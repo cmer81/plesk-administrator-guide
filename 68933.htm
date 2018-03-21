@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Référentiel d'applications </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="68949.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="70404.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557123.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557123.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Référentiel d'applications</h3>
+<p class="bodytext">Le référentiel d'applications exécute les fonctions d'un répertoire local et d'un outil de gestion des applications. La fonctionnalité du répertoire vous permet d'ajouter, de mettre à jour et de supprimer les packs d'applications. Les capacités de gestion vous permettent de voir les applications qui ont été installées dans Plesk, de les configurer ou de les rendre disponibles pour l'installation. En outre, vous pouvez supprimer les fichiers d'installation temporaires en nettoyant le cache du référentiel. Vous trouverez dans cette section des instructions détaillées sur l'exécution de ces opérations.</p>
+<p class="bodytext">Le référentiel d'applications est disponible dans le Panneau d'administration du serveur : <strong class="specialbold">Gestion des serveurs &gt; Outils &amp; Paramètres &gt; Référentiel d'applications</strong>.</p>
+<p class="widegraphic"><img src="76908.gif" alt="Installed_apps" height="409" width="1191" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="68933.htm#o68938" target="_self">Ajouter vos applications à Plesk</a></p><p class="relateditem"><a href="68933.htm#o68939" target="_self">Configurer les paramètres des applications pour l'ensemble du serveur</a></p><p class="relateditem"><a href="68933.htm#o68948" target="_self">Gérer la disponibilité des applications pour les clients</a></p><p class="relateditem"><a href="68933.htm#o68941" target="_self">Supprimer les packs d'applications</a></p><p class="relateditem"><a href="68933.htm#o68954" target="_self">Suivre les installations des applications</a></p><p class="relateditem"><a href="68933.htm#o68943" target="_self">Mettre à jour les applications installées</a></p><p class="relateditem"><a href="68933.htm#o68944" target="_self">Nettoyer le cache du référentiel d'applications</a></p><p class="relateditem"><a href="70404.htm" target="_self">Résoudre les problèmes d'installation des applications</a></p></td>
+</tr>
+</table>
+
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68938"></a><h4 class="heading4">Ajouter vos applications à Plesk</h4>
+<p class="bodytext">Si voulez proposer à vos clients une certaine application Web outre les applications du Catalogue, vous devez l'ajouter dans le référentiel d'applications. Notez que vous pouvez envoyer uniquement des applications packagées au format APS. </p>
+<p class="bodytext">Pour envoyer votre application, utilisez <strong class="specialbold">Outils &amp; Paramètres &gt; Référentiel d'applications &gt; Mes applications &gt; Ajouter une application</strong>. Après envoi, l'application apparaît dans le Panneau Client de tous les clients.</p>
+<p class="widegraphic"><img src="76907.gif" alt="Adding_App_from_Catalog" height="345" width="1007" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68939"></a><h4 class="heading4">Configurer les paramètres des applications pour l'ensemble du serveur</h4>
+<p class="bodytext">Dans certains cas, les applications du Catalogue requièrent une configuration valable pour l'ensemble du serveur avant que les clients ne puissent les installer. Par exemple, si l'installation d'une application affecte certains services de Parallels Plesk, elle peut requérir un mot de passe administrateur. Lorsque vos clients essayent d'installer une telle application, ils sont invités à contacter leur fournisseur (vous) pour exécuter la configuration. Après avoir configuré les paramètres, les clients peuvent installer l'application sur leurs sites Web.</p>
+<p class="bodytext">En général, les paramètres valables pour l'ensemble du serveur d'une application sont les paramètres qui s'appliquent à toutes les installations des applications et ne peuvent pas être changés par les clients. Par exemple, les clients ne peuvent pas installer l'application e-commerce ePages tant que vous n'avez pas défini si les clients doivent accéder à l'application par HTTP ou HTTPS.</p>
+<p class="bodytext">Pour configurer les paramètres valables pour l'ensemble du serveur, complétez ces deux étapes :</p>
+<ol class="listnumber"><li class="listnumber">Ajoutez l'application du Catalogue à l'aide des <strong class="specialbold">Outils &amp; Paramètres &gt; Référentiel d'applications &gt; Mes applications &gt; Ajouter une application</strong>.</li><li class="listnumber">Sélectionnez l'application à partir de la liste dans l'onglet <strong class="specialbold">Mes applications</strong> et envoyez les paramètres.</li></ol>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68948"></a><h4 class="heading4">Gérer la disponibilité des applications pour les clients</h4>
+<p class="bodytext">Après l'envoi d'un pack APS dans le référentiel, vous pouvez gérer sa disponibilité pour les clients. Cela peut être utile si vous voulez masquer temporairement votre application pour <em class="emphasis">tous </em>les clients. Dans ce cas, rendez l'application indisponible dans <strong class="specialbold">Outils &amp; Paramètres &gt; Référentiel d'applications &gt; Mes applications</strong>. L'application disparaîtra de la liste des applications disponibles de tous les clients. Pour afficher à nouveau l'application dans la liste, rendez-la disponible dans l'onglet <strong class="specialbold">Mes applications</strong>. Notez que vous ne pouvez pas exécuter ces opérations sur les applications que vous avez téléchargées à partir du Catalogue.</p>
+<p class="widegraphic"><img src="76909.gif" alt="App_Make_Unavailable" height="440" width="1188" vspace="0" hspace="0" align="bottom" border="0"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68941"></a><h4 class="heading4">Supprimer les packs d'applications</h4>
+<p class="bodytext">Vous pouvez supprimer <em class="emphasis">uniquement</em> les packs stockés dans le référentiel. Si vous supprimez une application à partir des <strong class="specialbold">Outils &amp; Paramètres &gt; Référentiel d'applications &gt; Mes applications</strong>, le Référentiel supprimera le pack d'applications. </p>
+<p class="bodytext">Cette opération n'affecte pas les <em class="emphasis">installations des applications</em>. Les applications installées peuvent être supprimées uniquement par des clients particuliers (propriétaires de l'installation) à partir du Panneau Client.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68954"></a><h4 class="heading4">Suivre les installations des applications</h4>
+<p class="bodytext">En général, les clients installent les applications directement à partir du Catalogue d'applications en ignorant le répertoire local. Les seules exceptions sont les applications que vous avez ajoutées dans le répertoire. Néanmoins, <em class="emphasis">toutes</em> les installations des applications sont enregistrées dans le référentiel. Vous pouvez voir les détails sur les installations dans <strong class="specialbold">Outils &amp; Paramètres &gt; Référentiel d'applications &gt; Applications installées</strong>. Un nombre zéro d'applications installées dans la liste signifie que le pack d'applications est stocké dans le Référentiel mais n'est installé par aucun client.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68943"></a><h4 class="heading4">Mettre à jour les applications installées</h4>
+<p class="bodytext">Le référentiel d'applications permet de mettre à jour toute application installée dans Plesk vers la toute dernière version disponible dans le Catalogue. Les deux principales méthodes de mise à jour d'une application dans Plesk sont par l'intervention du client (propriétaire de l'installation) ou par vous-même. Vous pouvez vérifier les mises à jour en cliquant sur le nom de l'app sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Référentiel d'applications</strong> &gt; onglet <strong class="specialbold">Applications installées</strong>. Si une mise à jour est disponible, vous pouvez l'appliquer en cliquant sur le lien <strong class="specialbold">Des mises à jour sont disponibles</strong>. Pour découvrir comme les clients peuvent mettre à jour leurs apps, consultez la section <strong class="specialbold"><a id="h72354" class="jumptemplate" title="Mettre à jour des applications" href="72341.htm#o68979" target="_self">Mettre à jour les applications</a></strong>.</p>
+<h5 class="heading5">Mise à jour forcée des applications</h5>
+<p class="bodytext">Vous pouvez forcer la mise à jour automatique de toutes les applications installées dans Plesk. Dans ce cas, Plesk met à jour automatiquement toutes les apps installées dès qu'une mise à jour est disponible.</p>
+<p class="widegraphic"><img src="76910.gif" alt="App_Update_Settings" height="341" width="934" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="procedureheading">Pour activer les mises à jour automatiques forcées :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Référentiel d'applications</strong> &gt; <strong class="specialbold">Applications installées</strong> &gt; page <strong class="specialbold">Paramètres de mise à jour</strong>.</li><li class="procedurelistnumber">Sélectionnez l'option <strong class="specialbold">Forcer les mises à jour pour toutes les applications installées</strong>. </li></ol><p class="bodytext">Nous vous recommandons d'utiliser cette option si vous êtes sûr que cela n'affectera pas le fonctionnement des sites Web. Cela peut se produire par exemple si vos clients utilisent des extensions d'apps : une extension développée pour une version spécifique de l'application peut ne pas être compatible avec les nouvelles versions.</p>
+<p class="note"><strong class="buttons">Remarque : </strong>si vous forcez les mises à jour d'apps, vos clients ne pourront pas désactiver la mise à jour automatique des apps comme décrit dans la section <strong class="specialbold"><a id="h72354_2" class="jumptemplate" title="Mettre à jour des applications" href="72341.htm#o68979" target="_self">Mettre à jour des applications</a></strong>.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68944"></a><h4 class="heading4">Nettoyer le cache du référentiel d'applications</h4>
+<p class="bodytext">Une fois que les clients installent une application à partir du Catalogue d'applications, le pack d'applications est stocké dans un répertoire temporaire sur le serveur, le cache du Référentiel. Les fichiers dans ce cache peuvent accélérer les installations des autres installations mais vous pouvez les supprimer pour libérer de l'espace disque sur votre serveur.</p>
+<p class="bodytext">Pour supprimer les fichiers temporaires du cache du référentiel d'applications, utilisez <strong class="specialbold">Outils &amp; Paramètres &gt; Référentiel d'applications &gt; Applications installées</strong> <strong class="specialbold">&gt; Vider le cache</strong>.</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '68933.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

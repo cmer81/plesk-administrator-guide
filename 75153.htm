@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Installer PHP </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="70668.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="75149.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055734.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055734.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Installer PHP</h3>
+<p class="bodytext">Plesk prend en charge dès l'installation de multiples versions de PHP et types de gestionnaires. Dans ce chapitre, vous découvrirez comment installer PHP sur le serveur en tant qu'administrateur de Plesk.</p>
+<h5 class="heading5">Installer et désinstaller PHP</h5>
+<p class="bodytext">Pour installer ou supprimer une version spécifique de PHP du serveur, suivez ces étapes :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour et à niveau</strong>. Ensuite, cliquez sur l'onglet <strong class="specialbold">Ajouter ou supprimer des composants</strong>.<ul class="listbullet2"><li class="listbullet2">(Plesk pour Linux) Cliquez sur la flèche pour développer la rubrique <strong class="specialbold">Web hosting</strong> et la sous-rubrique <strong class="specialbold">PHP interpreter versions</strong>.</li><li class="listbullet2">(Plesk pour Windows) Cliquez sur la flèche pour développer la rubrique <strong class="specialbold">Plesk hosting features</strong>.</li></ul></li><li class="procedurelistnumber">Dans cette liste, les versions de PHP installées actuellement sont indiquées avec une icône verte (coche). Les versions qui ne sont pas installées sont indiquées avec une icône rouge (croix). Pour sélectionner les versions que vous voulez installer, cliquez sur l'icône correspondante, puis sur <strong class="specialbold">Install</strong>. Pour sélectionner les versions que vous voulez supprimer, cliquez sur l'icône correspondante, puis sur <strong class="specialbold">Remove</strong>. Sur la capture d'écran ci-dessous, PHP 7.1 est marquée comme version à installer et PHP 5.6 comme version à supprimer.<p class="widegraphic"><img src="78108.png" alt="" height="238" width="411" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Continue</strong> pour installer/supprimer les versions de PHP sélectionnées.</li></ol><p class="bodytext">Lorsqu'une version de PHP est installée, Plesk configure automatiquement les types de gestionnaires PHP standard (CGI, FastCGI, PHP-FPM) pour cette version.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> sur les anciens systèmes d'exploitation, comme CentOS 6.x, vous devez installer le composant <strong class="specialbold">PHP-FPM support from OS vendor</strong> afin de pouvoir utiliser le gestionnaire PHP-FPM. Vous trouverez ce composant dans l'onglet <strong class="specialbold">Ajouter/Supprimer des composants</strong>, dans la section <strong class="specialbold">Web hosting</strong> &gt; <strong class="specialbold">Nginx web server and reverse proxy server</strong>.</p>
+<p class="bodytext">Vous pouvez <a id="h78109" class="jumptemplate" title="Configurer les gestionnaires PHP" href="75149.htm" target="_self">activer ou désactiver certains types de gestionnaires</a> pour vos clients, et ce, pour chaque version de PHP installée sur le serveur (p. ex., vous pouvez autoriser les clients à utiliser FastCGI et PHP-FPM avec PHP 7.1, mais uniquement PHP-FPM avec PHP 5.6). Vous pouvez également <a id="h78109_2" class="jumptemplate" title="Configurer les gestionnaires PHP" href="75149.htm" target="_self">configurer les paramètres PHP</a> individuellement pou chaque version de PHP.</p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '75153.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

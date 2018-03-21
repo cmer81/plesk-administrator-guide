@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Plesk sans serveur DNS </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="74239.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="76434.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055776.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055776.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Plesk sans serveur DNS</h2>
+<p class="bodytext">Vous pouvez exclure le composant Serveur DNS de votre installation Plesk. Pour cela, utilisez une installation de type personnalisé (voir le <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=deployment-guide&page=65780.htm" target="_blank">Guide de déploiement</a></strong>) et désélectionnez le composant correspondant (<em class="emphasis">Prise en charge du serveur DNS BIND</em> sous Linux et <em class="emphasis">Serveur DNS Microsoft</em> sous Windows).</p>
+<p class="bodytext">Si vous procédez ainsi<strong class="specialbold"> </strong>sans connexion à un service DNS externe, Plesk n'assure pas le service DNS pour les sites Web hébergés dessus. En outre, Plesk réagira comme suit :</p>
+<ul class="listbullet"><li class="listbullet">Le lien vers le <strong class="specialbold">Template DNS</strong> ne s'affiche pas sur la page <strong class="specialbold">Outils &amp; Paramètres</strong> du Panneau d'administration du serveur.</li><li class="listbullet">Dans le Panneau Client, les <strong class="specialbold">Paramètres DNS</strong> sous <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="placeholder">&lt;nom_de_domaine&gt;</strong> sont remplacés par le lien <strong class="specialbold">Informations WHOIS</strong>. Ce lien dirige les utilisateurs vers la page contenant des informations sur l'enregistrement du nom de domaine.</li><li class="listbullet">Les utilisateurs de Plesk ne sont pas en mesure d'installer des applications Web qui requièrent des droits de gestion pour les zones DNS (ou <em class="emphasis">aspect DNS</em>).</li><li class="listbullet">Plesk renvoie des erreurs lors des tentatives de gestion du serveur DNS ou des zones DNS à l'aide de l'utilitaire de ligne de commande <code class="monospace">dns</code> ou des requêtes XML API avec les nodes <code class="monospace">&lt;dns&gt;</code>.</li></ul><p class="note"><strong class="buttons">Important :</strong> s'il y a déjà des domaines sur votre serveur Plesk et si vous installez un serveur DNS ou connectez un service DNS externe par la suite, configurez manuellement les zones DNS de ces domaines. Les zones DNS pour les domaines créés après configuration du service DNS dans Plesk seront créées automatiquement avec le template DNS pour l'ensemble du serveur.</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72907.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

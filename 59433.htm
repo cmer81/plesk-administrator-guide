@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Protection DKIM, SPF et DMARC </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59432.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59434.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055756.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055756.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Protection DKIM, SPF et DMARC</h3>
+<p class="bodytext">Plesk prend en charge un certain nombre de solutions anti-spam pour la validation de l&#8217;identité des mails :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold"><a id="h78137" class="" title="DKIM" href="59433.htm#o78133" target="_self">DKIM</a> </strong> (DomainKeys Identified Mail) est une méthode utilisée pour associer l&#8217;identité d'un nom de domaine à un message sortant et pour valider l&#8217;identité d&#8217;un nom de domaine associée à un message entrant par authentification cryptographique. </li><li class="listbullet"><strong class="specialbold"><a id="h78138" class="jumptemplate" title="SPF et SRS" href="59433.htm#o78134" target="_self">SPF</a></strong> (Sender Policy Framework) est une méthode utilisée pour empêcher la falsification d'adresses d'expéditeurs, c&#8217;est-à-dire l&#8217;utilisation de fausses adresses d&#8217;expéditeurs. Elle permet au serveur de messagerie de vérifier que le mail entrant d&#8217;un domaine vient d'un hôte autorisé par l&#8217;administrateur de ce domaine. De plus, Plesk utilise <strong class="specialbold"> <a id="h78140" class="" title="SPF et SRS" href="59433.htm#o78134" target="_self">SRS</a></strong> (Sender Rewriting Scheme), de sorte que les messages transférés puissent passer le contrôle SPF.</li><li class="listbullet"><strong class="specialbold"><a id="h78139" class="jumptemplate" title="DMARC" href="59433.htm#o78135" target="_self">DMARC</a></strong> (Domain-based Message Authentication, Reporting and Conformance) est une technologie qui étend les fonctionnalités des méthodes SPF et DKIM. La politique DMARC détermine la façon dont les mails sont gérés selon les résultats des vérifications DKIM et SPF. </li></ul><p class="bodytext">Pour ces solutions, le serveur de messagerie requiert la configuration suivante :</p>
+<table class="tableintopic" width="616" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="117"><p class="tableheading">Serveur de messagerie</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tableheading">DKIM</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tableheading">SPF</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tableheading">SRS</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tableheading">DMARC</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="117"><p class="tablebodytext">Postfix (Linux)</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+ </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="117"><p class="tablebodytext">Qmail</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="117"><p class="tablebodytext">MailEnable Professional</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">-</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="117"><p class="tablebodytext">MailEnable Standard</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">Version 9.16 ou ultérieure</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">-</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="117"><p class="tablebodytext">SmarterMail</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="117"><p class="tablebodytext">IceWarp </p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="125"><p class="tablebodytext">-</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Dans ce tableau, &#8216;+&#8217; signifie que la solution est prise en charge par toutes les versions qui sont <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://doc.plesk.net/release-notes/onyx/software-requirements/#s4" target="_blank">prises en charge par Plesk Onyx</a></strong>. &#8216;-&#8216; signifie que la solution n&#8217;est pas prise en charge.</p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans ce chapitre :</p><p class="relateditem"><a href="59433.htm#o78133" target="_self">DKIM</a></p><p class="relateditem"><a href="59433.htm#o78134" target="_self">SPF et SRS</a></p><p class="relateditem"><a href="59433.htm#o78135" target="_self">DMARC</a></p></td>
+</tr>
+</table>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78133"></a><h4 class="heading4">DKIM</h4>
+<p class="bodytext"><strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://dkim.org/" target="_blank">DKIM</a></strong><strong class="specialbold"> </strong> (DomainKeys Identified Mail) fournit une méthode qui sert à valider l'identité d&#8217;un nom de domaine associé à un message. Elle laisse un organisme être garant d'un message envoyé en lui ajoutant une signature numérique générée automatiquement et en utilisant des techniques de cryptage pour valider l'autorisation de présence de la signature. </p>
+<p class="bodytext">Pour assurer la prise en charge DKIM, Plesk utilise une bibliothèque externe (Linux) ou le serveur de messagerie utilisé dans Plesk (Windows).</p>
+<p class="warning"><strong class="buttons">Important</strong> : si vous utilisez un service DNS externe, la signature DKIM fonctionnera pour les messages sortants, mais le serveur de messagerie de réception ne sera pas en mesure de valider ces messages. Pour résoudre le problème, vous pouvez désactiver le serveur DNS de Plesk et ajouter un enregistrement DNS associé à DKIM sur le service DNS externe. Dans ce cas, le serveur de réception sera en mesure de valider les messages.</p>
+<h5 class="heading5">Activer ou désactiver DKIM sur le serveur</h5>
+<p class="bodytext">Pour activer la fonctionnalité DKIM sur votre serveur, allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong> (groupe <strong class="specialbold">Mail</strong>) et faites défiler jusqu'à la section <strong class="specialbold">Protection anti-spam DKIM</strong>. Les options suivantes vous permettent de gérer DKIM sur votre serveur : </p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Autoriser la signature des mails sortants.</strong> Cette option permet aux clients d'activer la signature DKIM pour les mails sortants, domaine par domaine. Cette option n'active pas automatiquement la signature de tous les mails sortants. Pour utiliser DKIM, les utilisateurs doivent l&#8217;activer sur les différents domaines.</li><li class="listbullet"><strong class="specialbold">Vérifier les mails entrants</strong> (Plesk pour Linux). Cette option active la vérification DKIM pour tout mail entrant. Tous les messages sont vérifiés et si la vérification échoue, les messages sont signalés avec l'en-tête spécifique.</li></ul><p class="bodytext"></p>
+<p class="bodytext">Remarque : chaque option peut être sélectionnée individuellement. Vous pouvez activer la signature des mails sortants, vérifier les mails entrants, ou les deux.</p>
+<p class="note"><strong class="buttons">Remarque</strong> : vous ne pouvez pas désactiver le contrôle DKIM pour le mail entrant si <strong class="buttons"><a id="h78139_2" class="jumptemplate" title="DMARC" href="59433.htm#o78135" target="_self">DMARC</a></strong> est activé.</p>
+<h5 class="heading5">Activation de DKIM après mise à niveau de Plesk</h5>
+<p class="bodytext">Lorsque vous mettez Plesk à niveau depuis des versions antérieures à Plesk Onyx, DomainKeys est automatiquement remplacé par DKIM. Si la fonctionnalité DomainKeys était activée dans Plesk, DKIM est également activé.</p>
+<h5 class="heading5">Activation de la signature de mail DKIM d'un domaine</h5>
+<p class="bodytext">Si la signature DKIM est activée sur le serveur (voir la section <strong class="specialbold">Activer ou désactiver DKIM sur le serveur </strong>ci-dessus), les clients peuvent signer un mail sortant pour leur domaines.</p>
+<p class="procedureheading">Pour activer la signature DKIM d&#8217;un mail sortant pour un domaine particulier :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Ouvrez l&#8217;abonnement correspondant pour le gérer.</li><li class="procedurelistnumber">Allez sur l'onglet <strong class="specialbold">Mail</strong> &gt; <strong class="specialbold">Paramètres de la messagerie.</strong></li><li class="procedurelistnumber">Sélectionnez le domaine et cliquez sur <strong class="specialbold">Activer/Désactiver les services</strong>.</li><li class="procedurelistnumber">Sélectionnez <strong class="specialbold">Activer </strong>pour<strong class="specialbold"> Utiliser le système de protection anti-spam DKIM pour signer les mails sortants </strong>et cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="note"><strong class="buttons">Remarque</strong> : le service DNS doit être activé sur un domaine.</p>
+<p class="bodytext">Une fois que vous avez activé DKIM pour un domaine, Plesk ajoute ces deux entrées à la zone DNS du domaine :</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">default._domainkey.&lt;exemple.com&gt;</code>, contenant la partie publique de la clé générée.</li><li class="listbullet"><code class="monospace">_ domainkey.&lt;exemple.com&gt;</code>, contenant la politique DKIM.</li></ul><p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78134"></a><h4 class="heading4">SPF et SRS</h4>
+<p class="bodytext"><strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://www.openspf.org/" target="_blank">SPF</a></strong> (Sender Policy Framework) est une méthode utilisée pour empêcher la falsification d'adresses d'expéditeurs, c&#8217;est-à-dire l&#8217;utilisation de fausses adresses d&#8217;expéditeurs. SPF permet à un administrateur de domaine de définir une politique autorisant certains hôtes à envoyer un mail à partir du domaine. Un serveur de messagerie de réception vérifie que le mail entrant d'un domaine vient d&#8217;un hôte autorisé par l&#8217;administrateur de ce domaine. SPF se base sur les règles indiquées par l&#8217;administrateur dans la zone DNS de l&#8217;expéditeur.</p>
+<p class="bodytext">Dans Plesk, vous pouvez configurer une politique SPF pour les mails sortants en spécifiant les règles dans un enregistrement DNS. De plus, sur Linux, vous pouvez autoriser SPF à contrôler les mails entrants.</p>
+<p class="bodytext">Lorsque vous autorisez SPF à contrôler les mails entrants, le serveur de messagerie réalise une recherche DNS sur l&#8217;hôte de l&#8217;expéditeur pour rechercher un enregistrement DNS associé à SPF. Les jeux de règles suivants peuvent être définis :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Règles locales </strong>- règles utilisées par le filtre anti-spam avant que le contrôle SPF ne soit à proprement parler réalisé par le serveur de messagerie. <p class="listnote"><strong class="buttons">Remarque</strong> : ces règles sont liées aux règles spécifiées dans l&#8217;enregistrement DNS associé à SPF ou l&#8217;expéditeur. Par exemple, si l&#8217;expéditeur a la politique SPF suivante :<code class="monospace"> example.com.&nbsp;&nbsp; TXT&nbsp; v=spf1 +a +mx &#8211;all</code> et que la règle locale est <code class="monospace">a:test.plesk.com</code>, la politique qui en résulte sera <code class="monospace">example.com.&nbsp;&nbsp; TXT&nbsp; v=spf1 +a +mx +a:test.plesk.com &#8211;all</code>.</p>
+</li><li class="listbullet"><strong class="specialbold">Règles d&#8217;évaluation </strong>- règles qui s'appliquent aux domaines qui ne publient pas d&#8217;enregistrements SPF.</li></ul><p class="bodytext">Vous pouvez trouver des informations sur les statuts du contrôle SPF <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://tools.ietf.org/html/rfc7208#section-2.6" target="_blank">ici</a></strong>.</p>
+<p class="procedureheading">Pour configurer une politique SPF pour les mails sortants :</p>
+<p class="bodytext">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Template DNS</strong> et modifiez l&#8217;enregistrement TXT DNS associé à SPF. Cet enregistrement DNS est toujours présent dans le <strong class="specialbold"> <a id="h78157" class="jumptemplate" title="Template DNS" href="72226.htm" target="_self">template DNS</a></strong> pour l'ensemble du serveur. Voici un exemple d&#8217;enregistrement SPF créé par Plesk :</p>
+<pre class="preformatted">exemple.com.TXT	v=spf1 +a +mx +a:test.plesk.com -all</pre>
+<p class="bodytext">Les différentes parties de cet enregistrement ont la signification suivante :</p>
+<table class="tableintopic" width="690" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="341"><p class="tableheading">Partie</p>
+</td>
+<td style="border:1px solid #010101;" width="349"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="341"><p class="tablebodytext"><code class="monospace">v=spf1</code></p>
+</td>
+<td style="border:1px solid #010101;" width="349"><p class="tablebodytext">Le domaine utilise SPF en version 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="341"><p class="tablebodytext"><code class="monospace">+a</code></p>
+</td>
+<td style="border:1px solid #010101;" width="349"><p class="tablebodytext">Tous les hôtes des enregistrements &quot;A&quot; sont autorisés à envoyer des mails.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="341"><p class="tablebodytext"><code class="monospace">+mx</code></p>
+</td>
+<td style="border:1px solid #010101;" width="349"><p class="tablebodytext">Tous les hôtes des enregistrements &quot;MX&quot; sont autorisés à envoyer des mails.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="341"><p class="tablebodytext"><code class="monospace">+a:test.plesk.com</code></p>
+</td>
+<td style="border:1px solid #010101;" width="349"><p class="tablebodytext">Le domaine<em class="emphasis"> test.plesk.com</em> est autorisé à envoyer des mails.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="341"><p class="tablebodytext"><code class="monospace">-all</code></p>
+</td>
+<td style="border:1px solid #010101;" width="349"><p class="tablebodytext">Tous les autres domaines n&#8217;ont pas l&#8217;autorisation d&#8217;envoyer des mails.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Vous trouverez des informations plus détaillées sur la syntaxe d&#8217;un enregistrement DNS associé à SPF ici :&nbsp;<strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://www.openspf.org/SPF_Record_Syntax" target="_blank">http://www.openspf.org/SPF_Record_Syntax</a></strong>. Les notations de la politique sont consignées dans <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://tools.ietf.org/html/rfc7208" target="_blank">RFC 7208</a></strong>.</p>
+<p class="procedureheading">Pour autoriser SPF à contrôler le mail entrant sur un serveur base Linux :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong> (groupe <strong class="specialbold">Mail</strong>). L'écran des préférences de messagerie valables pour tout le serveur s'ouvrira sur l'onglet <strong class="specialbold">Paramètres</strong>.</li><li class="procedurelistnumber">Dans la section <strong class="specialbold">Protection anti-spam SPF</strong>, cochez la case <strong class="specialbold">Activer la protection anti-spam SPF pour vérifier la messagerie entrante</strong>.</li><li class="procedurelistnumber">Sélectionnez <strong class="specialbold">Continuer la vérification SPF en cas de problèmes de recherche DNS</strong> si vous souhaitez que SPF continue la vérification en cas d'échec de la recherche DNS. Dans ce cas, si l&#8217;hôte ne peut pas être résolu ou si aucun enregistrement associé à SPF n&#8217;est trouvé, les règles d&#8217;évaluation SPF peuvent s&#8217;appliquer.</li><li class="procedurelistnumber">Sélectionnez une option dans la zone de liste déroulante Mode de contrôle du SPF pour spécifier comment traiter l&#8217;e-mail quand SPF applique les règles locales et d&#8217;évaluation:<ol class="procedurelistnumber2"><li class="procedurelistnumber2"><strong class="specialbold">Créer seulement des en-têtes Received-SPF et ne jamais bloquer</strong>&nbsp;- pour accepter tous les messages entrants quels que soient les résultats de la vérification SPF.</li><li class="procedurelistnumber2"><strong class="specialbold">En cas de problème lors de la recherche des DNS, utiliser les messages d'erreur temporaires</strong> - pour accepter tous les messages entrants quels que soient les résultats de la vérification SPD, même si la vérification SPF a échoué en raison de problèmes de recherche DNS.</li><li class="procedurelistnumber2"><strong class="specialbold">Rejeter le mail quand SPF se résout en &quot;fail&quot; (refus)</strong> - pour rejeter les messages des expéditeurs qui ne sont pas autorisés à utiliser le domaine concerné.</li><li class="procedurelistnumber2"><strong class="specialbold">Rejeter le mail quand SPF se résout en &quot;soffail&quot; </strong> - pour rejeter les messages des expéditeurs qui ne peuvent pas être identifiés par le système SPF comme autorisés ou ne sont pas autorisés parce que le domaine n'a pas d&#8217;enregistrements SPF publiés.</li><li class="procedurelistnumber2"><strong class="specialbold">Rejeter le mail quand SPF se résout en &quot;neutral&quot; </strong> - pour rejeter les messages des expéditeurs qui ne peuvent pas être identifiés par le système SPF comme autorisés ou ne sont pas autorisés parce que le domaine n'a pas d&#8217;enregistrements SPF publiés.</li><li class="procedurelistnumber2"><strong class="specialbold">Rejeter le mail quand SPF ne résout pas en &quot;pass&quot; </strong>- pour rejeter les messages qui ne passent pas la vérification SPF pour quelque raison que ce soit (par exemple, lorsque le domaine de l&#8217;expéditeur ne met pas en uvre SPF et la vérification SPF renvoie le statut &quot;unknown&quot;).</li></ol></li><li class="procedurelistnumber">Pour spécifier les règles locales, tapez les règles dont vous avez besoin dans le champ <strong class="specialbold">Règles SPF locales</strong>. <br>Par exemple :<strong class="specialbold"> include:spf.trusted-forwarder.org</strong>.<p class="listcontinue">Pour de plus amples informations sur les règles du SPF, consultez <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://tools.ietf.org/html/rfc4408" target="Expanding_Block">http://tools.ietf.org/html/rfc4408</a></strong>.</p>
+</li><li class="procedurelistnumber">Vous pouvez aussi spécifier les règles d'évaluation dans le champ <strong class="specialbold">Règles d'évaluation SPF</strong>. <p class="listcontinue">Par exemple : <strong class="specialbold">v=spf1 +a/24 +mx/24 +ptr ?all</strong></p>
+</li><li class="procedurelistnumber">Pour définir un message d'erreur arbitraire qui sera renvoyé à l'émetteur SMTP quand un mail sera rejeté, saisissez le texte du message dans la zone de saisie <strong class="specialbold">Explication du SPF</strong>. <p class="listcontinue">Si aucune valeur n'est définie, c'est le texte par défaut qui sera utilisé pour la notification.</p>
+</li><li class="procedurelistnumber">Pour terminer la configuration, cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="procedureheading">Pour désactiver la vérification SPF pour le mail entrant :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber"> Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong> (groupe <strong class="specialbold">Mail</strong>). L'écran des préférences de messagerie valables pour tout le serveur s'ouvrira sur l'onglet <strong class="specialbold">Paramètres</strong>.</li><li class="procedurelistnumber">Dans la section <strong class="specialbold">Protection anti-spam SPF</strong>, décochez la case <strong class="specialbold">Activer la protection anti-spam SPF pour vérifier la messagerie entrante</strong>.</li></ol><p class="note"><strong class="buttons">Remarque</strong> : sur un serveur base Linux, vous ne pouvez pas désactiver le contrôle SPF pour le mail entrant si <strong class="buttons"><a id="h78139_3" class="jumptemplate" title="DMARC" href="59433.htm#o78135" target="_self">DMARC</a></strong> est activé.</p>
+<h5 class="heading5">Utilisation de SRS</h5>
+<p class="bodytext">En plus de SPF, certains serveurs de messagerie dans Plesk prennent en charge <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://www.openspf.org/SRS" target="_blank">SRS</a></strong> (Sender Rewriting Scheme), un mécanisme permettant de réécrire les adresses d&#8217;expéditeurs lorsqu&#8217;un e-mail est renvoyé de telle sorte que l&#8217;e-mail renvoyé continue à être compatible SPF. SRS permet de garantir la remise des messages à leur destinataire au cas où SPF est utilisé.</p>
+<p class="bodytext">SRS est utilisé automatiquement lorsque des messages sont transférés depuis des boîtes mail hébergées sous Plesk.</p>
+<p class="bodytext">Pour assurer la fonctionnalité SRS, Plesk utilise une bibliothèque externe (Linux) ou un logiciel de serveur de messagerie (Windows).</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78135"></a><h4 class="heading4">DMARC</h4>
+<p class="bodytext"><strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://dmarc.org/" target="_blank">DMARC</a></strong> (Domain-based Message Authentication, Reporting and Conformance) est une technologie qui étend les fonctionnalités des politiques expéditeur <strong class="specialbold"><a id="h78138_2" class="jumptemplate" title="SPF et SRS" href="59433.htm#o78134" target="_self">SPF</a></strong> et <strong class="specialbold"><a id="h78137_2" class="" title="DKIM" href="59433.htm#o78133" target="_self">DKIM</a> </strong>. La politique DMARC détermine la façon dont les mails sont gérés selon les résultats des vérifications DKIM et SPF. Cette technologie s'appuie sur les règles indiquées dans la zone DNS de l&#8217;expéditeur.</p>
+<p class="bodytext">Dans Plesk, vous pouvez configurer une politique DMARC pour les mails sortants en spécifiant les règles dans un enregistrement DNS. De plus, vous pouvez autoriser DMARC à contrôler le message entrant sur un serveur base Linux (en utilisant n&#8217;importe quel serveur de messagerie pris en charge par Plesk) ou sur un serveur base Windows (en utilisant SmarterMail uniquement).</p>
+<p class="procedureheading">Pour configurer une politique DMARC personnalisée pour les mails sortants :</p>
+<p class="bodytext">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Template DNS</strong> et modifiez les enregistrements DNS associés à la politique DMARC. Ces enregistrements DNS sont toujours présents dans le <strong class="specialbold"><a id="h72232" class="jumptemplate" title="Template DNS" href="72226.htm" target="_self">template DNS pour l'ensemble du serveur</a></strong>. (En revanche, les enregistrements DNS associés à <strong class="specialbold"><a id="h78137_3" class="" title="DKIM" href="59433.htm#o78133" target="_self">DKIM</a></strong> sont ajoutées aux zones DNS des différents domaines lorsque vous activez DKIM sur le domaine.)</p>
+<p class="bodytext"> Par exemple, la politique DMARC par défaut de Plesk est définie dans l'entrée :</p>
+<pre class="preformatted"> _dmarc.&lt;domain&gt;.	TXT	v=DMARC1; p=none</pre>
+<p class="bodytext">Cette politique recommande que le serveur de messagerie de réception ne supprime pas les messages même s&#8217;ils ont échoué au contrôle. Vous pouvez définir une politique plus stricte. Toutefois, notez que le serveur destinataire est libre d'appliquer sa propre politique aux messages entrants. </p>
+<p class="bodytext">Les clients d'hébergement peuvent modifier les politiques domaine par domaine.</p>
+<p class="bodytext">Pour plus d'informations sur DMARC, y compris sur les notations des politiques, consultez <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://datatracker.ietf.org/doc/rfc7489/" target="_blank">https://datatracker.ietf.org/doc/rfc7489/</a></strong>.</p>
+<p class="procedureheading">Pour autoriser DMARC à contrôler les messages entrants :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong> (groupe <strong class="specialbold">Mail</strong>). L'écran des préférences de messagerie valables pour tout le serveur s'ouvrira sur l'onglet <strong class="specialbold">Paramètres</strong>.</li><li class="procedurelistnumber">Dans la section <strong class="specialbold">DMARC</strong>, cochez la case <strong class="specialbold">Autoriser DMARC à vérifier la messagerie entrante</strong>. Sur un serveur base Linux, cette option est disponible seulement si <strong class="specialbold"><a id="h78137_4" class="" title="DKIM" href="59433.htm#o78133" target="_self">DKIM</a></strong> et <strong class="specialbold"><a id="h78138_3" class="jumptemplate" title="SPF et SRS" href="59433.htm#o78134" target="_self">SPF</a></strong> sont activés pour les mails entrants.</li></ol><p class="bodytext"> <img src="78142.gif" alt="DMARC_DKIM_SPF" height="465" width="1198" vspace="0" hspace="0" align="bottom" border="0"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59433.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

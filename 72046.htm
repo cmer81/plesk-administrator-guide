@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Pare-feu de Plesk (Linux) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="75326.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="64951.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Pare-feu de Plesk (Linux)</h2>
+<p class="bodytext">Par défaut, la configuration du pare-feu de Plesk se compose de politiques et de règles. Les politiques couvrent de nombreux aspects et affectent toutes les connexions depuis ou vers le serveur, selon la politique elle-même. Par exemple, vous pouvez utiliser la politique <strong class="specialbold">System policy for incoming traffic</strong> (disponible dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Pare-feu</strong>) pour bloquer complètement toutes les connexions entrantes vers le serveur. Les règles sont plus précises et gouvernent les connexions entrantes vers des services individuels de Plesk, comme SMTP ou MySQL.</p>
+<p class="bodytext">Notez que les règles écrasent les politiques. Par exemple : si une politique globale refuse tout trafic entrant et si une règle autorise le trafic entrant depuis une adresse IP spécifique, la règle est prioritaire. Vous pouvez utiliser ce mécanisme pour renforcer ou assouplir facilement la sécurité du serveur. Par exemple : configurer des politiques pour interdire toutes les connexions depuis et vers le serveur sauf pour quelques adresses IP et ports permet d'améliorer la sécurité. Toutefois, certaines applications risquent de ne pas fonctionner correctement en raison de restrictions du réseau. À l'inverse, autoriser toutes les connexions par défaut et utiliser des règles pour bloquer l'accès vers des services individuels ou depuis des adresses IP individuelles réduit la sécurité du serveur mais évite les problèmes de connexion. Faites vos propres tests pour déterminer le meilleur compromis entre usage et sécurité.</p>
+<p class="bodytext">Vous pouvez gérer le pare-feu de deux manières :</p>
+<ul class="listbullet2"><li class="listbullet2">Modifier les paramètres des politiques et règles par défaut.</li><li class="listbullet2">Créer des règles personnalisées.</li></ul><p class="bodytext">Pour modifier les paramètres des politiques et règles par défaut, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Pare-feu</strong> (groupe <strong class="specialbold">Sécurité</strong>) et cliquez sur <strong class="specialbold">Activer la gestion des règles du pare-feu</strong>. Confirmez l'activation de la gestion des règles, patientez jusqu'à l'application des modifications, puis cliquez sur <strong class="specialbold">Modifier les règles du pare-feu Plesk</strong>. Cliquez sur la règle ou la politique que vous voulez modifier. Vous pouvez définir une politique pour autoriser ou refuser des connexions ainsi qu'une règle pour autoriser ou refuser des connexions, ou autoriser les connexions depuis des adresses indiquées uniquement et refuser toutes les autres. Une fois que vous avez procédé aux modifications, cliquez sur <strong class="specialbold">Appliquer les changements</strong> pour faire entrer en vigueur les modifications ou sur <strong class="specialbold">Abandonner les changements</strong> pour tout annuler.</p>
+<p class="widegraphic"><img src="75005.gif" alt="Firewall_Linux" height="394" width="869" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Pour ajouter une règle personnalisée, activez la gestion des règles comme indiqué ci-dessus et cliquez sur <strong class="specialbold">Ajouter une règle personnalisée</strong>. Les règles personnalisée sont plus flexibles que les règles standard et peuvent être configurées pour autoriser ou refuser toutes les connexions entrantes, sortantes ou transférées depuis ou vers un port ou une adresse IP spécifique. Une fois que vous avez ajouté une ou plusieurs règles personnalisées, cliquez sur <strong class="specialbold">Appliquer les changements</strong> pour les appliquer aux jeux de règles ou sur <strong class="specialbold">Abandonner les changements</strong> pour tout annuler. Si ultérieurement vous décidez de supprimer une ou plusieurs règles personnalisées, cochez les cases correspondantes. Cliquez sur <strong class="specialbold">Supprimer</strong>, confirmez la suppression et cliquez sur <strong class="specialbold">Appliquer les changements</strong> pour supprimer les règles du jeu de règles.</p>
+<p class="bodytext">Lorsque vous créez des règles personnalisées, veillez à ne pas bloquer par inadvertance des <a id="h74637" class="jumptemplate" title="Ports utilisés avec Plesk" href="64950.htm" target="_self">ports utilisés par les services Plesk</a>.</p>
+<p class="note"><strong class="buttons">Remarque</strong> : si vous utilisez des <a id="h78128" class="jumptemplate" title="Utiliser Docker" href="75823.htm" target="_self">conteneurs Docker</a>, les règles du pare-feu Docker ne sont pas ajoutées aux règles du pare-feu Plesk.</p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72046.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

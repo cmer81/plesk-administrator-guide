@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Serveurs de bases de données </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="76434.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59428.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h1 class="heading1">Serveurs de bases de données</h1>
+<p class="bodytext">Plesk a besoin de serveurs de bases de données afin de stocker ses propres bases de données, c'est-à-dire, les bases de données utilisées par ses composants (par ex. pour le service de messagerie Web) ainsi que les bases de données créées par l'hébergement des sites Web des clients et des applications Web (par ex. une base de données WordPress). </p>
+<p class="bodytext">Plesk est compatible avec la plupart des moteurs de bases de données. Par ailleurs, Plesk est fourni avec les outils de gestion de bases de données correspondants. Pour fonctionner, Plesk peut utiliser des serveurs de bases de données situées sur le même serveur ou sur une machine distante.</p>
+<p class="bodytext">Par défaut, sur les serveurs Linux, les moteurs de bases de données sont installés sur le même serveur que Plesk, depuis le répertoire de votre fournisseur d'OS (Linux) ou votre répertoire personnalisé. Sur les serveurs Windows, les moteurs de bases de données sont dans le même pack que Plesk et installés sur le même serveur que Plesk.</p>
+<p class="bodytext"></p>
+<h5 class="heading5">Logiciel de serveur de bases de données dans Plesk pour Linux</h5>
+<p class="bodytext">Plesk Onyx pour Linux prend en charge les serveurs de bases de données MySQL et PostgreSQL. Plesk utilise des packs MySQL et PostgreSQL depuis le répertoire de votre système d'exploitation. MySQL 5.5 constitue une exception. Fourni dans le même pack que Plesk, MySQL 5.5 n'est compatible qu'avec un nombre restreint de systèmes d'exploitation.</p>
+<p class="bodytext">MySQL est installé pendant l'installation de Plesk. Vous pouvez installer PostgreSQL en plus via <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour et à niveau</strong> &gt; <strong class="specialbold">Ajouter/Supprimer des composants</strong> &gt; <strong class="specialbold">Serveur PostgreSQL</strong>.</p>
+<p class="bodytext">Vous pouvez également enregistrer des serveurs de bases de données externes MySQL et PostgreSQL dans Plesk. Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h72872" class="jumptemplate" title="Ajouter et supprimer des serveurs de bases de données" href="59428.htm" target="_self">Ajouter et supprimer des serveurs de bases de données</a></strong>. La liste des versions de serveurs de bases de données prises en charge est fournie dans les <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://docs.plesk.com/release-notes/12.5/software-requirements/" target="_blank">Notes de mises à jour </a></strong>.</p>
+<p class="bodytext">Sur les installations Plesk CloudLinux, vous pouvez utiliser MySQL 5.5. MySQL 5.5 est fourni dans le pack avec Plesk. Vous pouvez l'installer via <strong class="specialbold">Mises à jour et à niveau</strong> &gt; <strong class="specialbold">Ajouter/Supprimer des composants</strong>.</p>
+<p class="bodytext"></p>
+<h5 class="heading5">Logiciel de Serveur de bases de données dans Plesk pour Windows</h5>
+<p class="bodytext">Plesk Onyx pour Windows prend en charge Microsoft SQL Server Express 2008 et 2012, et MySQL 5.1. Par défaut, MySQL et Microsoft SQL Server 2008 sont installés pendant l'installation de Plesk. Vous pouvez installer Microsoft SQL Server 2012 en plus via <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour et à niveau</strong> &gt; <strong class="specialbold">Ajouter/Supprimer des composants</strong>.</p>
+<p class="bodytext">Vous pouvez également enregistrer des serveurs externes Microsoft SQL Server et MySQL dans Plesk. Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h72872_2" class="jumptemplate" title="Ajouter et supprimer des serveurs de bases de données" href="59428.htm" target="_self">Ajouter et supprimer des serveurs de bases de données</a></strong>. </p>
+<p class="bodytext">Plesk pour Windows utilise ODBC pour fonctionner avec d'autres moteurs de bases de données. Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h72883" class="jumptemplate" title="Se connecter à des bases de données externes (Windows)" href="60317.htm" target="_self">Se connecter à des bases de données externes (Windows)</a></strong>.</p>
+<p class="bodytext">La liste des versions de serveurs de bases de données prises en charge est fournie dans les <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://docs.plesk.com/release-notes/12.5/software-requirements/" target="_blank">Notes de mises à jour </a></strong>.</p>
+<p class="bodytext"> &nbsp;</p>
+<p class="note"><strong class="buttons">Remarque : </strong>les instructions relatives à la gestion des bases de données dans Plesk sont disponibles dans la section <strong class="specialbold"><a id="h72322" class="jumptemplate" title="Bases de données du site Web" href="70619.htm" target="_self">Gérer les bases de données du site Web</a></strong>.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans ce chapitre :</p><p class="relateditem"><a href="59428.htm" target="_self">Ajouter et supprimer des serveurs de bases de données</a></p><p class="relateditem"><a href="59429.htm" target="_self">Configurer les paramètres de sauvegarde de serveurs SQL distants</a></p><p class="relateditem"><a href="72879.htm" target="_self">Modifier les identifiants d'accès de l'administrateur de la base de données</a></p><p class="relateditem"><a href="74697.htm" target="_self">Droits et rôles de l'utilisateur de la base de données</a></p><p class="relateditem"><a href="72875.htm" target="_self">Préférences de l'hébergement de la base de données</a></p><p class="relateditem"><a href="72893.htm" target="_self">Outils de gestion de base de données</a></p><p class="relateditem"><a href="60317.htm" target="_self">Se connecter à des bases de données externes (Windows)</a></p><p class="relateditem"><a href="74496.htm" target="_self">Déplacer les bases de données vers un autre abonnement</a></p><p class="relateditem"><a href="73509.htm" target="_self">Accéder à distance aux bases de données</a></p><p class="relateditem"><a href="75181.htm" target="_self">Désactiver l'envoi de dumps de bases de données Microsoft SQL Server</a></p></td>
+</tr>
+</table>
+
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59427.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

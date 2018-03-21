@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Protéger contre les attaques par force brute (Fail2ban) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59420.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="73382.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557117.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557117.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Protéger contre les attaques par force brute (Fail2ban)</h2>
+<p class="bodytext">Le bannissement d'adresses IP (<em class="emphasis">Fail2Ban</em>) est un mécanisme de protection automatique du serveur contre les attaques par force brute. Fail2Ban s'appuie sur des expressions régulières pour surveiller les fichiers de log en se servant de modèles correspondant à des échecs d'authentification, en cherchant des tentatives d'exploitation et autres entrées considérées comme suspectes.  Ce type d'entrées de log est comptabilisé. Dès que leur nombre atteint une valeur prédéfinie, Fail2Ban envoie un mail de notification ou bloque l'adresse IP de l'attaquant pour une durée prédéfinie. Au terme du délai de blocage, l'adresse IP est automatiquement débloquée.</p>
+<p class="bodytext">La logique de Fail2Ban est déterminée par un nombre de <em class="emphasis">jails</em>. Une jail est un ensemble de règles couvrant une situation individuelle. Les paramètres de la jail déterminent les actions à effectuer lorsqu'une attaque est détectée, selon un filtre prédéfini (ensemble d'expressions régulières de surveillance des logs). Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h76403" class="" title="Gérer les jails Fail2Ban" href="73382.htm" target="_self">Gestion des jails Fail2Ban</a></strong>.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> pour utiliser Fail2Ban, les administrateurs mettant à niveau depuis Plesk 11.5 doivent obtenir une nouvelle clé de licence pour Plesk Onyx auprès de Plesk ou d'un revendeur.</p>
+<p class="procedureheading">Pour configurer Plesk de sorte que les adresses IP et les réseaux qui génèrent du trafic malveillant soient automatiquement bannis :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous&nbsp;<strong class="specialbold">Outils &amp; Paramètres&nbsp;&gt;&nbsp;Bannissement d'adresses IP</strong>&nbsp;(dans le groupe&nbsp;<strong class="specialbold">Sécurité</strong>&nbsp;). Le composant Fail2Ban doit être installé sur votre serveur.</li><li class="procedurelistnumber">Cochez la case <strong class="specialbold">Activer la détection d'intrusion</strong>. Ceci active le service Fail2Ban.</li><li class="procedurelistnumber">Définissez les paramètres suivants : <ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Période de bannissement de l'adresse IP :</strong> durée de bannissement pendant laquelle l'adresse IP est bannie. Une fois cette période terminée, l'adresse IP est automatiquement débloquée.</li><li class="listbullet2"><strong class="specialbold">Intervalle de détection des attaques ultérieures</strong> : durée en secondes pendant laquelle le système compte le nombre de tentatives de connexion infructueuses et les actions indésirables d'une adresse IP.</li><li class="listbullet2"><strong class="specialbold">Nombre d'échecs avant le bannissement de l'adresse IP</strong> : nombre de tentatives de connexion qui ont échoué depuis cette adresse IP.</li></ul></li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="bodytext">Désormais, tous les jails Fail2Ban actifs seront utilisés pour surveiller les fichiers de log et bannir les adresses IP suspectes. </p>
+<p class="widegraphic"><img src="75007.gif" alt="IP_Address_Banning" height="359" width="969" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Dans Plesk, les limites et spécificités suivantes s'appliquent à Fail2Ban :</p>
+<ul class="listbullet"><li class="listbullet">Fail2Ban ne doit pas être redémarré manuellement en tant que service Plesk, sinon toutes les données statistiques recueillies, y compris les adresses IP bannies, seront perdues.</li><li class="listbullet">Fail2Ban ne protège pas contre les attaquants avec adresse IPv6. Dans Plesk, Fail2Ban repose uniquement sur les adresses IP (sans recherche de noms d'hôtes) tant qu'il n'est pas reconfiguré.</li><li class="listbullet">Fail2Ban ne protège pas contre les attaques par force brute car il identifie les intrus à l'aide de leur adresse IP.</li><li class="listbullet">Si votre version de Plesk est installée dans un VPS, alors la limite des enregistrements iptables VPS (<code class="monospace">numiptent</code>) peut affecter le fonctionnement de Fail2Ban. Une fois cette limite dépassée, Fail2Ban cesse de fonctionner correctement et le log Fail2Ban présente une ligne du type :<br><code class="monospace">fail2ban.actions.action: ERROR iptables -I fail2ban-plesk-proftpd 1 -s 12.34.56.78 -j REJECT --reject-with icmp-port-unreachable returned 100</code><br>Dans ce cas contactez votre hébergeur VPS pour résoudre le problème.</li><li class="listbullet">Si Fail2Ban est installé sur votre serveur avant mise à niveau vers Plesk Onyx, alors le pack est remplacé par le pack Fail2Ban de Plesk. Si le pack que vous avez installé est plus récent que celui fourni avec Plesk, alors la mise à niveau risque d'échouer. Les jails existantes ne seront pas écrasées et vous pourrez les gérer dans Plesk avec les jails de Plesk Onyx.</li></ul><p class="bodytext"></p>
+<p class="procedureheading">Si une adresse IP ne doit pas être bloquée :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous&nbsp;<strong class="specialbold">Outils &amp; Paramètres&nbsp;&gt;&nbsp;Bannissement d'adresses IP&nbsp;Adresses IP de confiance&nbsp; &gt;Ajouter une adresse IP de confiance</strong>.</li><li class="procedurelistnumber">Dans le champ <strong class="specialbold">Adresse IP</strong>, indiquez une adresse IP, une plage d'IP ou un nom d'hôte DNS et cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="bodytext"></p>
+<p class="bodytext">Vous pouvez afficher et télécharger les fichiers de log Fail2Ban dans&nbsp;<strong class="specialbold">Outils &amp; Paramètres &gt; Bannissement d'adresses IP (Fail2Ban)</strong>, puis dans les <strong class="specialbold">logs</strong>&nbsp;.</p>
+<p class="bodytext">Vous pouvez afficher les adresses IP bannies, désactiver leur bannissement ou les déplacer vers les adresses IP de confiance dans<strong class="specialbold">&nbsp;Outils &amp; Paramètres &gt; Bannissement d'adresses IP (Fail2Ban) &gt;</strong> <strong class="specialbold">Adresses IP bannies</strong>&nbsp;.</p>
+<p class="bodytext">Vous pouvez afficher la liste des adresses IP qui ne seront jamais bannies, ajouter et supprimer des adresses IP de cette liste. Pour cela, allez sous <strong class="specialbold">Outils &amp; Paramètres &gt; Bannissement d'adresses IP (Fail2Ban)</strong> &gt; <strong class="specialbold">Adresses IP de confiance</strong>&nbsp;.</p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="73382.htm" target="_self">Gérer les jails Fail2Ban</a></p></td>
+</tr>
+</table>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '73381.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

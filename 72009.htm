@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Ajuster les paramètres Apache pour les hôtes virtuels </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="70837.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="71997.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055712.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055712.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Ajuster les paramètres Apache pour les hôtes virtuels</h3>
+<p class="bodytext">Vous pouvez personnaliser la configuration Apache pour un site Web particulier dans le Panneau Client sur la page <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; &lt;nom_de_domaine&gt; &gt; <strong class="specialbold">Paramètres d'Apache et Nginx</strong>.</p>
+<h5 class="heading5">Personnaliser les paramètres communs Apache</h5>
+<p class="bodytext">La section <strong class="specialbold">Paramètres communs Apache</strong> contient les paramètres que les propriétaires de sites Web souhaitent généralement ajuster. Par exemple, pour ajouter des fichiers index ou restreindre l'accès au site par adresse IP. Pour chaque paramètre, vous pouvez saisir une valeur personnalisée ou utiliser la configuration Apache par défaut (en sélectionnant la valeur <strong class="specialbold">Par défaut</strong>).</p>
+<p class="note"><strong class="buttons">Remarque : </strong>contrairement aux autres paramètres de serveur Web, le paramètre <strong class="specialbold">Refuser l'accès au site</strong> n'écrase pas la liste des adresses IP fournies par la configuration par défaut, car elle la complète. En cas de conflit (par exemple, si vous autorisez une adresse IP refusée par la configuration par défaut), vos valeurs seront utilisées.</p>
+<h5 class="heading5">Ajuster des directives supplémentaires Apache</h5>
+<p class="bodytext">Afin d'ajouter des directives Apache pour un site Web qui ne sont pas disponibles dans les <strong class="specialbold">Paramètres communs Apache</strong>, utilisez les champs <strong class="specialbold">Directives supplémentaires pour HTTP</strong> et <strong class="specialbold">Directives supplémentaires pour HTTPS</strong>. Lorsque vous éditez les champs, utilisez la syntaxe comme dans <code class="monospace">httpd.conf</code>. Par exemple, si vous souhaitez définir une page d'erreur personnalisée, ajoutez la ligne :</p>
+<pre class="preformatted">ErrorDocument 401 /my_error_page.html</pre>
+<p class="note"><strong class="buttons">Important : </strong>vos clients ne peuvent ni voir ni éditer ces champs.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext">&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72009.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

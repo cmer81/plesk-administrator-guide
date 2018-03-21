@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Ajouter et supprimer des serveurs de bases de données </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59427.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59429.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055790.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055790.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Ajouter et supprimer des serveurs de bases de données</h2>
+<h5 class="heading5">Ajouter des serveurs de bases de données externes à Plesk</h5>
+<p class="procedureheading">Pour utiliser des serveurs de bases de données externes avec votre serveur d'hébergement, les points suivants sont requis.</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Configurez un serveur de base de données externe :<ol class="procedurelistnumber2"><li class="procedurelistnumber2">Installez MySQL, PostgreSQL ou Microsoft SQL.<p class="listcontinue2">Les versions prises en charge sont répertoriées dans les <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="http://docs.plesk.com/release-notes/12.5/software-requirements/" target="_blank">Notes de mises à jour</a></strong>.</p>
+</li><li class="procedurelistnumber2">Configurez le compte de l'administrateur de la base de données.</li><li class="procedurelistnumber2">Activez l'accès au réseau pour le serveur de bases de données.</li></ol></li><li class="procedurelistnumber">Connectez-vous à Plesk.</li><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Serveurs de bases de données</strong>, puis cliquez sur <strong class="specialbold">Ajouter un serveur de bases de données</strong>.<p class="widegraphic"><br><img src="74988.gif" alt="Database_Servers" height="459" width="1133" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="procedurelistnumber">Indiquez les propriétés du serveur de bases de données :<ul class="listbullet2"><li class="listbullet2">Indiquez le moteur du serveur de bases de données dans la zone <strong class="specialbold">Type de serveur de bases de données</strong>. La liste contient les moteurs de bases de données pris en charge par votre clé de licence. Vous pouvez vérifier les composants pris en charge sur la page <strong class="specialbold">Outils &amp; Paramètres &gt; Plesk &gt; Gestion des licences</strong>.<p class="listnote2"><strong class="buttons">Remarque :</strong> pour utiliser Microsoft SQL Server avec Plesk, vous devez avoir Plesk Power Pack.</p>
+<p class="listcontinue2">Notez qu'avant d'utiliser un moteur de serveur de bases de données, vous devez l'installer dans <strong class="specialbold">Outils &amp; Paramètres &gt; Mises à jour et à niveau &gt; Ajouter/Supprimer des composants</strong>, sauf s'il a été installé avec Plesk.</p>
+</li><li class="listbullet2">Indiquez le nom d'hôte ou l'adresse IP du serveur de bases de données.</li><li class="listbullet2">Indiquez le numéro du port d'écoute du serveur de bases de données. Cette option n'est possible que pour MySQL. Par défaut, les serveurs MySQL écoutent sur le port 3306. Vous pouvez laisser le champ <strong class="specialbold">Numéro de port</strong> vide si votre serveur de base de données MySQL écoute sur le port par défaut.<p class="listnote2"><strong class="buttons">Remarque :</strong> n'utilisez pas le port 8306 pour le serveur MySQL. Le port 8306 est utilisé par Plesk pour communiquer avec sa base de données interne.</p>
+</li><li class="listbullet2">Indiquez le type de base de données associée au serveur.</li><li class="listbullet2">Pour que ce serveur de bases de données soit votre serveur par défaut pour héberger les bases de données des clients, cochez la case <strong class="specialbold">Prendre ce serveur par défaut pour MySQL</strong>. Si vous utilisez un serveur de bases de données MS SQL, cochez la case <strong class="specialbold">Utiliser ce serveur par défaut pour MS SQL</strong>.</li><li class="listbullet2">Précisez le nom d'utilisateur et le mot de passe de l'administrateur du serveur de bases de données.</li></ul></li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="bodytext">Si vous avez enregistré un serveur SQL, vous souhaiterez peut-être définir ses paramètres de sauvegarde. Pour configurer les paramètres de sauvegarde d'un serveur SQL distant, consultez la section <strong class="specialbold"><a id="h72869" class="jumptemplate" title="Configurer les paramètres de sauvegarde de serveurs SQL distants" href="59429.htm" target="_self">Configurer les paramètres de sauvegarde de serveurs SQL distants</a></strong>.&nbsp;&nbsp;</p>
+<p class="bodytext"></p>
+<h5 class="heading5">Supprimer des serveurs de bases de données de Plesk</h5>
+<p class="bodytext">Vous pouvez supprimer un serveur de bases de données uniquement s'il ne s'agit pas d'un serveur par défaut et s'il n'y a aucune base de données dessus.</p>
+<p class="procedureheading">Pour désenregistrer un serveur de base de données de Plesk :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Serveurs de bases de données</strong>.</li><li class="procedurelistnumber">Cochez la case à droite du nom de l'hôte du serveur de bases de données.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Supprimer</strong>.</li><li class="procedurelistnumber">Confirmez l'action puis cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="bodytext">&nbsp;&nbsp;</p>
+<p class="procedureheading">Pour désenregistrer un serveur de bases de données incluant des bases de données ou par défaut pour les bases de données des clients d'hébergement :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Supprimez les bases de données du serveur :<ol class="procedurelistnumber2"><li class="procedurelistnumber2">Allez sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Serveurs de bases de données</strong>.</li><li class="procedurelistnumber2">Cliquez sur le nom d'hôte du serveur de bases de données à supprimer de Plesk.</li><li class="procedurelistnumber2">Cochez la case dans le coin supérieur gauche de la liste pour sélectionner toutes les bases de données.</li><li class="procedurelistnumber2">Cliquez sur <strong class="specialbold">Supprimer</strong>.</li><li class="procedurelistnumber2">Confirmez la suppression, puis cliquez sur <strong class="specialbold">OK</strong>.</li></ol></li><li class="procedurelistnumber">Définissez un autre serveur de bases de données par défaut :<ol class="procedurelistnumber2"><li class="procedurelistnumber2">Cliquez sur le raccourci <strong class="specialbold">Serveurs de bases de données</strong> dans le chemin en haut de l'écran.</li><li class="procedurelistnumber2">Cliquez sur le nom d'hôte du serveur de bases de données à définir par défaut. Le serveur de bases de données doit être de même type (MySQL ou MS SQL) que le serveur que vous allez supprimer.</li><li class="procedurelistnumber2">Cliquez sur <strong class="specialbold">Préférences</strong> et cochez la case <strong class="specialbold">Utiliser ce serveur par défaut pour MySQL</strong>. Si vous utilisez un serveur de bases de données SQL, cochez la case <strong class="specialbold">Utiliser ce serveur par défaut pour MS SQL</strong>.</li><li class="procedurelistnumber2">Cliquez sur <strong class="specialbold">OK</strong>.</li></ol></li><li class="procedurelistnumber">Retournez à la liste des serveurs de bases de données (<strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Serveurs de bases de données</strong>).</li><li class="procedurelistnumber">Cochez la case correspondant au serveur de bases de données dont vous n'avez plus besoin.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Supprimer</strong>.</li><li class="procedurelistnumber">Confirmez l'action puis cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="note"><strong class="buttons">Important :</strong> vous ne pouvez pas supprimer les bases de données d'applications Web de cette façon. Pour les supprimer, vous devez d'abord supprimer les applications Web respectives sur les sites où elles sont utilisées.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59428.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

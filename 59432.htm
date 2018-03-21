@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Filtre anti-spam SpamAssassin </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59431.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59433.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055752.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055752.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Filtre anti-spam SpamAssassin</h3>
+<p class="bodytext">Le filtre anti-spam SpamAssassin détecte les spams parmi les mails envoyés sur les boîtes mail hébergées sur votre serveur Plesk. </p>
+<p class="bodytext">Découvrez comment activer et configurer la protection anti-spam dans la section <strong class="specialbold"><a id="h76178" class="jumptemplate" title="Activer SpamAssassin" href="59432.htm#o72115" target="_self">Activer SpamAssassin</a></strong>.</p>
+<p class="bodytext">Pour atteindre le niveau voulu de protection contre le spam, Plesk vous permet de configurer plusieurs paramètres SpamAssassin, notamment :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Sensibilité du filtre anti-spam</em><p class="listcontinue">Pour identifier les spams, SpamAssassin réalise différents tests sur le contenu et les objets de chaque mail. À la fin des tests, chaque message obtient un nombre de points. Plus le nombre est élevé, plus il est probable que le mail est un spam. Un message contenant le texte &quot;VIAGRA AU MEILLEUR PRIX !!!&quot; dans la ligne Objet et dans le corps du message totalise par exemple 8,3 points. Par défaut, la sensibilité du filtre est fixée de telle sorte que tous les messages qui totalisent 7 points voire plus sont classés en spams. Si vos utilisateurs reçoivent du spam lorsque la sensibilité du filtre est sur le niveau par défaut, augmentez-la légèrement en définissant une valeur moins élevée, par exemple 6. A contrario, si SpamAssassin traite des messages valides comme du spam, diminuez la sensibilité du filtre en définissant une valeur plus élevée. </p>
+</li><li class="listbullet"><em class="emphasis">Marquer comme spam</em><p class="listcontinue">Au niveau du serveur, vous ne pouvez pas configurer le filtre anti-spam valable pour tout le serveur afin de supprimer automatiquement les spams : vous ne pouvez le faire que sur une base par boîte mail. Donc, pour la politique valable pour l'ensemble du serveur, vous pouvez choisir uniquement d'identifier les messages en tant que spam : <code class="monospace">&quot;X-Spam-Flag: YES&quot;</code> et <code class="monospace">&quot;X-Spam-Status: Yes&quot;</code> sont ajoutés par défaut à la source du message. Si vous le souhaitez, le filtre anti-spam peut ajouter une chaîne de caractères spécifiques (texte) au début de chaque objet du message (par défaut : <code class="monospace">*****SPAM*****</code>).</p>
+<p class="listcontinue">Vous ne pouvez pas configurer SpamAssassin pour qu'il supprime tous les spams. Toutefois, vous pouvez autoriser chaque propriétaire de boîte mail à configurer sa propre protection contre le spam. Par exemple, l'utilisateur peut définir le filtre anti-spam pour qu'il supprime automatiquement les messages signalés par SpamAssassin ou encore configurer ses propres listes blanches/noires. Pour en savoir plus sur le paramétrage du filtre anti-spam pour une boîte mail spécifique, consultez la section <strong class="specialbold"><a id="h69604" class="jumptemplate" title="Protéger les boîtes mail contre les spams" href="65690.htm" target="_self">Protéger les boîtes mail contre les spams</a></strong>.</p>
+</li><li class="listbullet"><em class="emphasis">Taille maximum des messages à vérifier</em><p class="listcontinue">L'analyse d'un grand nombre de mails peut augmenter fortement la charge de votre serveur. Afin d'éviter cela, vous pouvez définir la taille maximale des messages à tester par le filtre anti-spam. </p>
+</li><li class="listbullet"><em class="emphasis">Nombre de processus SpamAssassin</em><p class="listcontinue">Vous pouvez également limiter la charge du serveur par SpamAssassin en définissant le nombre de processus SpamAssassin (sur Linux) ou de fils (sur Windows) exécutés simultanément sur le serveur. Dans Plesk pour Linux, le nombre maximal de processus SpamAssassin que vous pouvez configurer via l'interface de Plesk est de 32. Si vous avez besoin d'exécuter plus de processus SpamAssassin simultanément, ajoutez les lignes ci-après au fichier <code class="monospace"><a id="h78568" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> (créez-le s'il n'existe pas) :</p>
+</li></ul><pre class="preformatted">[mail]</pre>
+<pre class="preformatted">spamAssassin.maxChildrenLimit = 80</pre>
+<p class="listcontinue">La valeur numérique, dans cet exemple,&quot;80&quot; indique le nombre maximal de processus SpamAssassin configurables dans l'interface de Plesk.</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Langues ou paramètres régionaux de confiance (Windows uniquement)</em><p class="listcontinue">Vous pouvez définir les caractéristiques linguistiques des mails non bloqués par le filtre en indiquant les langues et paramètres régionaux. Les mails rédigés dans les langues spécifiées et avec les jeux de caractères indiqués ne seront pas signalés comme spams.</p>
+</li><li class="listbullet"><em class="emphasis">Listes noires et listes blanches</em><p class="listcontinue">SpamAssassin vous permet d'inclure certains expéditeurs dans ses listes <em class="emphasis">noires</em> et <em class="emphasis">blanches</em> :</p>
+<ul class="listbullet2"><li class="listbullet2">Si vous souhaitez que les mails de domaines spécifiques ou de certains expéditeurs individuels soient signalés comme spams, ajoutez les entrées voulues à la <em class="emphasis">liste noire</em> du filtre anti-spam. SpamAssassin ajoute alors la mention <code class="monospace">USER_IN_BLACKLIST</code> dans l'en-tête de chaque mail des adresses spécifiées pour garantir que le mail en question est bien traité comme spam. Par conséquent, le mail est marqué comme spam, supprimé ou placé dans le dossier Spam, selon les paramètres de SpamAssassin définis pour l'ensemble du serveur ou pour une boîte mail précise. </li><li class="listbullet2">Pour vous assurer que vous et vos utilisateurs ne raterez aucun mail de certains expéditeurs, ajoutez l'adresse mail ou les domaines complets à la <em class="emphasis">liste blanche</em> du filtre anti-spam.</li></ul><p class="listcontinue">Pour savoir comment configurer les listes noires et blanches, consultez la section <strong class="specialbold"><a id="h76180" class="jumptemplate" title="Configurer des Listes noires et Listes blanches" href="59432.htm#o72118" target="_self">Configurer des Listes noires et Listes blanches</a></strong>.</p>
+</li></ul><p class="note"><strong class="buttons">Remarque :</strong> Plesk fournit uniquement une fonction SpamAssassin de base. Si vous voulez créer des règles anti-spam complexes, éditez les fichiers de configuration de SpamAssassin. Pour en savoir plus sur la configuration avancée de SpamAssassin, consultez le <strong class="specialbold">Guide d'administration avancée, section Protection anti-spam</strong> pour <a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=advanced-administration-guide-linux&page=68764.htm" target="_blank">Linux</a> et <a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=advanced-administration-guide-win&page=69197.htm" target="_blank">Windows</a> ainsi que les autres documents respectifs sur <a class="externalhyperlinktemplate" title="" href="http://spamassassin.apache.org/doc/Mail_SpamAssassin_Conf.html" target="_blank">http://spamassassin.apache.org/doc/Mail_SpamAssassin_Conf.html</a>.</p>
+<p class="widegraphic"><img src="76181.gif" alt="SPAM_filter_setting" height="797" width="845" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="59432.htm#o72115" target="_self">Activer SpamAssassin</a></p><p class="relateditem"><a href="59432.htm#o72116" target="_self">Définir la taille maximum des mails pour SpamAssassin (Linux)</a></p><p class="relateditem"><a href="59432.htm#o72118" target="_self">Configurer des Listes noires et Listes blanches</a></p></td>
+</tr>
+</table>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o72115"></a><h4 class="heading4">Activer SpamAssassin</h4>
+<p class="procedureheading">Pour activer SpamAssassin :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Filtre anti-spam</strong> (dans le groupe <strong class="specialbold">Mail</strong>).  </li><li class="procedurelistnumber">Sélectionnez l'option <strong class="specialbold">Activer le filtre anti-spam SpamAssassin valable pour l'ensemble du serveur</strong>.</li><li class="procedurelistnumber">Pour autoriser vos utilisateurs à définir leurs propres préférences de filtrage des spams pour chaque boîte mail, sélectionnez l'option <strong class="specialbold">Appliquer les paramètres individuels au filtrage anti-spam</strong>.</li><li class="procedurelistnumber">Précisez le nombre maximal de processus SpamAssassin dans le champ <strong class="specialbold">Nombre maximum de processus du programme anti-spams à exécuter (1-5)</strong>. Nous vous conseillons d'utiliser la valeur par défaut.</li><li class="procedurelistnumber">Ajustez la sensibilité du filtre anti-spam en saisissant la valeur que vous souhaitez dans le champ <strong class="specialbold">Nombre de points qu'un message doit totaliser pour être considéré comme spam</strong>.<p class="listcontinue">Par défaut, la sensibilité du filtre est fixée de telle sorte que tous les messages qui totalisent 7 points voire plus sont classés en spams. Si vos utilisateurs reçoivent du spam lorsque la sensibilité du filtre est sur le niveau par défaut, augmentez-la légèrement en définissant une valeur moins élevée, par exemple 6. A contrario, si SpamAssassin traite des messages valides comme du spam, diminuez la sensibilité du filtre en définissant une valeur plus élevée.</p>
+</li><li class="procedurelistnumber">Sur Windows, définissez la taille maximale des messages que SpamAssassin doit traiter. Pour cela, sélectionnez l'option <strong class="specialbold">Ne pas filtrer si la taille du mail dépasse la taille indiquée</strong> et indiquez la valeur souhaitée. Ce paramètre n'est pas disponible dans Plesk pour Linux. Pour en savoir plus sur la taille maximum des mails dans Linux, consultez la section <strong class="specialbold"><a id="h72126" class="jumptemplate" title="Configurer des Listes noires et Listes blanches" href="59432.htm#o72118" target="_self">Définir la taille maximum des mails pour SpamAssassin (Linux)</a></strong>.</li><li class="procedurelistnumber">Indiquez comment doivent être signalés les mails identifiés comme du spam dans le champ <strong class="specialbold">Insérer le texte suivant en tête de la ligne Objet de chaque mail reconnu comme spam</strong>. Si vous ne voulez pas que le filtre anti-spam modifie l'objet du mail, ne cochez pas cette case. Si vous voulez inclure le nombre de points obtenus par les mails dans la ligne Objet, tapez <code class="monospace">_SCORE_</code> dans cette case.</li><li class="procedurelistnumber">Sur Windows, précisez les langues ou paramètres régionaux de confiance à l'aide des listes <strong class="specialbold">Langues fiables</strong> et <strong class="specialbold">Régions de confiance</strong>.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o72116"></a><h4 class="heading4">Définir la taille maximum des mails pour SpamAssassin (Linux)</h4>
+<p class="bodytext">Pour diminuer la charge causée par SpamAssassin sur votre serveur, définissez une taille maximum de mails que SpamAssassin doit analyser. Tous les messages dont la taille est plus élevée seront acheminés à leur destinataire sans être vérifiés.</p>
+<p class="procedureheading">Pour définir la taille maximum des messages que SpamAssassin doit traiter :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Ouvrez le fichier de configuration <code class="monospace">/etc/psa/psa.conf</code> pour pouvoir l'éditer.</li><li class="procedurelistnumber">Indiquez la valeur du paramètre <code class="monospace">SA_MAX_MAIL_SIZE</code> en octets. <p class="listcontinue">Par défaut, la taille maximum des mails est de 256 000 octets. La taille maximum recommandée pour les mails est de 150 à 250 kilooctets, ce qui est la limite usuelle pour les mails au format HTML contenant des images. La taille d'un mail est considérée comme critique pour le filtre et le serveur est surchargé lorsque celle-ci dépasse 500 kilooctets, ce qui est la limite usuelle pour les mails contenant des pièces jointes.</p>
+</li></ol>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o72118"></a><h4 class="heading4">Configurer des Listes noires et Listes blanches</h4>
+<p class="procedureheading">Pour ajouter des entrées à une liste noire ou blanche :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sur l'onglet <strong class="specialbold">Liste noire</strong> ou <strong class="specialbold">Liste blanche</strong> de la page <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Filtre anti-spam</strong>.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Ajouter des adresses</strong>.</li><li class="procedurelistnumber">Indiquez la liste des entrées que vous voulez ajouter à la liste.<p class="listcontinue">Séparez les adresses par une virgule, un point virgule ou un espace. Vous pouvez utiliser un astérisque (*) pour remplacer un certain nombre de lettres et un point d'interrogation (?) pour remplacer une seule lettre. Par exemple : adresse@spammers.net, user?@spammers.net, *@spammers.net. Si vous indiquez *@spammers.net, tout le domaine de messagerie spammers.net sera bloqué. Si vous utilisez un serveur Windows, indiquez également la procédure à suivre avec les messages issus des adresses spécifiées.</p>
+</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="procedureheading">Pour retirer des entrées de la liste noire ou blanche :</p>
+<p class="bodytext">Sélectionnez les entrées sur l'onglet correspondant et cliquez sur <strong class="specialbold">Supprimer</strong>.</p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59432.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

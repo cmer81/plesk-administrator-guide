@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Utilitaire de réparation de Plesk : Système de fichiers </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="74662.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="74665.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557321.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557321.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Utilitaire de réparation de Plesk : Système de fichiers</h3>
+<p class="bodytext">L'<a id="h74669" class="jumptemplate" title="Utilitaire de réparation de Plesk" href="74649.htm" target="_self">utilitaire de réparation de Plesk</a> avec l'aspect &nbsp;<code class="monospace">fs&nbsp;</code> vérifie l'intégrité et la structure du système de fichiers. Il est possible de vérifier les fichiers système (ceux qui sont essentiels pour Plesk) et/ou les fichiers des hôtes virtuels sur le serveur. Vous pouvez aussi vérifier les fichiers de domaines spécifiques. </p>
+<p class="note"><strong class="buttons">Remarque :</strong> cet aspect s'applique uniquement à Plesk pour Linux.</p>
+<p class="bodytext">L'utilitaire de réparation avec l'aspect &nbsp;fs&nbsp; permet de détecter et de résoudre les problèmes suivants :</p>
+<ul class="listbullet"><li class="listbullet">Propriétaires de fichiers ou répertoires inattendus.</li><li class="listbullet">Droits de fichiers ou répertoires inattendus.</li><li class="listbullet">Attributs étendus de fichiers ou répertoires inattendus.</li></ul><p class="bodytext">Il est également possible de détecter l'absence de fichiers ou répertoires obligatoires (sans résolution du problème).</p>
+<p class="bodytext">Les options suivantes sont spécifiques à cet aspect :</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">-system</code>&nbsp; : vérifie uniquement les fichiers système. Les vérifications concernent un certain nombre de fichiers système essentiels au bon fonctionnement de Plesk.</li><li class="listbullet"><code class="monospace">-vhosts</code>&nbsp; : vérifie uniquement les fichiers des hôtes virtuels.</li></ul><p class="bodytext">Si aucune de ces options n'est utilisée, les fichiers système et ceux des hôtes virtuels sont vérifiés. </p>
+<p class="bodytext">Si un domaine précis est indiqué, seuls les fichiers de ce domaine seront vérifiés. Si toute autre option (-<code class="monospace">system</code>, -<code class="monospace">vhosts</code>) est utilisée dans ce cas, elle sera ignorée.</p>
+<p class="bodytext">Exemples :</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">plesk repair fs</code>&nbsp; : vérifie à la fois les fichiers des hôtes virtuels et les fichiers système sur le serveur.</li><li class="listbullet"><code class="monospace">plesk repair fs -vhosts</code>&nbsp; : vérifie uniquement les fichiers des hôtes virtuels sur le serveur.</li><li class="listbullet"><code class="monospace">plesk repair fs &#8211;system</code> : vérifie uniquement les fichiers système sur le serveur.</li><li class="listbullet"><code class="monospace">plesk repair fs example.com</code> : vérifie les fichiers de l'hôte virtuel &nbsp;exemple.com&nbsp; uniquement.</li><li class="listbullet"><code class="monospace">plesk repair fs example.com -vhosts</code> : vérifie uniquement les fichiers de l'hôte virtuel &nbsp;exemple.com&nbsp;. Dans ce cas, l'option &#8211;vhosts est ignorée.</li><li class="listbullet"><code class="monospace">plesk repair fs -system -v -n</code> : donne des informations détaillées sur tout problème détecté dans le système de fichiers sans les résoudre.</li></ul><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '75675.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

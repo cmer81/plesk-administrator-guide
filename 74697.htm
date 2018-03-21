@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Droits et rôles de l'utilisateur de la base de données </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72879.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="72875.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055790.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055790.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Droits et rôles de l'utilisateur de la base de données</h2>
+<p class="bodytext">Plesk propose des rôles utilisateur pour les utilisateurs de bases de données MySQL et Microsoft SQL Server. Les rôles servent de <em class="emphasis">templates</em> vous aidant à assigner plus rapidement des droits à un utilisateur de bases de données. Voici les rôles d'utilisateur de bases de données pris en charge : <strong class="specialbold">Lecture et Écriture</strong> (par défaut), <strong class="specialbold">En lecture seule</strong> et <strong class="specialbold">Écriture uniquement</strong>. Chaque rôle dispose d'un jeu de privilèges accordés à un compte utilisateur de bases de données qui a ce rôle. Vous pouvez modifier les privilèges correspondants aux différents rôles.</p>
+<p class="bodytext">De plus, MySQL prend en charge le rôle <strong class="specialbold">Personnalisé</strong> qui correspond à un jeu de privilèges définis par l'utilisateur. Les utilisateurs de SQL Serveur ne peuvent pas modifier les jeux de droits fournis avec les rôles.</p>
+<p class="bodytext">Vous pouvez refuser un droit et interdire aux utilisateurs de Plesk de l'utiliser.</p>
+<p class="bodytext">Découvrez comment sélectionner les rôles pour les utilisateurs de bases de données dans <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="specialbold">Bases de données</strong> &gt; <strong class="specialbold">Gestion des utilisateurs</strong> dans la section <strong class="specialbold"><a id="h71574" class="jumptemplate" title="Gérer les comptes utilisateur de la base de données" href="69539.htm" target="_self">Gérer les comptes utilisateur de la base de données</a></strong>. Remarque : les utilisateurs de bases de données sur les abonnements de l'administrateur peuvent obtenir des privilèges globaux en plus des droits sur les tables de bases de données.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Rôles utilisateur de base de données MySQL</h5>
+<p class="bodytext">Dans Plesk avec MySQL, les utilisateurs peuvent sélectionner des rôles pour les utilisateurs de bases de données ainsi qu'ajouter ou supprimer des privilèges individuels.</p>
+<p class="bodytext">Voici la liste des jeux de privilèges MySQL pour chaque rôle : </p>
+<table class="tableintopic" width="504" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tableheading">Privilège</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tableheading">Lecture et Écriture</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tableheading">En lecture seule</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tableheading">Écriture uniquement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Sélectionner</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">-</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Insérer</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Mettre à jour</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Supprimer</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Créer</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Ignorer</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Modifier</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Index</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Créer des tables temporaires</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Verrouiller les tables</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Créer une vue</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="168"><p class="tablebodytext">Afficher la vue</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">-</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Pour modifier le jeu de privilèges par défaut, éditez le fichier <code class="monospace"><a id="h78546" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> et répertoriez les noms des privilèges pour chaque rôle que vous voulez modifier. </p>
+<p class="bodytext">Souvenez-vous que les clients Plesk peuvent toujours sélectionner plus de privilèges que vous ne l'avez fait dans <code class="monospace">panel.ini</code>, sauf si vous interdisez certains privilèges (voir plus loin dans cette section).</p>
+<p class="bodytext">Par exemple :</p>
+<pre class="preformatted">[databaseManagement]&nbsp;</pre>
+<pre class="preformatted">features.roles.mysql.readWrite = Select,Update,Insert</pre>
+<pre class="preformatted">features.roles.mysql.readOnly = Select</pre>
+<pre class="preformatted">features.roles.mysql.writeOnly = Update</pre>
+<pre class="preformatted"></pre>
+<p class="note"><strong class="buttons">Remarque :</strong> la modification d'un jeu de privilèges pour un rôle (par exemple, le rôle <strong class="specialbold">Lecture et Écriture</strong>) n'affecte pas les privilèges des utilisateurs de bases de données MySQL existants ayant ce rôle. Toutefois, le rôle de ce type d'utilisateur de bases de données est automatiquement changé en <strong class="specialbold">Personnalisé</strong>.</p>
+<p class="bodytext"></p>
+<p class="bodytext"><strong class="buttons">Interdire un privilège à tous les utilisateurs</strong></p>
+<p class="bodytext">Vous voudrez peut-être refuser certains privilèges à tous les utilisateurs de la base de données, par exemple, le privilège Supprimer. Pour refuser un privilège, vous devez préciser la liste des privilèges MySQL dans le fichier <code class="monospace"><a id="h78547" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code>, en omettant celui que vous voulez refuser. </p>
+<p class="bodytext">Par exemple :</p>
+<pre class="preformatted">[databaseManagement]&nbsp;</pre>
+<pre class="preformatted">features.privileges.mysql.dataAccess =&nbsp;Select, Insert, Update, Delete</pre>
+<pre class="preformatted">features.privileges.mysql.structureAccess&nbsp;=&nbsp;Create, Drop, Alter, Index, Create Temporary Tables, Lock Tables, Create View, Show View</pre>
+<p class="bodytext">Les privilèges indiqués sont affichés dans l'interface utilisateur de Plesk (<strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="specialbold">Bases de données</strong> &gt; <strong class="specialbold">Gestion des utilisateurs</strong>). Les utilisateurs pourront accorder ou révoquer uniquement les privilèges indiqués. Si un privilège est absent de la liste, Plesk le considère comme refusé pour un utilisateur de la base de données.</p>
+<p class="note"><strong class="buttons">Important :</strong> un privilège est refusé seulement une fois que l'utilisateur de Plesk enregistre des modifications dans les paramètres de l'utilisateur de bases de données (<strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="specialbold">Bases de données</strong> &gt; <strong class="specialbold">Gestion des utilisateurs</strong>&gt; cliquez sur un nom d'utilisateur &gt; cliquez sur <strong class="specialbold">OK</strong>).</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Rôles utilisateur de bases de données Microsoft SQL Server</h5>
+<p class="bodytext">Dans Plesk avec Microsoft SQL Server, les utilisateurs peuvent sélectionner des rôles (<strong class="specialbold">Lecture et Écriture</strong>, <strong class="specialbold">Lecture seule</strong>, <strong class="specialbold">Écriture uniquement</strong>), mais ils ne peuvent pas ajouter ou supprimer de droits individuels (rôle niveau base de données SQL Server). Les droits ne sont pas affichés dans l'interface de Plesk.</p>
+<p class="bodytext">Les droits par défaut pour chaque rôle sur Microsoft SQL Server sont les suivants :</p>
+<table class="tableintopic" width="504" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="tableheading">Droit</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tableheading">Lecture et Écriture</p>
+</td>
+<td style="border:1px solid #010101;" width="126"><p class="tableheading">En lecture seule</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tableheading">Écriture uniquement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">db_backupoperator</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="126"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">db_datareader</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="126"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">-</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">db_datawriter</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="126"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">db_ddladmin</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #010101;" width="126"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">+</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Pour modifier le jeu de droits par défaut pour un rôle, modifiez le fichier <code class="monospace"><a id="h78548" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> et répertoriez le nom des droits.</p>
+<p class="bodytext">Par exemple :</p>
+<pre class="preformatted">[databaseManagement]&nbsp;</pre>
+<pre class="preformatted">features.roles.mssql.readWrite = db_datareader,db_backupoperator,db_ddladmin</pre>
+<pre class="preformatted">features.roles.mssql.<code class="monospace">readOnly </code>= db_datareader,db_backupoperator</pre>
+<pre class="preformatted">features.roles.mssql.write<code class="monospace">Only</code> = db_datawriter</pre>
+<p class="note"><strong class="buttons">Remarque :</strong> quand vous modifiez le jeu de droits pour un rôle, les droits des utilisateurs de bases de données existants sont modifiés. Tous les utilisateurs existants et nouveaux, créés avec ce rôle, disposent des droits que vous avez indiqués dans le fichier <code class="monospace">panel.ini</code>.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"><strong class="buttons">Comment restaurer les droits par défaut des utilisateurs Microsoft SQL Server ?</strong></p>
+<p class="bodytext">Chaque rôle utilisateur de base de données a son jeu de droits défini par défaut (rôles utilisateur niveau base de données SQL Server). Pour réinitialiser les droits d'utilisateurs de bases de données existants avec les valeurs par défaut (selon leur rôle), exécutez cette commande :</p>
+<p class="bodytext"><code class="monospace">C:\Program Files\%plesk_dir%\bin\repair.exe --update-mssql-users-permissions [-database-server &lt;nom&gt;], [-database &lt;nom&gt;]</code></p>
+<p class="note"><strong class="buttons">Remarque :</strong> si vous avez modifié les droits d'un rôle (par ex. : rôle <strong class="specialbold">Lecture et Écriture</strong>) dans <code class="monospace">panel.ini</code>, la commande <code class="monospace">--update-mssql-users-permissions</code> utilise le jeu de droits que vous avez indiqué, plutôt que le jeu de droits par défaut (par ex. : le jeu par défaut pour le rôle <strong class="specialbold">Lecture et Écriture</strong> est <code class="monospace">db_datareader,db_datawriter,db_backupoperator,db_ddladmin</code>).</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '74697.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

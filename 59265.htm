@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Paramètres de sauvegarde généraux </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59256.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59259.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557385.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557385.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Paramètres de sauvegarde généraux</h2>
+<p class="bodytext">Si vous servez plusieurs sites Web, vous souhaitez peut-être configurer une sauvegarde utilisant peu de ressources serveur. </p>
+<p class="procedureheading">Pour réduire la charge du serveur et définir la politique d'utilisation de l'espace disque :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Gestionnaire de sauvegardes</strong> &gt; <strong class="specialbold">Paramètres</strong>.</li><li class="procedurelistnumber">(Facultatif) Précisez le nombre maximal de sauvegardes planifiées stockables dans tout type de stockage (<strong class="specialbold">Nombre maximum de fichiers de sauvegarde à stocker</strong>). <p class="listcontinue">Cette valeur définit la rotation des fichiers de sauvegardes planifiées. Pour en savoir plus, consultez la section <strong class="specialbold">Rotation des fichiers de sauvegardes planifiées</strong> ci-après sur cette page.</p>
+</li><li class="procedurelistnumber">Indiquez le nombre de processus de sauvegarde simultanés autorisés dans le champ <strong class="specialbold">Nombre maximum de sauvegardes planifiées, à exécuter simultanément</strong>. La valeur par défaut est 10. Entrez une valeur inférieure.</li><li class="procedurelistnumber">Afin que les processus de sauvegarde libèrent les ressources d'autres processus sur le serveur, sélectionnez le ou les paramètres suivants :<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Exécuter les sauvegardes planifiées avec une priorité faible</strong></li><li class="listbullet2"><strong class="specialbold">Exécuter tous les processus de sauvegarde avec une priorité faible</strong></li></ul><p class="listcontinue">Remarque : ces options augmentent le temps de sauvegarde. Les autres tâches du serveur ne seront pas ralenties pendant la sauvegarde.</p>
+</li><li class="procedurelistnumber">Cochez la case <strong class="specialbold">Ne pas compresser les fichiers de sauvegarde</strong> pour désactiver la compression.</li><li class="procedurelistnumber">Pour empêcher les sauvegardes d'utiliser tout l'espace disque disponible sur le serveur, procédez comme suit :<ul class="listbullet2"><li class="listbullet2">Configurez Plesk pour qu'il démarre une sauvegarde uniquement si votre serveur a assez d'espace disque libre pour la stocker. Gardez à l'esprit que cette option augmente largement le temps de sauvegarde, car Plesk doit calculer en plus la taille de la prochaine sauvegarde. <p class="listnote2"><strong class="buttons">Remarque :</strong> Plesk pour Windows ne calcule pas directement la taille des objets mais l'extrait de la base de données. La taille des objets dans la base de données de Plesk étant actualisée une fois par jour, la taille de la sauvegarde globale calculée peut différer de sa valeur réelle.</p>
+</li><li class="listbullet2">Configurez Plesk pour qu'il démarre une sauvegarde uniquement si votre serveur a le volume d'espace disque libre indiqué. Cette option est pratique quand vous connaissez la taille approximative de la prochaine sauvegarde et souhaitez éviter que Plesk perde du temps et des ressources à la calculer.</li></ul></li><li class="procedurelistnumber">Indiquez si vous préférez autoriser l'utilisation du serveur Plesk en tant que stockage FTP pour les sauvegardes Plesk.<p class="listcontinue">Les utilisateurs peuvent configurer leur stockage FTP pour qu'il se trouve sur le même serveur que le serveur hébergeant leurs abonnements. Dans ce cas, le volume d'espace disque utilisé double à chaque création de sauvegarde. Le serveur risque à un moment donné de manquer d'espace disque. Pour éviter cela, nous vous recommandons de décocher la case <strong class="specialbold">Autoriser le stockage de sauvegardes FTP sur le serveur local</strong>. </p>
+</li><li class="procedurelistnumber">Vous pouvez choisir d'enregistrer les sauvegardes dans le stockage du serveur Plesk si l'envoi vers le stockage FTP échoue (<strong class="specialbold">Enregistrer les sauvegardes dans le stockage du serveur si l'envoi vers FTP échoue</strong>).<p class="listcontinue">La sauvegarde sur le serveur de stockage est possible uniquement pour les utilisateurs dotés du droit <strong class="specialbold">Sauvegarde et restauration des données d'abonnements à l'aide du stockage du serveur</strong> ou <strong class="specialbold">Sauvegarde et restauration des données de comptes à l'aide du stockage du serveur</strong>.</p>
+</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="bodytext"></p>
+<h5 class="heading5">Paramètres de sécurité des sauvegardes</h5>
+<p class="bodytext">Vous pouvez sélectionner le type de protection pour toutes les sauvegardes de Plesk stockées dans le répertoire (local) serveur :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Clé de chiffrement de Plesk</strong>. Par défaut, toutes les sauvegardes créées dans Plesk sont chiffrées avec une clé interne. Cette clé est unique pour chaque installation de Plesk. Le chiffrement de sauvegardes avec des clés Plesk est pratique mais présente certaines limites. Lorsque les utilisateurs restaurent des sauvegardes créées sur d'autres installations de Plesk, les données sont restaurées mais les mots de passe utilisateur d'origine sont perdus et de nouveaux sont générés. Dans ce cas, les utilisateurs reçoivent des notifications de modification de mot de passe par mail. Si vous allez restaurer une sauvegarde sur une autre installation de Plesk et souhaitez éviter de modifier les mots de passe utilisateur, utilisez l'option <strong class="specialbold">Mot de passe indiqué</strong>.</li><li class="listbullet"><strong class="specialbold">Mot de passe indiqué</strong>. Vous pouvez définir un mot de passe pour l'ensemble du serveur afin de protéger les sauvegardes. Ce type de protection est préférable et peut être recommandé dans la plupart des cas. Il s'avère en particulier utile s'il y a plusieurs installations de Plesk ou si vous stockez une sauvegarde sur un disque monté et l'utilisez pour la restauration si le disque où est installé Plesk rencontre un problème. Pour restaurer toutes les données de Plesk, y compris les mots de passe utilisateur, vous devez indiquer le mot de passe de la sauvegarde. </li></ul><p class="bodytext">Les paramètres de sécurité décrits précédemment ne concernent que les sauvegardes stockées dans le répertoire du serveur (local) uniquement. Si vous stockez une sauvegarde sur un serveur FTP, configurez la protection par mot de passe dans les paramètres de stockage FTP. Pour plus d'informations, consultez la section <strong class="specialbold"><a id="h75938" class="jumpseetemplate" title="Utiliser un stockage FTP" href="59259.htm" target="_self">Utiliser un stockage FTP</a></strong>.</p>
+<p class="note"><strong class="buttons">Remarque </strong>: les mots de passe que les utilisateurs d'abonnements peuvent indiquer lors du téléchargement des sauvegardes n'entrent pas en conflit avec le mot de passe global du serveur ni avec la clé de chiffrement. Pour ce type de sauvegarde, des mots de passe spécifiques à l'utilisateur sont utilisés. Consultez la section <strong class="specialbold"><a id="h74081" class="jumptemplate" title="Envoyer, télécharger et supprimer des fichiers de sauvegarde" href="65201.htm" target="_self">Envoyer et télécharger les fichiers de sauvegarde</a></strong>.</p>
+<p class="bodytext"> </p>
+<h5 class="heading5">Rotation des fichiers de sauvegardes planifiées</h5>
+<p class="bodytext">Pour économiser de l'espace disque, vous pouvez limiter le nombre de fichiers de sauvegardes complètes stockés dans le répertoire. Quand cette limite est atteinte, le fichier de sauvegarde le plus ancien est supprimé afin de stocker un nouveau fichier. La limite ne concerne que les fichiers de sauvegardes complètes ; le nombre de sauvegardes incrémentales n'est pas limité.</p>
+<p class="bodytext">Quand vous indiquez une limite valable pour tout le serveur, allez dans <strong class="specialbold">Outils &amp; Paramètres &gt; Gestionnaire de sauvegardes &gt; Paramètres</strong>, les limites de tous les abonnements, comptes client et comptes revendeur sont recalculés en fonction de la valeur que vous avez indiquée. Tous les comptes client, comptes revendeur et les abonnements nouvellement créés auront la limite indiquée par défaut.</p>
+<p class="widegraphic"><img src="76991.gif" alt="2016-09-09_114746" height="345" width="920" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="note"><strong class="buttons">Remarque </strong>: les abonnés d'hébergement définissent eux-mêmes les limites des sauvegardes stockées en limitant la durée de stockage. Ils définissent les limites en jours, semaines ou mois (voir la section <strong class="specialbold"><a id="h75202" class="" title="Planifier des sauvegardes" href="59264.htm" target="_self">Planifier des sauvegardes</a></strong>). Pour comprendre le lien entre les limites personnalisées et la limite valable pour l'ensemble du serveur, lisez cet exemple.</p>
+<p class="bodytext">Exemple :</p>
+<ul class="listbullet"><li class="listbullet">Le client 1 paramètre une sauvegarde quotidienne (complète) et indique que les fichiers de sauvegarde doivent être conservés 10 jours.</li><li class="listbullet">Le client 2 paramètre une sauvegarde hebdomadaire (complète) et indique que les fichiers de sauvegarde doivent être conservés 6 semaines.</li><li class="listbullet">Le client 3 paramètre une sauvegarde mensuelle (complète) et indique que les fichiers de sauvegarde doivent être conservés 5 mois.</li></ul><p class="bodytext">&nbsp;Si vous définissez une limite globale pour le serveur, par exemple, 3 fichiers de sauvegarde, alors Plesk ajuste automatiquement les limites au niveau de l'abonnement. Autrement dit :</p>
+<ul class="listbullet"><li class="listbullet">Pour le Client 1, chaque fichier de sauvegarde est stocké 3 jours.</li><li class="listbullet">Pour le Client 2, chaque fichier de sauvegarde est stocké 3 semaines.</li><li class="listbullet">Pour le Client 3, chaque fichier de sauvegarde est stocké 3 mois.</li></ul><p class="bodytext">Les clients ne peuvent pas définir de valeur plus élevée pour ces limites. Toutefois, ils peuvent définir des valeurs moins élevées. </p>
+<p class="bodytext"></p>
+<p class="bodytext">&nbsp;&nbsp;&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59265.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

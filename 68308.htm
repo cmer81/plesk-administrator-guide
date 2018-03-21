@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> SSL/TLS et adresses IP partagées </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="76576.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="76416.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557276.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557276.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">SSL/TLS et adresses IP partagées</h3>
+<p class="bodytext">Plesk prend en charge l'extension SNI (Server Name Indication) dans le protocole TLS (Transport Layer Security). Cela permet d'utiliser des certificats SSL/TLS authentiques pour les sites hébergés sur des adresses IP partagées.</p>
+<p class="bodytext">SNI permet d'optimiser l'utilisation des ressources IPv4 et offre les avantages suivants :</p>
+<ul class="listbullet"><li class="listbullet">Les fournisseurs peuvent exécuter les sites SSL/TLS avec des certificats indépendants sur une même adresse IPv4.</li><li class="listbullet">Les clients d'hébergement peuvent installer des certificats SSL/TLS indépendants sur chacun de leurs sites ; par conséquent, il n'est pas nécessaire de souscrire à d'autres abonnements. Chaque client peut installer un certificat SSL/TLS même s'il n'y a qu'une seule adresse IP partagée sur tout le serveur.</li></ul><p class="bodytext">La prise en charge SSL/TLS avec SNI est possible uniquement si toutes les conditions suivantes sont remplies :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Le système d'exploitation de votre serveur Plesk prend en charge SNI.</em> <ul class="listbullet2"><li class="listbullet2">Systèmes Linux (voir la liste complète dans les <a class="externalhyperlinktemplate" title="" href="http://docs.plesk.com/release-notes/12.5/software-requirements/" target="_blank">Notes de mises à jour</a>).</li><li class="listbullet2">Windows 2012.</li></ul></li><li class="listbullet"><em class="emphasis">Le navigateur de l'utilisateur prend en charge SNI.</em> <p class="listcontinue">La plupart des navigateurs Web modernes à partir de IE 7, Firefox 2.0, Opera 8.0 et Chrome 1.0 le prennent en charge à moins qu'ils ne tournent sous Windows XP. Pour en savoir plus sur SNI et le logiciel client qui le prend en charge, consultez l'article <a class="externalhyperlinktemplate" title="" href="http://en.wikipedia.org/wiki/Server_Name_Indication" target="_blank">http://en.wikipedia.org/wiki/Server_Name_Indication</a>.</p>
+</li></ul><p class="bodytext">Remarque : si le SNI n'est pas pris en charge, et si vous (en tant qu'administrateur) affectez un certificat SSL/TLS à un site hébergé sur une adresse IP partagée, Plesk associera ce certificat à tous les autres sites hébergés sur la même adresse IP. Dans la même situation, les clients d'hébergement avec des adresses IP partagées ne pourront pas assigner de certificats SSL/TLS à leurs sites : la page <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="placeholder">&lt;nom_du_domaine&gt;</strong> &gt; <strong class="specialbold">Certificats SSL</strong> sera masquée dans leur Panneau Client. </p>
+<p class="bodytext">Pour obtenir des instructions sur l'affectation de certificats SSL/TLS aux sites Web, consultez la section <strong class="specialbold"><a id="h65196" class="jumptemplate" title="Protéger les connexions avec des certificats SSL/TLS" href="65158.htm" target="_self">Protéger les connexions avec des certificats SSL/TLS</a></strong>.</p>
+<h5 class="heading5">Activer la prise en charge de SNI</h5>
+<p class="bodytext">Par défaut, dans les installations Plesk propres (Linux et Windows), la prise en charge de SNI est activée. </p>
+<p class="bodytext">Si vous mettez à niveau depuis Plesk pour Windows 11.0 ou version antérieure, la prise en charge SNI sera désactivée. Vous pouvez l'activer depuis <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur</strong>. </p>
+<p class="bodytext">Dans Plesk pour Linux, la prise en charge SNI est toujours activée et ne peut être désactivée.</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '68308.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

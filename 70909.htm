@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Modifier les fichiers </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="70907.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="70908.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557297.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557297.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h4 class="heading4">Modifier les fichiers</h4>
+<p class="bodytext">Une fois que vous avez obtenu l'archive du pack, vous devez extraire son contenu dans un répertoire et modifier les fichiers. Vous pouvez aussi installer tel quel le pack de skin téléchargé sur le serveur (comme décrit dans la section <strong class="specialbold"><a id="h70914" class="jumptemplate" title="Installer des thèmes dans Plesk" href="70908.htm" target="_self">Installer des thèmes dans Plesk</a></strong>) et modifier les fichiers directement sur le serveur. </p>
+<p class="note"><strong class="buttons">Important</strong> : si vous utilisez cette méthode, assurez-vous de définir les informations du thème comme décrit dans la section <strong class="specialbold">Modifier les informations du thème</strong> ci-dessous avant d'installer le thème. </p>
+<h5 class="heading5">Structure du pack du thème</h5>
+<p class="bodytext">Le tableau suivant décrit la structure et le contenu des répertoires et fichiers inclus dans un pack de thème. </p>
+<p class="note"><strong class="buttons">Remarque :</strong> pour vous aider à déterminer les fichiers d'images ou les styles que vous devez modifier nous vous recommandons d'utiliser des outils de développement Wevb, comme Firebug pour Mozilla Firefox ou Inspect Elements pour Google Chrome. Ces outils vous permettent de sélectionner l'élément de l'interface et de voir le style appliqué, le fichier et la ligne définis dans ce fichier. </p>
+<p class="bodytext"></p>
+<table class="tableintopic" width="804" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="36" height="0"></td>
+<td width="162" height="0"></td>
+<td width="606" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="2" width="198"><p class="bodytext">&nbsp;</p>
+<p class="bodytext"><img src="25890.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> <code class="monospace">css</code></p>
+</td>
+<td style="border:1px solid #010101;" width="606"><p class="tablebodytext">Le fichier <code class="monospace">custom.css</code> dans ce répertoire est vide lorsque vous téléchargez le pack de thème. Aucun des styles définis dans le fichier inclus dans le thème de Plesk ne peut être modifié. Toutefois, si vous voulez redéfinir le style d'un élément de l'interface, vous pouvez ajouter une définition du style dans le fichier <code class="monospace">custom.css</code> téléchargé et l'envoyer dans Plesk. Dans ce cas, seul le style que vous avez défini est appliqué à cet élément, les autres éléments ne sont pas modifiés.</p>
+<p class="tablebodytext">Vous pouvez ajouter des définitions de style pour l'arrière-plan de la page, les principales polices, les couleurs du texte, des hyperliens, des bordures d'éléments d'écran, etc.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="2" width="198"><p class="bodytext"><img src="25890.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> <code class="monospace">icônes</code></p>
+</td>
+<td style="border:1px solid #010101;" width="606"><p class="tablebodytext">Ce répertoire contient uniquement les icônes placées dans les sous-répertoires par leur taille. Notez que la taille de l'icône est doublée pour les écrans Retina.</p>
+<p class="tablebodytext">Si vous n'avez pas l'intention de personnaliser l'un de ces éléments, vous pouvez les supprimer de l'archive avec votre thème personnalisé. Vous pouvez conserver uniquement les éléments que vous avez modifiés ou ajoutés.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="2" width="198"><p class="bodytext"><img src="25890.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> <code class="monospace">vos serveurs</code></p>
+</td>
+<td style="border:1px solid #010101;" width="606"><p class="tablebodytext">Ce répertoire contient les images utilisées comme remplissage pour certains éléments de l'interface.</p>
+<p class="tablebodytext">Certains de ces fichiers graphiques sont des feuilles Sprite qui comportent plusieurs images utilisées à différents endroits de l'interface. Pour cette raison, lorsque vous modifiez une image d'arrière-plan, vous devez vous assurer que le fichier correspondant n'est pas utilisé ailleurs. Mieux vaut créer un fichier graphique et modifier les feuilles de style au lieu de réutiliser simplement le fichier.</p>
+<p class="tablebodytext">Si vous n'avez pas l'intention de personnaliser l'un de ces éléments, vous pouvez les supprimer de l'archive avec votre thème personnalisé. Vous pouvez conserver uniquement les éléments que vous avez modifiés ou ajoutés.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="bodytext">&nbsp;</p>
+</td>
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="162"><p class="bodytext"><img src="25890.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> <code class="monospace">logos</code></p>
+</td>
+<td style="border:1px solid #010101;" width="606"><p class="tablebodytext">Ce répertoire contient les images des logos de l'entreprise et du produit affichés dans Plesk. Pour changer un logo, préparez le fichier portant le même nom et remplacez-le dans le dossier.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="2" width="198"><p class="bodytext"><img src="38607.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> meta.xml</p>
+</td>
+<td style="border:1px solid #010101;" width="606"><p class="tablebodytext">Ce fichier contient les informations sur le pack du thème, comme le nom et la description.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Pour annuler des modifications et utiliser les styles ou images par défaut, supprimez simplement vos définitions CSS personnalisées du fichier <code class="monospace">custom.css</code> et supprimez les images personnalisées des répertoires <code class="monospace">/images/</code> et <code class="monospace">/images/logos/</code> de votre thème personnalisé.</p>
+<h5 class="heading5">Modification des informations du thème</h5>
+<p class="procedureheading">Pour modifier les informations de votre thème :</p>
+<p class="bodytext">Ouvrez le fichier <code class="monospace">meta.xml</code> et définissez les propriétés suivantes :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">nom</strong>. Définissez le nom que vous utiliserez pour désigner ce thème. N'utilisez que des caractères latins et le signe moins (&quot;-&quot;).</li><li class="listbullet"><strong class="specialbold">description</strong>. Saisissez une courte description du thème.</li><li class="listbullet"><strong class="specialbold">version</strong>. Indiquez la version du thème.</li><li class="listbullet"><strong class="specialbold">vendeur</strong>. Indiquez le nom de votre entreprise ou le vôtre.</li></ul><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '70909.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

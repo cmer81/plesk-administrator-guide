@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Serveurs Web Apache et Nginx (Linux) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="71932.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="70837.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055712.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055712.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Serveurs Web Apache et Nginx (Linux)</h2>
+<p class="bodytext">Plesk pour Linux pour utilise le <em class="emphasis">serveur HTTP Apache</em> (<a class="" title="" href="http://httpd.apache.org/" target="_self">http://httpd.apache.org/</a>) pour l'hébergement de sites Web. Apache lui-même n'opère pas avec les sites Web. Il gère les hôtes virtuels, les ressources Web identifiées soit par une adresse IP soit par un nom d'hôte. Lorsque vous créez un site, Plesk ajoute un nouvel hôte virtuel à Apache pour rendre le site disponible via le serveur Web. </p>
+<p class="bodytext">Par défaut, afin d'améliorer les performances lorsqu'il fournit du contenu Web, Apache est utilisé en complément d'un autre serveur Web : <em class="emphasis">Nginx</em>. Pour en savoir plus sur l'intégration d'Apache à Nginx dans Plesk et découvrir comment faire d'Apache un serveur autonome, consultez la section <strong class="specialbold"><a id="h72008" class="jumptemplate" title="Apache avec Nginx" href="70837.htm" target="_self">Apacheb avec Nginx</a></strong>. </p>
+<p class="bodytext">D'autre part, vous pouvez exclure Apache du processus de gestion des requêtes pour le contenu Web de certains sites Web. Pour ce faire, vous pouvez modifier le mode Nginx. Pour plus d'informations, consultez la section <strong class="specialbold"><a id="h76432" class="jumptemplate" title="Ajuster les paramètres d'Apache et Nginx" href="72037.htm" target="_self">Ajuster les paramètres du serveur Web Apache</a></strong>.</p>
+<h5 class="heading5">Configuration par défaut du serveur Web</h5>
+<p class="bodytext">Le fichier <code class="monospace">/etc/httpd/conf/httpd.conf</code> définit la configuration Apache pour tous les hôtes virtuels dans le système. Les fichiers de configuration des hôtes virtuels se trouvent au niveau le plus bas de la hiérarchie des fichiers de configuration. Ils sont inclus dans le fichier de configuration Apache (last_<code class="monospace">httpd.conf</code>) via divers niveaux d'inclusion à l'aide de la directive INCLUDE. Le serveur Web Nginx est configuré de manière similaire : le fichier <code class="monospace">/etc/nginx/nginx.conf</code> inclut les fichiers de configuration de tous les hôtes virtuels via divers niveaux d'inclusion. Pour en savoir plus sur la hiérarchie des fichiers de configuration, consultez la section <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=advanced-administration-guide-linux&page=68678.htm" target="_blank">Fichiers de configuration du serveur Web</a> </strong>dans le Guide d'administration avancée.</p>
+<p class="bodytext">Chaque hôte virtuel dans le système a deux fichiers : <code class="monospace">last_httpd.conf</code> et <code class="monospace">last_nginx.conf</code>. Chacun définit respectivement la configuration d'Apache et de Nginx pour ces hôtes virtuels. Ces fichiers (sous <code class="monospace">/var/www/vhosts/system/&lt;nom_domaine&gt;/conf/</code>) sont générés automatiquement d'après des templates de configuration. Ainsi, si vous voulez changer la configuration par défaut du serveur Web, vous devez ajuster les fichiers de templates. Découvrez comment procéder dans la section<strong class="specialbold"> <a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=advanced-administration-guide-linux&page=68693.htm" target="_blank">Modifier les paramètres des hôtes virtuels à l'aide des templates de configuration</a></strong> dans le Guide d'administration avancée.</p>
+<h5 class="heading5">Personnaliser la configuration du serveur Web</h5>
+<p class="bodytext">Les propriétaires de sites Web peuvent avoir besoin de fonctionnalités serveur Web personnalisées non fournies par la configuration par défaut. Par exemple, des types de fichiers index spéciaux ou des accès restreints au site par adresse IP. Ces paramètres peuvent être définis en écrasant la configuration par défaut de clients spécifiques.</p>
+<p class="bodytext">La configuration du serveur Web par défaut peut être écrasée aux niveaux suivants :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Pack de services</em><p class="listcontinue">La configuration définie au niveau du pack de services écrase la configuration <em class="emphasis">par défaut</em>. Vous pouvez définir toutes les directives Apache et Nginx pour un pack de services particulier. Ces paramètres sont stockés dans la base de données Plesk. Ils seront appliqués par défaut aux sites Web de tous les clients (abonnés du pack). Consultez la section <strong class="specialbold"><a id="h72156" class="jumptemplate" title="Web Server (Apache)" href="72120.htm" target="_self">Serveur Web (Apache)</a></strong>.</p>
+</li><li class="listbullet"><em class="emphasis">Site Web (hôte virtuel)</em><p class="listcontinue">La configuration personnalisée de l'<em class="emphasis">hôte virtuel (site Web)</em> écrase la configuration définie dans son pack de services. Lorsque vous définissez les directives Apache et Nginx d'un site Web particulier, vos directives sont enregistrées dans les fichiers <code class="monospace">vhost.conf</code>, <code class="monospace">vhost_ssl.conf</code> et <code class="monospace">vhost_nginx.conf</code> (sous <code class="monospace">/var/www/vhosts/system/&lt;nom_domaine&gt;/conf/</code>). </p>
+<p class="listcontinue">Vous pouvez configurer les paramètres de serveur Web d'un site Web (hôte virtuel) de deux façons : </p>
+<ul class="listbullet2"><li class="listbullet2">En précisant vos paramètres dans le Panneau Client. Lorsque vous enregistrez vos modifications, Plesk crée les directives correspondantes dans les fichiers de configuration de l'hôte virtuel. Pour en savoir plus, consultez les sections <strong class="specialbold"><a id="h72067" class="jumptemplate" title="Ajuster les paramètres Apache pour les hôtes virtuels" href="72009.htm" target="_self">Ajuster les paramètres Apache pour les hôtes virtuels</a></strong> et <strong class="specialbold"><a id="h72039" class="jumptemplate" title="Ajuster les paramètres Nginx des hôtes virtuels" href="71997.htm" target="_self">Ajuster les paramètres Nginx pour les hôtes virtuels</a></strong>.</li><li class="listbullet2">En modifiant manuellement les fichiers de configuration. Pour en savoir plus, consultez le Guide d'administration avancée, section <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/en-US/12.5/redirect.html?book=advanced-administration-guide-linux&page=72064.htm" target="_blank">Fichiers de configuration de l'hôte virtuel</a></strong>.<p class="listnote2"><strong class="buttons">Remarque :</strong> seul l'utilisateur <code class="monospace">root</code> Linux est autorisé à ajouter ou modifier manuellement les fichiers de configuration personnalisés Apache et Nginx.</p>
+</li></ul><p class="listcontinue">Notez que les paramètres de sites Web fonctionnent uniquement pour le site Web sélectionné. Ils sont utilisés à la place des paramètres par défaut et des paramètres niveau pack de services.</p>
+</li></ul><p class="bodytext">Voici un schéma représentant la hiérarchie des paramètres de serveur Web :</p>
+<p class="widegraphic"><img src="72147.gif" alt="Web Server Settings Hierarchy" height="254" width="209" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="70837.htm" target="_self">Apache avec Nginx</a></p><p class="relateditem"><a href="72009.htm" target="_self">Ajuster les paramètres Apache pour les hôtes virtuels</a></p><p class="relateditem"><a href="71997.htm" target="_self">Ajuster les paramètres Nginx des hôtes virtuels</a></p><p class="relateditem"><a href="72074.htm" target="_self">Optimiser le serveur Web Apache</a></p><p class="relateditem"><a href="76461.htm" target="_self">Prendre en charge le HTTP/2 dans Plesk</a></p></td>
+</tr>
+</table>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '71933.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

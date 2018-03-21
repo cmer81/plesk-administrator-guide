@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Abonnements et packs d'hébergement </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="70622.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="70624.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557410.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557410.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Abonnements et packs d'hébergement</h2>
+<p class="bodytext">Un pack d'hébergement est un ensemble de ressources et de services d'hébergement que vous offrez à vos clients. Par exemple, les propriétés d'un pack d'hébergement définissent les ressources serveur disponibles dans un abonnement telles que l'espace disque, le trafic, le nombre de boîtes mail, etc. Pour savoir comment les ressources des packs sont allouées dans l'abonnement, consultez la section <strong class="specialbold"><a id="h70692" class="jumptemplate" title="Relations entre les abonnements et les packs" href="70623.htm#o65118" target="_self">Relations entre les abonnements et les packs</a></strong>.</p>
+<p class="bodytext">Dans cette section, vous découvrirez comment créer un pack d'hébergement et servir vos clients. </p>
+<p class="bodytext">Le volume de ressources et services fournis avec un abonnement peut être étendu en associant l'abonnement à des packs d'add-ons. Pour en savoir plus sur la création des packs d'add-ons, consultez la section <strong class="specialbold"><a id="h70695" class="jumptemplate" title="Configurer des packs d'add-ons" href="70673.htm" target="_self">Configurer les packs d'add-ons dans Plesk</a></strong>.</p>
+<p class="bodytext">&nbsp;&nbsp;&nbsp;</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="70623.htm#o65118" target="_self">Relations entre les abonnements et les packs</a></p><p class="relateditem"><a href="70624.htm" target="_self">Configurer les packs d'hébergement</a></p><p class="relateditem"><a href="70673.htm" target="_self">Configurer des packs d'add-ons</a></p><p class="relateditem"><a href="70727.htm" target="_self">Abonner des clients à des packs</a></p><p class="relateditem"><a href="65124.htm" target="_self">Gérer les clients</a></p><p class="relateditem"><a href="65125.htm" target="_self">Gérer les abonnements</a></p><p class="relateditem"><a href="70030.htm" target="_self">Servir les clients non techniques</a></p></td>
+</tr>
+</table>
+
+&nbsp;
+<hr class="linesolid"/>
+<a name="o65118"></a><h3 class="heading3">Relations entre les abonnements et les packs</h3>
+<p class="bodytext">Normalement, un abonnement est associé à un pack de services et cette association est reflétée dans une liste d'abonnements : chaque nom d'abonnement contient le nom de pack de services placé entre parenthèses à la fin. Le volume de ressources et services fournis avec un abonnement peut être étendu en associant l'abonnement à des packs d'add-ons. Un abonnement peut être associé à plusieurs add-ons, mais chaque add-on peut être ajouté à l'abonnement une fois seulement.</p>
+<p class="bodytext">Il est également possible qu'un abonnement ne soit pas associé à un pack de services et qu'il ne puisse pas être associé avec des packs d'add-ons : les add-ons sont uniquement ajoutés à un pack de services '&quot;principal&quot;. Nous appelons ce type d'abonnements des <em class="emphasis">abonnements personnalisés</em>. Leur nom peut être étendu avec &quot;<strong class="specialbold">(Personnalisé)</strong>&quot; dans la liste des abonnements. Un abonnement personnalisé peut s'avérer utile si vous voulez fournir des services sous certaines conditions spécifiques qui différent des offres habituelles dans votre plan commercial.</p>
+<p class="bodytext">Vous pouvez à tout moment modifier les associations abonnement/packs comme suit :</p>
+<ul class="listbullet"><li class="listbullet">Associez l'abonnement à un autre pack de services.</li><li class="listbullet">Ajoutez et supprimez des packs d'add-ons.</li><li class="listbullet">Supprimez l'association entre l'abonnement, le pack de services et les add-ons.</li></ul><h5 class="heading5">État de l'abonnement</h5>
+<p class="bodytext">Les abonnements associés à un pack particulier sont <em class="emphasis">synchronisés</em> : tout changement apporté au pack est automatiquement appliqué à tous ses abonnements. C'est vrai pour tous les types de packs : packs de services, leurs add-ons et packs revendeur.</p>
+<p class="bodytext">Plesk permet les variantes suivantes de l'état d'abonnement par défaut (actif et synchronisé avec les packs de services) :</p>
+<ul class="listbullet"><li class="listbullet">L'état <strong class="specialbold">Verrouillé</strong> qui signifie <em class="emphasis">verrouillage de la synchronisation</em>, indique qu'un abonnement est exclu de la synchronisation avec des packs associés.<p class="listcontinue">L'abonnement est alors verrouillé si vous changez ses paramètres, sans changer le pack de services associé. Un tel verrouillage sécurise vos personnalisations afin qu'elles ne soient pas écrasées la prochaine fois que vous changerez le pack et que tous ses abonnements sont synchronisés.</p>
+</li><li class="listbullet">L'état <strong class="specialbold">Non synchronisé</strong> indique que certains services et ressources offerts avec les packs associés ne peuvent être fournis avec l'abonnement. </li><li class="listbullet">L'état <strong class="specialbold">Suspendu</strong> n'est pas lié à la synchronisation d'un abonnement avec le pack de services, mais il affecte le comportement des sites Web. Plesk suspend automatiquement les abonnements une fois leur date d'expiration dépassée. Vous pouvez également suspendre manuellement un abonnement. Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h65131" class="jumptemplate" title="Gérer les abonnements" href="65125.htm" target="_self">Gérer les abonnements</a></strong>.</li></ul><p class="note"><strong class="buttons">Remarque :</strong> si un pack offre un privilège qui permet à un abonné de changer un service ou une ressource en particulier, cette allocation de ressource/service est ignorée lors d'une synchronisation. Par exemple, si le pack offre le privilège de configuration des paramètres PHP et si un client change certains paramètres PHP, son abonnement reste synchronisé avec le pack (même si une valeur du paramètre PHP dans l'abonnement diffère de celle correspondant au pack).</p>
+<h5 class="heading5">Abonnements non synchronisés</h5>
+<p class="bodytext">Plesk ne vérifie pas si un service ou une ressource qu'un pack de services doit fournir est effectivement disponible dans le système. Par exemple, lorsque vous créez un pack, vous pouvez choisir de fournir Miva alors que Miva n'est pas installé sur le serveur. Plesk vous permet de le faire sans afficher de message d'alerte ou d'erreur. </p>
+<p class="bodytext">Un abonnement est automatiquement marqué comme <strong class="specialbold">Non synchronisé</strong> si Plesk ne peut pas fournir les ressources et/ou services définis par le pack. Cela peut se produire dans les cas suivants : </p>
+<ul class="listbullet"><li class="listbullet">Lorsque l'abonnement est créé.</li><li class="listbullet">Lorsque les propriétés des packs associés sont modifiées.</li><li class="listbullet">Lorsqu'un pack d'add-on est ajouté à l'abonnement ou supprimé de cet abonnement.</li></ul><p class="procedureheading">Pour connaître les services ou ressources d'abonnement non synchronisés avec le pack :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Abonnements</strong> et cliquez sur le nom de l'abonnement non synchronisé.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Synchroniser</strong>.<p class="listcontinue">Plesk réessaiera de synchroniser l'abonnement avec les packs associés et affichera les propriétés en conflit si la synchronisation échoue.</p>
+<p class="listcontinue">Notez les résultats du rapport de conflits : propriétés affectées, <strong class="specialbold">Valeur du pack</strong> et <strong class="specialbold">Valeur disponible</strong>.</p>
+<p class="listcontinue">Si vous cliquez sur <strong class="specialbold">OK</strong> sur cette page, cela initiera la configuration des valeurs de l'abonnement en fonction des valeurs disponibles. Si vous cliquez sur <strong class="specialbold">Annuler</strong>, il n'y aura pas de changements.</p>
+</li></ol><p class="bodytext">Une fois que vous avez identifié le problème, vous pouvez le résoudre. Il existe deux méthodes :</p>
+<ol class="listnumber"><li class="listnumber">Adaptez le pack pour le conformer à l'état actuel du système.</li><li class="listnumber">Adaptez le système pour fournir les ressources et services offerts avec le pack.</li></ol><p class="procedureheading">Pour changer les propriétés du pack afin de le rendre conforme aux valeurs disponibles :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Packs de services</strong> &gt; <strong class="placeholder">&lt;nom du pack&gt;</strong>.</li><li class="procedurelistnumber">Adaptez les valeurs des propriétés du problème afin qu'elles correspondent aux <strong class="specialbold">Valeurs disponibles</strong> (voir ci-dessus).</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Mettre à jour &amp; Synchroniser</strong>.<p class="listcontinue">Les abonnements seront synchronisés automatiquement.</p>
+</li></ol><p class="procedureheading">Pour adapter le système et resynchroniser un abonnement :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Ajustez votre système : installez les composants manquants, ajoutez des disques durs. En bref, tout ce qui est indiqué par le rapport de conflit.</li><li class="procedurelistnumber">Allez sous <strong class="specialbold">Abonnements</strong> et cliquez sur le nom de l'abonnement non synchronisé.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Synchroniser</strong>.</li></ol><p class="bodytext">Plesk réessaiera de synchroniser l'abonnement avec les packs associés.</p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '70623.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

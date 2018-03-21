@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Apache avec Nginx </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="71933.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="72009.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055713.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055713.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Apache avec Nginx</h3>
+<p class="bodytext">Vous pouvez optimiser le fonctionnement du serveur Web qui héberge les sites Web des clients (Apache) en installant <em class="emphasis">Nginx</em>, un autre serveur Web extrêmement performant généralement utilisé en tant que serveur proxy inversé. Ce serveur Web a été spécialement conçu pour prendre en charge de grands volumes de contenu statique (de type images, vidéos, css, xml, etc.). Par opposition à Apache, Nginx est beaucoup plus efficace pour traiter un gros volume de connexions simultanées. Autre atout de ce serveur Web par rapport à Apache : Nginx utilise beaucoup moins de mémoire par connexion client. </p>
+<p class="bodytext">Pour profiter de tous les avantages de Nginx, Plesk le configure en tant que <em class="emphasis">serveur proxy inversé</em> situé entre Internet et Apache (cf. le schéma ci-dessous). Autrement dit, Nginx devient un serveur Web frontal qui traite toutes les requêtes entrantes des visiteurs des sites. Les requêtes sont envoyées vers Apache, qui, en retour, différencie les requêtes pour le contenu statique et dynamique. Si une requête est destinée à un fichier statique (comme jpg, css, html, etc. ), Apache passe la demande à tous les gestionnaires enregistrés (s'applique à la configuration au niveau du répertoire <code class="monospace">.htaccess</code>, réécrit une URL, etc) et renvoie à Nginx une réponse qui ne contient qu'un emplacement du fichier requis sur le système de fichiers. Nginx localise le fichier et l'envoie au client. Si la requête est destinée à un fichier dynamique (comme un script PHP), Apache exécute le fichier et envoie la réponse à Nginx, qui l'envoie au client.</p>
+<p class="widegraphic"><img src="70996.gif" alt="" height="192" width="400" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Une telle combinaison de Nginx et Apache apporte les avantages suivants :</p>
+<ul class="listbullet"><li class="listbullet">Augmentation du nombre maximal de connexions simultanées à un site Web.</li><li class="listbullet">Diminution de l'utilisation des ressources mémoire et CPU du serveur.<br>L'effet maximal est atteint pour les sites Web avec un large volume de contenu statique (type galeries de photos, sites de streaming vidéo, etc.).</li><li class="listbullet">Amélioration de l'efficacité en matière de prestations fournies aux visiteurs avec une connexion Internet lente (GPRS, EDGE, 3G, etc.).<br>Par exemple, un client avec une connexion à 10 Ko/s a besoin d'un script PHP qui génère une réponse à 100 Ko. Si le serveur ne dispose pas de Nginx, la réponse est fournie par Apache. Pendant les 10 secondes requises pour envoyer la réponse, Apache et PHP continuent d'utiliser toutes les ressources du système pour cette connexion ouverte. Si Nginx est installé, Apache transfère la réponse à Nginx (la connexion Nginx vers Apache est très rapide, les deux étant sur le même serveur) et libère ainsi des ressources système. Comme le volume de mémoire de Nginx est plus faible, la charge générale sur le système diminue. S'il y a beaucoup de connexions lentes de ce type, l'utilisation de Nginx optimisera largement la performance du site Web. </li></ul><p class="bodytext">Vous trouverez plus de détails techniques sur la manière dont Plesk traite les requêtes HTTP avec Nginx dans cette section. Pour en savoir plus sur l'activation de l'assistance Nginx dans Plesk, reportez-vous à la section <strong class="specialbold"><a id="h71000" class="jumptemplate" title="Installer Nginx" href="70837.htm#o70998" target="_self">Installer Nginx</a></strong>. Si vous ne voulez pas utiliser Nginx, faites d'Apache votre serveur Web frontal en procédant comme décrit dans la section <strong class="specialbold"><a id="h71001" class="jumptemplate" title="Désactiver Nginx" href="70837.htm#o70999" target="_self">Désactiver Nginx</a></strong>. Si vous souhaitez que Nginx traite toutes les requêtes HTTP pour le contenu Web, consultez la section <strong class="specialbold"><a id="h76432" class="jumptemplate" title="Ajuster les paramètres d'Apache et Nginx" href="72037.htm" target="_self">Ajuster les paramètres du serveur Web Apache</a></strong>.</p>
+<h5 class="heading5">Traitement des requêtes HTTP par Plesk avec Nginx</h5>
+<p class="bodytext">Pour intégrer sans heurt Nginx à Apache, Plesk utilise deux modules Apache supplémentaires : </p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">mod_aclr2</em>.<br>Ce module configure un gestionnaire qui s'exécute après les gestionnaires de tous les autres modules Apache (mod_rewrite, modules associés <code class="monospace">.htaccess</code>, mod_php, etc). Par conséquent, si la requête est destinée au contenu dynamique, mod_aclr2 ne l'obtiendra jamais car la requête sera servie par des gestionnaires de niveau supérieur de certains modules Apache (mod_php, mod_perl, mod_cgi, etc.). Les seules exceptions sont les requêtes SSI : une fois qu'elles atteignent mod_aclr2, il les redirige vers les gestionnaires corrects. Si la requête est destinée à un fichier statique, mod_aclr2 recherche l'emplacement exact du fichier sur le système de fichiers et envoie l'emplacement à Nginx. </li><li class="listbullet"><em class="emphasis">mod_rpaf</em>.<br>Du point de vue d'Apache, tous ses clients ont la même adresse IP, l'adresse du serveur Nginx (cf. le schéma ci-dessous). Cela entraîne des problèmes avec les sites Web et les applications Web qui utilisent les adresses IP des clients à des fins d'authentification, de statistiques, etc. mod_rpaf résout le problème en remplaçant l'adresse IP du serveur Nginx dans toutes les requêtes par des adresses IP clientes. Pour être plus précis, le module utilise l'en-tête spéciale X-Forwarded-For (X-Redirigée-Pour) dans laquelle Nginx place l'adresse IP d'un client.</li></ul><p class="bodytext">Regardons de plus près comment Plesk traite les requêtes pour le contenu statique et dynamique à l'aide de ces modules.</p>
+<p class="bodytext">La séquence de traitement d'une requête HTTP pour un fichier statique se présente comme suit (cf. le schéma) :</p>
+<ol class="listnumber"><li class="listnumber">Un client envoie une requête à un serveur Web.</li><li class="listnumber">Nginx ajoute les en-têtes <em class="emphasis">X-Accel-Internal</em> (utilisée par mod_aclr2) et <em class="emphasis">X-Forwarded-For</em> (contient l'adresse IP du client) à la requête qu'il envoie à Apache.</li><li class="listnumber">Apache reçoit la requête et initie le traitement par des gestionnaires enregistrés (applique la configuration <code class="monospace">.htaccess</code>, réécrit l'URL, etc.). À cette étape, mod_rpaf remplace l'adresse IP du serveur Nginx dans la variable d'Apache REMOTE_ADDR par l'adresse du client à partir de l'en-tête <em class="emphasis">X-Forwarded-For</em>.</li><li class="listnumber">Une fois la requête traitée par tous les gestionnaires enregistrés, elle atteint mod_aclr2. Le gestionnaire vérifie la présence de l'en-tête <em class="emphasis">X-Accel-Internal</em>. Si l'en-tête est présent, le module envoie à Nginx une réponse avec une longueur de contenu nulle et l'en-tête <em class="emphasis">X-Accel-Redirect</em>. L'en-tête contient l'emplacement exact du fichier tel qu'il est déterminé par mod_aclr2. </li><li class="listnumber">Lorsque Nginx reçoit la réponse, il localise le fichier et le remet au client. </li></ol><p class="bodytext">Le schéma ci-dessous illustre comment Plesk traite la requête d'un fichier GIF de 2 Ko.</p>
+<p class="widegraphic"><img src="71008.gif" alt="static_seq" height="474" width="600" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">En cas de traitement des requêtes de contenu dynamique, les étapes 1 à 3 sont identiques. Ensuite, la requête passe dans le gestionnaire du module Apache approprié (<em class="emphasis">mod_php</em>,<em class="emphasis"> mod_perl</em>,<em class="emphasis"> mod_cgi</em>, etc.). La requête n'atteint jamais mod_aclr2 (sauf les requêtes SSI). Le gestionnaire génère une réponse et l'envoie à Nginx, qui, en retour, remet la réponse au client. Le schéma ci-dessous illustre comment Plesk traite une requête de fichier PHP.</p>
+<p class="widegraphic"><img src="71009.gif" alt="" height="291" width="600" vspace="0" hspace="0" align="bottom" border="0"><br></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="70837.htm#o70998" target="_self">Installer Nginx</a></p><p class="relateditem"><a href="70837.htm#o70999" target="_self">Désactiver Nginx</a></p></td>
+</tr>
+</table>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o70998"></a><h4 class="heading4">Installer Nginx</h4>
+<p class="bodytext">Si vous procédez à une première installation de Plesk, Nginx sera activé par défaut. Si vous mettez à niveau à partir de versions antérieures, vous pouvez ajouter le composant Nginx à tout moment après la mise à niveau dans <strong class="specialbold">Outils &amp; Paramètres &gt; Mises à jour &amp; Mises à niveau &gt; Ajouter des composants</strong>. Une fois le composant ajouté, vous devez exécuter le service <strong class="specialbold">Serveur Proxy inversé (Nginx)</strong> dans <strong class="specialbold">Outils &amp; Paramètres &gt; Gestion des services</strong>. </p>
+<p class="bodytext">Vous pouvez voir la version du serveur Nginx installé dans <strong class="specialbold">Outils &amp; Paramètres &gt; Composants du serveur</strong>.</p>
+<p class="widegraphic"><img src="74959.png" alt="nginx version" height="668" width="1235" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o70999"></a><h4 class="heading4">Désactiver Nginx</h4>
+<p class="bodytext">Pour revenir à la configuration avec un seul serveur Web Apache, stoppez le service <strong class="specialbold">Reverse Proxy Server (Nginx)</strong> dans <strong class="specialbold">Outils &amp; Paramètres &gt; Gestion des services</strong>. </p>
+<p class="widegraphic"><img src="74960.png" alt="nginx_stop" height="628" width="1175" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Pour rétablir Nginx dans le serveur Web frontal, lancez le service <strong class="specialbold">Reverse Proxy Server (Nginx)</strong>. </p>
+<p class="note"><strong class="buttons">Remarque :</strong> les opérations de démarrage et d'arrêt du service <strong class="specialbold">Reverse Proxy Server (Nginx)</strong> ne démarrent et n'arrêtent pas simplement Nginx, elles activent la configuration du serveur Web (combinaison de Nginx et d'Apache ou juste Apache en tant que serveur Web frontal). L'opération de redémarrage fonctionne de la même manière pour tous les autres services : le service Nginx est redémarré.</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '70837.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

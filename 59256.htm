@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Sauvegarder et restaurer </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59246.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59265.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h1 class="heading1">Sauvegarder et restaurer</h1>
+<p class="bodytext">Avec les fonctions de restauration et de sauvegarde des données fournies par Plesk, vous pouvez :</p>
+<ul class="listbullet"><li class="listbullet">Sauvegarder tout le serveur.</li><li class="listbullet">Sauvegarder des comptes utilisateur individuels avec des sites Web.</li><li class="listbullet">Sauvegarder des abonnements individuels.</li><li class="listbullet">Planifier des sauvegardes.</li><li class="listbullet">Restaurer les données à partir des archives de sauvegarde.</li></ul><p class="bodytext">Dans le tableau ci-dessous, vous trouverez un aperçu des objets inclus dans les sauvegardes à différents niveaux.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #808080">
+<tr align="left" valign="top">
+<td valign="middle" style="border:1px solid #808080;" rowspan="2" width="150"><p class="tablebodytext">Niveau serveur</p>
+</td>
+<td valign="middle" style="border:1px solid #808080;" width="210"><p class="tablebodytext">Configuration uniquement</p>
+</td>
+<td style="border:1px solid #808080;" width="300"><ul class="tablelistbullet"><li class="tablelistbullet">Clé de licence Plesk.</li><li class="tablelistbullet">Paramètres et configuration des services système, comptes, sites, bases de données, boîtes mail, listes de diffusion.</li><li class="tablelistbullet">Certificats SSL/TLS.</li><li class="tablelistbullet">Informations sur les DNS.</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border:1px solid #808080;" width="210"><p class="tablebodytext">Configuration et contenu</p>
+</td>
+<td style="border:1px solid #808080;" width="300"><p class="tablebodytext">Tous les éléments précédents, plus :</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Contenu des sites Web.</li><li class="tablelistbullet">Contenu des mails.</li><li class="tablelistbullet">Contenu des listes de diffusion.</li><li class="tablelistbullet">Contenu des bases de données.</li><li class="tablelistbullet">Logs et statistiques.</li><li class="tablelistbullet">Pages d'erreurs personnalisées.</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border:1px solid #808080;" rowspan="2" width="150"><p class="tablebodytext">Niveau compte utilisateur</p>
+</td>
+<td valign="middle" style="border:1px solid #808080;" width="210"><p class="tablebodytext">Configuration uniquement</p>
+</td>
+<td style="border:1px solid #808080;" width="300"><ul class="tablelistbullet"><li class="tablelistbullet">Paramètres et configuration des services du compte, sites, bases de données, boîtes mail, listes de diffusion.</li><li class="tablelistbullet">Certificats SSL/TLS.</li><li class="tablelistbullet">Informations sur les DNS.</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border:1px solid #808080;" width="210"><p class="tablebodytext">Configuration et contenu</p>
+</td>
+<td style="border:1px solid #808080;" width="300"><p class="tablebodytext">Tous les éléments précédents, plus :</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Contenu des sites Web.</li><li class="tablelistbullet">Contenu des mails.</li><li class="tablelistbullet">Contenu des listes de diffusion.</li><li class="tablelistbullet">Contenu des bases de données.</li><li class="tablelistbullet">Logs et statistiques.</li><li class="tablelistbullet">Pages d'erreurs personnalisées.</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border:1px solid #808080;" rowspan="2" width="150"><p class="tablebodytext">Niveau abonnement</p>
+</td>
+<td valign="middle" style="border:1px solid #808080;" width="210"><p class="tablebodytext">Configuration uniquement</p>
+</td>
+<td style="border:1px solid #808080;" width="300"><ul class="tablelistbullet"><li class="tablelistbullet">Paramètres et configuration de l'abonnement, sites, bases de données, boîtes mail, listes de diffusion.</li><li class="tablelistbullet">Certificats SSL/TLS.</li><li class="tablelistbullet">Informations sur les DNS.</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border:1px solid #808080;" width="210"><p class="tablebodytext">Configuration et contenu</p>
+</td>
+<td style="border:1px solid #808080;" width="300"><p class="tablebodytext">Tous les éléments précédents, plus :</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Contenu des sites Web.</li><li class="tablelistbullet">Contenu des mails.</li><li class="tablelistbullet">Contenu des listes de diffusion.</li><li class="tablelistbullet">Contenu des bases de données.</li><li class="tablelistbullet">Logs et statistiques.</li><li class="tablelistbullet">Pages d'erreurs personnalisées.</li></ul></td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<p class="bodytext">Le tableau ci-dessous répertorie les objets et paramètres non inclus dans les sauvegardes à différents niveaux.</p>
+<table class="tableintopic" width="504" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="bodytext">Niveau serveur</p>
+</td>
+<td style="border:1px solid #010101;" width="252"><ul class="tablelistbullet"><li class="tablelistbullet">Paramètres de sauvegarde (paramètres FTP, sauvegarde planifiée, paramètres de sauvegarde globale)</li><li class="tablelistbullet">Règles de pare-feu</li><li class="tablelistbullet">Comptes administrateur supplémentaires</li><li class="tablelistbullet">Serveur DNS/de messagerie sélectionné</li><li class="tablelistbullet">Serveurs de bases de données</li><li class="tablelistbullet">Extensions installées et leurs paramètres</li><li class="tablelistbullet">Paramètres internes Plesk : /<code class="monospace">admin/conf/panel.ini</code></li><li class="tablelistbullet">Paramètres de l'interpréteur PHP : /<code class="monospace">admin/conf/php.ini</code></li><li class="tablelistbullet">Clé secrète utilisable dans les appels API en XML pour l'authentification dans Plesk : <code class="monospace">/etc/psa/private/secret_key</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="bodytext">Niveau revendeur</p>
+</td>
+<td style="border:1px solid #010101;" width="252"><ul class="tablelistbullet"><li class="tablelistbullet">Paramètres de sauvegarde (paramètres FTP, sauvegarde planifiée)</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="bodytext">Niveau client</p>
+</td>
+<td style="border:1px solid #010101;" width="252"><ul class="tablelistbullet"><li class="tablelistbullet">Paramètres de sauvegarde (paramètres FTP, sauvegarde planifiée)</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="bodytext">Niveau abonnement</p>
+</td>
+<td style="border:1px solid #010101;" width="252"><ul class="tablelistbullet"><li class="tablelistbullet">Paramètres de sauvegarde (paramètres FTP, sauvegarde planifiée)</li></ul></td>
+</tr>
+
+</table>
+<p class="note"><strong class="buttons">Remarque </strong>: si un abonnement est supprimé, toutes les sauvegardes créées au niveau de cet abonnement sont supprimées du stockage interne de Plesk.</p>
+<h5 class="heading5">Stockage des sauvegardes</h5>
+<p class="bodytext">Les sauvegardes peuvent être stockées à deux emplacements :</p>
+<ul class="listbullet"><li class="listbullet">Le stockage interne de Plesk : le stockage d'une sauvegarde est situé sur votre serveur Plesk.</li><li class="listbullet">Le répertoire FTP externe : le stockage d'une sauvegarde est situé sur un serveur externe sur le Web ou dans votre réseau local. Dans ce cas, vous devez fournir à Plesk le nom d'hôte du serveur et les identifiants d'accès utilisateur FTP.</li></ul><h5 class="heading5">Sauvegardes complètes et incrémentales</h5>
+<p class="bodytext">Plesk prend en charge deux types de sauvegardes :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Sauvegarde complète</em>. Une sauvegarde complète inclut toutes les données, à chaque sauvegarde, quelle que soit la date de la dernière mise à jour des données.</li><li class="listbullet"><em class="emphasis">Sauvegarde incrémentale</em>. Une sauvegarde incrémentale contient uniquement les données modifiées depuis la date de création de la dernière sauvegarde. </li></ul><p class="bodytext">Ce type de sauvegarde permet de réduire à la fois la durée de la sauvegarde et l'espace disque occupé par les fichiers de sauvegarde.</p>
+<p class="bodytext">Pour plus d'informations, consultez la section sur la <a id="h75809" class="jumptemplate" title="Sauvegarde incrémentale" href="75803.htm" target="_self">sauvegarde incrémentale</a>.</p>
+<h5 class="heading5">Sauvegardes créées par vos clients</h5>
+<p class="bodytext">Parmi vos clients, ceux qui ont le droit d'utiliser les fonctionnalités de sauvegarde et de restauration peuvent procéder eux-mêmes à la sauvegarde et à la restauration des paramètres de leurs propres comptes et sites Web via le Panneau Client. Vos clients, vos revendeurs et les clients de ces derniers trouveront des raccourcis vers leurs répertoires dans leur Panneau Client (<strong class="specialbold">Sites Web &amp; Domaines </strong>&gt;<strong class="specialbold"> Gestionnaire de sauvegardes</strong>).</p>
+<p class="bodytext">Les utilisateurs de Plesk peuvent voir le rôle d'un utilisateur qui a créé une sauvegarde (administrateur, client ou revendeur) dans la liste des tâches de sauvegarde (<strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Gestionnaire de sauvegardes</strong>). Cela permet aux clients de faire la différence entre les sauvegardes qu'ils ont créées eux-mêmes et les sauvegardes techniques de leur abonnement. Les sauvegardes techniques ont lieu lorsque les administrateurs ou revendeurs sauvegardent les abonnements des clients en les intégrant dans une sauvegarde plus importante. Par exemple, si l'administrateur de Plesk crée une sauvegarde niveau serveur, tous les abonnements des clients sont également sauvegardés et apparaissent pour les clients comme sauvegardes d'abonnements créées par l'administrateur.</p>
+<p class="widegraphic"><img src="75036.gif" alt="Backup_Manager" height="214" width="938" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">En cas d'échec d'une tâche de sauvegarde, Plesk affiche une description détaillée de l'erreur dans un champ distinct d'une tâche de sauvegarde.</p>
+<h5 class="heading5">Création de sauvegardes protégées par un mot de passe</h5>
+<p class="bodytext">Depuis Plesk 11.0, vous pouvez protéger les données sensibles dans vos sauvegardes par un mot de passe. Dans ces conditions, aucun attaquant ne peut accéder aux données de votre sauvegarde si la sécurité de votre stockage de sauvegarde venait à être compromise.</p>
+<p class="bodytext"><br></p>
+<p class="bodytext">Vous pouvez définir un mot de passe pour la sauvegarde dans les cas suivants :</p>
+<ul class="listbullet"><li class="listbullet">Dans les paramètres de votre stockage FTP personnel (<strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="specialbold">Gestionnaire de sauvegardes</strong> &gt; <strong class="specialbold">Paramètres du stockage FTP</strong>). <br></li><li class="listbullet">Lors du téléchargement d'un fichier de sauvegarde à partir du répertoire interne de Plesk vers un emplacement externe.<br></li></ul><p class="bodytext">Lorsque vous réessaierez d'envoyer ces sauvegardes vers Plesk et de les restaurer, vous serez invité à indiquer le mot de passe utilisé pour la protection. </p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans ce chapitre :</p><p class="relateditem"><a href="59265.htm" target="_self">Paramètres de sauvegarde généraux</a></p><p class="relateditem"><a href="59259.htm" target="_self">Utiliser un stockage FTP</a></p><p class="relateditem"><a href="59257.htm" target="_self">Sauvegarder tout le serveur</a></p><p class="relateditem"><a href="59267.htm" target="_self">Sauvegarder des comptes et sites individuels</a></p><p class="relateditem"><a href="59264.htm" target="_self">Planifier des sauvegardes</a></p><p class="relateditem"><a href="75803.htm" target="_self">Sauvegarde incrémentale</a></p><p class="relateditem"><a href="68468.htm" target="_self">Logs de sauvegarde</a></p><p class="relateditem"><a href="59263.htm" target="_self">Restaurer des données à partir des fichiers archives de sauvegarde</a></p><p class="relateditem"><a href="59261.htm" target="_self">Télécharger des fichiers de sauvegarde stockés sur le serveur</a></p><p class="relateditem"><a href="59260.htm" target="_self">Envoyer des fichiers de sauvegarde sur un serveur</a></p><p class="relateditem"><a href="59262.htm" target="_self">Supprimer les fichiers de sauvegarde stockés sur le serveur</a></p></td>
+</tr>
+</table>
+
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59256.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

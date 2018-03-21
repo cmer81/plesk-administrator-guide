@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Prendre en charge le HTTP/2 dans Plesk </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72074.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="71995.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055712.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055712.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Prendre en charge le HTTP/2 dans Plesk</h3>
+<h5 class="heading5">Vue d'ensemble</h5>
+<p class="bodytext">HTTP/2 est la deuxième version majeure du protocole réseau HTTP utilisé sur le World Wide Web. Ratifié en mai 2015, HTTP/2 a été créé pour résoudre de gros problèmes de performance du protocole HTTP 1.1. Vous pouvez découvrir les avantages de ce protocole <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://en.wikipedia.org/wiki/HTTP/2#Goals" target="_blank">ici</a></strong>. Actuellement, HTTP/2 est pris en charge par les principaux navigateurs Web.</p>
+<p class="bodytext">La prise en charge HTTP/2 est disponible pour les clients Plesk à partir de la version 12.5.30, mise à jour 28, et exige la dernière version de Nginx.</p>
+<p class="note"><strong class="buttons">Remarque </strong>: HTTP/2 n'est pris en charge que pour les sites SSL. Les sites non-SSL utilisent donc toujours HTTP/1.x. </p>
+<h5 class="heading5">Activation de la prise en charge HTTP/2 pour votre site Web</h5>
+<p class="bodytext">Assurez-vous que le serveur Web Nginx est bien à jour (dernière version) et fonctionnel. Pour ce faire, consultez les pages <strong class="specialbold">Outils &amp; Paramètres &gt; Composants du serveur</strong> et <strong class="specialbold">Outils &amp; Paramètres &gt; Gestion de services</strong>.</p>
+<p class="widegraphic"><img src="76462.gif" alt="composants" height="370" width="909" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="widegraphic"><img src="76463.gif" alt="services" height="198" width="907" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Identifiez-vous sur votre serveur via SSH sous le <code class="monospace">root</code> et activez la prise en charge HTTP/2 dans Plesk à l'aide de l'utilitaire de ligne de commande suivant :</p>
+<pre class="preformatted"># plesk bin http2_pref enable</pre>
+<p class="bodytext">Pendant la dernière étape, votre serveur Web Nginx est configuré pour l'utilisation du protocole TLS avec des chiffrements sûrs et actuels, toute la configuration du serveur Web est reconçue et tous les sites des clients avec &quot;prise en charge SSL&quot; passent au protocole HTTP/2. </p>
+<p class="bodytext">Examinez le résultat de la commande pour voir s'il contient des erreurs ou des avertissements liés au passage au HTTP/2. En cas de problème, consultez la section <strong class="specialbold">Résolution des problèmes </strong>ci-dessous.</p>
+<p class="note"><strong class="specialbold">Remarque </strong>: vous pouvez simplement utiliser un service en ligne comme <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://tools.keycdn.com/http2-test" target="_blank">https://tools.keycdn.com/http2-test</a></strong> pour vérifier si HTTP/2 est activé sur un domaine.</p>
+<p class="bodytext">Si vous souhaitez revenir au HTTP 1.x et désactiver HTTP/2, utilisez la commande suivante :</p>
+<pre class="preformatted"># plesk bin http2_pref disable</pre>
+<h5 class="heading5">Prise en charge ALPN</h5>
+<p class="bodytext">Pour le bon usage du HTTP/2 dans Google Chrome, le serveur Web Nginx doit prendre en charge l'extension ALPN. Pour plus d'informations, reportez-vous à la <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://www.ietf.org/proceedings/88/slides/slides-88-httpbis-1.pdf" target="_blank">documentation ALPN</a></strong>.</p>
+<p class="bodytext">La prise en charge ALPN pour le serveur Web Nginx est disponible dans Plesk pour les systèmes d'exploitation suivants : CentOS 7, RedHat Enterprise Linux 7, Ubuntu 14.04, Ubuntu 16.04 et Debian 8.</p>
+<p class="bodytext">Cela signifie que le protocole HTTP/2 géré par Plesk fonctionne avec ces OS dans tous les navigateurs actuels.</p>
+<h5 class="heading5">Résolution des problèmes</h5>
+<p class="bodytext">Si vous rencontrez des difficultés lors de l'activation de la prise en charge HTTP/2 pour un site Web ou si après vérification d'un site avec <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://tools.keycdn.com/http2-test" target="_blank">https://tools.keycdn.com/http2-test</a></strong> il s'avère que le protocole HTTP 1.x est activé, procédez comme suit pour résoudre le problème.</p>
+<ol class="listnumber"><li class="listnumber">Assurez-vous que la prise en charge SSL est activée pour le site Web dans la section <strong class="specialbold">Paramètres d'hébergement</strong> du domaine. HTTP/2 n'est pris en charge que pour les sites SSL. Les sites non-SSL utilisent donc toujours HTTP/1.x. Il s'agit d'une restriction du serveur Web Nginx et des navigateurs Web.</li><li class="listnumber">Vérifiez que Nginx est activé :<p class="listcontinue"><code class="monospace"># plesk sbin nginxmng &#8211;s</code></p>
+<p class="listcontinue">Activez si nécessaire :</p>
+<p class="listcontinue"><code class="monospace"># plesk sbin nginxmng -e</code></p>
+</li><li class="listnumber">Vérifiez que le pack OpenSSL est de version 1.0.1 ou supérieure :<p class="listcontinue"><code class="monospace"># rpm -qa | grep openssl</code></p>
+<p class="listcontinue"><code class="monospace">openssl-1.0.1e-42.el6_7.4.x86_64.</code></p>
+</li><li class="listnumber">Vérifiez qu'il n'y a pas de template de configuration personnalisé dans <code class="monospace">/usr/local/psa/admin/conf/templates/custom/domain/nginxDomainVirtualHost.php</code>. S'il y en a un, supprimez-le et recréez les fichiers de configuration :<p class="listcontinue"><code class="monospace"># plesk sbin httpdmng --reconfigure-all</code></p>
+<p class="listcontinue">Autre solution, si vous ne voulez pas supprimer vos personnalisations : modifiez le fichier <code class="monospace">/usr/local/psa/admin/conf/templates/custom/domain/nginxDomainVirtualHost.php</code> comme ci-dessous. </p>
+<p class="listcontinue">Trouvez la ligne du type :</p>
+<p class="listcontinue"><code class="monospace">($OPT['default'] ? ' default_server' : '') . ($OPT['ssl'] ? ' ssl' : '') ?&gt;;</code></p>
+<p class="listcontinue">Remplacez-la par les deux lignes suivantes :</p>
+<p class="listcontinue"><code class="monospace">($OPT['default'] ? ' default_server' : '') . ($OPT['ssl'] ? ' ssl' : '') .</code></p>
+<p class="listcontinue"><code class="monospace">($OPT['ssl'] &amp;&amp; $VAR-&gt;domain-&gt;physicalHosting-&gt;proxySettings['nginxHttp2'] ? ' http2' : '') ?&gt;;</code></p>
+<p class="listcontinue">Ensuite, exécutez la commande :</p>
+<p class="listcontinue"><code class="monospace"># plesk bin http2_pref enable</code></p>
+</li><li class="listnumber">Vérifiez que le fichier <code class="monospace">/usr/local/psa/admin/conf/panel.ini </code>inclut cette section :<p class="listcontinue"><code class="monospace">[webserver]</code></p>
+<p class="listcontinue"><code class="monospace">nginxHttp2 = true</code></p>
+</li><li class="listnumber">Vérifiez qu'il n'y a pas d'entrées incorrectes dans le fichier <code class="monospace">/usr/local/psa/admin/conf/panel.ini</code>. Si vous en trouvez, corrigez-les. Si vous avez un doute quant à ces entrées, sauvegardez <code class="monospace">/usr/local/psa/admin/conf/panel.ini</code> et restaurez le fichier d'origine depuis <code class="monospace">/usr/local/psa/admin/conf/panel.ini.sample</code>. <p class="listcontinue">Recréez les fichiers de configuration :</p>
+<p class="listcontinue"><code class="monospace"># plesk sbin httpdmng --reconfigure-all</code></p>
+</li><li class="listnumber">En cas de problèmes de connexion SSL avec HTTP/2 activé, vérifiez que la directive <code class="monospace">ssl_ciphers</code> dans <code class="monospace">/etc/nginx/conf.d/ssl.conf</code> ou dans le fichier personnalisé <code class="monospace">nginxDomainVirtualHost.php</code> inclut la valeur suivante : <p class="listcontinue"><code class="monospace">ssl_ciphers EECDH+AESGCM+AES128:EECDH+AESGCM+AES256:EECDH+CHACHA20:EDH+AESGCM+AES128:EDH+AESGCM+AES256:EDH+CHACHA20:EECDH+SHA256+AES128:EECDH+SHA384+AES256:EDH+SHA256+AES128:EDH+SHA256+AES256:EECDH+SHA1+AES128:EECDH+SHA1+AES256:EDH+SHA1+AES128:EDH+SHA1+AES256:EECDH+HIGH:EDH+HIGH:AESGCM+AES128:AESGCM+AES256:CHACHA20:SHA256+AES128:SHA256+AES256:SHA1+AES128:SHA1+AES256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!KRB5:!aECDH:!EDH+3DES;</code></p>
+</li><li class="listnumber">Si votre site ne fonctionne pas avec certains navigateurs après activation du HTTP/2, cela peut signifier qu'il y a des chiffrements et protocoles inutiles pour la prise en charge HTTP/2. Faites appel à l'utilitaire <code class="monospace">sslmng</code> de Plesk pour configurer la liste des protocoles et des chiffrements TLS disponibles après activation du HTTP/2. Par exemple, si vous souhaitez utiliser exactement la même liste de chiffrements que Plesk, la commande est la suivante :<p class="listcontinue"><code class="monospace">#plesk sbin sslmng --services=nginx --custom --ciphers=&quot;EECDH+AESGCM+AES128:EECDH+AESGCM+AES256:EECDH+CHACHA20:EDH+AESGCM+AES128:EDH+AESGCM+AES256:EDH+CHACHA20&quot; --protocols=&quot;TLSv1 TLSv1.1 TLSv1.2&quot;</code></p>
+<p class="listcontinue">La configuration est alors stockée dans le fichier <code class="monospace">/etc/nginx/conf.d/ssl.conf</code>. Nous déconseillons la modification manuelle de ce fichier.</p>
+</li><li class="listnumber">Si aucune des étapes précédentes n'a résolu le problème, contactez<strong class="specialbold"> <a class="externalhyperlinktemplate" title="" href="https://www.plesk.com/support/" target="_blank">l'assistance technique de Plesk</a></strong>.<p class="widegraphic"></p>
+</li></ol>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '76461.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

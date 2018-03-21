@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Planifier des tâches </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59410.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="78064.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557103.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557103.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Planifier des tâches</h2>
+<p class="bodytext">Si vous devez exécuter des scripts sur votre serveur à des moments précis, utilisez la fonction de planification de tâches sur votre serveur pour que le système lance automatiquement les scripts à votre place.</p>
+<p class="bodytext">Pour voir toutes les tâches planifiées créées pour chaque abonnement ainsi que celle créées niveau serveur, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Tâches planifiées</strong>. </p>
+<p class="widegraphic"><img src="74992.gif" alt="Scheduled_tasks" height="383" width="1178" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Vous pouvez trier les tâches par commande ou selon la planification, notamment si vous devez résoudre des problèmes liés à des pics de charge ponctuels (qui peuvent être dus à une tâche planifiée consommant beaucoup de ressources). Vous pouvez modifier les propriétés de chaque tâche dans la liste (en cliquant sur le nom de la tâche). Pour activer la tâche, cliquez sur l'icône <img src="74993.png" alt="Task_inactive" height="21" width="21" vspace="0" hspace="0" align="bottom" border="0"> et la désactiver en cliquant sur l'icône <img src="74994.png" alt="Task_active" height="21" width="21" vspace="0" hspace="0" align="bottom" border="0"> ou exécuter immédiatement la tâche.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> dans Plesk pour Linux, les tâches planifiées créées par les utilisateurs sont par défaut exécutées dans un shell chrooté. Cela signifie que le root du système de fichiers est changé par le répertoire home de l'utilisateur système. Cela améliore le système mais limite les options des utilisateurs de Plesk. Vous pouvez modifier le shell à utiliser pour les tâches planifiées de tous les utilisateurs de Plesk via <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Tâches planifiées</strong> &gt; <strong class="specialbold">Paramètres</strong>. Pour plus d'informations sur les paramètres de shell, consultez la section <strong class="specialbold"><a id="h78067" class="jumptemplate" title="Paramétrer des shells de tâches planifiées" href="78064.htm" target="_self">Paramétrer des shells de tâches planifiées</a></strong>.</p>
+<p class="bodytext">Pour créer une tâche planifiée, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Tâches planifiées</strong> &gt; <strong class="specialbold">Ajouter une tâche</strong>. Sélectionnez d'abord le type de tâche selon vos besoins :</p>
+<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Exécuter une commande</strong>. Indiquez le chemin d'accès complet au fichier exécutable à exécuter. Sont inclus : les fichiers binaires, les scripts shell et les fichiers batch.</li><li class="listbullet2"><strong class="specialbold">Récupérer une URL</strong>. Saisissez uniquement l'URL. Il n'est pas nécessaire de saisir une commande de type curl ou wget.</li><li class="listbullet2"><strong class="specialbold">Exécuter un script PHP</strong>. Saisissez le chemin d'accès du script relatif à votre répertoire d'hôte virtuel. Vous pouvez cliquer sur l'icône <img src="74476.png" alt="browse" height="30" width="30" vspace="0" hspace="0" align="bottom" border="0"> pour accéder rapidement au fichier de script.</li></ul><p class="bodytext">Ensuite, indiquez la fréquence de la tâche et définissez la date et l'heure d'exécution. Par défaut, l'heure correspond à celle du fuseau horaire du serveur. Si vous devez utiliser un autre fuseau horaire, allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Tâches planifiées</strong> &gt; <strong class="specialbold">Paramètres</strong>. Vous pouvez aussi indiquer la description de la tâche, sélectionner l'utilisateur système dans le contexte de sécurité d'exécution de la tâche et configurer les notifications.</p>
+<p class="bodytext">Enfin, avant d'enregistrer la tâche, vous pouvez la tester et vérifier si elle est configurée correctement. Cliquez sur <strong class="specialbold">Exécuter maintenant</strong> et attendez la fin de la tâche. En cas d'erreur, la tâche échouera aussi lors de son exécution planifiée. Repérez l'erreur et corrigez-la.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="78064.htm" target="_self">Paramétrer des shells de tâches planifiées</a></p></td>
+</tr>
+</table>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '64993.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

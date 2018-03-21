@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Protéger contre le spam sortant </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="63249.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="73368.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055763.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055763.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Protéger contre le spam sortant</h2>
+<p class="bodytext">Si vos offres d'hébergement incluent les services de messagerie, votre serveur de messagerie est susceptible d'être utilisé à des fins malveillantes, comme l'envoi de spam. Le spam sortant peut augmenter la charge sur le serveur, aux dépens des destinataires. Pire encore, les adresses IP de votre serveur peuvent être ajoutées sur des listes noires publiques comme les listes Spamhaus ou OpenBL.</p>
+<p class="bodytext">Pour éviter l'envoi de spam depuis le serveur, Plesk dispose d'un outil qui contrôle l'envoi de mails. Cet outil collecte les statistiques sur les mails sortants et bloque l'envoi de mails si des limites prédéfinies sont atteintes. Vous pouvez définir les limites des mails sortants sur les niveaux suivants : <em class="emphasis">serveur de messagerie</em>, <em class="emphasis">pack de services</em>, <em class="emphasis">abonnement</em>, <em class="emphasis">domaine</em> et <em class="emphasis">boîte mail</em>.</p>
+<p class="bodytext">Les administrateurs peuvent empêcher l'envoi de spam en limitant le nombre de mails sortants par heure. Ils ont également les moyens de déterminer la source exacte du spam potentiel grâce aux rapports et aux notifications.</p>
+<h5 class="heading5">Types de menaces</h5>
+<p class="bodytext">Dans Plesk, plusieurs limites permettent de prévenir les types suivants de menaces : </p>
+<ul class="listbullet"><li class="listbullet">Comptes mail volés. <p class="listcontinue">Les identifiants des comptes utilisateur SMTP peuvent être volés par des utilisateurs malveillants qui hackent un serveur de messagerie par le biais d'une vulnérabilité du système (par exemple : une vulnérabilité PHP) ou via l'exploitation d'une application (par exemple, d'une version obsolète de WordPress). De plus, si les clients utilisent des mots de passe faibles, ils peuvent être récupérés via des outils par force brute.</p>
+<p class="listcontinue">Vous pouvez bloquer ce type de menace en limitant le nombre de mails sortants d'une boîte mail.</p>
+</li><li class="listbullet">Scripts Web pour diffusion malveillante en masse. <p class="listcontinue">Un utilisateur malveillant peut utiliser un compte client Plesk pour créer un site Web comportant un script qui diffusera du spam. De plus, un utilisateur malveillant peut voler les identifiants FTP d'un compte client et charger un site Web avec un script de diffusion en masse.</p>
+<p class="listcontinue">Vous pouvez empêcher ce type de menace en limitant le nombre de mails sortants d'un domaine.</p>
+</li><li class="listbullet">Comptes système hackés sur Linux. <p class="listcontinue">Un utilisateur malveillant peut obtenir l'accès aux comptes utilisateur système Linux en exploitant l'application ou le système. Ensuite, dans crontab, il peut mettre en place des tâches planifiées exécutées en arrière-plan. Ce type de tâches planifiées peut exécuter des scripts de diffusion en masse de mails afin d'envoyer du spam.</p>
+<p class="listcontinue">Vous pouvez bloquer ce type de menace en limitant le nombre de mails sortants d'un abonnement.</p>
+</li></ul><h5 class="heading5">Configuration de la protection</h5>
+<p class="procedureheading">Pour vous protéger contre le spam en limitant le nombre de mails sortants, procédez comme suit :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Activez les limites des mails sortants dans les Paramètres du serveur de messagerie sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong>. Consultez la section<strong class="specialbold"> <a id="h72369" class="jumptemplate" title="Configurer les paramètres de messagerie pour l'ensemble du serveur" href="59430.htm" target="_self">Configurer les paramètres de la messagerie pour l'ensemble du serveur</a></strong>.<p class="widegraphic"><br><img src="74981.gif" alt="Switch_limitations" height="436" width="797" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="procedurelistnumber">Supprimez toutes les adresses IP et tous les réseaux de la liste blanche du serveur de messagerie (dans Plesk pour Linux, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong> &gt; <strong class="specialbold">Liste blanche</strong> ; dans Plesk pour Windows, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong> &gt; <strong class="specialbold">Options de relais</strong> &gt; <strong class="specialbold">Ne pas utiliser de restrictions de relais pour les réseaux suivants :</strong>). Les limites des mails sortants ne fonctionneront pas pour les expéditeurs dont les adresses IP sont incluses dans la liste blanche du serveur.<p class="listnote">Remarque : à partir de Plesk 12, le réseau 127.0.0.0/8 n'est plus ajouté par défaut aux listes blanches. Cette mesure est nécessaire pour garantir le fonctionnement correct de la protection contre le spam sortant. Si aucun hôte local n'est inclus dans la liste blanche, alors les scripts PHP ne peuvent pas envoyer de mail sur Windows. D'autres moteurs de scripts peuvent également être affectés. En outre, Mailman ne pourra pas envoyer de mail à des adresses externes.</p>
+</li><li class="procedurelistnumber">(Facultatif) Configurez la période de collecte des statistiques utilisée pour les rapports. La même période est utilisée pour déterminer le statut des mails sortants présenté sur la page d'accueil de l'interface de Plesk. Consultez la section <strong class="specialbold"><a id="h72369_2" class="jumptemplate" title="Configurer les paramètres de messagerie pour l'ensemble du serveur" href="59430.htm" target="_self">Configurer les paramètres de messagerie pour l'ensemble du serveur</a></strong>.</li><li class="procedurelistnumber">(Facultatif) Configurez la période pour les notifications relatives aux mails sortants. Consultez la section <strong class="specialbold"><a id="h73388" class="jumptemplate" title="Notifications sur les tentatives de dépassement des limites" href="73370.htm" target="_self">Notifications sur les tentatives de dépassement des limites</a></strong>.</li><li class="procedurelistnumber">(Facultatif) Modifiez les limites utilisées par défaut sur les objets Plesk. Consultez la section <strong class="specialbold"><a id="h73378" class="jumptemplate" title="Limites personnalisées" href="73368.htm" target="_self">Limites personnalisés</a></strong>.</li><li class="procedurelistnumber">Analysez les statistiques liées aux tentatives de dépassement des limites sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Contrôle des mails sortants</strong>. Consultez la section <strong class="specialbold"><a id="h73379" class="jumptemplate" title="Statistiques et rapports" href="73371.htm" target="_self">Statistiques et rapports</a></strong>.<p class="listnote"><strong class="buttons">Remarque </strong>: le lien <strong class="specialbold">Contrôle des mails sortants</strong> s'affiche uniquement si les limites sont activées dans les <strong class="specialbold"><a id="h72369_3" class="jumptemplate" title="Configurer les paramètres de messagerie pour l'ensemble du serveur" href="59430.htm" target="_self">Paramètres du serveur de messagerie</a></strong>.</p>
+<p class="widegraphic"><img src="74982.gif" alt="Outgoing_Mail_control" height="524" width="807" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ol><h5 class="heading5">Limitations de la protection</h5>
+<p class="bodytext">Certains types de mails sortants ne peuvent pas être comptabilisés dans le <strong class="specialbold">Contrôle des mails sortants</strong> en raison des restrictions logicielles du serveur de messagerie ou des listes de diffusion. Par conséquent, Plesk risque de ne pas bloquer des mails sortants excessifs. Voici les éléments concernés par ces limitations :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Listes de diffusion.</em> Les messages envoyés aux abonnés d'une liste de diffusion ne sont pas comptés lors du <strong class="specialbold">Contrôle des mails sortants</strong>.</li><li class="listbullet"><em class="emphasis">Mails transférés à une autre adresse depuis des adresses inexistantes</em>. Ces mails envoyés à des destinataires non existants et donc transférés à des adresses externes (c'est-à-dire hors du domaine) ne sont pas comptés dans le <strong class="specialbold">Contrôle des mails sortants</strong>. Cette limitation affecte le choix de l'adresse de redirection utilisée dans les paramètres de rejet des mails du domaine (Panneau Client &gt; <strong class="specialbold">Mail</strong> &gt; <strong class="specialbold">Paramètres de la messagerie</strong> &gt; <em class="emphasis">sélectionnez un domaine</em> &gt; <strong class="specialbold">Mails envoyés à des utilisateurs inexistants</strong>) : les clients peuvent indiquer uniquement les adresses appartenant au domaine sélectionné. Ils ne peuvent pas non plus définir une adresse de redirection pour plusieurs domaines en raison de cette restriction. Seul l'administrateur Plesk peut préciser une adresse de redirection sans restriction.</li><li class="listbullet"><em class="emphasis">Configuration des limites</em>. Les fonctions du serveur de messagerie définissent à quel niveau vous pouvez spécifier des limites pour les mails sortants et déterminent si vous pouvez empêcher l'envoi de mails frauduleux par des scripts Web :<p class="listcontinue"></p>
+</li></ul><table class="tableintopic" width="666" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="216" height="0"></td>
+<td width="144" height="0"></td>
+<td width="108" height="0"></td>
+<td width="108" height="0"></td>
+<td width="90" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" rowspan="2" width="216"><p class="tableheading">Protection contre le spam sortant</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Linux</p>
+</td>
+<td style="border:1px solid #010101;" colspan="3" width="306"><p class="tableheading">Windows</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Tous les serveurs de messagerie pris en charge par Plesk</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">MailEnable</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">SmarterMail</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">IceWarp</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="tablebodytext">Limitation des mails sortants pour une boîte mail</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Non</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Non</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="tablebodytext">Limitation des mails sortants pour un domaine</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Non</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="tablebodytext">Limitation des mails sortants pour un abonnement</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Non</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Non</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="tablebodytext">Suivi des mails envoyés par des scripts</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Non</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Non</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Non</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Mails transférés depuis des adresses existantes. </em>Dans Plesk pour Windows, ce type de mail transmis ne peut pas être compté dans le <strong class="specialbold">Contrôle des mails sortants</strong> :<p class="listcontinue"></p>
+</li></ul><table class="tableintopic" width="666" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="222" height="0"></td>
+<td width="144" height="0"></td>
+<td width="102" height="0"></td>
+<td width="108" height="0"></td>
+<td width="90" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" rowspan="2" width="222"><p class="tableheading">Transfert des mails vers des boîtes mail sur des serveurs locaux ou distants</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Linux</p>
+</td>
+<td style="border:1px solid #010101;" colspan="3" width="300"><p class="tableheading">Windows</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Tous les serveurs de messagerie pris en charge par Plesk</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tablebodytext">MailEnable</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">SmarterMail</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">IceWarp </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="222"><p class="tablebodytext">Mails transférés vers des destinataires locaux pris en charge</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tablebodytext">Non</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Non</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Non</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="222"><p class="tablebodytext">Mails transférés vers des destinataires distants pris en charge</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tablebodytext">Non</p>
+</td>
+<td style="border:1px solid #010101;" width="108"><p class="tablebodytext">Oui</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Non</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Messages sans authentification SMTP</em>. Si un message a été envoyé depuis un autre ordinateur, et par conséquent, si l'authentification SMTP n'a pas été établie, ce message n'est pas compté dans le <strong class="specialbold">Contrôle des mails sortants</strong>.</li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="73368.htm" target="_self">Limites personnalisées</a></p><p class="relateditem"><a href="73369.htm" target="_self">Fonctionnement des limites</a></p><p class="relateditem"><a href="73370.htm" target="_self">Notifications sur les tentatives de dépassement des limites</a></p><p class="relateditem"><a href="73371.htm" target="_self">Statistiques et rapports</a></p></td>
+</tr>
+</table>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '71349.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

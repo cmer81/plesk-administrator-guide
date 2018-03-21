@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Surveiller la santé du serveur </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<h2 class="heading2">Surveiller la santé du serveur</h2>
+<p class="bodytext">Le Moniteur de santé vous aide à maintenir le fonctionnement sans problème de Plesk. Pour cela, il suit l'utilisation des ressources du système sur le serveur et vous envoie des notifications lorsqu'une ou plusieurs ressources dépassent le seuil d'utilisation prédéfini.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> le Moniteur de santé est disponible dans les éditions Plesk <a id="h73870" class="jumptemplate" title="Éditions de Plesk" href="73868.htm" target="_self">Web Host</a> et <a id="h73870_2" class="jumptemplate" title="Éditions de Plesk" href="73868.htm" target="_self">Web Pro</a>. Pour utiliser le Moniteur de santé, vous devez basculer vers la <a id="h75262" class="jumptemplate" title="Interface de Plesk" href="70562.htm" target="_self">Vue Fournisseur de services</a> de Plesk.</p>
+<h5 class="heading5">Installer le Moniteur de santé</h5>
+<p class="bodytext">Le Moniteur de santé est un composant facultatif qui n'est pas installé par défaut. Vous pouvez l'installer à l'aide du <a id="h78395" class="jumptemplate" title="Ajouter et supprimer des composants Plesk" href="74719.htm" target="_self">Programme d'installation de Plesk</a>. Cherchez le composant <strong class="specialbold">Server health monitor</strong> (Moniteur de santé du serveur).</p>
+<h5 class="heading5">Suivre la santé du serveur</h5>
+<p class="bodytext">Pour obtenir un aperçu de l'utilisation actuelle des ressources du système, allez dans <strong class="specialbold">Accueil</strong> et consultez la section <strong class="specialbold">Santé du serveur</strong>.</p>
+<p class="widegraphic"><img src="74598.png" alt="" height="260" width="440" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Les ressources et les services surveillés par le Moniteur de santé sont regroupés en cinq grandes catégories. Si l'une des ressources ou l'un des services dans l'une des catégories au moins dépasse les seuils préconfigurés, un avertissement s'affiche. Pour chaque ressource ou service, vous pouvez configurer deux seuils : un &quot;jaune&quot; et un &quot;rouge&quot;. Si l'utilisation d'une ressource dépasse le seuil jaune, cela indique que la charge élevée est potentiellement problématique. Si l'utilisation d'une ressource dépasse le seuil rouge, cela indique que le fonctionnement et les services de Plesk sont potentiellement affectés. Une réponse immédiate est requise. Par défaut, le Moniteur de santé est préconfiguré avec des paramètres optimisés pour chaque ressource et service. Toutefois, l'administrateur peut modifier ces paramètres.</p>
+<p class="bodytext">Pour voir plus d'informations sur l'utilisation des ressources, étendez les catégories.</p>
+<p class="widegraphic"><img src="74599.png" alt="" height="408" width="441" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Vous pourrez ainsi afficher l'utilisation actuelle des ressources de toutes les ressources et de tous les services inclus dans la catégorie, ainsi que les tendances d'utilisation des ressources. L'icône <img src="74600.png" alt="" height="15" width="16" vspace="0" hspace="0" align="bottom" border="0"> indique que l'utilisation de ressource d'un service ou d'une ressource a augmenté pendant la dernière heure. L'icône <img src="74601.png" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> indique que l'utilisation a diminué pendant la dernière heure. Le nombre à droite de l'icône qui indique la tendance précise de combien l'utilisation de la ressource a augmenté ou diminué pendant la dernière heure. Par exemple : si le nombre est &quot;1,87&quot;, cela indique que l'utilisation de cette ressource ou de ce service particulier a augmenté ou diminué du facteur &quot;1,87&quot; (en fonction de l'icône de tendance). Si l'augmentation ou la diminution de l'utilisation est insignifiante, la valeur exacte est inconnue.</p>
+<p class="bodytext">Remarque : le Moniteur de santé affiche des valeurs de paramètres instantanées. Elles ne sont pas mises à jour en temps réel. Autrement dit, les valeurs affichées dans le Moniteur de santé reflètent l'utilisation des ressources à l'instant où la page est chargée et non l'utilisation actuelle de la ressource. Pour voir des valeurs d'utilisation de ressources à jour, actualisez la page dans votre navigateur.</p>
+<p class="bodytext">Pour voir l'évolution de l'utilisation des ressources, allez dans <strong class="specialbold">Gestion du serveur</strong> &gt; <strong class="specialbold">Surveillance de la santé</strong>. Étendez la catégorie et cochez les cases à côté des ressources ou des services pour voir le graphique d'utilisation détaillé pour ces ressources ou services, sur une période de trois heures à une semaine.</p>
+<h5 class="heading5">Configurer les alarmes, tendances et notifications par mail</h5>
+<p class="bodytext">Par défaut, le Moniteur de santé est préconfiguré avec des paramètres optimisés pour chaque ressource et service. Si vous voulez modifier les paramètres par défaut, allez dans <strong class="specialbold">Gestion du serveur</strong> &gt; <strong class="specialbold">Surveillance de la santé</strong> et cliquez sur <strong class="specialbold">Télécharger le fichier de configuration</strong> pour télécharger le fichier de configuration <code class="monospace">custom-health-config.xml</code>. Modifiez le fichier selon les instructions qui s'y trouvent. Vous pouvez changer les paramètres suivants dans le Moniteur de santé :</p>
+<ul class="listbullet2"><li class="listbullet2">Seuils d'alerte &quot;Jaune&quot; et &quot;Rouge&quot; pour chaque ressource ou service.</li><li class="listbullet2">Type de seuil d'alerte pour chaque ressource ou service (valeur absolue, valeur relative ou valeur tendance dépassée).</li><li class="listbullet2">Paramètres de calcul des tendances.</li><li class="listbullet2">Paramètres de notification par mail. Par défaut, les notifications par mail ne sont pas configurées.</li></ul><p class="bodytext">Une fois que vous avez modifié le fichier de configuration, enregistrez-le et envoyez-le (<strong class="specialbold">Surveillance de la santé</strong> &gt; <strong class="specialbold">Santé du serveur</strong> &gt; <strong class="specialbold">Envoyer le fichier de configuration</strong>). Les modifications entreront immédiatement en vigueur.</p>
+<h5 class="heading5">Mettre à jour les paramètres de santé après le changement du matériel</h5>
+<p class="bodytext">La configuration matérielle de votre serveur Plesk est capturée par le Moniteur de santé pendant l'installation du composant. Les modifications ultérieures du matériel serveur ne sont pas reflétées dans le Moniteur de santé. Par exemple, si vous augmentez le total de RAM de 1 Go à 2 Go, le Moniteur de santé continuera d'afficher que la RAM totale du serveur est de 1 Go. Pour que le Moniteur de santé reflète les changements effectués dans le matériel du serveur, allez dans <strong class="specialbold">Surveillance de la santé</strong> &gt; <strong class="specialbold">Moniteur de santé</strong> et cliquez sur <strong class="specialbold">Détecter les changements matériels</strong>.</p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '68886.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Utiliser d'autres logiciels de messagerie </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72349.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59431.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Utiliser d'autres logiciels de messagerie</h2>
+<h5 class="heading5">Utilisation d'autres logiciels de messagerie (Linux)</h5>
+<p class="bodytext">Plesk pour Linux est fourni avec les serveurs de messagerie <em class="emphasis">Postfix</em> et <em class="emphasis">Qmail. </em>Pour les messages par IMAP et POP3, il est possible d'utiliser Courier IMAP ou Dovecot. Nous vous recommandons d'utiliser Dovecot à la place du serveur par défaut Courier-IMAP. Dovecot est plus rapide et plus sûr. Il consomme moins de ressources serveur et prend en charge des règles pour le filtrage des messages côté serveur.</p>
+<p class="bodytext">Vous pouvez changer de serveur de messagerie via <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour et à niveau</strong> &gt; <strong class="specialbold">Ajouter/Supprimer des composants</strong> &gt; <strong class="specialbold">Fonctionnalités d'hébergement de messagerie</strong> ou via <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong>.</p>
+<p class="bodytext">Plesk commence à utiliser le nouveau serveur de messagerie sans devoir redémarrer le serveur. Vous pouvez toujours sélectionner un autre serveur de messagerie à tout moment plus tard.</p>
+<h5 class="heading5">Remarques sur l'utilisation de Dovecot :</h5>
+<ul class="listbullet"><li class="listbullet">Dovecot est fourni avec <a class="jumptemplate" title="" href="http://pigeonhole.dovecot.org" target="_self">Piegeonhole</a>, le moteur de filtre côté serveur qui peut être configuré depuis l'interface mail et des extensions tierces pour envoyer des mails aux agents utilisateur (Mail User Agent, MUA) comme Thunderbird.</li><li class="listbullet">Dovecot prend en charge le &quot;pushing&quot; de mails via les extensions de protocoles &quot;IMAP IDLE&quot; et &quot;IMAP NOTIFY&quot; facultatives.</li><li class="listbullet">Dovecot utilise le langage <a class="jumptemplate" title="" href="http://sieve.info" target="_self">Sieve</a> pour définir des règles de filtrage côté serveur.</li><li class="listbullet">Étant donné le nombre de versions de Dovecot existantes dans les répertoires de vendeurs d'OS, nous créons nos propres packages. De nombreuses fonctions Dovecot qui ne sont pas utiles dans le contexte de Plesk sont ignorées (la version fournie est conçue sans leur prise en charge).</li><li class="listbullet">Dovecot ne prend pas en charge les noms de comptes mail courts avec autorisation Qmail et POP3 avant SMTP.</li><li class="listbullet">Nous vous recommandons de ne pas revenir à Courier-IMAP depuis Dovecot, notamment si un grand nombre de mails ont été reçus. Cela pourrait relancer le téléchargement des mails par les clients de messagerie. </li><li class="listbullet">Si vous utilisiez des certificats SSL avec Courier-IMAP, vous pouvez les réutiliser avec Dovecot. Pour cela, prenez soit le fichier <code class="monospace">/usr/share/pop3d.pem</code> soit le fichier <code class="monospace">/usr/share/imapd.pem</code> et enregistrez-le sous <code class="monospace">/etc/dovecot/private/</code> en l'intitulant <code class="monospace">ssl-cert-and-key.pem</code>. Vérifiez que ce nouveau fichier dispose des droits <code class="monospace">0400 root:root</code>. Ensuite, redémarrez le service Dovecot.</li></ul><h5 class="heading5">Utilisation d'autres logiciels de messagerie (Windows)</h5>
+<p class="bodytext">Outre le serveur de messagerie par défaut, (<em class="emphasis">MailEnable</em>), Plesk pour Windows prend en charge <em class="emphasis">IceWarp (Merak)</em> et <em class="emphasis">SmarterMail</em>. Ces serveurs de messagerie ne sont pas fournis avec Plesk. Ils doivent être installés séparément. Pour utiliser IceWarp ou SmarterMail, procédez comme suit :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Téléchargez et installez le logiciel de serveur de messagerie conformément aux instructions fournies par le fabricant du serveur de messagerie.</li><li class="procedurelistnumber">Connectez-vous à Plesk et allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Composants du serveur</strong> &gt; lien <strong class="specialbold">Serveur de messagerie</strong>.<p class="listcontinue">Le serveur de messagerie que vous avez installé doit maintenant s'afficher dans la liste des serveurs de messagerie disponibles.</p>
+</li><li class="procedurelistnumber">Sélectionnez le serveur de messagerie voulu puis cliquez sur <strong class="specialbold">OK</strong>. </li></ol><p class="bodytext">Plesk commence à utiliser le nouveau serveur de messagerie sans devoir redémarrer le serveur. Vous pouvez toujours sélectionner un autre serveur de messagerie à tout moment plus tard.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> Le serveur SmarterMail vous permet d'activer l'option <strong class="specialbold">Authentification SMTP obligatoire</strong> au niveau du domaine. Toutefois, cette option peut être activée uniquement si un relais ouvert est sélectionné au niveau du serveur dans Plesk. Plesk désactive cette option avec les autres modes de relais. Pour activer cette option, autorisez un relais ouvert dans Plesk, comme indiqué dans la section <a id="h73939" class="jumptemplate" title="Configurer les paramètres de messagerie pour l'ensemble du serveur" href="59430.htm" target="_self">Paramètres de la messagerie pour l'ensemble du serveur</a> &gt; et allez dans SmarterMail &gt; <strong class="specialbold">Paramètres</strong> &gt; <strong class="specialbold">Par défaut</strong> &gt; <strong class="specialbold">Paramètres par défaut du domaine</strong>.</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72350.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

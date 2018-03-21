@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Fichier de configuration panel.ini </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="76658.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59215.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Fichier de configuration panel.ini</h2>
+<p class="bodytext">Certains aspects de Plesk et de ses extensions ne peuvent pas être gérés via l'interface graphique utilisateur, l'API XML ou l'interface de ligne de commande. Ces aspects sont gérés via des entrées dans le fichier de configuration <code class="monospace">panel.ini</code>. En éditant ce fichier, vous pouvez par exemple :</p>
+<ul class="listbullet2"><li class="listbullet2">Interdire la connexion à Plesk à l'aide des identifiants d'accès &quot;root&quot; ou &quot;administrateur&quot;. </li><li class="listbullet2">Masquer une adresse IP enregistrée dans Plesk, afin qu'elle n'apparaisse pas dans l'interface et ne puisse pas être affectée à des abonnements ou à des revendeurs.</li><li class="listbullet2">Fournir une URL personnalisée vers le Catalogue des extensions, etc.</li></ul><p class="bodytext">Le fichier <code class="monospace">panel.ini</code> est disponible ici :</p>
+<ul class="listbullet2"><li class="listbullet2">(Plesk pour Linux) <code class="monospace">&nbsp;/usr/local/psa/admin/conf/panel.ini</code></li><li class="listbullet2">(Plesk pour Windows) &nbsp;<code class="monospace">%plesk_dir%\admin\conf\panel.ini</code></li></ul><p class="bodytext">Si le fichier n'est pas disponible sur votre serveur, créez un fichier vierge à l'emplacement mentionné ci-dessus et intitulez ce fichier <code class="monospace">panel.ini</code>. Vous pouvez également renommer le fichier <code class="monospace">panel.ini.sample</code> disponible dans le même répertoire en <code class="monospace">panel.ini</code>. Dans ce cas, notez que le fichier contient un certain nombre de paramètres préconfigurés que vous pouvez utiliser en tant que référence.</p>
+<h5 class="heading5">Configurer les paramètres dans le fichier panel.ini</h5>
+<p class="bodytext">Pour configurer les paramètres via le fichier <code class="monospace">panel.ini</code>, vous devez éditer ce fichier à l'aide de l'une de ces méthodes :</p>
+<ul class="listbullet2"><li class="listbullet2">Se connecter au serveur via SSH ou RDP et ouvrir le fichier <code class="monospace">panel.ini</code> dans un éditeur de texte.</li><li class="listbullet2"><a id="h78351" class="jumptemplate" title="Installation des extensions" href="78328.htm#o78343" target="_self">Installer</a> l'<a id="h78356" class="jumptemplate" title="Catalogue des extensions" href="78328.htm" target="_self">extension</a> <em class="emphasis"><a class="externalhyperlinktemplate" title="" href="https://ext.plesk.com/packages/05bdda39-792b-441c-9e93-76a6ab89c85a-panel-ini-editor" target="_blank">Panel.ini Editor</a></em>&nbsp; et modifier le fichier <code class="monospace">panel.ini</code> dans l'interface Plesk à l'aide de cette extension.</li></ul><p class="bodytext">Quelle que soit l'option que vous choisissez, pour configurer un ou plusieurs paramètres via le fichier panel.ini, vous devez y ajouter des entrées respectant le modèle suivant :</p>
+<pre class="preformatted">[Section name]</pre>
+<pre class="preformatted">Setting name = Value</pre>
+<p class="note"><strong class="buttons">Remarque :</strong> si un paramètre est configuré avec une valeur booléenne (&quot;yes&quot; ou &quot;no&quot;), vous pouvez utiliser &quot;true&quot;, &quot;on&quot; ou &quot;yes&quot; pour l'activer, et &quot;false&quot;, &quot;off&quot;, &quot;no&quot; ou &quot;none&quot; pour le désactiver.</p>
+<p class="bodytext">Les modifications sont effectives dès que vous avez enregistré le fichier. Vous n'avez besoin de redémarrer aucun service.</p>
+<p class="bodytext">Par exemple, si vous voulez désactiver le <span class="strong">Bannissement d'adresses IP (Fail2Ban)</span>, ajoutez les lignes suivantes au fichier panel.ini :</p>
+<pre class="preformatted">[fail2ban]</pre>
+<pre class="preformatted">enabled = false </pre>
+<p class="bodytext">Par conséquent, l'option <strong class="specialbold">Bannissement d'adresses IP (Fail2Ban)</strong> disparaît du groupe <strong class="specialbold">Sécurité</strong> de l'écran <strong class="specialbold">Outils &amp; Paramètres</strong>. Vous ne pourrez plus non plus gérer cette option via les commandes de la CLI.</p>
+<p class="bodytext">Tous les paramètres qui peuvent être configurés via le fichier <code class="monospace">panel.ini</code> sont des éléments d'une section prédéfinie. Pour personnaliser un paramètre, vous devez placer ce paramètre ainsi que la section à laquelle il correspond dans le fichier <code class="monospace">panel.ini</code>. Une section individuelle doit être incluse une seule fois. Si vous voulez personnaliser plusieurs paramètres au sein d'une même section, incluez une seule fois cette section. Placez-y tous les paramètres que vous voulez personnaliser. </p>
+<p class="bodytext">Par exemple, pour personnaliser l'URL du Catalogue des extensions et activer la personnalisation du Catalogue des extensions, ajoutez les lignes suivantes au fichier <code class="monospace">panel.ini</code> :</p>
+<pre class="preformatted">[aps]</pre>
+<pre class="preformatted">catalogUrl = &quot;http://catalog.pp.plesk.ru&quot;</pre>
+<pre class="preformatted">catalogsCustomization = on</pre>
+<p class="bodytext">Pour configurer les paramètres via l'extension <em class="emphasis">Panel.ini Editor</em>&nbsp;, allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Mes extensions</strong> &gt; <strong class="specialbold">Panel.ini Editor</strong> &gt; <strong class="specialbold">Aller à l'extension</strong>.</p>
+<p class="widegraphic"><img src="78510.png" alt="" height="547" width="1111" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Sur cette page, dans l'onglet &quot;Viewer&quot;, vous pouvez voir la liste complète de tous les paramètres pouvant être gérés via le fichier <code class="monospace">panel.ini</code>, classés par section. La colonne &quot;Setting&quot; affiche le nom du paramètre tel qu'il est lisible par la machine et la colonne &quot;Value&quot; affiche la valeur affectée actuellement.</p>
+<p class="bodytext">Les paramètres ajoutés au fichier <code class="monospace">panel.ini</code> sont affichés en gras. Pour les paramètres dont la valeur a été personnalisée, la valeur par défaut est indiquée entre parenthèses, à côté de la valeur actuelle. Par exemple, dans la capture d'écran ci-dessus, la valeur &quot;http://apps.example.com&quot; a été affectée au paramètre &quot;catalogUrl&quot; à la place de la valeur par défaut (&quot;http://apps.plesk.com&quot;).</p>
+<p class="bodytext">Pour rechercher un paramètre spécifique, cliquez sur le bouton <img src="78511.png" alt="" height="32" width="34" vspace="0" hspace="0" align="bottom" border="0"> afin d'ouvrir le menu de recherche.</p>
+<p class="widegraphic"><img src="78512.png" alt="" height="312" width="887" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"></p>
+<p class="bodytext">Pour modifier le fichier <code class="monospace">panel.ini</code>, allez dans l'onglet &quot;Editor&quot; et ajoutez-y des entrées selon le processus décrit précédemment.</p>
+<h5 class="heading5">Restaurer les paramètres par défaut</h5>
+<p class="bodytext">Pour réinitialiser la valeur d'un paramètre que vous avez personnalisé via le fichier <code class="monospace">panel.ini</code>, ouvrez le fichier pour l'éditer. Ensuite, supprimez la ligne correspondante ou commentez-la en ajoutant le caractère &quot;;&quot; au début de la ligne. Par exemple :</p>
+<pre class="preformatted">[fail2ban]</pre>
+<pre class="preformatted">; enabled = false</pre>
+<p class="bodytext">Cela permet de restaurer la valeur par défaut immédiatement après l'enregistrement du fichier.</p>
+<p class="bodytext">Pour restaurer les valeurs par défaut de tous les paramètres personnalisés via le fichier <code class="monospace">panel.ini</code>, vous pouvez :</p>
+<ul class="listbullet2"><li class="listbullet2">Vous connecter au serveur via SSH ou RDP et ouvrir le fichier <code class="monospace">panel.ini</code> dans un éditeur de texte.</li><li class="listbullet2">Ouvrir l'extension <em class="emphasis">Panel.ini Editor</em>&nbsp;et cliquer sur <span class="strong">Rétablir par défaut</span>.</li></ul>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '78509.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

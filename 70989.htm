@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Mises à jour de Plesk </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59215.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="70988.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557361.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557361.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Mises à jour de Plesk</h2>
+<p class="bodytext">Les <em class="emphasis">mises à jour</em> sont des améliorations de la sécurité et de la stabilité de Plesk ou l'introduction de modifications développées après mise à disposition de Plesk.</p>
+<p class="bodytext">Ainsi, Plesk ne change pas de version après mise à jour : Les informations sur la mise à jour appliquée sont simplement ajoutées dans le nom de la version du produit, par ex. <em class="emphasis">Plesk Onyx 17.0 Mise à jour n° 7</em>. Les mises à jour sont gratuites et disponibles pour toutes les installations de Plesk, peu importe leur clé de licence.</p>
+<p class="note"><strong class="buttons">Remarque : </strong>les mises à jour de Plesk sont appliquées par séquence. Par conséquent, vous ne pouvez pas installer uniquement une mise à jour spécifique ou ignorer l'une des mises à jour</p>
+<p class="bodytext">Procédez selon l'une de ces méthodes pour appliquer des mises à jour :</p>
+<ul class="listbullet"><li class="listbullet">Manuellement, depuis l'interface utilisateur de Plesk.</li><li class="listbullet">Manuellement, depuis l'interface de ligne de commande.</li><li class="listbullet">Automatiquement (recommandé).</li></ul><p class="bodytext"></p>
+<h5 class="heading5">Vue d'ensemble</h5>
+<p class="bodytext">Plesk vous permet de gérer les mises à jour des composants suivants :</p>
+<ul class="listbullet"><li class="listbullet">Packs Plesk et packs de services développés par Plesk. Ces derniers incluent Plesk Migration Manager, Health Monitor, toutes les extensions de Plesk, Kaspersky Anti-Virus et Plesk Premium Antivirus.<p class="listcontinue">Reportez-vous à la section <strong class="buttons">Mise à jour manuelle de Plesk via l'interface utilisateur</strong> plus bas. Consultez également la section <strong class="buttons">Mise à jour manuelle de Plesk via la ligne de commande</strong>.</p>
+</li><li class="listbullet">Packs du système d'exploitation (Plesk pour Linux). Vous pouvez en gérer les mises à jour et leurs notifications dans Plesk si l'outil <strong class="specialbold"><a id="h76250" class="jumptemplate" title="Mises à jour système (Plesk pour Linux uniquement)" href="75822.htm" target="_self">Mises à jour système</a></strong> est activé. <p class="listcontinue">Reportez-vous à la section <strong class="buttons">Mise à jour manuelle du système et des composants tiers</strong>.</p>
+</li><li class="listbullet">Composants tiers fournis avec Plesk, tels que MySQL, PHP, serveurs Web, divers services de messagerie, etc. Ils peuvent être mis à jour dans le cadre de mises à jour système ou de mises à jour de Plesk si vous avez activé la mise à jour automatique des composants tiers. <p class="listnote"><strong class="buttons">Attention :</strong> utilisez les mises à jour automatiques des composants tiers avec précaution. Les sites Web hébergés sur votre serveur risquent d'être incompatibles avec les versions les plus récentes de certains composants. L'outil <strong class="specialbold"><a id="h76250_2" class="jumptemplate" title="Mises à jour système (Plesk pour Linux uniquement)" href="75822.htm" target="_self">Mises à jour système</a></strong> vous permet de verrouiller les packs sélectionnés pour qu'ils ne subissent aucune mise à jour. C'est pour cela que les mises à jour automatiques des composants tiers sont désactivées par défaut.</p>
+<p class="listcontinue">Pour activer les mises à jour automatiques des composants tiers, allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres de mise à jour et de mise à niveau</strong> et cochez la case <strong class="specialbold">Installer automatiquement les mises à jour pour les composants tiers</strong>.</p>
+</li></ul><p class="bodytext"></p>
+<p class="bodytext">Ce tableau indique l'outil Plesk à utiliser pour la mise à jour de divers composants logiciels.</p>
+<table class="tableintopic" width="684" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #808080">
+<tr align="left" valign="top">
+<td style="border:1px solid #808080;" width="174"><p class="tableheading">Outils et packs à mettre à jour.</p>
+<p class="tableheading">&nbsp;</p>
+</td>
+<td style="border:1px solid #808080;" width="162"><p class="tableheading">Packs Plesk et packs de services développés par Plesk.</p>
+</td>
+<td style="border:1px solid #808080;" width="180"><p class="tableheading">Packs de services fournis avec Plesk (composants tiers).</p>
+</td>
+<td style="border:1px solid #808080;" width="168"><p class="tableheading">Packs du système d'exploitation (Linux).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #808080;" width="174"><p class="tablebodytext">Outil Mises à jour système.</p>
+<p class="tablebodytext">Disponibles sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Mises à jour système</strong> dans Plesk pour Linux.</p>
+</td>
+<td style="border:1px solid #808080;" width="162"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #808080;" width="180"><p class="tablebodytext">+</p>
+<p class="tablebodytext">Remarque : l'outil Mises à jour système est une méthode primaire de gestion des composants tiers. Toutefois, il peut y avoir des exceptions*.</p>
+</td>
+<td style="border:1px solid #808080;" width="168"><p class="tablebodytext">+</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #808080;" width="174"><p class="tablebodytext">Programme d'installation de Plesk.</p>
+<p class="tablebodytext">Disponible sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Mises à jour et à niveau</strong> ou via l'interface de ligne de commande.</p>
+</td>
+<td style="border:1px solid #808080;" width="162"><p class="tablebodytext">+</p>
+</td>
+<td style="border:1px solid #808080;" width="180"><p class="tablebodytext">+</p>
+<p class="tablebodytext">Remarque : si l'outil Mises à jour système est désactivé ou n'est pas pris en charge, ces composants sont mis à jour via le Programme d'installation de Plesk.</p>
+</td>
+<td style="border:1px solid #808080;" width="168"><p class="tablebodytext">-</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">*Exceptions : une mise à jour Plesk fournie par le Programme d'installation de Plesk contient les mises à jour de packs tiers si ces mises à jour sont requises par dépendance à une mise à jour de pack Plesk, en particulier si cette dernière résout des problèmes de sécurité ou de stabilité critiques.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Mise à jour automatique de Plesk et de composants système</h5>
+<p class="bodytext">Si vous activez les mises à jour automatiques via <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres de mises à jour et à niveau</strong>, Plesk recherche les mises à jour une fois par semaine. Si des mises à jour sont disponibles, Plesk les télécharge et les installe automatiquement.</p>
+<p class="bodytext">Utilisez les options suivantes pour activer les mises à jour automatiques :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Installer automatiquement les mises à jour de Plesk (recommandé)</strong>. Cette option utilise le Programme d'installation de Plesk et autorise la mise à jour automatique de Plesk et de ses services intégrés. Dans certains cas, les composants tiers de Plesk peuvent être mis à jour en même temps que Plesk.</li><li class="listbullet"><strong class="specialbold">Installer automatiquement les mises à jour pour les composants tiers</strong> (Plesk pour Linux). Les services tiers peuvent être mis à jour en même temps que les composants Plesk ou les composants système, si l'outil <strong class="specialbold"><a id="h76250_3" class="jumptemplate" title="Mises à jour système (Plesk pour Linux uniquement)" href="75822.htm" target="_self">Mises à jour système</a></strong> est activé.</li><li class="listbullet"><strong class="specialbold">Installer automatiquement les mises à jour du pack système</strong> (Plesk pour Linux). Cette option utilise l'outil <strong class="specialbold"><a id="h76250_4" class="jumptemplate" title="Mises à jour système (Plesk pour Linux uniquement)" href="75822.htm" target="_self">Mises à jour système</a></strong> et autorise la mise à jour des packs système et des composants tiers de Plesk.</li></ul><p class="note"><strong class="buttons">Remarque </strong>: pour empêcher la mise à jour automatique de certains packs, sélectionnez-les dans la liste des packs (<strong class="specialbold">Tous les packs</strong>) et verrouillez-les en cliquant sur <strong class="specialbold">Verrouiller</strong>. Notez que cela n'est possible que si vous utilisez l'outil <strong class="specialbold"><a id="h76250_5" class="jumptemplate" title="Mises à jour système (Plesk pour Linux uniquement)" href="75822.htm" target="_self">Mises à jour système</a></strong>.</p>
+<p class="widegraphic"><img src="76418.gif" alt="System_Updates_U&amp;U" height="296" width="867" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Si vous désactivez les mises à jour automatiques de Plesk, la page Accueil affiche le message suivant :<strong class="specialbold"> Les mises à jour automatiques sont désactivées.</strong> et vous invite à autoriser les mises à jour automatiques. </p>
+<p class="bodytext"></p>
+<h5 class="heading5">Mise à jour manuelle du système et des composants tiers (Linux)</h5>
+<p class="bodytext">Par défaut, l'outil <strong class="specialbold"><a id="h76250_6" class="jumptemplate" title="Mises à jour système (Plesk pour Linux uniquement)" href="75822.htm" target="_self">Mises à jour système</a></strong> est activé, ce qui vous permet de gérer les mises à jour système et celles des composants tiers de Plesk. Vous pouvez appliquer les mises à jour manuellement depuis le groupe <strong class="specialbold">Présentation du système</strong> sur la page Accueil. Cette page contient les informations sur l'état des mises à jour. Autre solution : allez dans <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Mises à jour système</strong>.</p>
+<p class="bodytext">Pour sélectionner certains packs à mettre à jour et en voir les informations, cliquez sur <strong class="specialbold">Voir détails</strong> et sélectionnez les packs. Ceci peut être utile si vous ne voulez pas mettre à jour certains composants, tiers par exemple. Pour sauter systématiquement la mise à jour de certains composants, verrouillez-en la mise à jour. Vous pourrez les déverrouiller ultérieurement à tout moment. Pour plus d'informations, consultez l'article sur l'outil <strong class="specialbold"><a id="h76250_7" class="jumptemplate" title="Mises à jour système (Plesk pour Linux uniquement)" href="75822.htm" target="_self">Mises à jour système</a>.</strong></p>
+<p class="widegraphic"><img src="75644.gif" alt="Mises à jour" height="408" width="965" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Mise à jour manuelle de Plesk via l'interface utilisateur</h5>
+<p class="bodytext">Pour mettre à jour Plesk et ses composants tiers, vous pouvez cliquer sur <strong class="specialbold">Outils &amp; Paramètres &gt; Mises à jour et à niveau &gt; Mettre à jour les composants du produit</strong>. Sur cette page, vous pouvez sélectionner des composants pour lesquels des mises à jour sont disponibles. Cliquez sur <strong class="specialbold">Continuer</strong> pour appliquer ces mises à jour.</p>
+<p class="widegraphic"><img src="75645.gif" alt="Updates_components" height="397" width="876" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Mise à jour de Plesk via la ligne de commande</h5>
+<p class="bodytext">Pour installer toutes les mises à jour disponibles pour la version actuelle de Plesk, y compris les mises à jour des composants tels que MySQL ou PHP, utilisez la commande suivante :</p>
+<p class="bodytext"><code class="monospace"># plesk installer install-all-updates</code></p>
+<p class="bodytext">Pour n'installer que les mises à jour de Plesk, utilisez la commande suivante :</p>
+<p class="bodytext"><code class="monospace"># plesk installer install-panel-updates</code></p>
+<p class="bodytext">Dans ce cas, les composants tels que MySQL et PHP ne seront pas mis à jour sauf si requis pour le bon fonctionnement de Plesk.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext">&nbsp;&nbsp;&nbsp;</p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '70989.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

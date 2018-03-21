@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Configurer les paramètres de messagerie pour l'ensemble du serveur </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="71434.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="72346.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Configurer les paramètres de messagerie pour l'ensemble du serveur</h2>
+<p class="bodytext">Par défaut, Plesk fonctionne en coopération avec un logiciel de serveur de messagerie offrant des services de messagerie pour les boîtes mail et les listes de diffusion. Après installation, le serveur de messagerie est automatiquement configuré et prêt à l'emploi. Nous vous conseillons toutefois de régler les paramètres par défaut pour qu'ils répondent à vos besoins.</p>
+<p class="procedureheading">Pour voir ou configurer les paramètres du serveur de messagerie :</p>
+<p class="bodytext">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur de messagerie</strong> (groupe <strong class="specialbold">Mail</strong>).</p>
+<p class="widegraphic"><img src="74972.png" alt="Mail_Settings" height="527" width="1178" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Généralités</h5>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Ne décochez pas la case <strong class="specialbold">Activer les fonctions de gestion de messagerie dans Plesk</strong> si vous voulez autoriser vos utilisateurs à créer des comptes mail via le Panneau Client et utiliser les services de messagerie fournis par le serveur de messagerie géré par Plesk. Si vous utilisez un serveur de messagerie externe, décochez cette case.</li><li class="procedurelistnumber">Vous pouvez changer le <strong class="specialbold">Serveur de messagerie installé</strong> et <strong class="specialbold">Installer un serveur IMAP/POP3</strong> en cliquant sur les liens correspondants. Vous serez alors dirigé vers la page de l'interface du Programme d'installation de Plesk.</li><li class="procedurelistnumber">Si vous souhaitez limiter la taille des mails pouvant être envoyés via votre serveur, tapez la valeur souhaitée, en kilo-octets, dans le champ <strong class="specialbold">Taille maximum du message</strong>. Sinon ne renseignez pas ce champ.</li><li class="procedurelistnumber">Dans Plesk pour Linux, vous pouvez changer le nombre limite par défaut de connexions simultanées du serveur de messagerie faisables par les utilisateurs du service de messagerie sur le serveur. Cette fonction est pratique notamment pour les hébergeurs de messagerie qui doivent augmenter le nombre de connexions simultanées au serveur de messagerie. <p class="listcontinue">Vous pouvez également modifier la limite du nombre de connexions effectuées depuis la même adresse IP. Une limite faible peut affecter les utilisateurs se connectant au serveur de messagerie depuis plusieurs ordinateurs derrière un pare-feu, ainsi que les utilisateurs ayant plusieurs comptes mail. </p>
+<p class="listcontinue">Remarque : pour définir un nombre approprié, vous devez estimer non seulement le nombre total de connexions, mais aussi les ressources CPU et la mémoire sur le serveur.</p>
+<p class="listcontinue">Le nombre total de connexions correspond à la somme de l'ensemble des connexions effectuées via le même protocole(IMAP, POP3, IMAP via SSL ou POP3 via SSL/TLS), c'est-à-dire qu'une seule limite fonctionne pour tous les protocoles.</p>
+<p class="listcontinue">Si vous utilisez Courier IMAP, vous pouvez indiquer les limites suivantes :</p>
+<ul class="listbullet3"><li class="listbullet3"><strong class="specialbold">Nombre maximum de connexions</strong> (IMAP, POP3, IMAP via SSL/TLS ou POP3 via SSL/TLS). Ce nombre représente le maximum de processus IMAP ou POP3 pouvant être démarrés sur le serveur.</li><li class="listbullet3"><strong class="specialbold">Nombre maximum de connexions par adresse IP</strong>. Ce nombre représente le maximum de connexions via le même protocole que le serveur accepte depuis la même adresse IP.</li></ul><p class="listcontinue">Ces paramètres correspondent aux paramètres de configuration Courier IMAP <code class="monospace">MAXDAEMONS</code> et <code class="monospace">MAXPERIP</code>.</p>
+<p class="listcontinue">Si vous utilisez Dovecot, vous pouvez indiquer les limites suivantes :</p>
+<ul class="listbullet3"><li class="listbullet3"><strong class="specialbold">Nombre maximum de connexions (IMAP, POP3, IMAP via SSL/TLS ou POP3 via SSL/TLS</strong>. Ce nombre représente le maximum d'utilisateurs de messagerie pouvant être connectés en même temps.</li><li class="listbullet3"><strong class="specialbold">Nombre maximum de connexions pour un utilisateur par adresse IP</strong>. Ce nombre représente le maximum de connexions via le même protocole qu'un utilisateur de messagerie peut établir depuis une adresse IP.</li></ul><p class="listcontinue">Ces paramètres correspondent aux paramètres de configuration Dovecot <code class="monospace">process_limit</code> et <code class="monospace">mail_max_userip_connections</code>.</p>
+</li><li class="procedurelistnumber">Pour protéger votre serveur contre le transfert non autorisé de mails ou l'injection de mails intempestifs, cochez la case <strong class="specialbold">Activer la soumission du message</strong> pour permettre à vos clients d'envoyer les e-mails via le port 587.<p class="listcontinue">Prévenez également vos clients qu'ils doivent indiquer le port 587 pour les connexions SMTP sortantes dans les paramètres de leur programme de messagerie. Assurez-vous d'autoriser ce port dans les paramètres du pare-feu.</p>
+</li><li class="procedurelistnumber">Dans Plesk pour Linux avec le serveur de messagerie Postfix, vous pouvez modifier l'adresse IP utilisée pour l'envoi de mails. Par ailleurs, si votre serveur envoie des mails depuis les adresses IP des domaines, vous pouvez préciser le nom à utiliser en tant que nom d'hôte dans les messages d'accueil SMTP. <p class="listcontinue">Choisissez parmi ces trois options :</p>
+<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Envoyer depuis une adresse IP de domaine</strong>. Par défaut, les mails expédiés depuis un domaine sont envoyés avec l'adresse IP du domaine. Le nom d'hôte utilisé dans le message d'accueil SMTP est le nom d'hôte du serveur Plesk dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur</strong>. Lorsque cette option est sélectionnée, les mails envoyés de certains ou de tous les domaines risquent d'être signalés comme spams si le nom d'hôte du serveur Plesk n'est pas résolu correctement ou si l'IP du domaine est différente de celle résolue par le nom d'hôte du serveur Plesk.<p class="listcontinue2">Cette option est plus efficace s'il n'y a qu'une adresse IP sur le serveur Plesk.</p>
+</li><li class="listbullet2"><strong class="specialbold">Envoyer depuis les adresses IP du domaine et utiliser les noms de domaine dans le message d'accueil SMTP</strong>. Si vous sélectionnez cette option, Plesk change la configuration du serveur de messagerie de sorte que la bannière SMTP contient le nom du domaine depuis lequel un mail est envoyé.</li></ul></li></ol><p class="warning"><strong class="buttons">Attention :</strong> lorsque cette option est sélectionnée, les mails envoyés de certains ou de tous les domaines risquent d'être signalés comme spams si le serveur de messagerie de destination utilise <a class="externalhyperlinktemplate" title="" href="http://www.abuseat.org/" target="_blank">cbl</a> et si plusieurs domaines sur le serveur Plesk utilisent la même adresse IP.</p>
+<p class="listcontinue2">En outre, lorsque cette option est sélectionnée sur des serveurs Plesk hébergeant un grand nombre de domaines (plus de 100), la charge du serveur est largement accrue.</p>
+<p class="listcontinue2">Cette option est plus efficace si chaque domaine sur le serveur Plesk dispose d'une adresse IP et si le nombre de domaines hébergés sur le serveur reste raisonnable.</p>
+<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Envoyer depuis une adresse IP spécifiée</strong>. Vous voudrez peut-être utiliser des adresses IPv4 ou IPv6 spécifiques pour tous les mails sortants. Envoyer tous les mails depuis des adresses spécifiées peut être pratique, notamment si l'adresse IP du serveur de messagerie a été ajoutée dans des listes noires publiques comme les listes Spamhaus ou OpenBL. Si vous sélectionnez <strong class="specialbold">Aucune</strong>, le mail sortant ne sera pas envoyé.<br></li></ul><h5 class="heading5">Options de relais</h5>
+<p class="bodytext">Sélectionnez le mode de relais des mails.</p>
+<p class="bodytext">Avec le <em class="emphasis">relais fermé</em>, le serveur de messagerie n'accepte que les mails adressés aux utilisateurs dont les boîtes mail se trouvent sur ce serveur. Vos clients ne pourront pas envoyer de mail par le biais de votre serveur SMTP d'envoi. Nous vous déconseillons donc le choix de l'option de relais fermé.</p>
+<p class="bodytext">Avec le <em class="emphasis">relais après authentification</em>, seuls vos clients pourront recevoir et envoyer des mails par le biais de votre serveur de messagerie. Il est conseillé de ne pas désactiver l'option <strong class="specialbold">Authentification requise</strong> et de préciser les méthodes d'authentification admises :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Délai avant blocage POP3</strong>. Avec l'authentification POP3, une fois qu'un utilisateur s'est bien authentifié sur le serveur POP, il peut recevoir et envoyer des mails par le biais du serveur de messagerie pendant la période indiquée.</li><li class="listbullet"><strong class="specialbold">SMTP</strong>. Avec l'authentification SMTP, votre serveur de messagerie demande à l'utilisateur de s'authentifier si le mail est à envoyer à une adresse externe.</li></ul><p class="bodytext">Il existe également une option pour autoriser le relais sans autorisation, par défaut cachée sur l'interface utilisateur. Nous vous déconseillons d'ouvrir des relais sans autorisation car cela permet aux spammeurs d'envoyer des mails non sollicités via votre serveur. Si vous voulez définir le relais ouvert, connectez-vous au système de fichiers du serveur, localisez le fichier <code class="monospace">root.controls.lock</code> dans votre répertoire d'installation Plesk (<code class="monospace">PRODUCT_ROOT_D/var/root.controls.lock</code> sur Linux et <code class="monospace">PRODUCT_DATA_D/var/root.controls.lock</code> sur les plates-formes Windows), puis supprimez la ligne <code class="monospace">/server/mail.php3:relay_open</code> de ce fichier. L'option de relais ouvert s'affiche alors dans votre panneau de contrôle.</p>
+<p class="note"><strong class="buttons">Remarque pour les administrateurs d'hébergement Windows :</strong> si vous ne souhaitez pas utiliser les limites de relais pour les réseaux de confiance, indiquez le masque et l'adresse IP du réseau dans le champ <strong class="specialbold">Ne pas utiliser de restrictions de relais pour les réseaux suivants</strong> (par ex., 123.123.123.123/16), puis cliquez sur l'icône <img src="75090.png" alt="Icon_add" height="22" width="20" vspace="0" hspace="0" align="bottom" border="0"> . Pour retirer un réseau de la liste, cliquez sur l'icône <img src="75091.png" alt="Icon_remove" height="27" width="25" vspace="0" hspace="0" align="bottom" border="0"> correspondant au réseau à supprimer.</p>
+<p class="note">Les hôtes relais des réseaux de la liste sont considérés comme n'étant potentiellement pas exploités par des spammeurs, comme n'étant pas des relais ou des proxy ouverts. On peut concevoir qu'un hôte sûr puisse relayer des spams, mais il n'en sera pas à l'origine et ne falsifiera pas les données d'en-tête. Les contrôles de la liste noire de DNS n'interrogeront jamais d'hôtes sur ces réseaux.</p>
+<p class="note">Le serveur SmarterMail vous permet d'activer l'option <strong class="specialbold">Authentification SMTP obligatoire</strong> au niveau du domaine. Toutefois, cette option peut être activée uniquement si un relais ouvert est sélectionné au niveau du serveur dans Plesk. Plesk désactive cette option avec les autres modes de relais. Pour activer cette option, autorisez un relais ouvert dans Plesk, comme indiqué ci-dessus. Allez sous SmarterMail &gt; <strong class="specialbold">Paramètres</strong> &gt; <strong class="specialbold">Par défaut</strong> &gt; <strong class="specialbold">Paramètres par défaut du domaine</strong>.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Limitations des mails sortants</h5>
+<p class="bodytext">Activez les limites des mails sortants. Cette option est utilisée pour éviter l'envoi de spams depuis le serveur Plesk. Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h73366" class="jumptemplate" title="Protéger contre le spam sortant" href="71349.htm" target="_self">Protéger contre le spam sortant</a></strong>. </p>
+<p class="note"><strong class="buttons">Remarque </strong>: les limites que vous voyez sous <strong class="specialbold">Paramètres de la messagerie pour l'ensemble du serveur</strong> sont les valeurs par défaut utilisées dans les packs de services et les abonnements sauf si des limites personnalisées sont spécifiées. Pour en savoir plus sur les limites, consultez la section <strong class="specialbold"><a id="h73372" class="jumptemplate" title="Fonctionnement des limites" href="73369.htm" target="_self">Fonctionnement des limites</a></strong>.</p>
+<p class="bodytext">Outre les limites, vous pouvez ajuster les paramètres suivants :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Autoriser les scripts et les utilisateurs à utiliser Sendmail</strong> (Linux uniquement). Les utilisateurs système et les scripts pourront envoyer des mails à l'aide de Sendmail, même si les limites d'une boîte mail ou d'un domaine sont dépassées. Le nombre maximal de messages pouvant être envoyés via Sendmail est défini par la limite d'un abonnement complet correspondant. Les messages sont envoyés au nom de l'utilisateur système de l'abonnement.</li><li class="listbullet"><strong class="specialbold">Afficher les rapports basés sur les statistiques pour les derniers/les dernières</strong> (précisez la période). En cas de tentative de dépassement des limites des mails sortants au cours de cette période, une alerte s'affiche sur la page Accueil de Plesk. Par ailleurs et par défaut, des rapports sont créés et se basent sur les statistiques de cette période.</li><li class="listbullet"><strong class="specialbold">Envoyer une notification par mail toutes les/tous les</strong> (précisez la période). En cas de tentative de dépassement de limites des mails sortants au cours de cette période, l'administrateur reçoit une notification par mail.<p class="listcontinue">Si vous activez les limites des mails sortants, un nouveau lien, <strong class="specialbold">Contrôle des mails sortants</strong> s'affiche (groupe <strong class="specialbold">Mail</strong> sous <strong class="specialbold">Outils &amp; Paramètres</strong>). Utilisez ce lien pour voir les statistiques détaillées des mails sortants de tous les objets Plesk. </p>
+</li></ul><p class="note"><strong class="buttons">Remarque pour les administrateurs d'hébergement Windows : </strong>dans Plesk pour Windows, vous devez suivre plusieurs étapes afin d'utiliser les limites des mails sortants. Consultez la section ci-après pour en savoir plus.</p>
+<p class="bodytext">Pour configurer les limites des mails sortants sur un hébergement Windows, procédez comme suit :</p>
+<ol class="listnumber"><li class="listnumber">Fermez le relais ouvert et supprimez toutes les adresses IP et réseaux de confiance de la liste de relais.</li><li class="listnumber">Dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Serveur SMTP externe</strong>, vérifiez si l'option <strong class="specialbold">Autoriser Plesk à envoyer des notifications par mail via ce serveur SMTP</strong> est activée. </li></ol><h5 class="heading5">Paramètres antivirus</h5>
+<p class="bodytext">Sélectionnez le programme antivirus à utiliser sur le serveur. Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h72419" class="jumptemplate" title="Logiciels antivirus" href="59437.htm" target="_self">Logiciels antivirus</a></strong>.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Protection anti-spam</h5>
+<p class="bodytext">Sélectionnez les options de protection anti-spam à utiliser sur le serveur. Si vous souhaitez configurer des systèmes de protection anti-spam, tels que le <strong class="specialbold"><a id="h73558" class="jumptemplate" title="Filtre anti-spam SpamAssassin" href="59432.htm" target="_self">filtre anti-spam SpamAssassin</a></strong> ou des systèmes de protection basés sur <strong class="specialbold"><a id="h73559" class="jumptemplate" title="Protection DKIM, SPF et DMARC" href="59433.htm" target="_self">DomainKeys</a></strong>, les <strong class="specialbold"><a id="h73557" class="jumptemplate" title="Listes noires DNS" href="59434.htm" target="_self">listes noires DNS</a></strong> ou le système <strong class="specialbold">Sender Policy Framework (SPF)</strong>, reportez-vous à la section <strong class="specialbold"><a id="h64997" class="jumptemplate" title="Outils anti-spam" href="59431.htm" target="_self">Outils anti-spam</a></strong>.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Noms des comptes de messagerie POP3/IMAP</h5>
+<p class="bodytext">Si vous utilisez le serveur de messagerie Qmail, vous pouvez sélectionner le format des comptes de messagerie.</p>
+<p class="bodytext">Si vous activez l'option <strong class="specialbold">L'utilisation de noms de compte mail relatifs et absolus est autorisée</strong>, les utilisateurs pourront se connecter à leur compte mail soit en saisissant uniquement la partie gauche de l'adresse mail avant le signe @ (par ex. <code class="monospace">nomdutilisateur</code>), soit en saisissant l'adresse mail complète (par ex. <code class="monospace">nomdutilisateur@votre-domaine.com</code>).</p>
+<p class="bodytext">Pour éviter d'éventuels problèmes d'authentification aux utilisateurs de messagerie dont les comptes se trouvent sur d'autres domaines mais qui ont les mêmes nom d'utilisateur et mot de passe, nous vous conseillons vivement d'activer l'option <strong class="specialbold">Seuls les noms de compte mail complets sont autorisés</strong>.</p>
+<p class="bodytext">Une fois que vous aurez configuré votre serveur de messagerie pour qu'il ne prenne en charge que les noms de comptes de messagerie complets (absolus), vous ne pourrez plus faire marche arrière pour qu'il prenne en charge des noms de comptes courts (relatifs) tant que vous n'aurez pas vérifié qu'il n'y a pas de mot de passe chiffré pour les boîtes mail ni de compte utilisateur qui coïncide avec le nom d'utilisateur et le mot de passe de boîtes mail se trouvant sur d'autres domaines. </p>
+<p class="bodytext"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59430.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

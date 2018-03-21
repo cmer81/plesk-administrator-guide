@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Utiliser DNSSEC (Linux) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72907.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59427.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055776.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055776.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Utiliser DNSSEC (Linux)</h2>
+<div align="right"><span class="specialbold" style="font-size: 20px">Regardez le tutoriel vidéo</span><br/><iframe width="373" height="210" align="top" src="https://www.youtube.com/embed/ceumecl94s4?list=PL3vEEE_dvoG9f38D4uM3mRdHCQOf9mdCK" frameborder="0" allowfullscreen></iframe></div><p class="bodytext">DNSSEC est l'extension du protocole DNS qui permet de signer des données DNS pour protéger le processus de résolution des noms de domaine. Pour obtenir des informations générales sur DNSSEC et son utilisation, visitez le <a class="externalhyperlinktemplate" title="" href="https://www.icann.org/resources/pages/dnssec-2012-02-25-en" target="_blank">site Web ICANN</a> et la page <a class="externalhyperlinktemplate" title="" href="https://tools.ietf.org/html/rfc6781" target="_blank">https://tools.ietf.org/html/rfc6781</a>.</p>
+<p class="bodytext">Plesk vous permet de protéger les données DNS des domaines hébergés avec DNSSEC. Vous pouvez : </p>
+<ul class="listbullet"><li class="listbullet">Configurer les paramètres utilisés pour la substitution et la génération de clés.</li><li class="listbullet">Ajouter et supprimer la signature de zones de domaine selon les conditions DNSSEC.</li><li class="listbullet">Recevoir des notifications.</li><li class="listbullet">Voir et copier des enregistrements de ressources DS.</li><li class="listbullet">Voir et copier des jeux d'enregistrements de ressources DNSKEY.</li></ul><p class="bodytext">&nbsp;</p>
+<h5 class="heading5">Exigences</h5>
+<ul class="listbullet"><li class="listbullet">Plesk pour Linux avec serveur Bind DNS, à partir de Bind 9.9. </li><li class="listbullet">L'extension DNSSEC est commerciale ; elle n'est pas incluse par défaut dans les éditions de Plesk.</li><li class="listbullet">DNSSEC est disponible sur Debian 8, Ubuntu 14.04, Ubuntu 16.04, CentOS 7, RedHat Enterprise Linux 7, CloudLinux 7, Virtuozzo Linux 7.</li></ul><p class="bodytext">&nbsp;</p>
+<h5 class="heading5">Activation de la prise en charge DNSSEC.</h5>
+<p class="bodytext">Pour activer la prise en charge DNSSEC, installez l'extension <strong class="specialbold">Plesk DNSSEC </strong>(<strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Catalogue d'extensions</strong>).</p>
+<p class="widegraphic"><img src="76900.gif" alt="2016-09-06_184223" height="459" width="1066" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Configuration des paramètres DNSSEC par défaut</h5>
+<p class="bodytext">Les paramètres DNSSEC par défaut sont sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">DNSSEC</strong>. Vous pouvez modifier la politique par défaut de génération des paires de clés KSK et ZSK.</p>
+<p class="bodytext"><strong class="buttons">La politique recommandée pour les clés KSK et ZSK est la suivante</strong> :</p>
+<ul class="listbullet"><li class="listbullet">Utilisez une clé et une période de substitution longues pour KSK.<p class="listcontinue">À chaque mise à jour de la clé KSK, le propriétaire de la zone doit mettre à jour les enregistrements DS dans la zone du domaine parent. La politique recommandée permet de mettre à jour les enregistrements DS dans la zone parent aussi peu souvent que possible sans mettre en péril la sécurité.</p>
+</li><li class="listbullet">Utilisez une clé et une période de substitution plus courtes pour ZSK.<p class="listcontinue">La clé ZSK est mise à jour automatiquement. La politique recommandée permet d'économiser des ressources système sans mettre en péril la sécurité.</p>
+</li></ul><p class="bodytext">Lorsque les clients d'hébergement signent leurs zones, ils peuvent utiliser les valeurs par défaut ou en indiquer d'autres. <strong class="specialbold"> </strong>Pour en savoir plus, consultez <strong class="specialbold"><a id="h76435" class="jumpseetemplate" title="Configurer DNSSEC pour un domaine" href="76433.htm" target="_self">Utiliser DNSSEC sur des domaines</a></strong>.</p>
+<p class="widegraphic"><img src="76901.gif" alt="2016-09-07_115530" height="697" width="1007" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Protection des zones DNS avec DNSSEC</h5>
+<p class="bodytext">Pour utiliser DNSSEC, les propriétaires de domaines doivent signer leurs zones DNS. <strong class="specialbold"> </strong>Pour en savoir plus, consultez <strong class="specialbold"><a id="h76435_2" class="jumpseetemplate" title="Configurer DNSSEC pour un domaine" href="76433.htm" target="_self">Utiliser DNSSEC sur des domaines</a></strong>.</p>
+<h5 class="heading5">Description de la substitution de clés dans Plesk</h5>
+<p class="bodytext">Pour éviter les pannes de DNS d'un domaine, Plesk peut utiliser plusieurs clés KSK et ZSK. Temporairement, une clé précédemment générée existe parallèlement à une nouvelle clés, pour laisser le temps aux modifications de prendre effet dans la zone DNS. Les clés obsolètes sont supprimées automatiquement.</p>
+<p class="bodytext"><strong class="buttons">Substitution KSK</strong></p>
+<p class="bodytext">Plesk utilise une modification de la <a class="externalhyperlinktemplate" title="" href="https://tools.ietf.org/html/rfc7583#section-3.3.3" target="_blank">méthode Double-RRset</a> pour la substitution des clés KSK. Plesk se différencie en utilisant deux clés KSK pour chaque période de substitution. Cela permet de laisser assez de temps au propriétaire de la zone de domaine pour mettre à jour les enregistrements DS correspondants dans la zone parent, par exemple le temps des événements de substitution 1 et 2 sur le schéma ci-dessous.</p>
+<p class="bodytext"><strong class="buttons">Actions de l'utilisateur pendant la substitution KSK</strong></p>
+<p class="bodytext">Le propriétaire de la zone de domaine est notifié au sujet de la substitution et de la nécessité de mettre à jour les enregistrements DS dans la zone parent. Les enregistrements DS sont obsolètes à expiration de la plus ancienne clé KSK et une clé KSK est générée, par exemple lors de l'événement de substitution 2 du schéma suivant. S'il n'a pas mis à jour des enregistrements DS dans la zone parent, alors, à l'issue de la période de substitution et après notification, le domaine arrête la résolution. </p>
+<p class="note"><strong class="buttons">Remarque</strong> : actuellement, le texte de la notification du propriétaire de la zone de domaine ne peut pas être personnalisé.</p>
+<p class="widegraphic"><img src="76537.gif" alt="Substitution des clés KSK" height="645" width="1139" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"><strong class="buttons">Substitution ZSK</strong></p>
+<p class="bodytext">Pour laisser assez de temps aux serveurs esclaves et de mise en cache de se synchroniser avec le serveur DNS maître, Plesk effectue les actions suivantes :</p>
+<ul class="listbullet"><li class="listbullet">Ajout d'une nouvelle clé à la zone à un certain moment avant substitution. </li><li class="listbullet">Suppression de la clé précédente à un certain moment après substitution.</li></ul><p class="bodytext">Ce délai avant ou après substitution ZSK est appelé <em class="emphasis">période de transition</em> dans Plesk. Cette période est soit de 30 jours, soit de la somme des valeurs de la durée de vie SOA et du délai d'expiration SOA de la zone (si leur somme est supérieure à 30 jours). Toutefois, la période de transition ne peut dépasser la moitié de la période de substitution ZSK, sinon, la fonctionnalité de substitution est interrompue et les signatures de zone ne sont plus valides.</p>
+<p class="bodytext">Par conséquent, pour garantir le bon déroulement de la substitution ZSK, Plesk définit des limites pour les valeurs suivantes :</p>
+<ul class="listbullet"><li class="listbullet">Durée de vie SOA et délai d'expiration SOA de la zone Leur somme ne peut dépasser une valeur calculée.</li><li class="listbullet">Période de substitution ZSK. Elle ne peut être intérieure à une valeur calculée.</li></ul><p class="bodytext"><strong class="buttons">Actions utilisateur pendant la substitution ZSK.</strong></p>
+<p class="bodytext">Aucune action du propriétaire de la zone DNS du domaine n'est requise lors de la substitution ZSK. </p>
+<p class="bodytext"></p>
+<p class="widegraphic"><img src="76538.gif" alt="Substitution des clés ZSK" height="538" width="1123" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '76434.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

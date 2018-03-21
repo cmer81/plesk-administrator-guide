@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Suivre l'utilisation du disque </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="76188.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="76189.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557262.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557262.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Suivre l'utilisation du disque</h3>
+<h5 class="heading5">Démarrage ou arrêt de la surveillance</h5>
+<p class="procedureheading">Pour configurer et démarrer la surveillance de l'utilisation de l'espace disque :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Watchdog</strong> &gt; onglet <strong class="specialbold">Disques</strong>.<p class="listcontinue">Tous les périphériques (montés) connectés sont listés.</p>
+<p class="widegraphic"><img src="76233.gif" alt="Watchdog_Disks" height="365" width="1007" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="procedurelistnumber">Indiquez les partitions de disque dur à surveiller et définissez les préférences de surveillance :<ol class="procedurelistnumber2"><li class="procedurelistnumber2">Cliquez sur l'icône <img src="76220.png" alt="disk_mon_status__notmonitored" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> en regard de la partition que Watchdog doit surveiller.</li><li class="procedurelistnumber2">Cliquez sur une partition ou un nom de périphérique. </li><li class="procedurelistnumber2">Dans la colonne <strong class="specialbold">Seuil d'utilisation de l'espace disque</strong>, indiquez le volume d'espace disque utilisable sans devenir critique. Lorsque cette valeur seuil est atteinte, Watchdog vous envoie une alerte et exécute la commande que vous avez indiquée. Vous pouvez indiquer le total d'espace disque en pourcentage à partir du volume total ou selon une unité de mesure : gigaoctets, mégaoctets ou kilooctets. Nous vous conseillons de conserver la valeur 80 %.</li><li class="procedurelistnumber2">Dans le champ <strong class="specialbold">Seuil du nombre de fichiers</strong>, indiquez le nombre de fichiers et de répertoires qui peuvent être créés sur le serveur sans devenir critique. Lorsque cette valeur seuil est atteinte, Watchdog vous envoie une alerte. Vous pouvez indiquer un pourcentage du volume total ou le nombre exact de fichiers, si vous connaissez la capacité totale de votre système de fichiers. Pour la déterminer, identifiez-vous à la racine sur le serveur et exécutez la commande <code class="monospace">dumpe2fs &lt;nom du périphérique&gt;</code> du shell. Nous vous conseillons de conserver la valeur 80 %. </li><li class="procedurelistnumber2">Indiquez la commande que Watchdog doit exécuter lorsque la valeur seuil de l'espace disque est atteinte. Il peut s'agir d'une commande pour exécuter un utilitaire de nettoyage de l'espace disque comme <code class="monospace">tmpwatch</code> sur les systèmes RedHat Linux.</li><li class="procedurelistnumber2">Cliquez sur <strong class="specialbold">OK</strong>.</li><li class="procedurelistnumber2">Répétez la procédure pour configurer la surveillance de toutes les partitions dont vous avez besoin.</li></ol></li><li class="procedurelistnumber">Une fois que vous avez indiqué toutes les partitions que Watchdog doit surveiller, cliquez sur l'icône <strong class="specialbold">Activer</strong> dans le groupe <strong class="specialbold">Outils</strong>.</li></ol><p class="procedureheading">Pour arrêter la surveillance d'une partition en particulier :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Watchdog</strong> &gt; onglet <strong class="specialbold">Disques</strong>.</li><li class="procedurelistnumber">Cliquez sur l'icône <img src="76218.png" alt="Icon_Monitoring_enabled" height="16" width="18" vspace="0" hspace="0" align="bottom" border="0"> correspondant à la partition que Watchdog doit cesser de surveiller.</li></ol><p class="procedureheading">Pour arrêter la surveillance de toutes les partitions :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Watchdog</strong> &gt; onglet <strong class="specialbold">Disques</strong>.</li><li class="procedurelistnumber">Cliquez sur l'icône <strong class="specialbold">Désactiver</strong> dans le groupe <strong class="specialbold">Outils</strong>.</li></ol><p class="note"><strong class="buttons">Important</strong> : si vous cliquez sur Désactiver, tout le service de surveillance est affecté. Autrement dit, plus aucune partition du disque ni aucun service système ne seront surveillés. </p>
+<h5 class="heading5">Visualisation du statut des disques</h5>
+<p class="procedureheading">Pour voir le statut des pilotes de disques durs et autres périphériques de stockage connectés :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Watchdog</strong> &gt; onglet <strong class="specialbold">Disques</strong>.<p class="widegraphic"><img src="76226.png" alt="Watchdog_Disks_monitored" height="357" width="1025" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="procedurelistnumber">Affichez tous les périphériques (montés) connectés.<p class="listnote"><strong class="buttons">Remarque :</strong> Watchdog risque de ne pas détecter correctement certains périphériques montés.</p>
+<p class="listcontinue">Une icône dans la colonne <strong class="specialbold">S</strong> (statut) indique si une partition de l'espace disque ou un périphérique de stockage est en cours de surveillance par Watchdog et montre le niveau d'utilisation actuelle de l'espace disque :</p>
+<ul class="listbullet2"><li class="listbullet2"><img src="76221.gif" alt="18426" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le lecteur de disque ou la partition est sans surveillance.</li><li class="listbullet2"><img src="76222.png" alt="disk_status__init" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - vous avez démarré la surveillance mais la vérification du disque ou de la partition n'a pas encore été effectuée.</li><li class="listbullet2"><img src="76223.png" alt="disk_status__normal" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - la surveillance est active pour le disque dur ou la partition et Watchdog signale que l'utilisation de l'espace disque n'a pas atteint la valeur seuil que vous avez définie.</li><li class="listbullet2"><img src="76224.png" alt="disk_status__excess" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - la surveillance est active pour le disque dur ou la partition et Watchdog signale que l'utilisation de l'espace disque a atteint la valeur seuil que vous avez définie. Il n'y aura bientôt plus d'espace disque sur le disque ou la partition.</li></ul><p class="listcontinue">Une icône dans la colonne <strong class="specialbold">M</strong> (monitoring/surveillance) indique si vous avez configuré Watchdog pour qu'il surveille l'utilisation de l'espace disque sur un périphérique de stockage ou sur une partition de disque :</p>
+<ul class="listbullet2"><li class="listbullet2"><img src="76225.png" alt="disk_mon_status__notmonitored" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - vous n'avez pas configuré Watchdog pour qu'il surveille l'espace disque ou la partition.</li><li class="listbullet2"><img src="76218.png" alt="Icon_Monitoring_enabled" height="16" width="18" vspace="0" hspace="0" align="bottom" border="0"> - vous avez configuré Watchdog pour qu'il surveille l'espace disque ou la partition.</li></ul><p class="listcontinue">Les colonnes <strong class="specialbold">Périphérique</strong> et <strong class="specialbold">Point de montage</strong> affichent les informations sur le périphérique de stockage et le point de montage de la partition. La colonne <strong class="specialbold">Point de montage</strong> affiche un tiret (-) si une partition n'est plus connectée au système de fichiers : lorsque la partition est reconnectée au système, Watchdog reprend alors la surveillance.</p>
+<p class="listcontinue">La colonne <strong class="specialbold">Seuil d'utilisation de l'espace disque</strong> indique le total d'espace disque qui peut être utilisé sans devenir critique. Lorsque le volume indiqué est atteint, Watchdog vous envoie une notification et exécute la commande que vous avez indiquée. Un tiret (-) dans cette colonne indique que la partition ou le périphérique n'est pas surveillé.</p>
+<p class="listcontinue">La colonne <strong class="specialbold">Seuil du nombre de fichiers</strong> indique le total de fichiers ou de répertoires qui peuvent être stockés sur le système de fichiers sans attirer votre attention. Le nombre de fichiers ou de répertoires est restreint non seulement par l'espace disque mais également par la capacité du système de fichiers.  Lorsque le volume indiqué est atteint, Watchdog vous envoie une notification. Un tiret (-) dans cette colonne indique que la partition ou le périphérique n'est pas surveillé.</p>
+<p class="listcontinue">La colonne <strong class="specialbold">Commande</strong> indique la commande que Watchdog exécutera lorsque la valeur seuil de l'espace disque sera atteinte.</p>
+</li></ol><p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '76190.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

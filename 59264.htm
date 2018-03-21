@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Planifier des sauvegardes </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59267.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="75803.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557385.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557385.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Planifier des sauvegardes</h2>
+<p class="procedureheading">Pour planifier une sauvegarde des données :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Gestionnaire de sauvegardes</strong> &gt; <strong class="specialbold">Planification</strong>.</li><li class="procedurelistnumber">Cochez la case <strong class="specialbold">Activer cette tâche de sauvegarde</strong> et indiquez :<ul class="listbullet2"><li class="listbullet2">La date et la périodicité de l'exécution de la sauvegarde (<strong class="specialbold">Exécuter la tâche de sauvegarde</strong>).</li><li class="listbullet2"><p class="bodytext">Pour réduire l'utilisation de l'espace disque et la durée du processus de sauvegarde, choisissez l'option Utiliser la sauvegarde incrémentale. Pour plus d'informations, consultez la section sur la <a id="h75809" class="jumptemplate" title="Sauvegarde incrémentale" href="75803.htm" target="_self">sauvegarde incrémentale</a>). Indiquez la fréquence des sauvegardes complètes à effectuer (option Sauvegarder intégralement). La liste des valeurs autorisées dépend de la période sélectionnée dans Exécuter la tâche de sauvegarde.</p></li><li class="listbullet2">Pour que Plesk supprime automatiquement les anciennes sauvegardes, précisez la durée de stockage des sauvegardes (option <strong class="specialbold">Conserver les fichiers de sauvegarde pendant</strong>).<p class="listcontinue2">Si vous n'utilisez pas la sauvegarde incrémentale, alors l'unité de temps est identique à celle sélectionnée dans l'option <strong class="specialbold">Exécuter la tâche de sauvegarde</strong> (jours, semaines ou mois).</p>
+<p class="listcontinue2">Si vous utilisez les sauvegardes incrémentales, alors l'unité de temps dépend de la période de temps sélectionnée dans <strong class="specialbold">Sauvegarder intégralement</strong> (semaines, mois ou années).</p>
+</li><li class="listbullet2">Les données à sauvegarder (<strong class="specialbold">Sauvegarder</strong>). Vous ne pouvez sauvegarder que les paramètres ou les paramètres et les données utilisateur. Pour en savoir plus sur les éléments inclus dans la sauvegarde, consultez la section <strong class="specialbold"><a id="h74075" class="jumptemplate" title="Sauvegarder et restaurer" href="59256.htm" target="_self">Sauvegardes et restaurations</a></strong>.</li><li class="listbullet2">Sélectionnez l'emplacement où stocker le fichier de sauvegarde (<strong class="specialbold">Stocker sous</strong>). </li><li class="listbullet2">La division du fichier de sauvegarde. Pour créer une sauvegarde multi-volumes, cochez la case correspondante et définissez le volume en méga-octets. <p class="listnote2"><strong class="buttons">Remarque </strong>: les volumes multiples sont pris en charge pour les sauvegardes stockées dans le stockage FTP personnel.</p>
+</li><li class="listbullet2"><strong class="specialbold">Exclure les fichiers de log</strong>. Sélectionnez cette option pour que tous les fichiers de log (y compris les logs du répertoire système) soient exclus de la sauvegarde.</li><li class="listbullet2"><strong class="specialbold">Exclure des fichiers spécifiques de la sauvegarde</strong>. Sélectionnez cette option pour exclure certains fichiers ou répertoires de la sauvegarde, par exemple, si vous souhaitez exclure de la sauvegarde des fichiers de log ou des répertoires de fichiers temporaires. Si vous n'avez pas accès à certains fichiers vous pouvez aussi les exclure de la sauvegarde pour éviter des erreurs. Indiquez les fichiers ou répertoires selon les règles suivantes :<ul class="listbullet3"><li class="listbullet3">Séparez les fichiers par une ligne ou par le signe &quot;,&quot;.</li><li class="listbullet3">L'astérisque &quot;*&quot; permet de remplacer tout caractère sauf &quot;/&quot; dans le nom du fichier ou du répertoire. Par exemple : <strong class="specialbold">/certains/*/logs</strong> désigne le répertoire de <strong class="specialbold">logs </strong>de certains sous-répertoires du répertoire <strong class="specialbold">certains</strong>, <strong class="specialbold">/certains/log*</strong> désigne les fichiers et répertoires commençant par <strong class="specialbold">log </strong>dans le répertoire <strong class="specialbold">certains</strong>, <strong class="specialbold">*/logs</strong> désigne le répertoire <strong class="specialbold">logs </strong>dans certains sous-répertoires d'un répertoire root d'abonnements.</li><li class="listbullet3">Les caractères &quot;**&quot; permettent de remplacer plusieurs caractères répétés ou répertoires. Par exemple : <strong class="specialbold">**/logs</strong> désigne le répertoire de logs dans une séquence de plusieurs sous-répertoires dans un répertoire root d'abonnements.</li><li class="listbullet3">Les chemins de répertoires ne doivent pas être &quot;.&quot; ou &quot;..&quot; et ne doivent pas contenir de caractères spéciaux tels que &quot;\t&quot;, &quot;\n&quot;, etc.<p class="listnote2"><strong class="buttons">Remarque </strong>: les options <strong class="specialbold">Exclure les fichiers de log</strong> et <strong class="specialbold">Exclure des fichiers spécifiques de la sauvegarde</strong> ne sont disponibles que si vous avez sélectionné l'option <strong class="specialbold">Fichiers et bases de données utilisateur</strong>. </p>
+</li></ul></li><li class="listbullet2">Notification par mail lors d'erreurs de sauvegarde. Si vous voulez envoyer une notification par mail lorsque la sauvegarde rencontre des problèmes, tapez l'adresse mail voulue.</li><li class="listbullet2"><strong class="specialbold">Suspendre le domaine jusqu'à la fin de la tâche de sauvegarde</strong>. Sélectionnez cette option pour interdire aux utilisateurs de modifier le contenu ou les paramètres des sites Web alors qu'ils sont en cours de sauvegarde.</li></ul></li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong>.<p class="widegraphic"><img src="75768.gif" alt="Back_Up_schedule" height="726" width="974" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ol><p class="procedureheading">Pour modifier les paramètres d'une sauvegarde planifiée :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Gestionnaire</strong> <strong class="specialbold">de sauvegarde</strong>.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Planification</strong> et procédez aux changements souhaités.</li></ol><p class="procedureheading">Pour désactiver les sauvegardes planifiées :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Gestionnaire</strong> <strong class="specialbold">de sauvegarde</strong>.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Planification</strong> et décochez la case <strong class="specialbold">Activer cette tâche de sauvegarde</strong>.</li></ol><p class="procedureheading"><p class="bodytext">&nbsp;&nbsp;</p></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59264.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

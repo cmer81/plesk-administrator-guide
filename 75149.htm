@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Configurer les gestionnaires PHP </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="75153.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="75145.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055734.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055734.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Configurer les gestionnaires PHP</h3>
+<p class="bodytext">Plesk assure la prise en charge intégrale du langage de script PHP, ainsi que les versions PHP multiples et les types de gestionnaires, le tout, de manière prête à l'emploi. Cette section explique comment l'administrateur de Plesk peut mettre à disposition les types de gestionnaires PHP à ses clients et configurer les paramètres PHP pour les versions individuelles de PHP.</p>
+<h5 class="heading5">Mettre les types de gestionnaires à disposition de vos clients</h5>
+<p class="bodytext">Pour mettre une combinaison spécifique de version PHP et gestionnaire PHP à disposition ou non de vos clients, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres PHP</strong>. Vous trouverez une lite de toutes les combinaisons de versions PHP et type de gestionnaires disponibles sur le serveur :</p>
+<p class="widegraphic"><img src="75150.png" alt="" height="180" width="933" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">L'icône <img src="75151.png" alt="" height="18" width="18" vspace="0" hspace="0" align="bottom" border="0"> en regard d'une combinaison &quot;version PHP + type de gestionnaire&quot; indique si cette combinaison est disponible pour vos clients et peut être sélectionnée. L'icône <img src="75152.png" alt="" height="18" width="18" vspace="0" hspace="0" align="bottom" border="0"> indique que cette combinaison n'est pas disponible. Cliquez sur l'icône pour activer/désactiver la disponibilité de la combinaison version PHP + type de gestionnaire. Tout client autorisé à sélectionner la version de PHP et le type de gestionnaire pour ses domaines pourra sélectionner toute combinaison que vous rendrez disponible. Le nombre de domaines qui utilisent une combinaison version PHP + type de gestionnaire est affiché juste à droite du nom de cette combinaison. Vous pouvez cliquer sur ce nombre pour voir la liste des domaines.</p>
+<p class="bodytext">Les types de gestionnaires ont des niveaux de sécurisation et de consommation des ressources différents. Vous pouvez utiliser cette fonction pour interdire à vos clients d'utiliser un type de gestionnaire spécifique ou une version de PHP spécifique (en rendant indisponibles toutes les combinaisons version de PHP + type de gestionnaire qui utilisent cette version de PHP). Par exemple : le gestionnaire CGI PHP n'est pas disponible par défaut pour toutes les versions de PHP. Toutefois, vous pouvez la rendre disponible pour une version de PHP spécifique, ou encore pour toutes les versions. Si vous n'êtes pas sûr du type de gestionnaire PHP à rendre disponible, vous pouvez consultez <a id="h75146" class="jumptemplate" title="Types de gestionnaires PHP" href="75145.htm" target="_self">cette documentation</a>.</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o75811"></a><h3 class="heading3">PHP Extensions and Settings</h3>
+<p class="bodytext">Plesk vous offre la possibilité d'activer ou de désactiver des extensions PHP spécifiques et de configurer manuellement une vaste gamme de paramètres PHP. Ces paramètres peuvent être configurés pour chaque version PHP indépendamment de toutes les autres, par exemple, vous pouvez définir une liste des extensions activées pour PHP 5.3 totalement différente de celle pour PHP 5.4. Ces paramètres sont appliqués à chaque type de gestionnaire PHP, par exemple, si vous activez l'extension <em class="emphasis">xdebug</em> pour PHP 5.3, elle sera activée pour tous les domaines utilisant PHP 5.3, s'ils utilisent un gestionnaire CGI, FastCGI ou PHP-FPM).</p>
+<p class="bodytext">Pour changer les paramètres PHP pour une version de PHP individuelle, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres PHP</strong> et cliquez sur n'importe quelle combinaison &quot;version de PHP + type de gestionnaire&quot; dont la version de PHP correspond aux paramètres que vous voulez modifier. Par exemple, si vous voulez modifier les paramètres pour PHP 5.3, cliquez sur <em class="emphasis">Module Apache 5.3.3</em> ou sur <em class="emphasis">Application FastCGI 5.3.3</em>. Vous pouvez gérer les paramètres PHP suivants ici :</p>
+<ul class="listbullet2"><li class="listbullet2">Active ou désactiver les extensions PHP d'une liste prédéfinie.</li><li class="listbullet2">Configurez les paramètres PHP voulus en modifiant le fichier <code class="monospace">php.ini</code>.</li></ul><p class="bodytext">Toute modification que vous ferez sera effective pour tous les sites Web qui utilisent cette version de PHP. Remarque : les clients qui ont le droit de gérer des paramètres PHP peuvent configurer certains paramètres PHP pour leurs domaines et sous-domaines. Les paramètres qu'ils configurent au niveau du domaine écrasent les paramètres au niveau du serveur. </p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '75149.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

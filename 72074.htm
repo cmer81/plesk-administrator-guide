@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Optimiser le serveur Web Apache </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="71997.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="76461.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055718.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055718.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Optimiser le serveur Web Apache</h3>
+<p class="bodytext">Les méthodes suivantes permettent d'améliorer les performances de votre serveur Web Apache :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Activer ou désactiver les modules Apache</em> : permet de réduire la consommation des ressources du , car vous n'utilisez que les modules Apache dont vous avez effectivement besoin pour assurer le fonctionnement des sites Web sur votre serveur</li><li class="listbullet"><em class="emphasis">Exécuter Apache avec des logs redirigés</em> : permet d'augmenter la densité du site Web sur le serveur.</li><li class="listbullet"><em class="emphasis">Définir l'intervalle de redémarrage d'Apache</em> : permet de diminuer le nombre de redémarrages.</li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="72074.htm#o69999" target="_self">Activer ou désactiver les modules Apache</a></p><p class="relateditem"><a href="72074.htm#o72073" target="_self">Exécuter Apache avec des logs redirigés</a></p><p class="relateditem"><a href="72074.htm#o72811" target="_self">Définir l'intervalle de redémarrage d'Apache</a></p></td>
+</tr>
+</table>
+
+&nbsp;
+<hr class="linesolid"/>
+<a name="o69999"></a><h4 class="heading4">Activer ou désactiver les modules Apache</h4>
+<p class="bodytext">Vous pouvez désactiver les modules du serveur Web Apache qui ne sont pas critiques pour les services d'hébergement dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Serveur Web Apache</strong>. Résultat : vous pourrez réduire la consommation des ressources du serveur (par ex., obtenir un volume de RAM inférieur ce qui est important pour le VPS). Vous pourrez ainsi servir plus de clients d'hébergement sur un serveur.</p>
+<p class="bodytext">Remarque : certains modules dépendent les uns des autres et peuvent être désactivés ou activés uniquement si les modules dont ils dépendent sont désactivés ou activés. Par exemple, le module <em class="emphasis">cache </em>dépend des modules <em class="emphasis">disk_cache</em>, <em class="emphasis">file_cache</em> et <em class="emphasis">mem_cache</em>. En d'autres termes, vous ne pouvez désactiver <em class="emphasis">cache </em>que lorsque ces trois modules dépendants sont désactivés.</p>
+<p class="note"><strong class="buttons">Avertissement :</strong> cette fonction est réservée aux utilisateurs avancés. Activez les modules uniquement si vous appréhendez complètement les conséquences de vos actions. Notez que certaines modifications risquent de réduire les performances Apache ou mener à l'arrêt de son fonctionnement. En outre, ces changements risquent d'affecter certaines fonctions de Plesk. Par exemple, si vous désactivez <em class="emphasis">mod_perl </em>ou <em class="emphasis">mod_php</em>, les scripts Perl et PHP (dont la messagerie Web) cesseront de fonctionner sur les sites Web. Cela peut causer des problèmes : par exemple, lorsque vous offrez une fonction et qu'elle ne fonctionne pas dans un pack de services.</p>
+<p class="bodytext">Selon votre système d'exploitation, les modules Apache suivants sont toujours activés :</p>
+<p class="bodytext">Debian ou Ubuntu :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">env</em></li><li class="listbullet"><em class="emphasis">auth_digest</em></li><li class="listbullet"><em class="emphasis">authn_file</em></li><li class="listbullet"><em class="emphasis">authz_host</em></li><li class="listbullet"><em class="emphasis">authz_user</em></li><li class="listbullet"><em class="emphasis">actions</em></li><li class="listbullet"><em class="emphasis">alias</em></li><li class="listbullet"><em class="emphasis">dav</em></li><li class="listbullet"><em class="emphasis">dav_fs</em></li><li class="listbullet"><em class="emphasis">mime</em></li><li class="listbullet"><em class="emphasis">ssl</em></li></ul><p class="bodytext"></p>
+<p class="bodytext">Redhat ou CentOS :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">env</em></li><li class="listbullet"><em class="emphasis">auth_digest</em></li><li class="listbullet"><em class="emphasis">authn_file</em></li><li class="listbullet"><em class="emphasis">authz_host</em></li><li class="listbullet"><em class="emphasis">authz_user</em></li><li class="listbullet"><em class="emphasis">actions</em></li><li class="listbullet"><em class="emphasis">alias</em></li><li class="listbullet"><em class="emphasis">AutoIndex</em></li><li class="listbullet"><em class="emphasis">dav</em></li><li class="listbullet"><em class="emphasis">dir</em></li><li class="listbullet"><em class="emphasis">log_config</em></li><li class="listbullet"><em class="emphasis">mime</em></li><li class="listbullet"><em class="emphasis">negotiation</em></li><li class="listbullet"><em class="emphasis">setenvif</em></li><li class="listbullet"><em class="emphasis">ssl</em></li></ul>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o72073"></a><h4 class="heading4">Exécuter Apache avec des logs redirigés</h4>
+<p class="bodytext">Si vous comptez héberger plus de 300 domaines ou sites Web sur votre serveur, nous vous recommandons d'activer la prise en charge de <em class="emphasis">logs redirigés</em> sur le serveur Web Apache. Par défaut, Apache redémarre lorsqu'il doit traiter les fichiers de log, par exemple, lors de la rotation des logs. Si le nombre de sites Web sur votre serveur est supérieur à 300, le serveur ralentit car Apache doit souvent redémarrer. Si vous activez la prise en charge de logs redirigés, Apache écrit une erreur et accède aux logs via une redirection depuis un autre processus, au lieu d'écrire directement dans les fichiers de log. Par conséquent, Apache fonctionne sans redémarrer à chaque fois qu'il traite des logs. </p>
+<p class="bodytext">Pour activer la prise en charge des logs redirigés, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Serveur Web Apache</strong> &gt; option <strong class="specialbold">Logs redirigés</strong>. </p>
+<p class="note"><strong class="buttons">Remarque :</strong> si vous hébergez plus de 256 sites Web sur votre serveur, la valeur limite de la configuration Nginx est ajustée automatiquement.</p>
+<p class="bodytext">Lorsque vous utilisez cette option, le trafic HTTP et HTTPS est enregistré dans le fichier <code class="monospace">access_log</code>. La tâche de maintenance quotidienne l'analyse et crée deux fichiers &quot;.processed&quot; : <code class="monospace">access_log.processed </code>et <code class="monospace">access_ssl_log.processed</code>. Les statistiques Web sont effectuées selon ces fichiers. </p>
+<p class="bodytext">S'il est nécessaire d'analyser le trafic HTTPS et le trafic HTTP séparément, utilisez les commandes suivantes :</p>
+<p class="bodytext"><code class="monospace">grep HTTPS access_log</code></p>
+<p class="bodytext"><code class="monospace">grep HTTP access_log</code></p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o72811"></a><h4 class="heading4">Définir l'intervalle de redémarrage d'Apache</h4>
+<p class="bodytext">Lorsque l'utilisateur effectue des opérations avec des domaines et des sous-domaines (comme créer, supprimer ou modifier leur configuration), les modifications sont prises en compte uniquement après le redémarrage d'Apache. </p>
+<p class="bodytext">Si vous voulez éviter de trop nombreux redémarrages d'Apache, vous pouvez définir un intervalle de temps fixe pendant lequel Plesk redémarre Apache. Remarque : si l'intervalle est défini sur 0 seconde, Apache redémarre immédiatement après chaque modification. Nous vous recommandons de toujours définir un intervalle supérieur à 0 seconde, notamment si vous effectuez de nombreuses modifications avec les domaines et les sous-domaines via Plesk.</p>
+<p class="bodytext">Si aucune modification n'a été appliquée aux domaines pendant l'intervalle fixé, Apache ne redémarre pas. </p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72074.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

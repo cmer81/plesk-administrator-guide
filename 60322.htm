@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Configurer ASP.NET (Windows) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="76345.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="71434.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055727.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055727.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Configurer ASP.NET (Windows)</h2>
+<p class="bodytext">ASP.NET est un ensemble d'outils et de technologies de développement souples permettant d'utiliser plusieurs applications basées sur le framework ASP.NET. Plesk prend en charge les versions 1.1.x, 2.0.x et 4.0.x du framework .NET et permet de configurer la plupart de ses paramètres. La plupart des paramètres de configuration d'ASP.NET qui doivent généralement être personnalisés pour le bon fonctionnement des applications ASP.NET peuvent être édités en utilisant Plesk.</p>
+<p class="procedureheading">Pour configurer les paramètres ASP.NET globaux du serveur :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres ASP.NET</strong> (groupe Applications). Les paramètres des différentes versions d'ASP:NET sont sous les onglets correspondants.<p class="widegraphic"><br><img src="74970.gif" alt="ASP_Net" height="435" width="938" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="procedurelistnumber">Définissez les chaînes qui déterminent les données de connexion de la base de données pour les applications ASP.NET ayant recours à des bases de données. Cette option n'existe que pour ASP.NET 2.0.x.<p class="listcontinue2">La première fois que vous ouvrez la page de configuration d'ASP.NET, des exemples de paramètres de connexion avec des constructions courantes sont affichés. Vous pouvez alors les supprimer et définir vos propres chaînes.</p>
+<ul class="listbullet2"><li class="listbullet2">Pour ajouter une chaîne, saisissez les données demandées dans les champs <strong class="specialbold">Nom</strong> et <strong class="specialbold">Paramètres de connexion</strong>, puis cliquez sur <img src="75089.png" alt="Icon_add" height="22" width="20" vspace="0" hspace="0" align="bottom" border="0"> à côté de ces champs.</li><li class="listbullet2">Pour supprimer une chaîne, cliquez sur <img src="75087.png" alt="Icon_remove" height="27" width="25" vspace="0" hspace="0" align="bottom" border="0"> à côté de la chaîne.</li></ul></li><li class="procedurelistnumber">Configurez les messages d'erreur personnalisés renvoyés par les applications ASP.NET dans le champ <strong class="specialbold">Paramètres pour les erreurs personnalisées</strong> :<ul class="listbullet2"><li class="listbullet2">Pour activer le mode Messages d'erreur personnalisés, choisissez l'option adéquate dans le menu <strong class="specialbold">Mode Erreurs personnalisées</strong> :<ul class="listbullet3"><li class="listbullet3"><strong class="specialbold">On</strong> : les messages d'erreur personnalisés sont activés.</li><li class="listbullet3"><strong class="specialbold">Off</strong> : les messages d'erreur personnalisés sont désactivés et les erreurs détaillées sont affichées.</li><li class="listbullet3"><strong class="specialbold">RemoteOnly</strong> : les messages d'erreur personnalisés ne sont affichés que pour les clients distants et les erreurs ASP.NET sont affichées sur l'hôte local.</li></ul></li><li class="listbullet2">Pour ajouter un message d'erreur personnalisé (qui sera utilisé, à moins que le mode ait été placé sur <strong class="specialbold">Off</strong>), saisissez les valeurs dans les champs <strong class="specialbold">Code du statut</strong> et <strong class="specialbold">URL de redirection</strong> puis cliquez sur <img src="75089.png" alt="Icon_add" height="22" width="20" vspace="0" hspace="0" align="bottom" border="0">.<ul class="listbullet3"><li class="listbullet3">Le <strong class="specialbold">Code du statut</strong> définit le code du statut HTTP entraînant une redirection vers une page d'erreur.</li><li class="listbullet3">L'<strong class="specialbold">URL de redirection</strong> définit l'adresse Web de la page d'erreur qui donne au client des informations sur l'erreur.</li></ul><p class="listcontinue2">Compte tenu du risque de conflit, vous ne pouvez pas ajouter de message d'erreur personnalisé avec un code d'erreur qui existe déjà, mais vous pouvez redéfinir l'URL du code existant.</p>
+</li><li class="listbullet2">Pour supprimer un message d'erreur personnalisé de la liste, cliquez sur l'icône <img src="75088.png" alt="Icon_remove" height="27" width="25" vspace="0" hspace="0" align="bottom" border="0"> à côté de celui-ci.</li></ul></li><li class="procedurelistnumber">Configurez les paramètres de compilation dans le champ <strong class="specialbold">Compilation et débogage</strong> :<ul class="listbullet2"><li class="listbullet2">Pour déterminer le langage de programmation à utiliser par défaut dans les fichiers de compilation dynamique, choisissez une entrée dans la liste <strong class="specialbold">Langage de la page par défaut</strong>.</li><li class="listbullet2">Pour permettre la compilation des applications en mode production, ne cochez pas la case <strong class="specialbold">Activer le débogage</strong>.</li><li class="listbullet2">Pour permettre la compilation d'applications en mode débogage, cochez la case <strong class="specialbold">Activer le débogage</strong>. Dans ce cas, les fragments du code source contenant une erreur seront cités dans le message de la page de diagnostic.<p class="listnote"><strong class="buttons">Remarque :</strong> lorsque les applications fonctionnent en mode de débogage, une saturation de la mémoire et/ou de la performance peut se produire. Il est recommandé d'utiliser le mode débogage lorsque vous testez une application, mais de le désactiver avant de déployer une application en production.</p>
+</li></ul></li><li class="procedurelistnumber">Configurez les paramètres d'encodage des applications ASP.NET dans la section <strong class="specialbold">Paramètres de globalisation</strong> :<ul class="listbullet2"><li class="listbullet2">Pour définir un encodage adopté pour toutes les requêtes entrantes, saisissez une valeur de codage dans le champ <strong class="specialbold">Encodage de la demande</strong>, par défaut, utf-8.</li><li class="listbullet2">Pour définir un encodage adopté pour toutes les réponses, saisissez une valeur dans le champ <strong class="specialbold">Encodage de la réponse</strong>, par défaut, utf-8.</li><li class="listbullet2">Pour définir un encodage à utiliser par défaut pour analyser les fichiers <code class="monospace">.aspx</code>, <code class="monospace">.asmx</code> et <code class="monospace">.asax</code>, saisissez une valeur dans le champ <strong class="specialbold">Encodage du fichier</strong>, par défaut Windows-1252.</li><li class="listbullet2">Pour définir la langue à utiliser par défaut pour traiter les requêtes Web entrantes, choisissez l'élément voulu dans la liste <strong class="specialbold">Langues</strong>.</li><li class="listbullet2">Pour définir la langue à utiliser par défaut lors de la recherche d'une ressource liée à un fichier de langue, choisissez l'élément voulu dans la liste <strong class="specialbold">Langues UI</strong>.</li></ul></li><li class="procedurelistnumber">Définissez un niveau de confiance du code d'accès pour les applications ASP.NET dans le champ <strong class="specialbold">Sécurité d'accès du code</strong>.<p class="listcontinue">Le niveau de confiance CAS est un ensemble de restrictions appliquées à une app. Par exemple : le niveau Faible restreint les capacités réseau de l'app (comme l'envoi de mail). Le niveau Élevé supprime toutes les restrictions.</p>
+<ul class="listbullet2"><li class="listbullet2">Pour autoriser le changement du niveau de confiance CAS des sites Web, cochez la case <strong class="specialbold">Autoriser la modification du niveau de confiance CAS pour les sites Web individuels</strong>. Si vous ne cochez pas cette case, les sites Web utilisent le paramètre de niveau serveur. Dans le cas contraire, chaque site Web dispose de son propre niveau de confiance CAS. Celui-ci est défini dans les paramètres d'hébergement du site Web.<p class="listnote"><strong class="buttons">Important :</strong> lorsqu'un assembleur se voit affecter un niveau de confiance trop bas, il ne fonctionne pas correctement. Pour en savoir plus sur les niveaux de droits, consultez l'article <a class="" title="" href="https://msdn.microsoft.com/en-us/library/Aa302425" target="_self">https://msdn.microsoft.com/fr-fr/library/Aa302425</a></p>
+</li></ul></li><li class="procedurelistnumber">Définissez les paramètres des sessions client dans le champ <strong class="specialbold">Paramètres de la session</strong> :<ul class="listbullet2"><li class="listbullet2">Pour configurer le mode d'authentification par défaut des applications, choisissez l'élément qui convient dans la liste <strong class="specialbold">Mode d'authentification</strong>. Le mode d'authentification <strong class="specialbold">Windows</strong> doit être sélectionné si une forme d'authentification IIS est utilisée.</li><li class="listbullet2">Pour définir la durée pendant laquelle une session peut rester inactive avant d'être fermée, saisissez la valeur voulue en minutes dans le champ <strong class="specialbold">Délai d'expiration de session (minutes)</strong>.</li></ul></li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong> pour appliquer tous les changements.</li></ol><p class="note"><strong class="buttons">Remarque :</strong> Plesk prend en charge des configurations distinctes selon les versions du framework .NET (1.1.x, 2.0.x et 4.0.x).</p>
+<p class="bodytext"></p>
+<p class="note"><strong class="buttons">Remarque :</strong> si vous souhaitez utiliser des applications Web ASP.NET Core 1.0, sélectionnez les composants <strong class="specialbold">.NET Core Runtime</strong> et <strong class="specialbold">ASP.NET Core</strong> lors de l'installation de Plesk. Ensuite, vous pouvez charger votre application ASP.NET Core 1.0 sur votre site Web et l'utiliser. Dans ce cas, il est recommandé de désactiver la prise en charge ASP.NET pour votre domaine (en allant sous <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="specialbold">Paramètres d'hébergement</strong> et en décochant l'option <strong class="specialbold">Prise en charge de Microsoft ASP.NET</strong>) pour économiser des ressources serveur.</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '60322.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

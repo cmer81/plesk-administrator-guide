@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Restaurer des données à partir des fichiers archives de sauvegarde </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="68468.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59261.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557385.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557385.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Restaurer des données à partir des fichiers archives de sauvegarde</h2>
+<p class="bodytext">Vous pouvez restaurer des sauvegardes créées avec Plesk Onyx ou avec des versions antérieures de Plesk, s'il ne s'agit pas de versions antérieures à Plesk 8.6. </p>
+<p class="bodytext">Pour restaurer les données depuis les fichiers de sauvegarde, allez dans <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Gestionnaire</strong> <strong class="specialbold">de sauvegardes</strong>. Dans la liste des sauvegardes, cliquez sur la date de création de la sauvegarde à restaurer. Remarque : la liste peut contenir des sauvegardes stockées dans le stockage du serveur Plesk et dans le stockage FTP. Les sauvegardes dans le stockage FTP ont l'icône correspondante dans la colonne <strong class="specialbold">Notes du système</strong>. Indiquez les paramètres suivants dans l'assistant de restauration.</p>
+<h5 class="heading5"><span class="strong">Données à restaurer</span></h5>
+<p class="note"><strong class="buttons">Remarque </strong>: à compter de Plesk 12.0, les utilisateurs peuvent sélectionner des objets individuels pour les restaurer depuis une sauvegarde. Les utilisateurs peuvent ainsi restaurer uniquement ce dont ils ont besoin, sans écraser d'autres objets ni endommager leur configuration ou leurs données. Par exemple, si un utilisateur souhaite restaurer uniquement une zone DNS d'un domaine, <code class="monospaceitalics">exemple.tld</code>, il est inutile de restaurer les configurations de tous les autres domaines.<br>Vous pouvez restaurer plusieurs objets simultanément. Pour restaurer des objets de types différents (par exemple, une boîte mail et une base de données), vous devez utiliser deux sessions de restauration : une pour la boîte mail et une autre pour la base de données.<br>La restauration d'objets sélectionnés est possible uniquement depuis les sauvegardes créées avec Plesk 12.0 ou version ultérieure. </p>
+<p class="procedureheading">Pour restaurer tous les objets :</p>
+<ol class="listnumber"><li class="listnumber">Sélectionnez <strong class="specialbold">Tous les objets (système complet)</strong>.</li><li class="listnumber">Si vous y êtes invité, précisez le type de données à restaurer, comme les configurations de domaines, le contenu de l'hôte virtuel, les bases de données ou les paramètres et comptes de messagerie. Par exemple, si vous sélectionnez les paramètres de messagerie, alors seuls les paramètres de messagerie de tous les domaines seront restaurés.</li></ol><p class="procedureheading">Pour restaurer des objets spécifiques d'un type précis, tel que boîte mail ou zone DNS d'un domaine :</p>
+<ol class="listnumber"><li class="listnumber">Sélectionnez l'option <strong class="specialbold">Objets sélectionnés</strong>.</li><li class="listnumber">Sélectionnez le type d'objet à restaurer. Par exemple : <em class="emphasis">Base de données</em>.</li><li class="listnumber">Si vous y êtes invité, sélectionnez l'abonnement auquel appartient l'objet dans la zone <strong class="specialbold">Abonnement</strong> (applicable à tous les types d'objets sauf l'<em class="emphasis">Abonnement</em>). Cliquez dans la boîte pour voir la liste de tous les abonnements ou saisissez les premières lettres du nom de l'abonnement. Plesk trouvera alors les correspondances. Par exemple : <em class="emphasis">exemple.com</em>.</li><li class="listnumber">Sélectionnez un ou plusieurs objets du type sélectionné. Par exemple : <em class="emphasis">wordpress_bdd_8</em>.</li></ol><p class="bodytext">De même, lors de la restauration des comptes utilisateur et des sites Web dans le Panneau Client &gt; section <strong class="specialbold">Compte</strong>, les utilisateurs peuvent sélectionner les objets à restaurer tout comme dans l'assistant du <strong class="specialbold">Gestionnaire de sauvegardes</strong>.</p>
+<p class="bodytext">Vous pouvez restaurer les types d'objets suivants depuis une sauvegarde :</p>
+<ul class="listbullet"><li class="listbullet">Revendeur</li><li class="listbullet">Client</li><li class="listbullet">Abonnement</li><li class="listbullet">Site</li><li class="listbullet">Zone DNS</li><li class="listbullet">Base de données</li><li class="listbullet">Certificat SSL/TLS</li><li class="listbullet">Liste de diffusion</li><li class="listbullet">Compte mail</li><li class="listbullet">Fichiers et répertoires</li></ul><p class="bodytext">Vous pouvez restaurer des objets du type sélectionné appartement à un seul abonnement pendant une session de restauration.</p>
+<p class="note"><strong class="buttons">Remarque </strong>: quand vous restaurez une sauvegarde incrémentale, Plesk restaure également les données de la sauvegarde complète précédente ainsi que toutes les sauvegardes incrémentales suivantes, jusqu'à la sauvegarde incrémentale sélectionnée. Pour en savoir plus, cliquez sur le lien dans la colonne <strong class="specialbold">Taille</strong> dans la liste des sauvegardes.</p>
+<p class="widegraphic"><img src="76994.gif" alt="Backup_resoration_select_object" height="650" width="900" vspace="0" hspace="0" align="bottom" border="0"></p>
+<h5 class="heading5"><span class="strong">Options de restauration</span></h5>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Suspendre les domaines jusqu'à la fin de la restauration.</strong> Sélectionnez cette option pour éviter les conflits pouvant se produire lorsque des utilisateurs modifient le contenu ou les paramètres d'un site pendant leur restauration.</li><li class="listbullet"><strong class="specialbold">Une fois la tâche de restauration terminée, envoyez la notification par mail à.</strong> Saisissez votre adresse mail si vous voulez que le panneau de contrôle vous avertisse une fois la restauration terminée.</li><li class="listbullet"><strong class="specialbold">Politique de résolution des conflits.</strong> Indiquez ce qu'il faut faire en cas de conflits lors de la restauration.</li><li class="listbullet"><strong class="specialbold">Paramètres de sécurité des sauvegardes</strong>. Si la sauvegarde était protégée par un mot de passe, indiquez-le dans le champ <strong class="specialbold">Mot de passe</strong>.  <br>Si vous avez oublié votre mot de passe, décochez l'option <strong class="specialbold">Indiquer le mot de passe</strong>. Notez que dans ce cas, certaines données confidentielles ne seront pas restaurées correctement. Par exemple, les mots de passe utilisateur seront remplacés par des mots de passe aléatoires, les informations sur les applications APS déjà installées seront perdues, etc. </li><li class="listbullet"><strong class="specialbold">Restaurer le fichier de sauvegarde malgré une signature corrompue</strong>. Vous verrez cette option dans les cas suivants :<ul class="listbullet2"><li class="listbullet2">Le fichier de sauvegarde a été modifié après sa création.</li><li class="listbullet2">Le fichier de sauvegarde est corrompu.</li><li class="listbullet2">Le fichier de sauvegarde sélectionné a été créé sur un autre serveur Plesk.</li><li class="listbullet2">Le fichier de sauvegarde sélectionné a été créé sur le même serveur avant mise à niveau vers Plesk 11.5 ou version ultérieure.</li></ul><p class="listcontinue">Plesk vous notifiera dans tous ces cas. Vous ne pourrez pas lancer la restauration sans sélectionner l'option <strong class="specialbold">Restaurer le fichier de sauvegarde malgré une signature corrompue</strong>. Nous vous déconseillons vivement de restaurer de telles sauvegardes sauf dans les situations suivantes :</p>
+<ul class="listbullet2"><li class="listbullet2">La sauvegarde a été créée sur le même serveur avant mise à niveau vers Plesk 11.5 ou version ultérieure. Les versions antérieures de Plesk n'ont pas signé de sauvegarde, Plesk n'est donc pas en mesure de vérifier leurs signatures et signale que ces sauvegardes sont potentiellement problématiques.</li><li class="listbullet2">Vous procédez à <em class="emphasis">un transfert via les fichiers de sauvegarde</em>.<em class="emphasis"> </em>Pour en savoir plus, consultez la section <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=deployment-guide&page=71256.htm" target="_blank">Transférer les données via les fichiers de sauvegarde</a></strong> du <strong class="specialbold">Guide de déploiement</strong>.</li></ul></li></ul><h5 class="heading5">Résolution des erreurs de restauration</h5>
+<p class="bodytext">En cas d'erreur ou de conflit lors de la restauration des données, l'assistant vous demande de sélectionner une résolution appropriée. Effectuez la procédure de l'assistant selon les instructions à l'écran.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> le mode de restauration Réécriture des données signifie que tous les objets seront restaurés des fichiers de sauvegarde, indépendamment de leur présence actuelle dans le système. Le mode Réécriture fonctionne comme suit :</p>
+<ul class="listbullet"><li class="listbullet">Si un objet ou des paramètres du fichier de sauvegarde ne sont pas présents dans Plesk, ils sont créés ou configurés dans Plesk.</li><li class="listbullet">Si un objet ou des paramètres du fichier de sauvegarde sont présents dans Plesk, l'objet ou les paramètres du fichier de sauvegarde remplacent l'objet ou les paramètres correspondants présents dans Plesk.</li><li class="listbullet">Si un objet ou des paramètres du fichier de sauvegarde sont présents dans Plesk, mais manquent dans le fichier de sauvegarde, l'objet ou les paramètres présents dans Plesk ne sont pas modifiés.</li></ul><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59263.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

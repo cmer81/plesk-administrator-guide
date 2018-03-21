@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Composants de Plesk </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="78086.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="74719.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557303.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557303.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Composants de Plesk</h2>
+<p class="bodytext">Plesk orchestre le travail des services Web, DNS, de messagerie, etc. Sur le plan technique, Plesk n'offre pas les services lui-même, il prend juste le contrôle sur un certain nombre de composants tiers. Par exemple, lorsqu'un client crée un site Web via l'interface utilisateur de Plesk, Plesk propage en arrière-plan cette requête vers un serveur Web (soit Apache soit IIS). Ce dernier ajoute alors un nouvel hôte virtuel dans le système. La liste des composants est définie lors de l'installation de Plesk (pour en savoir plus, consultez le <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=deployment-guide" target="_blank">Guide de déploiement</a></strong>). Plesk vous permet de voir la liste des composants installés, d'en ajouter de nouveaux, de basculer entre les composants interchangeables et de les supprimer (uniquement sur Windows).</p>
+<h5 class="heading5">Affichage des composants de Plesk</h5>
+<p class="bodytext">Vous pouvez voir la liste des composants installés et de leurs versions dans <strong class="specialbold">Outils &amp; Paramètres &gt; groupe Gestion des serveurs &gt; Composants du serveur</strong>. <em class="emphasis">Plesk pour Windows</em> donne une autre indication de l'état d'un composant (l'apparence des icônes dépend du thème de Plesk) :</p>
+<ul class="listbullet"><li class="listbullet"><img src="62123.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> signifie que Plesk utilise ce composant et que celui-ci est activé.</li><li class="listbullet"><img src="62122.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> signifie que Plesk n'utilise pas ce composant (généralement parce que la clé de licence a expiré ou fait défaut), mais le composant est activé.</li><li class="listbullet"><img src="62124.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> signifie que Plesk n'utilise pas ce composant parce que celui-ci est arrêté.</li><li class="listbullet"><img src="62130.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> signifie que Plesk n'utilise pas ce composant, mais celui-ci n'est pas installé sur le système et est donc disponible.</li></ul><h5 class="heading5">Installation des composants de Plesk</h5>
+<p class="bodytext">Si vous n'avez pas inclus de composant dans votre installation de Plesk, vous pouvez l'ajouter plus tard sous <strong class="specialbold">Outils &amp; Paramètres &gt; Plesk &gt; Mises à jour et à niveau &gt; Ajouter/Supprimer des composants</strong>.</p>
+<h5 class="heading5">Composants interchangeables</h5>
+<p class="bodytext">Certains composants de Plesk sont interchangeables. Par exemple, sur Windows, vous pouvez utiliser soit le serveur DNS Microsoft, soit BIND en tant que serveur DNS. Sur Linux, vous pouvez choisir entre Postfix et Qmail pour la messagerie, etc.</p>
+<p class="bodytext">Avec <em class="emphasis">Plesk pour Linux</em>, vous pouvez basculer entre les composants interchangeables de deux manières :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">À l'aide des paramètres du service</em>. Certains composants de Plesk avec le même objectif peuvent être installés en parallèle sur le même serveur de Plesk. Par exemple, si deux composants antivirus installés, vous pouvez indiquer celui qui traitera votre messagerie dans <strong class="specialbold">Outils &amp; Paramètres &gt; Messagerie &gt; Paramètres du serveur de messagerie</strong>.</li><li class="listbullet"><em class="emphasis">À l'aide du Programme d'installation de Plesk</em>. Certains composants de Plesk avec le même objectif n'autorisent pas l'installation en parallèle. Par exemple, il peut n'y avoir qu'un serveur de messagerie dans Plesk : soit Postfix, soit Qmail. Dans ce cas, vous devez choisir l'un des composants dans <strong class="specialbold">Outils &amp; Paramètres &gt; Mises à jour et à niveau &gt; Ajouter/supprimer des composants</strong>.  </li></ul><p class="bodytext">Avec <em class="emphasis">Plesk pour Windows</em>, vous pouvez basculer entre les composants interchangeables dans <strong class="specialbold">Outils &amp; Paramètres &gt; Composants du serveur</strong>. Pour basculer, cliquez sur le nom du composant (par ex., <strong class="specialbold">Serveur de messagerie</strong>) et sélectionnez le composant voulu dans la liste.</p>
+<h5 class="heading5">Suppression de composants de Plesk (Windows)</h5>
+<p class="bodytext">Si vous n'avez plus besoin d'un composant de Plesk, vous pouvez le supprimer de Plesk depuis <strong class="specialbold">Outils &amp; Paramètres &gt; Mises à jour et à niveau &gt; Ajouter/Supprimer des composants</strong> ou en cliquant sur le lien <strong class="specialbold">Ajouter ou supprimer des composants</strong> sur la page <strong class="specialbold">Accueil</strong>. </p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="74719.htm" target="_self">Ajouter et supprimer des composants Plesk</a></p></td>
+</tr>
+</table>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '60306.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

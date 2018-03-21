@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Mises à jour système (Plesk pour Linux uniquement) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="75714.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="70443.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557255.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557255.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Mises à jour système (Plesk pour Linux uniquement)</h2>
+<p class="bodytext">Vous pouvez installer des mises à jour de packs système via l'interface de Plesk avec l'outil <em class="emphasis">Mises à jour système</em>. Il utilise la fonctionnalité native des gestionnaires de packs du système d'exploitation, tels que <em class="emphasis">yum</em> ou <em class="emphasis">apt</em>, pour installer des mises à jour. Il vous simplifie la surveillance et le maintien à jour des packs. En outre, l'interface de Plesk peut être le seul moyen de contrôle des mise à jour système pour certains administrateurs Plesk.</p>
+<p class="bodytext">L'outil Mises à jour système vous aide pour deux choses : </p>
+<ul class="listbullet"><li class="listbullet">Gérer les mises à jour des packs du système d'exploitation.</li><li class="listbullet">Gérer les mises à jour des composants tiers fournis avec Plesk, tels que PHP, Apache ou Dovecot. Ces mises à jour peuvent aussi être installées avec le Programme d'installation de Plesk. Toutefois, dans ce guide, nous considérons qu'elles font partie des mises à jour système car il s'agit du mode de fonctionnement par défaut de Plesk.</li></ul><p class="bodytext">L'outil Mises à jour système vous offre les possibilités suivantes :</p>
+<ul class="listbullet"><li class="listbullet">Voir les mises à jour disponibles.</li><li class="listbullet">Gérer les mises à jour une par une ou en lots.</li><li class="listbullet">Verrouiller des packs pour empêcher les mises à jour automatiques.</li><li class="listbullet">Déverrouiller des packs pour autoriser les mises à jour automatiques. </li><li class="listbullet">Configurer des notifications relatives aux mises à jour.</li></ul><p class="bodytext">L'outil Mises à jour système n'installe pas les mises à jour de packs Plesk. Pour cela, utilisez le Programme d'installation de Plesk. Pour savoir comment mettre à jour Plesk, consultez la section <strong class="specialbold"><a id="h76248" class="jumptemplate" title="Mises à jour de Plesk" href="70989.htm" target="_self">Mises à jour de Plesk</a></strong>.</p>
+<p class="warning"><strong class="buttons">Important</strong> : en cas de problème pendant la mise à jour, essayez de résoudre la situation par le biais du système d'exploitation. L'outil Mises à jour système n'est qu'un outil frontal de votre gestionnaire de packs système, tel que <em class="emphasis">yum </em>ou <em class="emphasis">apt,</em> de sorte que les problèmes sont probablement dus au gestionnaire de packs système.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans ce chapitre :</p><p class="relateditem"><a href="75822.htm#o77147" target="_self">Premiers pas avec l'outil Mises à jour système</a></p><p class="relateditem"><a href="75822.htm#o77148" target="_self">Modifier les répertoires des mises à jour système</a></p><p class="relateditem"><a href="75822.htm#o77149" target="_self">Mettre à jour les packs système</a></p><p class="relateditem"><a href="75822.htm#o77150" target="_self">Configurer les notifications</a></p><p class="relateditem"><a href="75822.htm#o77154" target="_self">Voir le log de mise à jour</a></p><p class="relateditem"><a href="75822.htm#o77151" target="_self">Désactiver l'outil Mises à jour système</a></p></td>
+</tr>
+</table>
+
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77147"></a><h3 class="heading3">Premiers pas avec l'outil Mises à jour système</h3>
+<p class="bodytext">L'outil Mises à jour système est activé par défaut dans Plesk. Il se trouve sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">section Gestion des serveurs </strong>&gt; <strong class="specialbold">Mises à jour système</strong>. Vous pouvez aussi y accéder sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres de mises à jour et à niveau</strong> &gt; onglets <strong class="specialbold">Mises à jour disponibles</strong> et <strong class="specialbold">Tous les packs</strong>.</p>
+<p class="bodytext">Si antérieurement, vous avez désactivé l'outil Mises à jour système, modifiez le fichier <code class="monospace"><a id="h78525" class="jumptemplate" title="Utiliser Node.js" href="76658.htm" target="_self">panel.ini</a></code> comme suit :</p>
+<pre class="preformatted">[updates]</pre>
+<pre class="preformatted">systemUpdatesTool = on</pre>
+<p class="bodytext"> &nbsp;</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77148"></a><h3 class="heading3">Modifier les répertoires des mises à jour système</h3>
+<p class="bodytext"><strong class="buttons">Mises à jour fiables</strong></p>
+<p class="bodytext">Pour des raisons de stabilité et de fiabilité, l'outil Mises à jour système installe les mises à jour de chaque pack depuis le répertoire à partir duquel le pack a été installé. On parle de <em class="emphasis">mises à jour fiables</em> ; ce mode est utilisé par défaut dans Plesk. </p>
+<p class="procedureheading">Pour connaître le répertoire utilisé pour mettre à jour un pack :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres de mise à jour et de mise à niveau</strong> &gt; onglet <strong class="specialbold">Tous les packs</strong>.</li><li class="procedurelistnumber">Regardez la colonne <strong class="specialbold">pack</strong>. Le répertoire de chaque pack est indiqué entre parenthèses.<p class="widegraphic"><img src="77146.gif" alt="System Updates_Repo" height="459" width="862" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ol><p class="bodytext">Si vous devez mettre à jour un pack à partir d'un autre répertoire, désactivez les <em class="emphasis">mises à jour fiables</em>. </p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"><strong class="buttons">Désactivation des mises à jour fiables</strong></p>
+<p class="bodytext">Si vous désactivez les mises à jour fiables, l'outil Mises à jour système ne garantit plus que les mises à jour sont installées depuis le répertoire d'origine du pack. Le gestionnaire de packs système (par ex. yum ou apt) gère les mises à jour dans ce cas de la même façon qu'il ne le fait sans Plesk. Par conséquent, si d'autres répertoires sont disponibles sur le système, ils peuvent servir pour installer les mises à jour.</p>
+<p class="procedureheading">Pour désactiver les mises à jour fiables :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour système</strong>.</li><li class="procedurelistnumber">Décochez l'option <strong class="specialbold">Autoriser les mises à jour fiables des packs système</strong>.<p class="widegraphic"><img src="77153.gif" alt="safe_updates_option" height="203" width="1022" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ol><p class="procedureheading">&nbsp;&nbsp;</p>
+<p class="bodytext"><strong class="buttons">Passage à un autre répertoire</strong></p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Désactivez les mises à jour fiables.</li><li class="procedurelistnumber">Mettez le pack à jour.</li><li class="procedurelistnumber">Activez les mises à jour fiables. Si les mises à jour du pack étaient installées depuis un autre répertoire, l'outil Mises à jour système en utilise un nouveau pour la mise à jour de ce pack. Le répertoire est indiqué dans la colonne <strong class="specialbold">pack</strong> sous <strong class="specialbold">Tous les packs</strong>.</li></ol><p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"><strong class="buttons">Répertoires inconnus</strong></p>
+<p class="bodytext">Si le répertoire source d'un pack installé est <em class="emphasis">inconnu</em>, il peut être mis à jour avec un pack de l'un des répertoires suivants :</p>
+<ul class="listbullet"><li class="listbullet">Répertoires système (tels que les répertoires avec ID &quot;base&quot; ou &quot;update&quot; sous CentOS, Red Hat Enterprise Linux, ou CloudLinux, ou origine de type &quot;Debian&quot; ou &quot;Ubuntu&quot; sous Debian et Ubuntu).</li><li class="listbullet">Répertoires Plesk (tels que les répertoires avec ID commençant par &quot;PLESK_&quot; sous CentOS, Red Hat Enterprise Linux, ou CloudLinux, ou origine de type &quot;Plesk&quot; sous Debian ou Ubuntu).</li></ul><p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"><strong class="buttons">Blocage des mises à jour d'autres répertoires</strong></p>
+<p class="bodytext">Pour empêcher les mises à jour non fiables, vous pouvez masquer l'option <strong class="specialbold">Autoriser les mises à jour fiables des packs système</strong> qui peut permettre d'installer des mises à jour non fiables. Cette option se trouve sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour système </strong>&gt; <strong class="specialbold">Mises à jour fiables</strong>.</p>
+<p class="bodytext">Éditez le fichier <code class="monospace"><a id="h78526" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> comme suit :</p>
+<ul class="listbullet"><li class="listbullet">Pour masquer l'option <strong class="specialbold">Autoriser les mises à jour fiables des packs système</strong> :</li></ul><pre class="preformatted">[updates]</pre>
+<pre class="preformatted">safeUpdatesManagement = false</pre>
+<p class="bodytext"></p>
+<ul class="listbullet"><li class="listbullet">Pour que Plesk propose l'option <strong class="specialbold">Autoriser les mises à jour fiables des packs système</strong> :</li></ul><pre class="preformatted">[updates]</pre>
+<pre class="preformatted">safeUpdatesManagement = true</pre>
+<p class="bodytext"></p>
+<p class="note"><strong class="buttons">Remarque :</strong> pour le moment, vous ne pouvez ni ajouter ni supprimer le répertoire d'un pack. Toutefois, si vous avez un accès root au serveur, vous pouvez enregistrer un répertoire distant comme pour les gestionnaires de packs, tels que <em class="emphasis">yum</em> ou <em class="emphasis">apt</em>.</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77149"></a><h3 class="heading3">Mettre à jour les packs système</h3>
+<p class="bodytext">L'outil Mises à jour système recherche des mises à jour quotidiennement et présente des informations sur les mises à jour dans la liste des packs et sur la page d'accueil de Plesk. Il vous envoie aussi des notifications si vous l'avez configuré pour cela.</p>
+<p class="procedureheading">Pour mettre à jour automatiquement les packs système : </p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Gestion des serveurs </strong>&gt; <strong class="specialbold">Mises à jour système</strong> &gt; <strong class="specialbold">Paramètres</strong>.<p class="listcontinue">Autre solution, allez sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Paramètres de mises à jour et à niveau</strong>.</p>
+</li><li class="procedurelistnumber">Sélectionnez <strong class="specialbold">Installer automatiquement les mises à jour du pack système</strong>.</li><li class="procedurelistnumber">(Facultatif et non recommandé) Indiquez si vous souhaitez désactiver les mises à jour fiables. Vous trouverez plus d'informations dans la section <a id="h77152" class="jumptemplate" title="Modifier les répertoires des mises à jour système" href="75822.htm#o77148" target="_self">Modifier la source des mises à jour</a>.</li><li class="procedurelistnumber">(Facultatif) Définissez les paramètres de notification pour recevoir des alertes sur les mises à jour installées.<p class="widegraphic"><img src="76417.gif" alt="System_Updates" height="307" width="1011" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ol><p class="procedureheading">Pour mettre à jour manuellement les packs système :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Gestion des serveurs </strong>&gt; <strong class="specialbold">Mises à jour système</strong> &gt; <strong class="specialbold">Mises à jour disponibles</strong>.<p class="listcontinue">Vous pouvez consulter les informations suivantes pour chaque pack de la liste :</p>
+<ul class="listbullet2"><li class="listbullet2">Informations sur la mise à jour disponible. Pour les voir, cliquez sur la mise à jour voulue dans la colonne <strong class="specialbold">Mises à jour</strong>.</li><li class="listbullet2">Informations sur un pack. Pour les voir, cliquez sur le nom du pack voulu dans la colonne <strong class="specialbold">pack</strong>.</li></ul></li><li class="procedurelistnumber">Mise à jour de tous les packs ou de certains<ul class="listbullet2"><li class="listbullet2">Pour mettre à jour tous les packs pour lesquels des mises à jour sont disponibles, cliquez sur <strong class="specialbold">Tout mettre à jour</strong>.</li><li class="listbullet2">Pour mettre à jour certains packs, sélectionnez-les dans la liste et cliquez sur <strong class="specialbold">Mettre à jour</strong>.</li></ul></li></ol><p class="procedureheading">Pour mettre à jour des packs verrouillés :</p>
+<p class="bodytext">Si certains packs sont verrouillés vous pouvez tout de même les mettre à jour :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Dans les <strong class="specialbold">Mises à jour système</strong>, cliquez sur <strong class="specialbold">Mettre à jour</strong> (pour ne mettre à jour que les packs sélectionnés) ou sur <strong class="specialbold">Tout mettre à jour</strong>.</li><li class="procedurelistnumber">Sélectionnez l'option <strong class="specialbold">Déverrouiller les packs pour autoriser cette mise à jour uniquement</strong> dans la fenêtre <strong class="specialbold">Mettre à jour les packs</strong>.</li></ol><p class="procedureheading">Pour verrouiller des packs et empêcher les mises à jour automatiques :</p>
+<p class="bodytext">Dans <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Mises à jour système</strong>, sélectionnez les packs voulus et cliquez sur <strong class="specialbold">Verrouiller</strong>.</p>
+<p class="bodytext">Les packs verrouillés ne sont pas mis à jour automatiquement dans les Mises à jour système pendant la mise à jour automatique. Toutefois, vous pouvez les mettre à jour manuellement. Pour cela, sélectionnez-les et cliquez sur <strong class="specialbold">Mettre à jour</strong> puis cochez <strong class="specialbold">Déverrouiller les packs pour autoriser cette mise à jour uniquement</strong>. Autre méthode de mise à jour de ces packs : par le biais du système d'exploitation natif.</p>
+<p class="bodytext">Si un pack dépend d'un pack verrouillé, Plesk vous demande d'autoriser la mise à jour du pack verrouillé.</p>
+<p class="procedureheading">Pour déverrouiller des packs pour la mise à jour :</p>
+<p class="bodytext">Dans <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Mises à jour système</strong>, sélectionnez les packs verrouillés voulus et cliquez sur <strong class="specialbold">Déverrouiller</strong>.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77150"></a><h3 class="heading3">Configurer les notifications</h3>
+<p class="bodytext">Plesk peut vous alerter en cas de mise à jour de packs Plesk et de packs système. Plesk affiche des notifications sur les mises à jour disponibles même si les mises à jour automatiques sont désactivées.</p>
+<p class="bodytext">Pour définir les notifications, allez dans <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Mises à jour système</strong> &gt; <strong class="specialbold">Paramètres</strong> &gt; <strong class="specialbold">Notifications</strong>.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77154"></a><h3 class="heading3">Voir le log de mise à jour</h3>
+<p class="bodytext">Le log des mises à jour de packs système se trouve sous <code class="monospace">/var/log/plesk/systemupdatestool.log</code> </p>
+<p class="bodytext">Vous pouvez voir les informations suivantes sur les mises à jour :</p>
+<ul class="listbullet"><li class="listbullet">Commande utilisée.</li><li class="listbullet">Résultat du gestionnaire de packs système.</li><li class="listbullet">Résultat de l'opération.</li></ul><p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77151"></a><h3 class="heading3">Désactiver l'outil Mises à jour système</h3>
+<p class="bodytext">Pour désactiver l'outil Mises à jour système, ajoutez les lignes suivantes au fichier <code class="monospace"><a id="h78527" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> :</p>
+<pre class="preformatted">[updates]</pre>
+<pre class="preformatted">systemUpdatesTool = off</pre>
+<p class="bodytext">Lorsque l'outil Mises à jour système est désactivé, la section <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour système</strong> n'est pas visible dans l'interface de Plesk. La section <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour système</strong> est toujours visible, mais les onglets associés à l'outil Mises à jour système ne le sont pas (<strong class="specialbold">Mises à jour disponibles</strong> et <strong class="specialbold">Tous les packs</strong>).</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '75822.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

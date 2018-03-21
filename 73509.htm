@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Accéder à distance aux bases de données </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="74496.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="75181.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055790.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055790.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Accéder à distance aux bases de données</h2>
+<p class="bodytext">Pour des raisons de sécurité, vous pouvez préciser les paramètres d'accès pour les utilisateurs de bases de données, afin d'autoriser ou interdire les connexions à distance à une base de données. Les connexions à distance peuvent être autorisées depuis certaines adresses IP. Par exemple, si un script exécuté sur un hôte distant accède à la base de données Plesk à l'aide des identifiants d'accès d'un utilisateur de base de données particulier, alors vous pouvez restreindre l'accès de cet utilisateur à l'adresse IP de cet hôte distant.</p>
+<p class="bodytext">En fonction du type de serveur de bases de données, Plesk utilise différents outils de contrôle d'accès :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Listes de contrôle d'accès. </em>Pour les utilisateurs de bases de données MySQL, le contrôle d'accès est géré par un mécanisme de sécurité natif MySQL : Access Control List (ACL). Des règles personnalisées sont ajoutées à ACL. Si le pare-feu de Plesk est actif, il doit autoriser les connexions entrantes à MySQL. Sinon, les paramètres des connexions à distance dans ACL ne fonctionneront pas.</li><li class="listbullet"><em class="emphasis">Règles de pare-feu</em>. Pour les autres utilisateurs de bases de données (utilisateurs PostgreSQL et SQL Server), l'accès à distance est géré par le pare-feu Plesk. Les règles personnalisées sont ajoutées aux règles du pare-feu Plesk. Si l'extension du pare-feu Plesk n'est pas installée et si la gestion des règles du pare-feu n'est pas activée, les options correspondantes ne sont pas visibles dans l'interface Plesk<em class="emphasis">.</em></li></ul><p class="note"><strong class="buttons">Remarque </strong>: Plesk n'ajoute pas de nouvelles règles au pare-feu sans votre accord. À chaque fois qu'un abonné configure une règle de contrôle d'accès personnalisée, Plesk vous informe et vous invite à accepter ou à rejeter les modifications.</p>
+<p class="bodytext">Les options de contrôle d'accès sont disponibles sous <strong class="specialbold">Sites Web &amp; Domaines &gt; Base de données</strong> lorsque vous ajoutez ou modifiez une base de données ou un utilisateur de base de données. Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h73510" class="jumptemplate" title="Configurer des règles d'accès personnalisées" href="73491.htm" target="_self">Configurer des règles d'accès personnalisées</a></strong>.</p>
+<p class="bodytext">Lorsqu'un client, un abonnement ou un utilisateur de base de données est supprimé, toutes les règles de pare-feu associées sont également supprimées.</p>
+<h5 class="heading5">Autorisation des clients à configurer des règles personnalisées</h5>
+<p class="procedureheading">Pour autoriser les clients à configurer des règles personnalisées :</p>
+<ul class="listbullet"><li class="listbullet">Activez le droit <strong class="specialbold">Accès à distance pour les utilisateurs de la base de données</strong> dans les paramètres de l'abonnement (<strong class="specialbold">Abonnements</strong> &gt; cliquez sur l'abonnement &gt; <strong class="specialbold">Personnaliser</strong>).</li><li class="listbullet">Installez le pare-feu Plesk et activez la gestion des règles dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; groupe <strong class="specialbold">Sécurité</strong> &gt; <strong class="specialbold">Pare-feu</strong> (uniquement pour les utilisateurs PostgreSQL et SQL Server).</li><li class="listbullet">Assurez-vous que Microsoft SQL Server n'est pas configuré pour utiliser les ports dynamiques pour les connexions à distance (uniquement pour les utilisateurs SQL Server).<p class="widegraphic"><img src="76902.gif" alt="2016-09-07_123607" height="771" width="1182" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul><p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Vérification des règles de pare-feu personnalisées</h5>
+<p class="bodytext">Une fois que l'utilisateur a défini des règles personnalisées, l'administrateur Plesk reçoit la notification suivante sur la page d'<strong class="specialbold">accueil</strong> du Panneau d'administration du serveur. <em class="emphasis">Les règles d'accès à distance pour les utilisateurs de la base de données ont été modifiées. Vous devez les approuver. Allez dans les paramètres du pare-feu pour vérifier et confirmer ces règles</em>.</p>
+<p class="bodytext">Une fois que vous avez vérifié les règles, vous pouvez confirmer l'ajout des règles personnalisées au jeu de règles du pare-feu système. Utilisez les boutons <strong class="specialbold">Appliquer les modifications</strong> ou <strong class="specialbold">Annuler les modifications</strong> sur la page des règles de pare-feu Plesk pour Linux pour les configurations non appliquées (<strong class="specialbold">Pare-feu</strong> &gt; <strong class="specialbold">Modifier les règles du pare-feu de Plesk</strong>). </p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '73509.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

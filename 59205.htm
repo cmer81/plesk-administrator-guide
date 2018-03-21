@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Gestionnaire d'événements </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="74627.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="67897.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557137.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557137.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Gestionnaire d'événements</h2>
+<p class="bodytext">Certaines actions dans Plesk, comme :</p>
+<ul class="listbullet2"><li class="listbullet2">Créer un compte client</li><li class="listbullet2">Supprimer une adresse IP</li><li class="listbullet2">Mettre à jour des paramètres d'hébergement d'un domaine, etc.</li></ul><p class="bodytext">sont considérées comme des <a class="" title="" href="https://en.wikipedia.org/wiki/Event_(computing)" target="_self">événements</a> par Plesk. Pour chaque événement, vous pouvez créer un ou plusieurs gestionnaires d'événements qui exécutent une commande prédéfinie à chaque fois que l'événement se produit.</p>
+<p class="bodytext">Les gestionnaires d'événements sont pratiques notamment si vous voulez exécuter une action ou un ensemble d'actions à chaque fois qu'un événement spécifique se produit. Par exemple, vous pouvez créer un gestionnaire d'événements qui se déclenche à chaque création d'abonnement, et à ce moment crée automatiquement une boîte mail, envoie une requête à un service externe, etc.</p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="59205.htm#o78431" target="_self">Ajouter de nouveaux gestionnaires d'événements</a></p><p class="relateditem"><a href="59205.htm#o78432" target="_self">Transmission des paramètres d'événements</a></p><p class="relateditem"><a href="59205.htm#o78438" target="_self">Ajouter et supprimer des gestionnaires d'événements</a></p><p class="relateditem"><a href="67897.htm" target="_self">Paramètres des évènements transmis par les gestionnaires d'évènements</a></p></td>
+</tr>
+</table>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78431"></a><h3 class="heading3">Ajouter de nouveaux gestionnaires d'événements</h3>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong>&nbsp;&gt;&nbsp;<strong class="specialbold">Gestionnaire d'événements</strong>.</li><li class="procedurelistnumber">Cliquez sur&nbsp;<strong class="specialbold">Ajouter un gestionnaire d'événements</strong>.</li><li class="procedurelistnumber">Dans la liste des événements, sélectionnez l'événement qui déclenchera le gestionnaire.</li><li class="procedurelistnumber">Dans les priorités, définissez la priorité pour l'exécution du gestionnaire, soit en la sélectionnant dans la liste, soit en saisissant un numéro personnalisé dans le champ. La priorité joue un rôle important si vous affectez plusieurs gestionnaires à un seul événement. Dans ce cas, les gestionnaires se déclenchent en fonction de leur priorité, par ordre décroissant (l'événement avec la priorité la plus élevée se déclenche en premier, puis la priorité la plus élevée suivante, etc.).</li><li class="procedurelistnumber">Dans la liste des utilisateurs, sélectionnez le compte d'utilisateur système au nom duquel la tâche sera exécutée. <p class="listnote"><strong class="buttons">Remarque pour les utilisateurs de Linux :</strong>&nbsp;l'administrateur du serveur peut créer les gestionnaires d'événements qui seront exécutés sur le serveur au nom de l'utilisateur root. Si vous souhaitez restreindre l'utilisation du compte root, créez un fichier vide nommé&nbsp;<code class="monospace">root.event_handler.lock</code>&nbsp;dans <code class="monospace">/usr/local/psa/var/</code>.</p>
+</li><li class="procedurelistnumber">Saisissez le chemin d'accès vers le script shell ou vers un fichier .bat qui contient les commandes à exécuter lorsqu'un gestionnaire d'événements se déclenche dans le champ&nbsp;&quot;Commande&quot; (par exemple, <code class="monospace">/usr/local/psa/bin/script.sh</code> ou <code class="monospace">C:\Windows\Temp\script.bat</code>).</li><li class="procedurelistnumber">Cliquez sur&nbsp;<strong class="specialbold">OK</strong>.</li></ol><p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78432"></a><h3 class="heading3">Transmission des paramètres d'événements</h3>
+<p class="bodytext">Lorsqu'un gestionnaire d'événements se déclenche, il transmet certaines données (&quot;Paramètres d'événements&quot;) associées à l'événement (les données transmises dépendent du gestionnaire d'événements concerné). Par exemple, le gestionnaire d'événements &quot;Domaine créé&quot; transmet les données suivantes :</p>
+<ul class="listbullet2"><li class="listbullet2">Le nom du domaine créé.</li><li class="listbullet2">Le GUID du domaine créé.</li><li class="listbullet2">Le GUID du compte client qui appartient au domaine créé.</li></ul><p class="bodytext">Chaque paramètre est transmis en tant que variable d'environnement que vous pouvez utiliser dans votre script shell ou fichier .bat comme suit :</p>
+<h5 class="heading5">Plesk pour Linux</h5>
+<p class="bodytext">Utilisez la variable <code class="monospace">${ENVIRONMENT_VARIABLE_NAME}</code> (par exemple, &quot;<code class="monospace">${NEW_DOMAIN_NAME}</code>&quot;) dans votre script shell. Lorsque le gestionnaire d'événements se déclenche, la variable est remplacée par la valeur correspondant à l'événement.</p>
+<h5 class="heading5">Plesk pour Windows</h5>
+<p class="bodytext">Utilisez la variable <code class="monospace">%N </code>(par exemple, &quot;<code class="monospace">%1</code>&quot;) dans votre fichier .bat et ajoutez-y le nom de la variable d'environnement à la position correspondante à la fin de la commande dans les paramètres du gestionnaire d'événements. Dans cet exemple :</p>
+<p class="widegraphic"><img src="78436.png" alt="2" height="120" width="1165" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">la variable &quot;<code class="monospace">%1</code>&quot; sera remplacée par la valeur de la variable d'environnement &quot;<code class="monospace">NEW_DOMAIN_NAME</code>&quot; et &quot;<code class="monospace">%2</code>&quot; sera remplacée par la valeur de &quot;<code class="monospace">NEW_DOMAIN_GUID</code>&quot;. Si vous utilisez &quot;<code class="monospace">%3</code>&quot; dans le fichier .bat , la variable ne sera pas remplacée, car deux noms de variables d'environnement seulement ont été indiqués après la commande.</p>
+<p class="bodytext">Vous pouvez voir la liste complète des paramètres d'événements et des noms de variables d'environnement pour chaque gestionnaire d'événements <a id="h78437" class="jumptemplate" title="Paramètres des évènements transmis par les gestionnaires d'évènements" href="67897.htm" target="_self">ici</a>. </p>
+<p class="bodytext">Pour référence, voici deux exemples de scripts pour l'événement &quot;Compte client créé&quot; :</p>
+<ul class="listbullet"><li class="listbullet">(Plesk pour Linux) <code class="monospace">test-handler.sh</code><p class="preformattedbold2ndlvl"><code class="monospace">#!/bin/bash</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;--------------&quot; &gt;&gt; /tmp/event_gestionnaire.log</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">/bin/date &gt;&gt; /tmp/event_handler.log # information on the event date and time</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">/usr/bin/id &gt;&gt; /tmp/event_handler.log # information on the user, on behalf of which the script was executed (to ensure control)</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;customer created&quot; &gt;&gt; /tmp/event_handler.log # information on the created customer account</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;name: ${NEW_CONTACT_NAME}&quot; &gt;&gt; /tmp/event_handler.log # customer's name</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;login: ${NEW_LOGIN_NAME}&quot; &gt;&gt; /tmp/event_handler.log # customer's username in Plesk</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;--------------&quot; &gt;&gt; /tmp/event_gestionnaire.log</code></p>
+<p class="listcontinue2"></p>
+</li><li class="listbullet">(Plesk pour Windows) <code class="monospace">test-handler.bat</code><p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;--------------&quot; &gt;&gt; c:\windows\temp\event_gestionnaire.log</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">rem information on the event date and time</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">date /T &gt;&gt; c:\windows\temp\event_gestionnaire.log</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">rem information on the created customer account</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;customer created&quot; &gt;&gt; c:\windows\temp\event_gestionnaire.log</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">rem customer's name</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;name: %1&quot; &gt;&gt; c:\windows\temp\event_handler.log</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">rem customer's username in Plesk</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;login: %2&quot; &gt;&gt; c:\windows\temp\event_handler.log</code></p>
+<p class="preformattedbold2ndlvl"><code class="monospace">echo &quot;--------------&quot; &gt;&gt; c:\windows\temp\event_gestionnaire.log</code></p>
+</li></ul><p class="bodytext">Si vous vous connectez à Plesk et créez un compte ayant comme nom &quot;Jean Dupont&quot; et login &quot;jean_dupont&quot;, le gestionnaire d'événements se déclenchera et les enregistrements suivants seront ajoutés au fichier&nbsp;event_handler.log :</p>
+<ul class="listbullet"><li class="listbullet">(Plesk pour Linux) <p class="preformattedseclevel"><code class="monospace">Fri Mar 16 15:57:25 NOVT 2007</code></p>
+<p class="preformattedseclevel"><code class="monospace">uid=0(root) gid=0(root) groups=0(root)</code></p>
+<p class="preformattedseclevel"><code class="monospace">customer created</code></p>
+<p class="preformattedseclevel"><code class="monospace">name: Jean Dupont</code></p>
+<p class="preformattedseclevel"><code class="monospace">login: jean_dupont</code></p>
+<p class="listcontinue2"></p>
+</li><li class="listbullet">(Plesk pour Windows) <p class="preformattedseclevel"><code class="monospace">Mon March 15 21:46:34 NOVT 2010</code></p>
+<p class="preformattedseclevel"><code class="monospace">client créé</code></p>
+<p class="preformattedseclevel"><code class="monospace">name: Jean Dupont</code></p>
+<p class="preformattedseclevel"><code class="monospace">login: jean_dupont</code></p>
+</li></ul><p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78438"></a><h3 class="heading3">Ajouter et supprimer des gestionnaires d'événements</h3>
+<p class="bodytext">Pour voir la liste des gestionnaires d'événements actifs actuellement, allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Gestionnaire d'événements</strong>. Sur cette page, vous pouvez aussi modifier et supprimer des gestionnaires d'événements :</p>
+<ul class="listbullet2"><li class="listbullet2">Pour modifier un gestionnaire d'événements, cliquez sur son nom, saisissez vos modifications et cliquez sur <strong class="specialbold">OK</strong>.</li><li class="listbullet2">Pour supprimer un gestionnaire d'événements, cochez la case correspondante et cliquez sur <strong class="specialbold">Supprimer</strong>.</li></ul><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59205.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

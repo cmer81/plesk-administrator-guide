@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Revendre des extensions </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="75596.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="75326.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Revendre des extensions</h2>
+<h5 class="heading5">Procédure pour revendre des extensions</h5>
+<p class="bodytext">Vous pouvez appliquer cette méthode si vous souhaitez vendre de nouvelles instances Plesk avec des extensions payantes. Elle vous permet également de vendre des extensions en upselling dans votre boutique en ligne pour des instances de Plesk déjà provisionnées. Remarque : cette méthode ne couvre pas les achats au sein de l'application. Autrement dit, si vos clients cliquent sur le bouton &quot;Acheter&quot; dans le Catalogue des extensions de Plesk, ils seront redirigés vers la boutique de Plesk, et non vers votre boutique.</p>
+<h5 class="heading5">Instructions pour l'implémentation</h5>
+<ol class="listnumber"><li class="listnumber">Plesk et les extensions que vous voulez revendre doivent être disponibles en tant qu'articles dans votre boutique en ligne. </li><li class="listnumber">Lors d'un achat, vous devez contacter Key Administrator via l'API KA Partner et demander des licences pour les articles achetés. </li><li class="listnumber">Key Administrator crée les licences demandées et vous envoie un code d'activation unique pour ces licences. Notez qu'il ya deux versions de l'API KA Partner : v1 et v3.<ol class="listnumber2"><li class="listnumber2">a. Remarques pour la v1 : <ol class="listnumber3"><li class="listnumber3"><a class="" title="" href="https://central.plesk.com/docs/partner-api/1.0/" target="_self">https://central.plesk.com/docs/partner-api/1.0/</a></li><li class="listnumber3">Possiblité d'obtenir une clé Plesk principale et plusieurs clés supplémentaires pour ces extensions via un appel unique (voir <a class="" title="" href="https://central.plesk.com/docs/partner-api/1.0/41090.htm" target="_self">https://central.plesk.com/docs/partner-api/1.0/41090.htm</a>).</li><li class="listnumber3">Clé d'activation unique pour la licence principale de Plesk et ses clés de licence supplémentaires.</li><li class="listnumber3">Version considérée comme obsolète ; nous vous recommandons d'utiliser la v3.</li></ol></li><li class="listnumber2">b. Remarques pour la v3 :<ol class="listnumber3"><li class="listnumber3">https://central.plesk.com/docs/partner-api/3.0/</li><li class="listnumber3">Possibilité d'obtenir une seule clé (principale ou supplémentaire) via un appel unique (voir <a class="" title="" href="https://central.plesk.com/docs/partner-api/3.0/63401.htm" target="_self">https://central.plesk.com/docs/partner-api/3.0/63401.htm</a>). </li><li class="listnumber3">Clé d'activation unique pour la licence principale et ses clés de licence supplémentaires (les licences supplémentaires requises via des appels API distincts sont associées à la licence principale et la même clé d'activation pour les licences principales de Plesk active plusieurs licences).</li><li class="listnumber3">Version la plus récente de l'API Partner ; nous vous recommandons d'utiliser cette version à la place de la v1.</li></ol></li></ol></li><li class="listnumber">Une fois que vous avez reçu le code d'activation pour votre boutique, vous pouvez soit transmettre le code directement à votre client (via la boutique en ligne ou par e-mail), soit, de préférence, activer les licences en exécutant une commande CLI sur l'instance de Plesk que vous avez créée pour votre client.<p class="listcontinue">Pour activer les licences via CLI, utilisez la commende &quot;license&quot;. Pour en savoir plus sur l'utilisation, consultez la page : <a class="" title="" href="https://docs.plesk.com/en-US/onyx/cli-linux/using-command-line-utilities/license-license-keys.71029/" target="_self">https://docs.plesk.com/en-US/17.0/cli-linux/using-command-line-utilities/license-license-keys.71029/</a></p>
+</li></ol><h5 class="heading5">Prise en charge de l'upselling dans l'application</h5>
+<p class="bodytext">La méthode décrite ci-dessus ne prend pas en charge l'achat dans l'application. Autrement dit, si vos clients cliquent sur le bouton &quot;Acheter&quot; dans le Catalogue des extensions dans Plesk, ils seront redirigés vers la boutique de Plesk, et non vers votre boutique. Pour résoudre ce désagrément, nous avons ajouté la possibilité de fournir le nom d'hôte de votre propre boutique dans le fichier &quot;panel.ini&quot;. Une fois que vous y avez intégré le nom d'hôte de votre boutique, tous les liens du type &quot;Acheter&quot; et les autres liens proposant l'upselling affichés dans les extensions pointeront vers votre boutique en ligne.</p>
+<p class="bodytext">Pour modifier l'URL de la boutique en ligne utilisée par les liens &quot;Acheter&quot;, modifiez le fichier <code class="monospace"><a id="h78549" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> et ajoutez la ligne suivante à la section &nbsp;<code class="monospace">[extensions]</code>&nbsp;:</p>
+<p class="bodytext"><code class="monospace">[extensions]</code></p>
+<p class="bodytext"><code class="monospace">buyUrl = &quot;https://shop.com&quot;</code></p>
+<p class="bodytext">où &quot;shop.com&quot; est le nom de domaine de votre boutique en ligne.</p>
+<p class="bodytext">Exemple : </p>
+<ul class="listbullet2"><li class="listbullet2">URL d'origine d'une extension : </li></ul><p class="listcontinue"><code class="monospace">https://go.plesk.com/buy-plesk-ext/extension-name?kn=PLESK.1234567890.0001</code></p>
+<ul class="listbullet2"><li class="listbullet2">URL modifiée telle qu'elle est utilisée par une extension une fois que vous avez précisé le nom d'hôte de votre boutique dans <code class="monospace"><a id="h78580" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> : </li></ul><p class="listcontinue"><code class="monospace">https://myownstore.com/store?extension-id=extension-name&amp;kn=PLESK.1234567890.0001</code></p>
+<p class="listnote"><strong class="buttons">Remarque :</strong> cette fonction affecte uniquement les extensions vendues par Plesk et utilisant &quot;go.plesk.com&quot; comme nom d'hôte cible. Si une extension est vendue directement par un éditeur de logiciel, les liens &quot;Acheter&quot; et les éventuels autres liens d'upselling ne sont pas affectés.</p>
+<h5 class="heading5">Contrôler les extensions à afficher et à revendre</h5>
+<p class="bodytext">Une fois que vous avez modifié l'URL des liens &quot;Acheter&quot; (comme expliqué ci-dessus), toutes les extensions commerciales, y compris celles qui seront ajoutées au Catalogue des extensions par la suite, pointeront vers votre boutique, même si vous ne les avez pas encore configurées. Pour vous assurer que vos clients ne voient que les extensions commerciales que vous souhaitez leur vendre, configurez un serveur proxy intelligent pour le Catalogue des extensions de Plesk. Ce serveur proxy utilise le flux du Catalogue des extensions, filtre les extensions que vous ne souhaitez pas vendre et fournit le flux modifié à vos instances de Plesk.</p>
+<p class="procedureheading">Instructions pour l'implémentation</p>
+<ol class="listnumber"><li class="listnumber">Configurez un serveur (physique ou virtuel) sur lequel le script du proxy sera exécuté.</li><li class="listnumber">Téléchargez le script du proxy depuis le lien <a class="" title="" href="https://github.com/plesk/extensions-catalog-proxy" target="_self">https://github.com/plesk/extensions-catalog-proxy</a> et placez-le sur le serveur. Cette page contient les explications sur le fonctionnement et le déploiement du script du proxy.</li><li class="listnumber">Configurez le proxy afin qu'il transmette uniquement les extensions commerciales qui doivent être visibles sur vos serveurs Plesk. <p class="listcontinue">Le proxy fonctionne comme une liste blanche : vous devez indiquer les ID des extensions commerciales qui doivent être affichées dans Plesk, sinon, elles ne sont pas visibles. Vous pouvez trouver la liste des extensions et leurs ID (&quot;codes&quot;) ici : <a class="" title="" href="https://ext.plesk.com/api/v4/packages" target="_self">https://ext.plesk.com/api/v4/packages</a> </p>
+<p class="listnote"><strong class="buttons">Remarque importante :</strong> ce proxy affecte uniquement les extensions avec des liens &quot;Acheter&quot; qui pointent vers https://go.plesk.com. Les extensions gratuites ainsi que les extensions dont les liens &quot;Acheter&quot; pointent vers un autre endroit ne sont pas filtrées par ce proxy : elles continueront d'être visibles dans le Catalogue des extensions sur vos serveurs Plesk.</p>
+</li><li class="listnumber">Changez l'URL du flux du Catalogue des extensions sur tous vos serveurs Plesk, de telle manière qu'il pointe vers l'adresse du serveur proxy. Pour cela, ajoutez la ligne suivante au fichier <code class="monospace"><a id="h78520" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> :<p class="listcontinue"><code class="monospace">[extensions]</code></p>
+<p class="listcontinue"><code class="monospace">catalog.url = http://&lt;proxy-address&gt;:8080</code></p>
+</li><li class="listnumber">Lorsqu'une nouvelle extension payante est disponible dans le Catalogue des extensions et que vous avez configuré votre boutique en ligne pour la vendre, modifiez le proxy. Ajoutez-y l'ID de l'extension afin de la rendre disponible pour vos clients. Notez que les données du catalogue sont mises en cache sur les serveurs de Plesk et que les nouvelles extensions n'apparaissent pas immédiatement.</li></ol><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '78409.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

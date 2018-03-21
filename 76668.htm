@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Prendre en charge SmarterMail à distance (Windows) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59422.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59440.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Prendre en charge SmarterMail à distance (Windows)</h2>
+<p class="bodytext">Au lieu d'utiliser un serveur de messagerie local, vous pouvez intégrer Plesk à un serveur SmarterMail distant. Cela permet à vos clients de recevoir et d'envoyer des mails, malgré les restrictions suivantes. Vous pouvez utiliser un seul serveur SmarterMail comme serveur de messagerie centralisé utilisé par plusieurs installations de Plesk.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> la prise en charge d'un serveur SmarterMail distant est une fonctionnalité Premium de Plesk qui requiert l'achat du <a class="externalhyperlinktemplate" title="" href="https://go.plesk.com/buy-plesk-ext/offer-power-pack" target="_blank">Power Pack</a> ou du <a class="externalhyperlinktemplate" title="" href="https://go.plesk.com/buy-plesk-ext/offer-hosting-pack" target="_blank">pack d'hébergement</a>.</p>
+<h5 class="heading5">Restrictions et informations importantes :</h5>
+<ul class="listbullet2"><li class="listbullet2">Seuls SmarterMail 15 et versions ultérieures sont pris en charge.</li><li class="listbullet2">Les données de messagerie d'un serveur SmarterMail distant ne sont pas incluses dans les sauvegardes Plesk. Vous devez configurer manuellement un schéma de sauvegarde/restauration, par exemple selon les pratiques recommandées par SmarterTools.</li><li class="listbullet2">Après passage à un serveur de messagerie SmarterMail distant, certains paramètres et fonctionnalités de messagerie, tels que les filtres anti-spam, antivirus, répondeurs automatiques ou listes blanches/noires, ne peuvent plus être gérés depuis Plesk et doivent être configurés côté SmarterMail. Notez bien que les fonctionnalités ne sont pas perdues mais remplacées par des contreparties SmarterMail.</li></ul><p class="warning"><strong class="buttons">Attention :</strong> le passage à un autre serveur de messagerie n'est recommandé que pour les nouvelles installations de Plesk. Sur les serveurs déjà utilisés pour héberger des comptes client actifs, le passage à un autre serveur n'est pas recommandé et entraînera la perte des données et paramètres de messagerie. Si vous devez changer le serveur de messagerie d'une installation Plesk active, nous recommandons de prévenir vos clients à l'avance et de leur conseiller de sauvegarder leurs mails. Vous ne pourrez pas les restaurer à partir des sauvegardes Plesk après changement de serveur.</p>
+<p class="procedureheading">Pour passer à un serveur SmarterMail distant :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> et cliquez sur <strong class="specialbold">Composants du serveur</strong>. Accédez à la section &quot;Serveur de messagerie&quot; et cliquez sur <strong class="specialbold">Serveur SmarterMail de messagerie (non configuré)</strong>.</li><li class="procedurelistnumber">Saisissez les informations requises sur le serveur SmarterMail : nom d'hôte, port et identifiants admin. Le nom d'hôte doit être résolu correctement et le port doit être accessible depuis le serveur Plesk ; vous devez modifier manuellement les paramètres du pare-feu. </li><li class="procedurelistnumber">(Facultatif) Pour améliorer la sécurité, vous pouvez activer les options suivantes :<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Utiliser le protocole HTTPS</strong>, pour protéger les connexions du serveur SmarterMail distant.</li><li class="listbullet2"><strong class="specialbold">Vérifier le certificat SSL lorsque le protocole HTTPS est utilisé</strong>, pour forcer la vérification de la validité du certificat du serveur de messagerie.</li></ul><p class="listcontinue">Notez que pour utiliser ces options, vous devez configurer manuellement le serveur SmarterMail distant pour l'utilisation du HTTPS selon les instructions <a class="externalhyperlinktemplate" title="" href="https://portal.smartertools.com/kb/a2814/set-up-smartermail-as-an-iis-site-in-iis-8.aspx" target="_blank">ici</a> et <a class="externalhyperlinktemplate" title="" href="https://portal.smartertools.com/kb/a2671/configure-ssl-tls-to-secure-smartermail.aspx" target="_blank">là</a>.</p>
+</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong>. Si une connexion au serveur SmarterMail distant doit être établie, il apparaît dans la liste des serveurs de messagerie disponibles.</li><li class="procedurelistnumber">Pour parachever le changement de serveur, cliquez sur <strong class="specialbold">Serveur de messagerie</strong>, sélectionnez l'option &quot;Serveur SmarterMail distant&quot; dans la liste et cliquez sur <strong class="specialbold">OK</strong>.</li><li class="procedurelistnumber">Pour garantir que les enregistrements DNS des domaines hébergés pointent vers le serveur SmarterMail distant, mettez à jour en conséquence les enregistrements MX dans le template DNS de Plesk, selon <a id="h72232" class="jumptemplate" title="Template DNS" href="72226.htm" target="_self">ces instructions</a>.</li><li class="procedurelistnumber">(Facultatif) Pour permettre à vos clients d'accéder à la messagerie Web SmarterMail depuis Plesk, cliquez sur <strong class="specialbold">Serveur de messagerie</strong>, sélectionnez <strong class="specialbold">Client Web SmarterMail distant</strong> sous &quot;Messagerie Web&quot;, tapez ou collez l'URL de la messagerie Web SmarterMail dans le champ <strong class="specialbold">URL de la page de connexion</strong> et cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '76668.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

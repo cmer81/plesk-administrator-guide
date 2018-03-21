@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Gestion des adresses IP </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="70568.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="64993.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557101.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557101.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Gestion des adresses IP</h2>
+<p class="bodytext">Dans Plesk, vous pouvez afficher la liste de toutes les adresses IP enregistrées et les gérer.</p>
+<p class="bodytext">Pour chaque adresse IP enregistrée dans Plesk, il est nécessaire de préciser si l'adresse est <em class="emphasis">dédiée</em> ou <em class="emphasis">partagée</em>.</p>
+<ul class="listbullet2"><li class="listbullet2">Une adresse IP partagée peut être partagée par un nombre indéfini d'abonnements.</li><li class="listbullet2">Une adresse IP dédiée est liée à un seul abonnement. Elle peut être utilisée pour héberger plusieurs sites Web à condition que ces sites Web appartiennent au même abonnement.</li></ul><p class="bodytext">Voici les avantages d'une adresse IP dédiée :</p>
+<ul class="listbullet2"><li class="listbullet2">Hébergement des partages FTP accessibles de manière anonyme (sans authentification par mot de passe).</li><li class="listbullet2">Limitation des risques de dégâts associés à la réputation d'une adresse IP (par exemple, envoi de spam par le propriétaire d'un abonnement) aux sites Web hébergés sur cette adresse IP.</li><li class="listbullet2">Sécurisation d'un site Web unique avec un certificat SSL/TLS si la prise en charge Server Name Indication (SNI) n'est pas disponible. La prise en charge SNI permet d'activer la protection SSL/TLS pour les sites Web sur une adresse IP partagée. Toutefois, cela risque de ne pas fonctionner pour tous les serveurs et navigateurs. Pour en savoir plus, consultez la section&nbsp;<a id="h78402" class="jumptemplate" title="SSL/TLS et adresses IP partagées" href="68308.htm" target="_self">SSL/TLS et adresses IP partagées</a>.</li></ul><p class="note"><strong class="buttons">Remarque :</strong> pour pouvoir créer un abonnement et héberger des sites Web, vous devez disposer d'une adresse IP partagée ou d'au moins une adresse IP dédiée sur le serveur.</p>
+<h5 class="heading5">Afficher la liste des adresses IP enregistrées</h5>
+<p class="bodytext">Pour afficher la liste des adresses IP enregistrées dans Plesk ainsi que les informations essentielles, comme le type d'adresse IP ou ne nombre de sites Web hébergés sur une adresse donnée, allez dans&nbsp;<strong class="specialbold">Outils &amp; Paramètres</strong>&nbsp;&gt;&nbsp;<strong class="specialbold">Adresses IP</strong>.</p>
+<p class="widegraphic"><img src="78400.png" alt="" height="270" width="1896" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Vous pouvez rechercher une adresse IP dans le menu de recherche. Pour afficher ce menu, cliquez sur la flèche à droite sur l'écran.</p>
+<h5 class="heading5">Ajouter une adresse IP</h5>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans&nbsp;<strong class="specialbold">Outils &amp; Paramètres</strong>&nbsp;&gt;&nbsp;<strong class="specialbold">Adresses IP</strong>.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Ajouter une adresse IP</strong>.<p class="listnote"><strong class="buttons">Remarque :</strong> si vous exécutez Plesk dans un conteneur Virtuozzo, vous pouvez ajouter des adresses IP uniquement sur le hardware node Virtuozzo. Dans ce cas, le bouton Ajouter une adresse IP ne s'affiche pas. Pour découvrir comment ajouter une adresse IP lorsque vous exécutez Plesk dans un conteneur Virtuozzo, consultez la documentation Virtuozzo. Une fois que vous avez ajouté l'adresse IP souhaitée, relisez les adresses IP.</p>
+</li><li class="procedurelistnumber">Sélectionnez l'interface réseau de la nouvelle adresse IP depuis le menu de l'&nbsp;<strong class="specialbold">Interface</strong>&nbsp;.</li><li class="procedurelistnumber">Saisissez l'adresse IP et le masque de sous-réseau dans la zone prévue à cet effet. Par exemple, <code class="monospace">123.123.123.123/16</code>&nbsp;ou&nbsp;<code class="monospace">2002:7b7b:7b7b::1/64</code>.</li><li class="procedurelistnumber">(Facultatif, utilisé sur les serveurs Plesk derrière le NAT) <strong class="specialbold">Définir l'adresse IP publique</strong>. Si vous ajoutez une adresse IP privée dans l'objectif d'héberger des sites Web destinés au public, vous pouvez associer cette adresse IP à une adresse IP publique. Pour cela, saisissez-la dans le champ <strong class="specialbold">Définir l'adresse IP publique</strong>. Cette adresse IP sera utilisée dans les enregistrements A des domaines hébergés sur cette adresse IP. </li><li class="procedurelistnumber">Sélectionnez le type de la nouvelle adresse IP, partagée ou dédiée.</li><li class="procedurelistnumber">Sélectionnez le certificat SSL/TLS par défaut à utiliser pour la nouvelle adresse IP. Par défaut, chaque adresse IP est sécurisée avec un certificat par défaut (autosigné). Pour en savoir plus sur les certificats SSL/TLS, consultez la section&nbsp;<a id="h78403" class="jumptemplate" title="Protéger les connexions avec des certificats SSL/TLS" href="65158.htm" target="_self">Protéger les connexions avec des certificats SSL/TLS</a>. </li><li class="procedurelistnumber">(Plesk pour Windows) Sélectionnez la politique d'utilisation FTPS souhaitée. <p class="listnote"><strong class="buttons">Remarque :</strong> pour permettre des connexions FTP sécurisées, le serveur FTP installé sur votre serveur Plesk doit prendre en charge FTP sur SSL/TLS. Par exemple, les serveurs Gene6, Serv-U FTP, IIS FTP 7.x prennent en charge ce type de connexion. </p>
+</li><li class="procedurelistnumber">Cliquez sur &nbsp;<strong class="specialbold">OK</strong> pour ajouter l'adresse IP.</li></ol><h5 class="heading5">Mettre à jour la liste des adresses IP</h5>
+<p class="bodytext">Vous pouvez mettre à jour la liste des adresses IP dans Plesk. Cela permet d'enregistrer toutes les adresses IP présentes sur les interfaces réseau du serveur dans Plesk. Cette mise à jour est notamment utile dans les cas suivants :</p>
+<ul class="listbullet2"><li class="listbullet2">Si vous exécutez Plesk dans un conteneur Virtuozzo et si vous avez ajouté une adresse IP via le hardware node.</li><li class="listbullet2">Si vous avez ajouté manuellement une adresse IP sur le serveur.</li></ul><p class="bodytext">Dans les deux cas, vous devez mettre à jour la liste des adresses IP avant de les assigner à des abonnements.</p>
+<p class="procedureheading">Pour mettre à jour la liste des adresses IP :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans &nbsp;<strong class="specialbold">Outils &amp; Paramètres</strong>&nbsp;&gt;&nbsp;<strong class="specialbold">Adresses IP</strong>.&nbsp;</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Relire les IP</strong>.</li></ol><h5 class="heading5">Masquer les adresses IP</h5>
+<p class="bodytext">Vous pouvez masquer n'importe quelle adresse IP enregistrée dans Plesk. Les adresses IP masquées ne sont pas affichées dans&nbsp;<strong class="specialbold">Outils &amp; Paramètres</strong>&nbsp;&gt;&nbsp;<strong class="specialbold">Adresses IP</strong> et ne peuvent pas être affectées. Par exemple, si vous voulez éviter d'affecter une adresse IP par erreur, vous pouvez masquer les adresses IP présentes sur le serveur.</p>
+<p class="bodytext">Notez que si vous masquez une adresse IP déjà assignée à un ou plusieurs abonnements, l'erreur suivante se produit : &quot;Cette adresse IP est déjà utilisée pour l'hébergement.&quot; L'adresse IP est marquée comme étant sur &quot;Liste noire&quot; dans &nbsp;Outils &amp; Paramètres&nbsp;&gt;&nbsp;Adresses IP, mais elle reste disponible.</p>
+<p class="procedureheading">Pour masquer une ou plusieurs adresses IP :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Modifiez le fichier <code class="monospace"><a id="h78530" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> et ajoutez-y les lignes suivantes :</li></ol><pre class="preformatted">[ip]</pre>
+<pre class="preformatted">blacklist=&quot;&lt;adresses IP à masquer&gt;&quot;</pre>
+<p class="listcontinue"><code class="monospace">&lt;IP addresses to be hidden&gt;</code> correspond à une liste d'adresses IP que vous voulez masquer, séparées par une virgule. Vous pouvez masquer des adresses IP IPv4 et IPv6. Par exemple :</p>
+<pre class="preformatted">[ip]</pre>
+<pre class="preformatted">blacklist=&quot;192.168.1.10, 2002:5bcc:18fd:c:f482:d057:9ccf:993D&quot;</pre>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Connectez-vous à Plesk. Allez dans&nbsp;<strong class="specialbold">Outils &amp; Paramètres</strong>&nbsp;&gt;&nbsp;<strong class="specialbold">Adresses IP</strong>, puis cliquez sur&nbsp;<strong class="specialbold">Relire les IP</strong>.</li></ol><h5 class="heading5">Afficher à nouveau une ou plusieurs adresses IP</h5>
+<p class="bodytext">Si vous changez d'avis ultérieurement, vous pouvez à nouveau afficher les adresses IP masquées. Pour cela, supprimez les adresses IP du fichier <code class="monospace">panel.ini</code> et cliquez sur <strong class="specialbold">Relire les IP</strong>.</p>
+<h5 class="heading5">Affecter un site Web par défaut à une adresse IP </h5>
+<p class="bodytext">Le premier site Web hébergé sur une adresse IP devient le <em class="emphasis">site Web par défaut</em> pour cette adresse. Si plusieurs sites Web sont hébergés sur une adresse IP unique, c'est le site Web par défaut qui s'affiche quand le visiteur saisit l'adresse IP lors de la navigation à la place d'un nom de domaine.</p>
+<p class="bodytext">Par exemple, vous pouvez héberger votre site Web et d'autres sites Web sur une adresse IP unique. Si vous voulez que les visiteurs voient votre propre site Web lorsqu'ils saisissent l'adresse IP, vous pouvez sélectionner votre propre site Web comme site par défaut.</p>
+<p class="procedureheading">Pour sélectionner un site Web :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans &nbsp;<strong class="specialbold">Outils &amp; Paramètres</strong>&nbsp;&gt;&nbsp;<strong class="specialbold">Adresses IP</strong>.</li><li class="procedurelistnumber">Cliquez sur l'adresse IP souhaitée.</li><li class="procedurelistnumber">Sélectionnez le site Web de votre choix dans le menu <strong class="specialbold">Site par défaut</strong>.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">OK</strong>. </li></ol><p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59410.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

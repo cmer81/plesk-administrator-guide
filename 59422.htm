@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Notifications automatiques par mail </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59283.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="76668.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Notifications automatiques par mail</h2>
+<p class="bodytext">Plesk inclut un système de notification automatique dont l'objectif est de vous informer, d'informer vos revendeurs et vos clients d'événements tels que la surutilisation de ressources, l'expiration d'abonnements et la suspension de comptes.</p>
+<p class="bodytext">Pour afficher ou modifier les paramètres de ce système de notification, allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Notifications</strong>. Vous pouvez indiquer si vous voulez recevoir des notifications pour chacun des événements. Les adresses mails de l'administrateur, des revendeurs ainsi que des clients sont récupérées depuis le champ Adresse mail des informations de contact. Vous pouvez également indiquer une adresse mail supplémentaire à laquelle les notifications seront envoyées.</p>
+<p class="bodytext">Remarque : les notifications de création de sites Web et de comptes sont envoyées immédiatement. En revanche, les notifications de surutilisation des ressources et de suspension de compte sont liées à un script qui est exécuté toutes les 24 heures. C'est pourquoi une notification relative à la surutilisation de ressources peut être expédiée quelque temps après l'instant où la limite d'utilisation des ressources est dépassée.</p>
+<p class="bodytext">Vous pouvez modifier le texte des notifications. Les notifications sont envoyées en texte brut et l'utilisation des balises HTML est proscrite. Lorsque vous modifiez le texte d'une notification, vous pouvez insérer des variables qui seront remplacées par leurs valeurs réelles lors de l'envoi de la notification. Vous trouverez ci-après la liste complète des variables disponibles.</p>
+<table class="tableintopic" width="732" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="258" height="0"></td>
+<td width="216" height="0"></td>
+<td width="258" height="0"></td>
+<td width="33" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="258"><p class="tableheading">Type d'événement</p>
+</td>
+<td style="border:1px solid #010101;" width="216"><p class="tableheading">Balises visibles dans les notifications</p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="tableheading">Données utilisées par les balises</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" rowspan="16" width="258"><p class="bodytext">Création d'un compte revendeur ou client</p>
+<p class="bodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_contact_name&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_contact_name&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom et prénom de l'utilisateur</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_login&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_login&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom d'utilisateur pour être autorisé dans Plesk</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;mot de passe&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">mot de passe de l'utilisateur pour être autorisé dans Plesk</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_company_name&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_company_name&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">raison sociale</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_cr_date&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_cr_date&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">date de création du compte utilisateur</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_phone&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_phone&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">numéro de téléphone</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_fax&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_fax&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">numéro de fax</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_country&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_country&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">pays</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_state_province&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_state_province&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">état ou région</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_city&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_city&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">ville</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_postal_ZIP_code&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_postal_ZIP_code&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">code postal ou CP</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_address&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;user_address&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">adresse</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_id&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;user_id&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">identificateur unique affecté par le système</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_email&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_email&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">mail</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_expiration_date&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_email_expiration_date&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">date d'expiration du compte</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;hostname&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom d'hôte pour accéder à Plesk</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" rowspan="5" width="258"><p class="bodytext">Ajout d'un nouveau site Web dans le serveur</p>
+<p class="bodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;domain&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom de domaine</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_login&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_login&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom d'utilisateur pour être autorisé dans Plesk</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"> <em class="emphasis">&lt;reseller_contact_name&gt;</em></p>
+<p class="bodytext"> <em class="emphasis">&lt;client_contact_name&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;user_contact_name&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom et prénom de l'utilisateur</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;dom_id&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">identificateur unique affecté par le système</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;ip&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">adresse IP sur laquelle le site Web est hébergé</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" rowspan="5" width="258"><p class="bodytext">Notifications d'expiration de l'abonnement</p>
+<p class="bodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;domain_name&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom de l'abonnement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_login&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_login&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;user_login&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom d'utilisateur pour être autorisé dans Plesk</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_contact_name&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_contact_name&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;user_contact_name&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom et prénom de l'utilisateur</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;dom_id&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">identificateur unique affecté par le système</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;domain_expiration_date&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">date d'expiration de l'abonnement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" rowspan="6" width="258"><p class="bodytext">Notifications de mises à jour d'applications APS </p>
+<p class="bodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;available_updates_text&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">texte relatif aux mises à jour disponibles</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;available_updates_list&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">liste des mises à jour disponibles</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;installed_updates_text&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">texte relatif aux mises à jour installées</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;installed_updates_list&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">liste des mises à jour installées</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;requirements_updates_text&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">texte relatif aux mises à jour dans les prérequis d'application</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;requirements_updates_list&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">liste des mises à jour dans les prérequis d'application</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" rowspan="10" width="258"><p class="bodytext">Notifications de surexploitation des ressources</p>
+<p class="bodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;domain_name&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom de l'abonnement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;limit_name&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom d'une ressource</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_login&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_login&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;user_login&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom d'utilisateur pour être autorisé dans Plesk</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;reseller_contact_name&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;client_contact_name&gt;</em></p>
+<p class="bodytext"><em class="emphasis">&lt;user_contact_name&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">nom et prénom de l'utilisateur</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;disk_usage&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">informations sur l'espace disque utilisé</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;disk_space_limit&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">informations sur le total d'espace disque alloué au compte</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;resource_table&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">informations sur toutes les limites de ressources atteintes ou bientôt atteintes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="216"><p class="bodytext"><em class="emphasis">&lt;traffic&gt;</em></p>
+</td>
+<td style="border:1px solid #010101;" width="258"><p class="bodytext">informations sur le trafic utilisé</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" rowspan="2" width="216"><p class="bodytext"><em class="emphasis">&lt;traffic_limit&gt;</em></p>
+<p class="bodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" rowspan="2" width="258"><p class="bodytext">informations sur la somme de bande passante affectée au compte</p>
+<p class="bodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="33"><p class="bodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="note"><strong class="buttons">Remarque :</strong> si vous avez effectué une mise à jour vers Plesk depuis une version antérieure, tous les templates de notification personnalisés que vous avez précédemment utilisés restent effectifs. En raison des changements dans la hiérarchie des comptes utilisateur et de l'ajout d'un schéma de surexploitation de ressources, tout type de ressources peut maintenant être surexploité. Par conséquent, pour afficher les informations sur toutes les ressources surexploitées dans les templates de notification, nous vous conseillons d'utiliser une seule variable <em class="emphasis">&lt;resource_table&gt;</em> au lieu des variables <em class="emphasis">&lt;disk_usage&gt;</em>, <em class="emphasis">&lt;disk_space_limit&gt;</em>, <em class="emphasis">&lt;traffic&gt;</em> et <em class="emphasis">&lt;traffic_limit&gt;</em>. </p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59422.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Utiliser Docker </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="64951.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="76658.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557349.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557349.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Utiliser Docker</h2>
+<div align="right"><span class="specialbold" style="font-size: 20px">Regardez le tutoriel vidéo</span><br/><iframe width="373" height="210" align="top" src="https://www.youtube.com/embed/DQnO70uGUN0?list=PL3vEEE_dvoG9f38D4uM3mRdHCQOf9mdCK" frameborder="0" allowfullscreen></iframe></div><p class="note"><strong class="buttons">Remarque</strong> : cette fonctionnalité n'est pas prise en charge dans les installations Plesk sous Windows Server 2008.</p>
+<p class="bodytext">Docker est une plate-forme pour les applications distribuées destinée aux développeurs et administrateurs système. Elle permet d'exécuter des applications dans des conteneurs. Elle vous permet d'utiliser des logiciels spécifiques, tels que Redis ou MongoDB, ou un version spécifique d'un logiciel, pouvant ne pas être pris en charge par votre système d'exploitation ou nécessitant une compilation.</p>
+<p class="bodytext">Docker est disponible en tant qu&#8217;extension Plesk. Plesk vous permet d'exécuter et de gérer des conteneurs basés sur des images Docker spécifiques et d'utiliser Docker non seulement sur l'hôte local, mais aussi sur une machine distante spécifique.</p>
+<p class="bodytext">&nbsp;</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans ce chapitre :</p><p class="relateditem"><a href="75823.htm#o77132" target="_self">Exigences et limites</a></p><p class="relateditem"><a href="75823.htm#o77144" target="_self">Premiers pas avec Docker</a></p><p class="relateditem"><a href="75823.htm#o77133" target="_self">Catalogue d'images</a></p><p class="relateditem"><a href="75823.htm#o77134" target="_self">Paramètres des conteneurs</a></p><p class="relateditem"><a href="75823.htm#o77135" target="_self">Opérations sur les conteneurs</a></p><p class="relateditem"><a href="75823.htm#o77136" target="_self">Utilisation de Docker à distance</a></p><p class="relateditem"><a href="75823.htm#o77137" target="_self">Création d'images avec des paramètres personnalisés</a></p><p class="relateditem"><a href="75823.htm#o77138" target="_self">Gestion des images locales</a></p><p class="relateditem"><a href="75823.htm#o77139" target="_self">Configuration de Nginx pour les requêtes proxy de domaines sur un conteneur</a></p></td>
+</tr>
+</table>
+
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77132"></a><h3 class="heading3">Exigences et limites</h3>
+<ul class="listbullet"><li class="listbullet">Docker est pris en charge dans Plesk avec les systèmes d'exploitation suivants : CentOS 7, RedHat 7, Debian 8, Ubuntu 14.04 et Ubuntu 16.04. <p class="listcontinue">Dans Plesk pour Windows, vous pouvez utiliser Docker installé sur une machine distante (voir <strong class="specialbold">Utilisation de Docker à distance </strong>plus bas dans cette section).</p>
+</li><li class="listbullet">Pour utiliser les services Docker à distance dans Plesk, vous avec besoin d'une licence complémentaire. Vous pouvez l'acquérir <a class="externalhyperlinktemplate" title="" href="https://go.plesk.com/buy-plesk-ext/docker" target="_blank">individuellement</a> ou via le <a class="externalhyperlinktemplate" title="" href="https://go.plesk.com/buy-plesk-ext/offer-hosting-pack" target="_blank">pack d'hébergement</a>.</li><li class="listbullet">Docker ne fonctionne sur des systèmes x64. </li><li class="listbullet">Il est impossible de migrer ou sauvegarder des conteneurs Docker dans Plesk. Toutefois, vous pouvez sauvegarder les données utilisées par les conteneurs (voir <strong class="specialbold">Mappage de volume</strong> plus bas) ou télécharger des snapshots.</li><li class="listbullet">Virtuozzo 7 avec <a class="externalhyperlinktemplate" title="" href="https://help.virtuozzo.com/customer/portal/articles/2622351" target="_blank">Mise à jour 1 Correctif 1 (7.0.1-686)</a> ou version ultérieure est installé et pris en charge. Remarque : à partir de cette mise à jour, les nouveaux conteneurs sous CentOS 7 sont créés avec pare-feu activé par défaut, Virtuozzo étant en valeur d'une sécurité accrue. L'administrateur Plesk doit configurer manuellement le pare-feu pour que les <a class="externalhyperlinktemplate" title="" href="https://kb.plesk.com/en/391" target="_blank">ports nécessaires au bon fonctionnement de Plesk</a> soient ouverts.</li></ul><p class="bodytext">&nbsp;&nbsp;</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77144"></a><h3 class="heading3">Premiers pas avec Docker</h3>
+<p class="bodytext">Installez l&#8217;extension <strong class="specialbold">Docker </strong>dans Plesk. </p>
+<p class="bodytext">Pour commencer à l'utiliser, allez dans <strong class="specialbold">Docker</strong> dans le panneau de navigation gauche.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77133"></a><h3 class="heading3">Catalogue d'images</h3>
+<p class="bodytext">Dans le catalogue (<strong class="specialbold">Docker</strong> &gt; <strong class="specialbold">Catalogue d'images Docker</strong>), Plesk propose des images de <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://hub.docker.com/explore" target="_blank">https://hub.docker.com/explore</a></strong>. Par défaut, seules les images recommandées sont présentées. Pour voir plus d'images, utilisez la zone de recherche ou les filtres.</p>
+<p class="bodytext">Plusieurs versions sont disponibles pour chaque application. Vous pouvez exécuter une version précise en sélectionnant l'étiquette correspondante comme ci-dessous :</p>
+<p class="widegraphic"><img src="76044.gif" alt="Docker_Containers" height="648" width="1005" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="procedureheading">Pour utiliser des filtres :</p>
+<ol class="listnumber"><li class="listnumber">Cliquez sur la flèche <img src="76322.gif" alt="arrow" height="25" width="29" vspace="0" hspace="0" align="bottom" border="0"> en regard de la zone de recherche.</li><li class="listnumber">Indiquez au moins l'un de ces éléments : répertoire et nom de l'image.<p class="listcontinue">Répertoires que vous pouvez sélectionner :</p>
+<ul class="listbullet2"><li class="listbullet2">Répertoire local, contenant des images locales. Ces images sont déjà téléchargées et sont stockées sur le serveur avec Docker. Pour plus d'informations, consultez la rubrique <strong class="specialbold">Gestion d'images locales</strong> plus bas dans cette section.</li><li class="listbullet2">Hub Docker - <strong class="specialbold">https://hub.docker.com/explore.</strong></li></ul></li></ol><p class="procedureheading">Pour exécuter un conteneur :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Docker</strong> &gt; <strong class="specialbold">Catalogue d'images Docker</strong>.</li><li class="procedurelistnumber">Utilisez la zone de recherche ou les filtres pour rechercher rapidement des applications dans le catalogue.</li><li class="procedurelistnumber">Pour voir la description et la documentation d'une application sur le hub Docker, cliquez sur le nom de l'image. Cela ne vaut pas pour les images locales.</li><li class="procedurelistnumber">Pour exécuter une version spécifique, cliquez sur la flèche en regard du bouton <strong class="specialbold">Exécuter</strong> et sélectionnez la version de l'application. </li><li class="procedurelistnumber">Pour exécuter la dernière version de l'application sélectionnée, cliquez sur <strong class="specialbold">Exécuter</strong>.<p class="listcontinue">Si l'image est stockée en local, il s'agit du bouton <strong class="specialbold">Exécuter (local)</strong>.</p>
+<p class="listcontinue">Plesk crée un conteneur, vous invite à en définir les paramètres (variables d'environnement, etc.), puis l'exécute. Vous pouvez annuler l'exécution en cliquant sur <strong class="specialbold">Annuler </strong>sur l'écran <strong class="specialbold">Paramètres</strong>. Pour plus d'informations sur les paramètres, consultez la rubrique <strong class="specialbold">Paramètres des conteneurs</strong> plus bas sur cette page.</p>
+</li><li class="procedurelistnumber">Le conteneur est visible dans la liste des conteneurs en haut de la page <strong class="specialbold">Catalogue Docker</strong>. <p class="widegraphic"><img src="76046.gif" alt="Docker_Container_displayed" height="552" width="975" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ol><p class="bodytext">Consultez le log (<strong class="specialbold">Logs</strong>) pour connaître les paramètres indispensables au bon fonctionnement du conteneur.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77134"></a><h3 class="heading3">Paramètres des conteneurs</h3>
+<p class="note"><strong class="buttons">Remarque :</strong> pour modifier les paramètres d'un conteneur, il n'est pas nécessaire de l'arrêter. Lorsque vous enregistrez les nouveaux paramètres, Plesk recrée le conteneur.</p>
+<p class="bodytext">Pour modifier les paramètres d'un conteneur, allez dans <strong class="specialbold">Paramètres</strong> ou <strong class="specialbold">Détails</strong> &gt; <strong class="specialbold">Paramètres</strong>.</p>
+<p class="widegraphic"><img src="78131.gif" alt="Docker_container_settings" height="520" width="1246" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="procedureheading">Limitation de la mémoire</p>
+<p class="bodytext">Par défaut, l'utilisation de la RAM dans un conteneur Docker est illimitée. Pour limiter l'utilisation de la RAM, décochez la case <strong class="specialbold">Illimité</strong> et saisissez la valeur limite en mégaoctets dans le champ <strong class="specialbold">Limite de mémoire</strong>. </p>
+<p class="note"><strong class="buttons">Remarque :</strong> pour le moment, il est impossible de limiter l'utilisation du CPU et du disque pour un conteneur Docker.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> les conteneurs Docker sont des objets de niveau administrateur. Ils ne sont pas contrôlés par les limites Cgroup au niveau de l'abonnement (utilisation du CPU, de la RAM et du disque).</p>
+<p class="procedureheading">Démarrage automatique</p>
+<p class="bodytext">Si l'option <strong class="specialbold">Démarrage automatique après redémarrage du système</strong> n'est pas sélectionnée, après redémarrage système, les sites Web utilisant ce conteneur risquent d'être hors service et le conteneur doit être redémarré manuellement.</p>
+<p class="procedureheading">Mappage de port</p>
+<p class="bodytext">Par défaut, le <strong class="specialbold">mappage de port automatique</strong> est activé et le port interne du conteneur est mappé à un port aléatoire du système hôte, par exemple 32768.</p>
+<p class="bodytext">Pour modifier le port sur le système hôte, décochez l'option <strong class="specialbold">Mappage de port automatique </strong>et indiquez un autre port externe dans le <strong class="specialbold">mappage manuel</strong>. Si le <strong class="specialbold">mappage manuel </strong>n'apparaît pas lorsque vous décochez la case, cela signifie que le conteneur n'expose pas les ports.</p>
+<p class="warning"><strong class="buttons">Important :</strong> si le mappage de port est configuré, Docker fait la liaison avec le port indiqué sur toutes les interfaces réseau du système hôte. Généralement, cela signifie que l'application est accessible depuis tout emplacement. Docker suppose que l'authentification est gérée par l'application, mais cela n'est pas toujours le cas, par exemple MySQL ne permet pas l'accès anonyme contrairement à Redis. <br>Plesk ne peut déterminer quels sont les services installés sur un certain conteneur Docker et ne peut en contrôler l'accès. Pour interdire l'accès à l'application hors Plesk, procédez manuellement via le pare-feu du système hôte. </p>
+<p class="procedureheading">Mappage de volume</p>
+<p class="bodytext">Les volumes Docker sont des répertoires sur votre serveur, avec montage sur un conteneur Docker, vous offrant un stockage permanent accessible depuis votre système hôte. Les données des volumes Docker peuvent être sauvegardées et surtout ne sont pas supprimées si vous arrêtez ou supprimez un conteneur.</p>
+<p class="bodytext">Pour en savoir plus sur les données dans les conteneurs, consultez la <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://docs.docker.com/engine/userguide/containers/dockervolumes/" target="_blank">documentation Docker</a></strong>.</p>
+<p class="bodytext">Pour ajouter un mappage de volume, définissez les éléments suivants :</p>
+<ul class="listbullet"><li class="listbullet">Dans la première zone (gauche), chemin vers le répertoire sur le serveur où monter le conteneur.</li><li class="listbullet">Dans la seconde zone (droite) (intitulée <strong class="specialbold">Source</strong>), chemin vers un répertoire hors du conteneur.</li></ul><p class="bodytext">Pour mapper plusieurs répertoires, cliquez sur <strong class="specialbold">Ajouter un mappage</strong>.</p>
+<p class="procedureheading">Configuration de variables d'environnement</p>
+<p class="bodytext">Les variables d'environnement sont utilisées par l'application dans un conteneur. Vous devrez peut-être ajouter ou modifier des variables. Plesk permet d'ajouter autant de variables que nécessaire.&nbsp;</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77135"></a><h3 class="heading3">Opérations sur les conteneurs</h3>
+<p class="bodytext">Vous pouvez effectuer les actions suivantes avec des conteneurs :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Redémarrer</strong> ou <strong class="specialbold">Arrêter</strong> un conteneur. Dans ce cas, le conteneur est recréé avec les paramètres actuels. <p class="listnote"><strong class="buttons">Remarque </strong>: si vous n'avez pas enregistré les données sur les volumes montés (voir <strong class="specialbold">Mappage de volume</strong> plus bas), elles seront perdues.</p>
+</li><li class="listbullet">Consulter les logs et la consommation de ressources (<strong class="specialbold">Détails</strong>).</li><li class="listbullet">Modifier les paramètres des conteneurs, tels que les variables d'environnement ou le mappage de volume (<strong class="specialbold">Paramètres </strong>ou <strong class="specialbold">Détails</strong> &gt; <strong class="specialbold">Paramètres</strong>).<p class="listcontinue">Dans Plesk sous CentOS, vous pouvez définir la limite de mémoire d'un conteneur (<strong class="specialbold">Paramètres</strong> &gt; <strong class="specialbold">Limite de la mémoire</strong>).</p>
+</li><li class="listbullet">Renommer un conteneur (<strong class="specialbold">Paramètres</strong> &gt; <strong class="specialbold">Nom du conteneur</strong>).</li><li class="listbullet">Recréer un conteneur avec la même image ou une autre version (<strong class="specialbold">Détails</strong> &gt; <strong class="specialbold">Recréer</strong>).</li><li class="listbullet">Créer une image reposant sur un conteneur avec vos paramètres personnalisés (<strong class="specialbold">Détails</strong> &gt; <strong class="specialbold">Enregistrer sous Image</strong>).</li><li class="listbullet">Faire un snapshot d'un conteneur (<strong class="specialbold">Détails</strong> &gt; <strong class="specialbold">Télécharger un snapshot</strong>).</li><li class="listbullet">Supprimer un conteneur (<strong class="specialbold">Supprimer</strong> ou <strong class="specialbold">Détails</strong> &gt; <strong class="specialbold">Supprimer</strong>).</li></ul><p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"></p>
+<h5 class="heading5">Recréation d'un conteneur</h5>
+<p class="bodytext">En général, vous devez recréer un conteneur pour mettre à jour l'application. En réalité, vous pouvez reconstruire un conteneur depuis toute version de l'application disponible dans l'application, et non seulement depuis une version récente.</p>
+<p class="bodytext">Les paramètres personnalisés sont conservés pendant la recréation. Pour conserver les données utilisées par l'application dans le conteneur, vous devez définir le mappage de volume avant de recréer un conteneur. Le mappage de volume vous permet d'accéder aux répertoires dans un conteneur (voir le <a id="h77140" class="jumptemplate" title="Paramètres des conteneurs" href="75823.htm#o77134" target="_self">Mappage de volume</a> dans les paramètres de conteneur).</p>
+<p class="procedureheading">Pour recréer un conteneur :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Docker</strong> et cliquez sur <strong class="specialbold">Détails</strong> sous le conteneur à recréer.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Recréer</strong> dans les paramètres du conteneur et indiquez la version de l'image et s'il faut utiliser les variables d'environnement par défaut.</li></ol><p class="bodytext"> </p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77136"></a><h3 class="heading3">Utilisation de Docker à distance</h3>
+<p class="bodytext">Par défaut, Plesk utilise Docker installé en tant que composants de Plesk. Toutefois, vous pouvez utiliser des services Docker installés hors de Plesk. Notez bien que vous ne pouvez utiliser qu'un service à la fois. Le nom d&#8217;hôte du serveur sélectionné est indiqué dans le titre du catalogue Docker dans Plesk. </p>
+<p class="note"><strong class="buttons">Important</strong> : gérer des services Docker distants requiert un add-on de clé de licence de Plesk. Sans cet add-on, vous ne pouvez gérer que le service Docker local exécuté sur le serveur Plesk.</p>
+<p class="bodytext"><strong class="buttons">Configuration de services distants</strong></p>
+<p class="bodytext">Configurez le serveur distant exécutant Docker comme décrit dans la <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://docs.docker.com/engine/security/https/" target="_blank">documentation Docker</a></strong> pour l'utiliser comme serveur distant dans Plesk.</p>
+<p class="bodytext"><strong class="buttons">Gérer des services distants</strong></p>
+<p class="bodytext">Les étapes suivant sont valables pour Plesk pour Linux et Windows.</p>
+<p class="procedureheading">Pour commencer à utiliser Docker exécuté sur un hôte distant :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Docker</strong> (sous <strong class="specialbold">Gestion des serveurs</strong>).</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Ajouter un serveur</strong> et indiquez les paramètres du serveur distant avec Docker.</li><li class="procedurelistnumber">Pour commencer à utiliser ce service Docker dans Plesk, gardez l'option <strong class="specialbold">Définir sur activé</strong>.</li></ol><p class="bodytext">Le lien vers Docker apparaît dans le volet de navigation gauche.</p>
+<p class="bodytext"></p>
+<p class="procedureheading">Pour changer de service Docker :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Docker</strong> (sous <strong class="specialbold">Gestion des serveurs</strong>).</li><li class="procedurelistnumber">Dans la liste des serveurs, sélectionnez celui que vous allez utiliser et cliquez sur <strong class="specialbold">Définir sur activé</strong>.</li></ol><p class="bodytext">Autre solution : réglez le serveur sur Activé lorsque vous modifiez ses paramètres.</p>
+<p class="widegraphic"><img src="76284.gif" alt="set_active" height="301" width="975" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77137"></a><h3 class="heading3">Création d'images avec des paramètres personnalisés </h3>
+<p class="bodytext">Pour créer une image selon les modifications apportées à un conteneur, utilisez la commande <strong class="specialbold">Enregistrer sous Image</strong>. Cela crée un snapshot de votre conteneur qui apparaît en tant que nouvelle image dans le catalogue d'images. Ainsi vous pouvez créer des images avec des paramètres personnalisés, des variables d'environnement par exemple.</p>
+<p class="bodytext">Pour créer une image depuis l'un de vos conteneurs :</p>
+<p class="bodytext">Allez sous <strong class="specialbold">Docker</strong> &gt; <strong class="specialbold">Détails</strong> sous le nom du conteneur &gt; <strong class="specialbold">Enregistrer sous Image</strong> et éventuellement indiquez les éléments suivants : </p>
+<ul class="listbullet"><li class="listbullet">Nom de l'image. Par défaut, un ID est généré et utilisé comme nom. </li><li class="listbullet">Balise. Vous pouvez indiquer ici la version de l'image. La version par défaut est la &quot;plus récente&quot;.</li></ul><p class="bodytext">L'image créée apparaît dans le catalogue d'images avec l'intitulé <strong class="specialbold">Image locale</strong>.</p>
+<p class="bodytext">&nbsp;</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77138"></a><h3 class="heading3">Gestion des images locales</h3>
+<p class="bodytext">Les images locales sont celles stockées par Docker sur le disque local. Il est donc inutile de les télécharger depuis le catalogue d'images.</p>
+<p class="bodytext">Une image devient locale dans les situations suivantes :</p>
+<ul class="listbullet"><li class="listbullet">Vous avez sélectionné une version (balise) d'une image dont le téléchargement a commencé. Si vous exécutez ensuite un conteneur ou annulez l'exécution (écran <strong class="specialbold">Paramètres</strong>), l'image est enregistrée en local.</li><li class="listbullet">Vous chargez une image dans le catalogue Docker dans Plesk (<strong class="specialbold">Charger l'image</strong> dans le catalogue d'images Docker).</li><li class="listbullet">Vous avez créé une image personnalisée depuis un conteneur (voir <strong class="specialbold"><a id="h77142" class="jumptemplate" title="Création d'images avec des paramètres personnalisés" href="75823.htm#o77137" target="_self">Création d'images avec des paramètres personnalisés</a></strong>).</li><li class="listbullet">Vous avez généré une image avec l'interface de ligne de commande.</li></ul><p class="bodytext">Si Docker héberge au moins une version téléchargée d'un groupe de versions d'une image, cette image est marquée comme <strong class="specialbold">Image locale</strong> dans le catalogue. <strong class="specialbold">Exécuter (local)</strong> indique que la dernière version a déjà été téléchargée. Plesk indique aussi combien il existe d'images locales pour un produit.</p>
+<p class="widegraphic"><img src="76318.gif" alt="local_image" height="548" width="969" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="procedureheading">Pour voir les images locales et supprimer les images locales obsolètes :</p>
+<ol class="listnumber"><li class="listnumber">Allez sous <strong class="specialbold">Docker</strong> &gt; <strong class="specialbold">Catalogue d'images Docker</strong>.</li><li class="listnumber">Pour voir toutes les images locales, cliquez sur la flèche en regard de la zone de recherche. et sélectionnez <strong class="specialbold">Local</strong> dans le filtre <strong class="specialbold">Répertoire</strong>.</li><li class="listnumber">Pour voir toutes les images locales d'un produit précis, cliquez sur le lien sous le nom du produit. Toutes les balises des images locales et l'espace disque occupé sont indiqués.<p class="listcontinue"></p>
+<p class="widegraphic"><img src="76321.gif" alt="remove_images" height="416" width="490" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="listcontinue"></p>
+</li><li class="listnumber">Pour supprimer toutes les images, cliquez sur <strong class="specialbold">Supprimer toutes les images</strong>.</li><li class="listnumber">Pour supprimer une image précise, cliquez sur l'icône Supprimer <img src="76316.gif" alt="docker_icon_remove" height="18" width="17" vspace="0" hspace="0" align="bottom" border="0"> en regard de l'image voulue.</li></ol><p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o77139"></a><h3 class="heading3">Configuration de Nginx pour les requêtes proxy de domaines sur un conteneur</h3>
+<p class="bodytext">Certains conteneurs Docker exposent les ports, de sorte que les applications dans les conteneurs sont accessibles via ces ports.</p>
+<p class="bodytext">Lorsque vous utilisez une application dans un conteneur Docker sur votre site Web, il peut être pratique d'indiquer le port non standard dans son URL. Pour éviter des désagréments, vous pouvez configurer Nginx pour les requêtes proxy de domaines sur ce port, pour que les domaines puissent utiliser un port standard (80 par exemple) sans devoir indiquer explicitement le port dans l'URL.</p>
+<p class="bodytext"><strong class="buttons">Exigences</strong></p>
+<ul class="listbullet"><li class="listbullet">Nginx doit être exécuté dans Plesk.</li><li class="listbullet">Vous devez mapper manuellement le port dans un conteneur sur un port du système hôte (par exemple 32768) (<strong class="specialbold">Docker </strong>&gt; sélectionnez un conteneur &gt; <strong class="specialbold">Paramètres</strong> &gt; décochez <strong class="specialbold"> </strong>l'option <strong class="specialbold">Mappage de port automatique</strong>).</li></ul><p class="bodytext">Après mappage manuel du port dans un conteneur à un port de votre système (par exemple 32768), vous pouvez configurer Nginx pour les requêtes proxy de domaines sur ce port, pour que les domaines puissent utiliser un port standard sur Nginx (80 par exemple). Pour cela, ajoutez une règle pour Nginx dans les paramètres du domaine comme suit :</p>
+<p class="bodytext">Allez sous <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; domaine &gt; <strong class="specialbold">Règles de proxy</strong> &gt; <strong class="specialbold">Ajouter une règle</strong> et définissez les éléments suivants :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">URL</strong>. Indiquez l'URL du site Web utilisant une application s'exécutant dans un conteneur. Il peut s'agir du site Web principal ou d'une partie de ce site. </li><li class="listbullet"><strong class="specialbold">Conteneur</strong>. Sélectionnez l'application s'exécutant en tant que conteneur Docker.</li><li class="listbullet"><strong class="specialbold">Port</strong>. Sélectionnez l'un des mappages indiqués dans les paramètres du conteneur (port dans un conteneur mappé à un port de votre système). Nginx transmet alors par proxy des requêtes au port sur le système.</li></ul><p class="bodytext">&nbsp;Les règles de proxy sont mises en uvre dans la configuration du serveur Web, par ex. dans le fichier du site Web&nbsp;<code class="monospace">nginx.conf</code>&nbsp;(dans&nbsp;<code class="monospace">/var/www/vhosts/system/$domain/conf/</code>):</p>
+<pre class="preformatted">#extension docker begin</pre>
+<pre class="preformatted">location ~ ^/.* {</pre>
+<pre class="preformatted"> proxy_pass http://0.0.0.0:9080;</pre>
+<pre class="preformatted"> proxy_set_header Host $host;</pre>
+<pre class="preformatted"> proxy_set_header X-Real-IP $remote_addr;</pre>
+<pre class="preformatted"> proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</pre>
+<pre class="preformatted">}</pre>
+<pre class="preformatted">#extension docker end</pre>
+<p class="bodytext">Les règles de proxy devraient fonctionner correctement sur les serveurs derrière NAT.</p>
+<p class="note"><strong class="buttons">Remarque</strong> : les conteneurs Docker connectés via des règles de proxy à un site Web ne sont pas comptabilisés dans l&#8217;utilisation de l&#8217;espace disque de l&#8217;abonnement. Ferait exception à cette règle un répertoire de site Web monté sur un conteneur Docker en tant que volume, car dans ce cas, tous les fichiers situés dans le conteneur sont comptabilisés dans l&#8217;utilisation de l&#8217;espace disque par le site Web.</p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '75823.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

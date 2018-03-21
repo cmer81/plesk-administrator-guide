@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Outils anti-spam </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72350.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59432.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055751.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055751.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Outils anti-spam</h2>
+<p class="bodytext">Pour protéger vos utilisateurs contre les spams, vous pouvez vous servir des utilitaires suivants avec Plesk :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Filtre anti-spam SpamAssassin</strong>. Il s'agit d'un filtre anti-spam efficace qui utilise une vaste gamme de tests locaux et de tests réseau pour identifier la signature des spams.<p class="listcontinue">Vous pouvez configurer un filtre anti-spam soit en supprimant les messages douteux dès qu'ils arrivent sur votre serveur de messagerie, soit en modifiant la ligne Objet et en ajoutant les en-têtes &quot;X-Spam-Flag: YES&quot; et &quot;X-Spam-Status: Yes&quot; aux messages. Ce dernier en-tête peut servir aux utilisateurs qui préfèrent filtrer leurs mails avec des programmes de filtrage installés sur leur propre ordinateur.</p>
+<p class="listcontinue">Pour en savoir plus sur SpamAssassin, consultez le site <a class="externalhyperlinktemplate" title="" href="http://spamassassin.apache.org" target="_blank">http://.spamassassin.apache.org</a>.</p>
+<p class="listcontinue">Pour configurer et activer le filtre SpamAssassin, allez à la section <strong class="specialbold"><a id="h65007" class="jumptemplate" title="Filtre anti-spam SpamAssassin" href="59432.htm" target="_self">Filtre anti-spam SpamAssassin</a></strong>.</p>
+</li><li class="listbullet"><strong class="specialbold">DKIM</strong>. DKIM est un système de protection anti-spam basé sur l'authentification des expéditeurs. Lorsqu'un mail indique provenir d'un certain domaine, DKIM déclenche le mécanisme suivant : le système du destinataire peut déterminer avec certitude que le mail provient en réalité d'un utilisateur ou d'un système autorisé à envoyer des mails pour ce domaine. Si la vérification de l'expéditeur échoue, le système du destinataire élimine ce type de mails. Pour configurer le système DKIM sur votre serveur, consultez la section<strong class="specialbold"> <a id="h65008" class="jumptemplate" title="Protection DKIM, SPF et DMARC" href="59433.htm" target="_self">Protection DKIM</a></strong>.</li><li class="listbullet"><strong class="specialbold">Listes noires des DNS</strong>. Ce système de prévention contre les spams s'appuie sur les requêtes DNS adressées par votre serveur de messagerie à une base de données qui contient les sources des spams connues et documentées, de même qu'une vaste liste d'adresses IP dynamiques. En principe, avec toute réponse positive de cette base de données, votre serveur de messagerie renvoie l'erreur &quot;550&quot; ou rejette la demande de connexion.<p class="listcontinue">Pour configurer votre serveur de messagerie pour l'utilisation avec les bases de données DNSBL, reportez-vous à la section <strong class="specialbold"><a id="h65009" class="jumptemplate" title="Listes noires DNS" href="59434.htm" target="_self"> Listes noires DNS</a></strong>.</p>
+</li><li class="listbullet"><strong class="specialbold">Sender Policy Framework </strong>(disponible uniquement pour l'hébergement Linux). Ce système de lutte contre les spams est également basé sur des requêtes DNS. Il est conçu pour réduire le nombre de spams envoyés depuis de fausses adresses mail. Avec SPF, le propriétaire d'un domaine sur Internet peut préciser les adresses des machines qui sont autorisées à envoyer des mails pour les utilisateurs de son domaine. Les destinataires qui implémentent SPF traitent ensuite comme douteux tout mail qui indique provenir de ce domaine mais qui ne vient effectivement pas d'adresses autorisées par le domaine.<p class="listcontinue">Pour en savoir plus sur SPF, allez sur <a class="externalhyperlinktemplate" title="" href="http://www.openspf.org/howworks.html" target="_blank">http://www.openspf.org/howworks.html</a>.</p>
+<p class="listcontinue">Pour activer le filtre basé sur SPF, reportez-vous à la section <strong class="specialbold">Système Sender Policy Framework(Linux)</strong>. </p>
+</li><li class="listbullet"><strong class="specialbold">Listes noire et blanche valables pour tout le serveur</strong>. Les listes noire et blanche sont des utilitaires standard de serveurs de messagerie. Vous pouvez utiliser les listes noires et blanches pour bloquer ou accepter les mails de serveurs spécifiques. Votre serveur de messagerie récupère les noms de domaine et les adresse IP des serveurs tentant de s'y connecter. Si un nom de domaine correspond à une entrée de la liste noire, votre serveur refuse la connexion. Résultat : le message spam potentiel ne sera jamais reçu. Si une adresse IP correspond aux entrées de la liste blanche, votre serveur reçoit un message de l'expéditeur. Le message n'est pas analysé par les systèmes de protection anti-spam (de type authentification de l'expéditeur, Greylisting ou DNSBL).<br>Pour configurer des listes blanche et noire applicables à l'ensemble du serveur, consultez la section <strong class="specialbold"><a id="h65011" class="jumptemplate" title="Listes noire et blanche valables pour tout le serveur" href="59436.htm" target="_self">Listes noire et blanche valables pour tout le serveur</a></strong>.</li><li class="listbullet"><strong class="specialbold">Greylisting </strong>(disponible uniquement pour l'hébergement Linux). Le Greylisting est un système de protection anti-spam fonctionnant ainsi : pour chaque mail arrivant sur le serveur, les adresses mail de l'expéditeur et du destinataire sont enregistrées dans une base de données. Lorsqu'un message arrive pour la première fois, les adresses de son expéditeur et destinataire ne sont pas encore listées dans la base de données et le serveur rejette temporairement le message avec un code d'erreur SMTP. Si le mail est valable et si le serveur expéditeur est correctement configuré, il essaiera de renvoyer le mail et le message sera accepté. Si le message est envoyé par un spammeur, le mail ne sera pas renvoyé : en général, les spammeurs envoient un mail en masse à des milliers de destinataires et ne s'occupent pas du renvoi.<p class="listcontinue">Le système de protection greylisting prend également en compte l'ensemble du serveur et les listes blanches et noires par utilisateur des expéditeurs du mail : les mails envoyés par des expéditeurs figurant sur une liste blanche sont acceptés sans vérification du greylisting tandis que les mails d'expéditeurs figurant sur une liste noire sont toujours rejetés.     </p>
+<p class="listcontinue">Lorsque les composants de la prise en charge du greylisting sont installés sur le serveur, le greylisting est automatiquement activé pour tous les domaines. Vous pouvez activer/désactiver la protection greylisting pour tous les domaines simultanément (via <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Filtre anti-spam</strong>) ou pour des abonnements individuels (sous <strong class="specialbold">Panneau Client</strong> &gt; <strong class="specialbold">Mail</strong> &gt; <strong class="specialbold">Changer les paramètres</strong>).</p>
+<p class="listcontinue"></p>
+<p class="listcontinue"></p>
+</li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="59432.htm" target="_self">Filtre anti-spam SpamAssassin</a></p><p class="relateditem"><a href="59433.htm" target="_self">Protection DKIM, SPF et DMARC</a></p><p class="relateditem"><a href="59434.htm" target="_self">Listes noires DNS</a></p><p class="relateditem"><a href="59436.htm" target="_self">Listes noire et blanche valables pour tout le serveur</a></p><p class="relateditem"><a href="63249.htm" target="_self">Greylisting (Linux)</a></p></td>
+</tr>
+</table>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59431.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

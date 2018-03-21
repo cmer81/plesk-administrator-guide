@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Surveiller les connexions à Plesk </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="68894.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59256.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557366.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557366.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Surveiller les connexions à Plesk</h2>
+<h5 class="heading5">Surveiller les sessions utilisateur</h5>
+<p class="procedureheading">Pour savoir qui parmi vos clients est actuellement connecté à Plesk :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Sessions Plesk</strong> <strong class="specialbold">actives</strong>. Toutes les sessions, y compris la vôtre, sont présentées avec les détails suivants :<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Type</strong>. Type d'utilisateur Plesk qui a ouvert la session. Les types suivants peuvent s'afficher : <ul class="listbullet3"><li class="listbullet3"> Administrateur du serveur.</li><li class="listbullet3"> Revendeur ou client.</li><li class="listbullet3"> Propriétaire de la boîte mail.</li></ul></li><li class="listbullet2"><strong class="specialbold">Nom d'utilisateur</strong>. Identifiant avec lequel l'utilisateur s'est connecté.</li><li class="listbullet2"><strong class="specialbold">Adresse IP</strong>. Adresse IP à partir de laquelle l'utilisateur accède à Plesk.</li><li class="listbullet2"><strong class="specialbold">Heure de connexion</strong>. Date et heure auxquelles l'utilisateur s'est connecté à Plesk.</li><li class="listbullet2"><strong class="specialbold">Période d'inactivité</strong>. Période pendant laquelle l'utilisateur n'a exécuté aucune action dans Plesk alors qu'il y était connecté.</li></ul></li><li class="procedurelistnumber">Pour actualiser la liste des sessions utilisateur, cliquez sur <strong class="specialbold">Rafraîchir</strong>.</li><li class="procedurelistnumber">Pour mettre fin à une session utilisateur, cochez la case correspondante, cliquez sur <strong class="specialbold">Fermer</strong>, confirmez et cliquez sur <strong class="specialbold">OK</strong>.<p class="widegraphic"><img src="75035.gif" alt="Sessions" height="313" width="925" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ol><h5 class="heading5">Surveillance des sessions utilisateur FTP</h5>
+<p class="bodytext">Votre Plesk peut indiquer des sessions FTP actives uniquement si l'un des programmes de serveur FTP suivants est installé sur le serveur d'hébergement :</p>
+<ul class="listbullet"><li class="listbullet">Gene6 FTP Server (hébergement Windows)</li><li class="listbullet">Serv-U FTP Server (hébergement Windows)</li><li class="listbullet">ProFTPd (hébergement Linux/UNIX)</li></ul><p class="procedureheading">Pour identifier les utilisateurs connectés à votre serveur via FTP, les répertoires où ils se trouvent actuellement et les fichiers qu'ils sont en train de charger ou de télécharger sur le serveur :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Sessions FTP</strong> <strong class="specialbold">actives</strong>.</li><li class="procedurelistnumber">Toutes les sessions, y compris la vôtre, sont présentées avec les détails suivants :<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Type</strong>. Catégorie de l'utilisateur qui a ouvert la session : <p class="listcontinue2"><img src="17580.gif" alt="ftp session alien" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> pour les utilisateurs non enregistrés dans Plesk.</p>
+<p class="listcontinue2"><img src="17579.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> pour les utilisateurs du FTP anonyme.</p>
+<p class="listcontinue2"><img src="17578.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> pour les administrateurs des sites Web.</p>
+<p class="listcontinue2"><img src="17576.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> pour les utilisateurs Web (propriétaires de pages Web personnelles n'ayant pas leur propre nom de domaine).</p>
+</li><li class="listbullet2"><strong class="specialbold">Statut</strong>. Statut actuel de la connexion FTP.</li><li class="listbullet2"><strong class="specialbold">Login de l'utilisateur FTP</strong>. Identifiant utilisé pour accéder au compte FTP.</li><li class="listbullet2"><strong class="specialbold">Nom de domaine</strong>. Domaine auquel l'utilisateur FTP est actuellement connecté.</li><li class="listbullet2"><strong class="specialbold">Emplacement actuel</strong>. Répertoire dans lequel l'utilisateur FTP se trouve actuellement.</li><li class="listbullet2"><strong class="specialbold">Nom du fichier</strong>. Nom du fichier en cours de traitement.</li><li class="listbullet2"><strong class="specialbold">Vitesse</strong>. Vitesse de transfert en kilooctets.</li><li class="listbullet2"><strong class="specialbold">Progression, %</strong>. Avancement du transfert de fichier, en pourcentage.</li><li class="listbullet2"><strong class="specialbold">Adresse IP</strong>. Adresse IP à partir de laquelle l'utilisateur accède au compte FTP.</li><li class="listbullet2"><strong class="specialbold">Heure de connexion</strong>. Délai écoulé depuis que l'utilisateur a ouvert la session.</li><li class="listbullet2"><strong class="specialbold">Période d'inactivité</strong>. Période pendant laquelle l'utilisateur n'a exécuté aucune action alors qu'il était connecté au serveur via FTP.</li></ul></li><li class="procedurelistnumber">Pour actualiser la liste des sessions FTP, cliquez sur <strong class="specialbold">Actualiser</strong>.</li><li class="procedurelistnumber">Pour mettre fin à une session, cochez la case correspondante, puis cliquez sur <strong class="specialbold">Fermer</strong>.</li></ol><h5 class="heading5">Surveillance des connexions de la session du terminal (Windows)</h5>
+<p class="procedureheading">Pour identifier vos clients actuellement connectés au serveur via une session du serveur terminal :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Sessions actives des services du Terminal</strong>.</li><li class="procedurelistnumber">Toutes les sessions, y compris la vôtre, sont présentées avec les détails suivants :<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">S</strong>. Statut de la session terminal : <p class="listcontinue2"><img src="24356.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - pour l'administrateur serveur.</p>
+<p class="listcontinue2"><img src="23829.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le client est connecté et a ouvert une session avec un nom d'utilisateur et un mot de passe valides.</p>
+<p class="listcontinue2"><img src="23828.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le client est connecté mais n'a pas ouvert de session.</p>
+<p class="listcontinue2"><img src="24355.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le client est déconnecté.</p>
+</li><li class="listbullet2"><strong class="specialbold">Nom</strong>. Nom de cette session Terminal.</li><li class="listbullet2"><strong class="specialbold">Utilisateur</strong>. Nom de l'utilisateur de la session Terminal.</li></ul><p class="listcontinue">Pour voir les détails de la session, cliquez dans la liste sur le nom de la session.</p>
+</li><li class="procedurelistnumber">Pour actualiser la liste des sessions Terminal, cliquez sur <strong class="specialbold">Actualiser</strong>.</li><li class="procedurelistnumber">Pour mettre fin à une session Terminal, cochez la case correspondante, cliquez sur <img src="34814.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> <strong class="specialbold">Déconnecter </strong>, confirmez la déconnexion et cliquez sur <strong class="specialbold">OK</strong>.</li><li class="procedurelistnumber">Pour fermer une session Terminal, cochez la case correspondante, cliquez sur <img src="34815.gif" alt="" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> <strong class="specialbold">Déconnexion</strong>, confirmez la déconnexion et cliquez sur <strong class="specialbold">OK</strong>.</li></ol><h5 class="heading5"></h5>
+<h5 class="heading5"></h5>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59246.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

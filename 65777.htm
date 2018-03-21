@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Plesk dans les conteneurs Virtuozzo </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="70390.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="74635.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Plesk dans les conteneurs Virtuozzo</h2>
+<p class="bodytext">Les conteneurs Virtuozzo sont une solution de virtualisation de systèmes d'exploitation qui créent des partitions isolées ou des conteneurs sur un même serveur physique ou une même instance d'OS pour utiliser le matériel, le logiciel, le centre de données et la gestion à son maximum et le plus efficacement possible.</p>
+<p class="bodytext">Lorsque Plesk fonctionne dans les conteneurs Virtuozzo, les opérations suivantes ne sont pas disponibles à partir de Plesk :</p>
+<ul class="listbullet"><li class="listbullet">Ajouter et supprimer les adresses IP à partir des cartes réseau du serveur. </li><li class="listbullet">Changer le nom de l'hôte.</li><li class="listbullet">Configurer la date et l'heure système.</li></ul><p class="bodytext">Après avoir ajouté les adresses IP dans le hardware node des conteneurs Virtuozzo, vous devez utiliser la fonction <strong class="specialbold">Relire l'IP</strong> dans le Panneau d'administration du serveur (dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Adresses IP</strong>) pour mettre à jour le pool d'adresses IP de Plesk.</p>
+<p class="bodytext">Si vous installez Plesk dans un conteneur Virtuozzo, vous devez configurer le paramètre Service hors ligne pour le conteneur pour afin de que l'interface Web de Plesk et Power Panel, utilisé pour gérer les conteneurs, sont accessibles.</p>
+<p class="bodytext">Par défaut, le conteneur est configuré afin que les paramètres suivants soient activés pour le service Gestion hors ligne : <strong class="specialbold">VZPP-plesk</strong> (redirection des connexions sur le port 8443) et<strong class="specialbold"> VZPP</strong> (redirection des connexions sur le port 4643). Vous devez désactiver le service <strong class="specialbold">VZPP-plesk</strong>. Vous pouvez y parvenir dans les conteneurs Virtuozzo pour Linux et Windows à l'aide de l'utilitaire Management Console.</p>
+<p class="procedureheading">Pour configurer le conteneur à l'aide de Management Console :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Ouvrez Management Console.</li><li class="procedurelistnumber">Connectez-vous au hardware node des conteneurs Virtuozzo.</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Conteneurs Virtuozzo</strong>.</li><li class="procedurelistnumber">Sélectionnez le conteneur, faites un clic droit dessus et sélectionnez <strong class="specialbold">Propriétés</strong> à partir du menu contextuel.</li><li class="procedurelistnumber">Allez dans <strong class="specialbold">Réseau</strong> &gt; <strong class="specialbold">Gestion hors ligne</strong> et désactivez le service <strong class="specialbold">VZPP-plesk</strong>.</li></ol><p class="procedureheading">Pour configurer le conteneur à l'aide des outils de ligne de commande sur un hardware node Linux :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Connectez-vous au hardware node via SSH.</li><li class="procedurelistnumber">Entrez la commande suivante :<p class="preformattedbold">vzctl set CT_ID --offline_management yes --offline_service vzpp --save</p>
+</li></ol><p class="procedureheading">Pour configurer le conteneur à l'aide des outils de ligne de commande sur un hardware node Windows :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Connectez-vous au hardware node via le Bureau à distance.</li><li class="procedurelistnumber">Entrez les commandes suivantes :<p class="preformattedbold">vzctl set CT_ID --offline_management yes --save</p>
+<p class="preformattedbold">vzcfgt set CT_ID offlineservices vzpp</p>
+</li></ol><p class="bodytext">Après avoir configuré le conteneur, vous pourrez accéder aux fonctions de gestion du conteneur à partir de Plesk (via <strong class="specialbold">Outils</strong> &gt; <strong class="specialbold">Gérer votre conteneur</strong> [dans le groupe <strong class="specialbold">Gestion des serveurs</strong>]).</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '65777.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

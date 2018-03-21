@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Utiliser Plesk sans serveur de messagerie </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59430.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="72349.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Utiliser Plesk sans serveur de messagerie</h2>
+<p class="bodytext">L'utilisation d'un serveur de messagerie dans Plesk est facultative. Avec Plesk pour Linux vous pouvez désactiver ou désinstaller le service de messagerie pour tous les domaines hébergés sur votre serveur. Avec un hébergement Windows, vous ne pouvez pas désactiver le serveur de messagerie par défaut. Toutefois, vous pouvez modifier la configuration du serveur pour interdire les mails sortants. Vous pouvez également exclure le serveur de messagerie des composants installés pendant l'installation de Plesk.</p>
+<p class="bodytext">Toutefois, si vous n'installez pas le serveur de messagerie ou si vous interdisez l'envoi de messages sortants, le problème suivant se pose : Plesk doit envoyer des notifications et certains scripts de vos clients peuvent requérir l'envoi de mails. Pour résoudre ce problème, Plesk peut envoyer les mails sortants via un serveur SMTP externe arbitraire.</p>
+<p class="bodytext">&nbsp;</p>
+<h5 class="heading5">Utilisation d'un serveur SMTP externe pour les mails sortants (Linux) </h5>
+<p class="bodytext">Lorsque<em class="emphasis"> </em>le serveur de messagerie géré par Plesk n'est pas installé, Plesk utilise le client SMTP intégré pour envoyer des mails via le serveur SMTP externe indiqué. Par défaut, le client n'est pas installé et le lien <strong class="specialbold">Serveur SMTP externe</strong> n'est pas disponible sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; dans le groupe <strong class="specialbold">Mail</strong>. Plesk vous permet d'installer le client uniquement <em class="emphasis">à la place</em> du serveur de messagerie géré par Plesk.</p>
+<p class="bodytext">Pour utiliser le serveur SMTP externe :</p>
+<ol class="listnumber"><li class="listnumber">Désinstallez le serveur de messagerie Plesk et installez le client SMTP : Dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour et à niveau</strong> &gt; <strong class="specialbold">Ajouter/Supprimer des composants</strong> &gt; <strong class="specialbold">Mail hosting</strong>, sélectionnez <strong class="specialbold">MSMTP (relay only)</strong> à la place du serveur de messagerie sélectionné.<p class="widegraphic"><br><img src="74973.png" alt="Mail_Server_uninstall" height="681" width="838" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="listcontinue">Une fois le serveur de messagerie Plesk désinstallé, les clients ne peuvent plus utiliser les services de messagerie. Pour en savoir plus, consultez la section <strong class="specialbold">Fonctionnalités du Panneau Client sans serveur de messagerie</strong> ci-dessous.</p>
+</li><li class="listnumber">Définissez le serveur SMTP dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Serveur SMTP externe </strong>(groupe <strong class="specialbold">Mail</strong>) et sélectionnez au moins l'une de ces options :<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Autoriser Plesk à envoyer des notifications par mail via ce serveur SMTP</strong></li><li class="listbullet2"><strong class="specialbold">Autoriser le script de l'utilisateur à envoyer des mails via ce serveur SMTP</strong></li></ul><p class="listcontinue">Autres moyens de configurer les paramètres du serveur SMTP externe :</p>
+<ul class="listbullet2"><li class="listbullet2">Utilitaire de ligne de commande <code class="monospace">mailserver</code> (commande <code class="monospace">--update-smtp-settings</code>)</li><li class="listbullet2">Requêtes API XML avec l'opérateur <code class="monospace">server</code> (opération <code class="monospace">set.prefs</code>)</li></ul></li><li class="listnumber">Si le serveur SMTP requiert une authentification, vous devrez communiquer les identifiants d'accès aux propriétaires de sites (<strong class="specialbold">Nom d'utilisateur</strong> et <strong class="specialbold">Mot de passe</strong>) afin qu'ils puissent les insérer dans leurs scripts et permettre l'envoi de mails.</li></ol><p class="bodytext">Plesk envoie des notifications et mails générés par les scripts via le serveur SMTP externe indiqué. Remarque : si vous n'indiquez pas les paramètres du serveur SMTP externe, aucun service de messagerie n'est disponible.</p>
+<p class="bodytext">Une fois que vous avez installé le client, seul le lien - <strong class="specialbold">Serveur SMTP externe</strong> - sera visible dans <strong class="specialbold">Outils &amp; Paramètres</strong>, groupe <strong class="specialbold">Mail</strong>.</p>
+<p class="note"><strong class="buttons">Remarque : </strong>si vous excluez le serveur de messagerie de la liste de composants lors de l'installation de Plesk, le client SMTP est automatiquement installé à la place du logiciel de serveur de messagerie. Dans ce cas, vous serez invité à fournir les paramètres du client SMTP pendant l'installation de Plesk.</p>
+<p class="bodytext">&nbsp;</p>
+<h5 class="heading5">Utilisation d'un serveur SMTP externe pour les mails sortants (Windows) </h5>
+<p class="bodytext">Plesk pour Windows intègre un client SMTP qui envoie les mails sortants au serveur SMTP indiqué dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Serveur SMTP externe</strong> (groupe <strong class="specialbold">Mail</strong>). </p>
+<p class="bodytext">Par défaut, l'option <strong class="specialbold">Utiliser le serveur de messagerie installé avec Plesk et le compte de messagerie par défaut créés par Plesk</strong> est activée. Autrement dit, le serveur de messagerie installé avec Plesk est utilisé en tant que serveur SMTP externe. Ainsi, Plesk envoie tous les mails sortants via le serveur de messagerie Plesk. Plesk créé automatiquement un compte de messagerie avec des droits administrateur pour accéder au serveur de messagerie installé en local. Le mot de passe de ce compte n'est pas visible sur cette page.</p>
+<p class="bodytext">Lorsque vous interdisez les mails sortants depuis le serveur de messagerie Plesk, vous pouvez configurer un autre serveur SMTP afin de permettre à Plesk d'envoyer des notifications et des mails générés par les scripts hébergés :</p>
+<p class="bodytext"></p>
+<ol class="listnumber"><li class="listnumber">Indiquez un autre serveur SMTP et un compte d'utilisateur sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Serveur SMTP externe</strong> (groupe <strong class="specialbold">Mail</strong>). Pour afficher les paramètres du serveur SMTP, décochez l'option <strong class="specialbold">Utiliser le serveur de messagerie installé avec Plesk et le compte de messagerie par défaut créés par Plesk</strong>.</li><li class="listnumber">Sélectionnez l'option <strong class="specialbold">Autoriser Plesk à envoyer des notifications par mail via ce serveur SMTP</strong>.<strong class="specialbold"> </strong>Plesk enverra des notifications via le serveur SMTP externe indiqué. </li><li class="listnumber">Pour autoriser l'envoi de mails par les scripts hébergés, informez les propriétaires des sites que leurs scripts doivent utiliser les paramètres de serveur SMTP à jour.</li></ol><p class="bodytext">Si vous n'indiquez pas les paramètres du serveur SMTP externe, aucun service de messagerie sortant n'est disponible.</p>
+<p class="bodytext">&nbsp;</p>
+<h5 class="heading5">Fonctionnalités du Panneau Client sans serveur de messagerie</h5>
+<p class="bodytext">Lorsque le serveur de messagerie est désinstallé, Plesk ne fournit aucune fonctionnalité de messagerie à vos abonnés. L'onglet <strong class="specialbold">Mail</strong> ainsi que les éléments de l'interface liés aux boîtes mail ne sont pas disponibles. En outre, lorsqu'aucun serveur de messagerie n'est installé, les modifications suivantes ont lieu :</p>
+<ul class="listbullet"><li class="listbullet">La messagerie Web n'est pas disponible.</li><li class="listbullet">Les utilisateurs ne peuvent pas installer les applications APS qui nécessitent un service de messagerie.</li></ul><p class="bodytext">Remarque :tous les fichiers et dossiers contenant les données de messagerie de vos abonnés restent sur le serveur Plesk.</p>
+<p class="note"><strong class="buttons">Important : </strong>lorsque vous transférez des domaines depuis Plesk avec un service de messagerie vers Plesk sans service de messagerie, toutes les données relatives aux boîtes mail des domaines <em class="emphasis">ne sont pas transférées</em>.</p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72346.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

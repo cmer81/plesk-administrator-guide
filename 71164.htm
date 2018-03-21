@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> À propos du calcul de l'espace disque utilisé </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="60927.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="68886.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557371.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557371.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">À propos du calcul de l'espace disque utilisé</h3>
+<p class="bodytext">Lorsqu'un utilisateur de Plesk crée un abonnement, Plesk commence à calculer l'espace disque utilisé pour cet élément. L'espace disque utilisable est catégorisé en différents types :</p>
+<ul class="listbullet"><li class="listbullet">(Toujours inclus) Contenu du site Web, du FTP et des utilisateurs Web.</li><li class="listbullet">Fichiers de log et rapports de statistiques.</li><li class="listbullet">Bases de données.</li><li class="listbullet">Bases de données à distance.</li><li class="listbullet">Boîtes mail.</li><li class="listbullet">Applications Java.</li><li class="listbullet">Listes de diffusion.</li><li class="listbullet">Fichiers de sauvegarde des abonnements.</li><li class="listbullet">Sauvegardes des abonnements qui font partie des sauvegardes niveau serveur.</li></ul><p class="bodytext">Cette section explique comment Plesk calcule l'espace disque utilisé pour chacune de ces catégories sur Linux et sur Windows. Si vous souhaitez inclure ou exclure des options du calcul de l'espace disque, vous pouvez le faire sur la page <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur</strong>. </p>
+<p class="bodytext">Le total d'espace disque utilisé est visible dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Rapport récapitulatif</strong>. Ce rapport récapitulatif indique le volume utilisé de l'espace disque pour l'ensemble des abonnements. </p>
+<p class="bodytext">Pour voir l'utilisation de l'espace disque par abonnement, allez dans&nbsp;<strong class="specialbold">Abonnements</strong> et cliquez sur le nom d'un abonnement en vue <strong class="specialbold">Liste classique</strong> (cliquez sur l'icône <img src="75739.png" alt="Mode_button" height="30" width="39" vspace="0" hspace="0" align="bottom" border="0"> et sélectionnez <strong class="specialbold">Liste classique</strong>). L'utilisation de l'espace disque d'un domaine principal ainsi que pour des domaines supplémentaires et sous-domaines est visible dans la colonne&nbsp;<strong class="specialbold">Utilisation du disque</strong>&nbsp;.</p>
+<p class="widegraphic"><img src="75734.gif" alt="Subscriptions_DiskUsage" height="350" width="783" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">L'espace disque occupé par le contenu de domaines supplémentaires et sous-domaines est inclus dans la valeur de l'espace disque utilisé, calculée pour le domaine principal.</p>
+<p class="bodytext">La valeur de l'espace disque utilisé d'un sous-domaine ou d'un domaine supplémentaire est généralement faible et inclut uniquement des fichiers système tels que ceux de configuration et les logs du domaine.</p>
+<p class="bodytext"></p>
+<h5 class="heading5">Variables</h5>
+<p class="bodytext">Dans la prochaine section, nous utiliserons les variables suivantes pour simplifier la description :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">HTTPD_VHOSTS_D. </em>Chemin d'accès absolu vers le répertoire avec les hôtes virtuels. </li><li class="listbullet"><em class="emphasis">CATALINA_HOME</em>. Chemin d'accès absolu vers le répertoire d'installation Tomcat.</li><li class="listbullet"><em class="emphasis">PRODUCT_ROOT_D</em>. Chemin d'accès absolu vers le répertoire d'installation Plesk.</li><li class="listbullet"><em class="emphasis">PLESK_MAILNAMES_D</em>. Chemin d'accès absolu vers le répertoire des boîtes mail.</li><li class="listbullet"><em class="emphasis">PGSQL_DATA_D</em> et <em class="emphasis">MYSQL_VAR_D</em>. Chemins d'accès absolu vers le répertoire des bases de données PostgreSQL et MySQL, respectivement.</li></ul><p class="bodytext">Les valeurs des variables dépendent du système d'exploitation. Sur Linux, les valeurs sont dans <code class="monospace">/etc/psa/psa.conf</code>.</p>
+<h5 class="heading5">Contenu du site Web, du FTP anonyme et des utilisateurs Web.</h5>
+<p class="bodytext">Cette catégorie de contenu est toujours incluse dans le calcul de l'espace disque utilisé.</p>
+<p class="bodytext">Sur Windows, le volume du contenu du site Web correspond au volume total du répertoire <code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;&quot;</code>, excluant ces répertoires :</p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\anon_ftp&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;nom_sousdomaine&gt;\anon_ftp&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;addon_nom_domaine&gt;\anon_ftp&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\.plesk\statistics&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;nom_sousdomaine&gt;\.plesk\statistics&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;addon_nom_domaine&gt;\.plesk\statistics&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\web_users&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;nom_sousdomaine&gt;\web_users&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;addon_nom_domaine&gt;\web_users&quot;</code></p>
+<p class="bodytext">Sur Linux, le volume du contenu du site correspond au volume total des répertoires suivants :</p>
+<p class="listcontinue"><code class="monospace">HTTPD_VHOSTS_D/&lt;nom_domaine&gt;/cgi-bin</code></p>
+<p class="listcontinue"><code class="monospace">HTTPD_VHOSTS_D/&lt;nom_domaine&gt;/error_docs</code></p>
+<p class="listcontinue"><code class="monospace">HTTPD_VHOSTS_D/&lt;nom_domaine&gt;/httpdocs</code></p>
+<p class="listcontinue"><code class="monospace">HTTPD_VHOSTS_D/&lt;nom_domaine&gt;/&lt;nom_sousdomaine&gt;</code></p>
+<p class="listcontinue"><code class="monospace">HTTPD_VHOSTS_D/&lt;nom_domaine&gt;/&lt;addon_nom_domaine&gt;</code></p>
+<p class="listcontinue"><code class="monospace">HTTPD_VHOSTS_D/system/&lt;nom_domaine&gt;/pd</code></p>
+<p class="bodytext">Sur Windows, la taille du contenu du FTP anonyme correspond au volume total des répertoires suivants :</p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\anon_ftp&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;nom_sousdomaine&gt;\anon_ftp&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;addon_nom_domaine&gt;\anon_ftp&quot;</code></p>
+<p class="bodytext">Sur Linux, le volume du contenu du FTP anonyme correspond au volume total des répertoires suivants :</p>
+<p class="listcontinue"><code class="monospace">HTTPD_VHOSTS_D/</code><em class="emphasis">&lt;nom_domaine&gt;</em><code class="monospace">/anon_ftp</code></p>
+<p class="bodytext">Sur Windows, le volume du contenu des utilisateurs Web correspond au volume total des répertoires suivants :</p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\</code><em class="emphasis">&lt;nom_domaine&gt;</em><code class="monospace">\web_users&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\</code><em class="emphasis">&lt;nom_domaine&gt;</em><code class="monospace">\&lt;nom_sousdomaine&gt;\web_users&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;addon_nom_domaine&gt;\web_users&quot;</code></p>
+<p class="bodytext">Sur Linux, le volume du contenu des utilisateurs Web correspond au volume total des répertoires suivants :</p>
+<p class="listcontinue"><code class="monospace">HTTPD_VHOSTS_D/</code><em class="emphasis">&lt;nom_domaine&gt;</em><code class="monospace">/web_users</code></p>
+<p class="note"><strong class="buttons">Remarque :</strong> depuis Plesk 11.5, si les répertoires ci-dessus contiennent des liens physiques, Plesk inclut la taille de chaque lien dans le calcul une seule fois, quel que soit le nombre d'instances de chaque lien.</p>
+<p class="bodytext">Nous nous référons au total du contenu de site Web, FTP et des utilisateurs Web en tant que <em class="emphasis">WEB_CONTENT</em> dans la formule de calcul de l'espace disque utilisé.</p>
+<h5 class="heading5">Fichiers de log et rapports de statistiques</h5>
+<p class="bodytext">Sur Windows, le volume des logs et rapports correspond au volume total des répertoires suivants :</p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\.plesk\statistics&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;nom_sousdomaine&gt;\.plesk\statistics&quot;</code></p>
+<p class="listcontinue"><code class="monospace">&quot;%plesk_vhosts%\&lt;nom_domaine&gt;\&lt;addon_nom_domaine&gt;\.plesk\statistics&quot;</code></p>
+<p class="bodytext">Sur Linux, le volume des logs et rapports correspond au volume total des répertoires suivants :</p>
+<p class="listcontinue"><em class="emphasis">HTTPD_VHOSTS_D</em><code class="monospace">/system/&lt;nom_domaine&gt;/statistics</code></p>
+<p class="bodytext">Dans la formule de calcul du total de l'espace disque utilisé, ce total est désigné par &quot;<em class="emphasis">LOG_AND_STAT</em>&quot;.</p>
+<h5 class="heading5">Bases de données</h5>
+<p class="bodytext">La taille des bases de données est calculée par site Web. On en fait la somme pour obtenir le volume total.</p>
+<p class="bodytext">Sur Windows, la taille des bases de données MySQL est la somme de la longueur des données et la longueur de l'index dans la requête suivante : <em class="emphasis">SHOW TABLE STATUS FROM &lt;nom_bd&gt;</em>.</p>
+<p class="bodytext">Pour obtenir la taille des bases de données MS SQL, le système exécute la requête <em class="emphasis">exec sp_databases</em> pour chaque base de données sous un site Web particulier. Les résultats sont ajoutés et multipliés par 1 024.</p>
+<p class="bodytext">Sur Linux, la taille des bases de données PostgreSQL correspond à la taille totale des répertoires <code class="monospace">PGSQL_DATA_D/base/</code><em class="emphasis">db_oid</em>. Dans ce cas, <em class="emphasis">db_oid</em> représente l'OID d'une base de données d'un certain site Web.</p>
+<p class="bodytext">Sur Linux, la taille des bases de données MySQL correspond à la taille du répertoire <code class="monospace">MYSQL_VAR_D/</code><em class="emphasis">nom_bd</em>. Dans ce cas, <em class="emphasis">db_name</em> représente le nom d'une base de données d'un certain site Web.</p>
+<p class="bodytext">La taille totale des bases de données est désignée comme <em class="emphasis">DATABASES</em> dans la formule de calcul de l'espace disque utilisé. </p>
+<h5 class="heading5">Bases de données à distance</h5>
+<p class="bodytext">À compter de Plesk Onyx, vous pouvez inclure les bases de données sur les hôtes distants dans le calcul de l'utilisation de l'espace disque. Sur Linux, seules les bases de données MySQL peuvent être incluses (option <strong class="specialbold">Bases de données MySQL distantes</strong>). Sur Windows, les bases de données de tout type peuvent être incluses dans le calcul (option <strong class="specialbold">Bases de données à distance</strong>). </p>
+<h5 class="heading5">Boîtes mail</h5>
+<p class="bodytext">Le volume des boîtes mail par site Web correspond au volume total des répertoires des boîtes mail correspondantes. Le chemin d'accès vers une boîte mail dépend de l'agent de transfert des messages, par exemple, MailEnable.</p>
+<ul class="listbullet"><li class="listbullet">(Windows, MailEnable) <em class="emphasis">mailbox_dir</em><code class="monospace">\</code><em class="emphasis">&lt;nom_domaine&gt;</em><code class="monospace">\MAILROOT\</code><em class="emphasis">nom_boîtemail</em>.<em class="emphasis"> </em>Le répertoire <em class="emphasis">mailbox_dir</em> se trouve dans le registre Windows HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Mail Enable\Mail Enable\Connectors\SF.</li><li class="listbullet">(Windows, SmarterMail) <em class="emphasis">mailbox_dir</em><code class="monospace">\Users\</code><em class="emphasis">mailbox_name</em>. Le répertoire <em class="emphasis">mailbox_dir</em> est obtenu en appelant la méthode <em class="emphasis">GetDomainSettings</em> du service Web <em class="emphasis">svcDomainAdmin</em>.</li><li class="listbullet">(Linux) <em class="emphasis">PLESK_MAILNAMES_D</em><code class="monospace">/</code><em class="emphasis">&lt;nom_domaine&gt;</em>.</li></ul><p class="bodytext">Nous utilisons le terme <em class="emphasis">MAILBOXES</em> pour désigner le volume total des boîtes mail dans la formule de calcul de l'espace disque utilisé.</p>
+<h5 class="heading5">Applications Java</h5>
+<p class="bodytext">Sur Windows, le volume total des applications Java correspond au volume du répertoire <em class="emphasis">CATALINA_HOME</em> <code class="monospace">\psa-wars\</code><em class="emphasis">nom_domaine</em>. Dans ce cas, <em class="emphasis">CATALINA_HOME</em> correspond à la valeur du paramètre <em class="emphasis">InstallPath</em> dans le registre Windows, sous HKLM\SOFTWARE\Apache Software Foundation\Tomcat\&lt;version_Tomcat&gt;.</p>
+<p class="bodytext">Sur Linux, le répertoire avec le contenu Java est <code class="monospace">CATALINA_HOME/psa-wars/</code><em class="emphasis">&lt;nom_domaine&gt;</em>.</p>
+<p class="bodytext">Nous utiliserons le terme <em class="emphasis">JAVA_APPS</em> pour désigner ce total dans la formule de calcul de l'espace disque utilisé.</p>
+<h5 class="heading5">Fichiers de sauvegarde</h5>
+<p class="bodytext">Sur Linux, la taille des sauvegardes est obtenue en appelant l'utilitaire suivant :</p>
+<p class="listcontinue"><em class="emphasis">PRODUCT_ROOT_D</em><code class="monospace">/admin/bin/pmm-ras --get-domain-dumps-disc-usage --domain-guid </code><em class="emphasis">&lt;domain_guid&gt;</em><code class="monospace"> --session-path </code><em class="emphasis">PRODUCT_ROOT_D</em><code class="monospace">/PMM/logs</code></p>
+<p class="bodytext">Si l'administrateur indique d'exclure du quota de l'utilisateur les sauvegardes du site Web nichées dans les sauvegardes niveau serveur, l'utilitaire s'exécute avec une option supplémentaire, --skip-server-dumps.</p>
+<p class="bodytext">Sur Windows, le volume des sauvegardes est caché et représente la somme des nombres qui suivent <em class="emphasis">size_</em> dans les noms des fichiers size_xxxxxx. Ces fichiers size_ sont stockés dans <code class="monospace">&quot;%plesk_dir%\Backup\</code> <em class="emphasis">backups_dir</em><code class="monospace">\</code><em class="emphasis">&lt;nom_domaine&gt;</em><code class="monospace">\.discovered\*\</code>&quot;.</p>
+<p class="bodytext"><em class="emphasis">backups_dir</em> correspond à :</p>
+<p class="bodytext"><code class="monospace">/domains</code> : si les sauvegardes appartiennent à l'administrateur.</p>
+<p class="bodytext"><code class="monospace">/resellers/</code><em class="emphasis">&lt;nomutilisateur_revendeur&gt;</em><code class="monospace">/domains</code> : si un site Web appartient à un revendeur.</p>
+<p class="bodytext"><code class="monospace">/resellers/</code><em class="emphasis">&lt;nomutilisateur_revendeur&gt;</em><code class="monospace">/clients/</code><em class="emphasis">&lt;nomutilisateur_client&gt;</em><code class="monospace">/domains</code> : si un site Web appartient au client d'un certain revendeur.</p>
+<p class="bodytext"><code class="monospace">/clients/</code><em class="emphasis">&lt;nomutilisateur_client&gt;</em><code class="monospace">/domains</code> : si un site Web appartient à un client directement sous l'administrateur.</p>
+<p class="bodytext">Si le fichier <code class="monospace">&quot;%plesk_dir%\Backup\dumps_dir\&lt;nom_domaine&gt;\.discovered\*\ownertype_server&quot;</code> existe, le volume des sauvegardes du site Web nichées dans les sauvegardes au niveau serveur n'est pas ajouté dans l'utilisation de l'espace disque.</p>
+<p class="bodytext">Nous utiliserons le terme <em class="emphasis">BACKUPS</em> pour désigner le volume des sauvegardes dans la formule de calcul du total de l'espace disque utilisé.</p>
+<h5 class="heading5">Calcul du total d'espace disque utilisé</h5>
+<p class="bodytext">La formule de calcul du total d'espace disque utilisé est la suivante :</p>
+<p class="bodytext"><em class="emphasis">TOTAL = WEB_CONTENT</em>  </p>
+<p class="listcontinue"><em class="emphasis">+ LOG_AND_STAT</em> (si l'option <strong class="specialbold">fichiers de log et rapports de statistiques</strong> est sélectionnée dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur</strong>)</p>
+<p class="listcontinue"><em class="emphasis">+ DATABASES</em> (en fonction de l'option <strong class="specialbold">bases de données</strong> sur Linux et <strong class="specialbold">bases de données MySQL</strong> et <strong class="specialbold">bases de données Microsoft SQL</strong>)</p>
+<p class="listcontinue"><em class="emphasis">+ MAILBOXES</em> (si l'option <strong class="specialbold">boîtes mail</strong> est sélectionnée)</p>
+<p class="listcontinue"><em class="emphasis">+ JAVA_APPS</em> (si l'option <strong class="specialbold">applications Java</strong> est sélectionnée)</p>
+<p class="listcontinue"><em class="emphasis">+ BACKUPS</em> (si l'option <strong class="specialbold">fichiers de sauvegarde du domaine</strong> est sélectionnée, alors la valeur dépend des <strong class="specialbold">fichiers de sauvegardes créés par l'administrateur</strong>)</p>
+<p class="bodytext">Dans ce cas, les variables (par exemple <em class="emphasis">WEB_CONTENT</em>) correspondent au total des catégories respectives.</p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '71164.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

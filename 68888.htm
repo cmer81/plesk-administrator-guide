@@ -1,0 +1,62 @@
+<html>
+<head>
+<title> Suivre la santé du serveur </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,800|Carme' rel='stylesheet' type='text/css'>
+<script src="locate.js"></script>
+<link href="prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000" onLoad="FindCorrectTOCPage(); prettyPrint()">
+<h3 class="heading3">Suivre la santé du serveur</h3>
+<p class="bodytext">Le Moniteur de santé affiche les informations sur l'utilisation des ressources du serveur de deux manières différentes :</p>
+<ul class="listbullet"><li class="listbullet">Un rapport récapitulatif sur tous les principaux paramètres relatifs à la santé du serveur. </li><li class="listbullet">Un rapport détaillé avec un graphique qui représente les changements pour chaque paramètre de santé du serveur.</li></ul><p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68891"></a><h4 class="heading4">Rapport récapitulatif</h4>
+<p class="bodytext">Le rapport récapitulatif contient les informations sur tous les principaux paramètres de santé du serveur qui sont groupés pour votre convenance. Ce rapport affiche le statut de chaque groupe, les valeurs instantanées des paramètres et leurs tendances. Pour obtenir le rapport récapitulatif du Moniteur de santé, allez dans <strong class="specialbold">Panneau d'administration du serveur &gt; Accueil &gt; Santé du serveur</strong>.</p>
+<p class="bodytext">Notez que le rapport récapitulatif vous indique les valeurs <em class="emphasis">instantanées</em> des paramètres qui ne correspondent qu'au moment où la page d'accueil a été actualisée.</p>
+<p class="bodytext">L'exemple du rapport récapitulatif (valeurs aléatoires) est affiché ci-dessous.</p>
+<p class="bodytext"><img src="68906.png" alt="Health Monitor alarm example" height="192" width="271" vspace="0" hspace="0" align="bottom" border="0"></p>
+<h5 class="heading5">Alarmes rouges et jaunes</h5>
+<p class="bodytext">Comme vous pouvez le voir, l'un des paramètres a dépassé une certaine valeur seuil et le Moniteur de santé vous alerte grâce à la surbrillance jaune. Il existe deux types d'alarmes pour chaque paramètre : </p>
+<ul class="listbullet"><li class="listbullet">Alarme jaune : un paramètre approche de sa valeur critique.</li><li class="listbullet">Alarme rouge : un paramètre dépasse sa valeur critique. </li></ul><p class="bodytext">La valeur seuil de ces alarmes peut être configurée à l'aide du fichier de configuration.</p>
+<h5 class="heading5">Tendances</h5>
+<p class="bodytext">Le Moniteur de santé peut également vous notifier si l'un des paramètres augmente trop rapidement. Pour cela, il s'appuie sur les tendances. La tendance permet d'afficher l'évolution de la valeur d'un paramètre avec le temps. Dans cet exemple, le paramètre à l'origine de l'alarme a augmenté (<img src="68890.gif" alt="Trend" height="12" width="12" vspace="0" hspace="0" align="bottom" border="0">) pendant la dernière heure de 1,87 fois par rapport à l'heure précédente (l'intervalle par défaut de la tendance est une heure). Si la valeur d'un paramètre ne pose aucun problème, sa tendance ne s'affiche pas.</p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o68892"></a><h4 class="heading4">Rapport détaillé</h4>
+<p class="bodytext">Le rapport détaillé vous permet de détecter les périodes où l'utilisation des ressources est maximale (minimale). Pour voir le rapport, allez dans <strong class="specialbold">Gestion des serveurs &gt; Surveillance de la santé</strong>. Pour voir l'évolution des paramètres de santé du serveur, cochez les cases correspondantes. Vous pouvez sélectionner une période pour laquelle le graphique doit être généré : des 3 dernières heures à une semaine.</p>
+<p class="bodytext">Notez que les valeurs des paramètres derrière le graphique sont également <em class="emphasis">instantanées</em> et sont pertinentes uniquement au moment où la page a été actualisée.</p>
+<p class="bodytext"></p>
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '68888.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

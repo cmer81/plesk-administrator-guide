@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Logiciels de messagerie </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59437.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59438.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055746.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Logiciels de messagerie</h2>
+<p class="bodytext">Vous pouvez installer sur le serveur un certain nombre de packs logiciels de messagerie Web et sélectionner ceux devant être disponibles pour vos utilisateurs. Sinon, vous pouvez rediriger vos utilisateurs vers un service de messagerie Web externe. Pour ce faire, enregistrez une adresse de services de messagerie Web externe avec Plesk en ajoutant une entrée correspondante.</p>
+<p class="bodytext">Tous les packs de messagerie Web installés et les services de messagerie Web externes enregistrés sont listés dans les paramètres de messagerie des packs d'hébergement et des abonnements (section <strong class="specialbold">Mail</strong>). Vous pouvez alors sélectionner la messagerie Web à fournir aux utilisateurs.</p>
+<h5 class="heading5">Logiciels de messagerie pris en charge</h5>
+<p class="bodytext">Les messageries Web <em class="emphasis">Horde</em> et <em class="emphasis">RoundCube</em> sont installées par défaut sur Plesk pour Linux. Seul <em class="emphasis">Horde</em> est installé sur Plesk pour Windows. En outre, Plesk pour Linux prend en charge <em class="emphasis">Atmail</em>. Quant à Plesk pour Windows, il prend également en charge les clients de messagerie suivants :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Client Web MailEnable</em></li><li class="listbullet"><em class="emphasis">Client Web SmarterMail</em></li><li class="listbullet"><em class="emphasis">Client Web du serveur de messagerie IceWarp (Merak)</em></li><li class="listbullet"><em class="emphasis">Atmail Open</em></li></ul><p class="note"><strong class="buttons">Important :</strong> si vous proposez Roundcube à vos clients, notez que les sauvegardes Plesk n'incluent pas les sauvegardes des bases de données Roundcube. Par conséquent, les données Roundcube des clients, comme les calendriers et les contacts, ne sont pas restaurées lorsque vous procédez à une restauration d'abonnements ou du serveur complet.</p>
+<h5 class="heading5">Services de messagerie Web externes</h5>
+<p class="procedureheading">Pour enregistrer un service de messagerie Web externe :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Messagerie Web</strong> (dans le groupe <strong class="specialbold">Mail</strong>).</li><li class="procedurelistnumber">Cliquez sur <strong class="specialbold">Enregistrer la messagerie Web</strong>.</li><li class="procedurelistnumber">Indiquez les éléments suivants :<ol class="procedurelistnumber2"><li class="procedurelistnumber2"><strong class="specialbold">Nom du service de messagerie Web</strong>. </li><li class="procedurelistnumber2"><strong class="specialbold">URL du service de messagerie Web</strong>. Indiquez une adresse commençant par le préfixe <code class="monospace">http://</code> ou <code class="monospace">https://</code>.</li><li class="procedurelistnumber2">Ne décochez pas la case <strong class="specialbold">Disponible</strong> pour que le service de messagerie Web enregistré soit sélectionnable dans les paramètres du pack d'hébergement. </li></ol></li><li class="procedurelistnumber"> Cliquez sur <strong class="specialbold">OK</strong>.<p class="widegraphic"><img src="74983.gif" alt="Webmail_Services" height="335" width="826" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ol><p class="procedureheading">Pour modifier les propriétés d'un enregistrement de messagerie Web externe :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Messagerie Web</strong> (dans le groupe <strong class="specialbold">Mail</strong>).</li><li class="procedurelistnumber">Cliquez sur le lien approprié dans la colonne <strong class="specialbold">Nom</strong>.</li><li class="procedurelistnumber">Effectuez les changements requis, puis cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="procedureheading">Pour qu'un service de messagerie Web ne puisse pas être inclus dans les packs d'hébergement :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Messagerie Web</strong> (dans le groupe <strong class="specialbold">Mail</strong>).</li><li class="procedurelistnumber">Procédez comme suit :<ul class="listbullet2"><li class="listbullet2">Pour rendre un service temporairement indisponible sans le supprimer vraiment, cochez la case correspondante et cliquez sur <strong class="specialbold">Désactiver</strong>.<p class="listcontinue2">Cela fonctionne pour les packs logiciels de messagerie Web installés et pour les liens vers les services de messagerie Web externes.</p>
+</li><li class="listbullet2">Pour supprimer définitivement un enregistrement de services, cochez la case correspondante et cliquez sur <strong class="specialbold">Supprimer</strong>.<p class="listcontinue2">Ainsi, vous ne pouvez supprimer que les liens vers les services de messagerie Web externes. Les packs logiciels installés ne peuvent être supprimés qu'à l'aide du Programme d'installation de Plesk (<strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour</strong>).</p>
+</li></ul></li></ol>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '66411.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

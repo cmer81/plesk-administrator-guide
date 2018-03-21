@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Pare-feu Plesk (Windows) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72046.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="75823.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Pare-feu Plesk (Windows)</h2>
+<p class="bodytext">Le composant &quot;pare-feu&quot; vous permet de protéger un serveur contre les connexions réseau entrantes pouvant en compromettre la sécurité. Le pare-feu est fourni avec un jeu de règles prédéfinies permettant les connexions aux services nécessaires pour le bon fonctionnement du serveur d'hébergement, type hébergement Web, messagerie et FTP. </p>
+<h5 class="heading5">Activation et désactivation du pare-feu</h5>
+<p class="bodytext">Dans le cas d'une installation conforme, le pare-feu est activé. Vous pouvez l'activer ou le désactiver à tout moment à l'aide du bouton correspondant sur la page <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Pare-feu</strong>.</p>
+<p class="widegraphic"><img src="75006.gif" alt="Firewall_Windows" height="390" width="869" vspace="0" hspace="0" align="bottom" border="0"></p>
+<h5 class="heading5">Affichage et gestion des connexions entrantes autorisées</h5>
+<p class="bodytext">Par défaut, toutes les connexions entrantes non autorisées de manière explicite sont bloquées. Pour voir les règles de pare-feu actives pour les connexions entrantes, allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Pare-feu</strong> &gt; <strong class="specialbold">Règles de pare-feu</strong>. Sur cet onglet, vous pouvez effectuer les opérations suivantes.</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Autoriser les connexions entrantes à un service :</em> <p class="listcontinue">Si le service n'est pas visible dans la liste de règles, cliquez sur <strong class="specialbold">Nouvelle règle de pare-feu</strong>. Indiquez un nom de règle parlant, puis définissez le profil du pare-feu : Domaine, Privé ou Public (pour plus d'infos, consultez la <a class="externalhyperlinktemplate" title="" href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/bb736287%28v=vs.85%29.aspx" target="_blank">documentation sur le profil de pare-feu Windows</a>), le port et le protocole devant accepter les connexions entrantes. Ne décochez pas la case <strong class="specialbold">Activer la règle</strong> si vous voulez appliquer la règle immédiatement. </p>
+<p class="listcontinue">Si ce service est déjà inclus dans la liste des règles, cliquez sur le nom de la règle correspondante et cochez la case <strong class="specialbold">Activer la règle</strong>.</p>
+</li><li class="listbullet"><em class="emphasis">Bloquer temporairement les connexions à un service</em> : cliquez sur le nom de la règle correspondante et décochez la case <strong class="specialbold">Activer la règle</strong>.</li><li class="listbullet"><em class="emphasis">Bloquer de manière permanente les connexions à un service</em> : sélectionnez la règle correspondante et cliquez sur <strong class="specialbold">Supprimer</strong>.</li><li class="listbullet"><em class="emphasis">Restaurer la configuration du pare-feu par défaut</em> : cliquez sur <strong class="specialbold">Par défaut</strong>.</li><li class="listbullet"><em class="emphasis">Fermer toutes les connexions au serveur : </em>si votre serveur a fait l'objet d'une attaque et si les sites Web sont endommagés, vous voudrez peut-être rendre le serveur inaccessible sur Internet et l'isoler jusqu'à résolution de toutes les vulnérabilités et restauration des sites Web des clients à partir des fichiers de sauvegarde. Pour fermer toutes les connexions au serveur, cliquez sur <strong class="specialbold">Mode Panique</strong>.</li></ul><h5 class="heading5">Autorisation et blocage des communications ICMP</h5>
+<p class="bodytext">On utilise les communications ICMP pour régler les problèmes réseau. Par défaut, toutes les communications ICMP sont autorisées. Retrouvez une description détaillée des messages ICMP sur la page <a class="externalhyperlinktemplate" title="" href="http://msdn.microsoft.com/en-us/library/ms912869" target="_blank">http://msdn.microsoft.com/en-us/library/ms912869</a>.</p>
+<p class="procedureheading">Pour bloquer ou autoriser des communications ICMP, procédez comme suit :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous <strong class="specialbold">Outils &amp; Paramètres </strong>&gt; <strong class="specialbold">Pare-feu</strong> &gt; <strong class="specialbold">Protocole ICMP</strong>.<p class="listcontinue">Les règles prédéfinies pour les communications ICMP apparaissent dans une liste. La colonne <strong class="specialbold">S</strong> (statut) présente l'icône <img src="75106.png" alt="Icon_stopped" height="21" width="23" vspace="0" hspace="0" align="bottom" border="0">  si le pare-feu bloque les paquets correspondant à cette règle et l'icône <img src="75107.png" alt="Icon_running" height="22" width="24" vspace="0" hspace="0" align="bottom" border="0"> si le pare-feu autorise le passage des paquets correspondant à cette règle.</p>
+</li><li class="procedurelistnumber">Exécutez l'une des actions suivantes :<ul class="listbullet2"><li class="listbullet2">Pour autoriser les requêtes ICMP d'un type donné, cliquez sur l'icône <img src="75104.png" alt="Icon_stopped" height="21" width="23" vspace="0" hspace="0" align="bottom" border="0"> correspondante dans la colonne <strong class="specialbold">S</strong>.</li><li class="listbullet2">Pour bloquer les requêtes ICMP d'un type donné, cliquez sur l'icône <img src="75108.png" alt="Icon_running" height="22" width="24" vspace="0" hspace="0" align="bottom" border="0"> correspondante dans la colonne <strong class="specialbold">S</strong>.</li><li class="listbullet2">Pour bloquer toutes les requêtes ICMP, cliquez sur <strong class="specialbold">Mode Panique</strong>.</li><li class="listbullet2">Pour restaurer les paramètres par défaut des requêtes ICMP, cliquez sur <strong class="specialbold">Par défaut</strong>.</li></ul></li></ol><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '64951.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Utiliser des serveurs DNS externes </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72305.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="74239.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055776.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055776.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Utiliser des serveurs DNS externes</h2>
+<p class="bodytext">Bien que Plesk fournisse tous les instruments pour exécuter le DNS sur votre serveur, vous pouvez également héberger les zones DNS sur un serveur DNS externe. Cela peut être sur votre propre serveur ou sur un service DNS tiers comme<em class="emphasis"> Amazon Route 53</em> (<a class="externalhyperlinktemplate" title="" href="http://aws.amazon.com/fr/route53/" target="_blank">http://aws.amazon.com/fr/route53/</a>) ou <em class="emphasis">DynECT</em> (<a class="externalhyperlinktemplate" title="" href="http://dyn.com/dns/dynect-managed-dns/" target="_blank">http://dyn.com/dns/dynect-managed-dns/</a>). </p>
+<p class="bodytext">Il y a deux situations possibles : </p>
+<ul class="listbullet"><li class="listbullet">Vous n'utilisez qu'un serveur DNS externe. <p class="listcontinue">Vous pouvez exclure le composant Serveur DNS de votre installation Plesk. Pour cela, utilisez une installation de type personnalisé (voir le <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=deployment-guide&page=65780.htm" target="_blank">Guide de déploiement</a></strong>) et désélectionnez le composant correspondant (<em class="emphasis">Prise en charge du serveur DNS BIND</em> sous Linux et <em class="emphasis">Serveur DNS Microsoft</em> sous Windows). Dans ce cas, vous ne pouvez pas gérer les zones DNS via Plesk. Au lieu de cela, utilisez un serveur DNS. </p>
+</li><li class="listbullet">Vous pouvez utiliser à la fois un serveur DNS pour stocker les informations sur les zones et le serveur DNS pour gérer les zones via Plesk.<p class="listcontinue">Si vous utilisez des services DNS externes, alors vous n'avez pas besoin de désactiver le serveur DNS local. Le serveur DNS local peut être activé ou désactivé : dans les deux cas, la gestion des zones s'effectue sur le serveur DNS de Plesk et les modifications dans les zones sont propagées au DNS externe. </p>
+<p class="listcontinue">Par défaut, Plesk ne peut pas propager automatiquement les modifications des zones DNS aux serveurs DNS externes. Pour que cela fonctionne, vous devez écrire un script d'intégration. Ce script doit communiquer avec le backend du serveur DNS (comme l'API) et appliquer toutes les modifications des zones DNS réalisées dans Plesk. Pour savoir comment préparer ce type de script, consultez le document <strong class="specialbold"><strong class="specialbold">Développer des extensions pour Plesk Onyx</strong></strong>, section <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=extensions-guide&page=72158.htm" target="_blank">Intégration avec des services DNS tiers</a></strong>.</p>
+</li></ul><p class="bodytext">Lorsque vous utilisez un serveur DNS externe et qu'un serveur DNS local de Plesk est installé en même temps, toutes les fonctions de Plesk liées au DNS sont prises en charge et fonctionnent normalement, notamment :</p>
+<ul class="listbullet"><li class="listbullet">La gestion des templates, zones et enregistrement DNS avec l'interface de Plesk, les utilitaires de ligne de commande et les requêtes API.</li><li class="listbullet">Les applications APS qui utilisent l'aspect DNS.</li><li class="listbullet">D'autres services qui utilisent le DNS, comme la protection anti-spam DKIM, SPF et DMARC. Pour en savoir plus, consultez la section <strong class="specialbold"><a id="h64997" class="jumptemplate" title="Outils anti-spam" href="59431.htm" target="_self">Outils anti-spam</a></strong>.</li></ul><p class="bodytext">Par conséquent, les utilisateurs peuvent toujours modifier les paramètres DNS des domaines, même si le service DNS local est désactivé sans que le serveur DNS local ne soit désinstallé. Ceci est vrai pour les domaines créés avant que vous ne désactiviez le service DNS local.</p>
+<h5 class="heading5">Intégration avec Amazon Route 53</h5>
+<p class="bodytext">Si vous voulez utiliser le service DNS Amazon Route 53 avec Plesk, vous pouvez installer l'extension correspondante. Depuis Plesk 12.0, cette extension est disponible dans le <strong class="specialbold"><strong class="specialbold">Catalogue des extensions</strong></strong> de l'interface de Plesk.  </p>
+<p class="procedureheading">Pour intégrer Plesk à Amazon Route 53 :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sur la page <strong class="specialbold"><strong class="specialbold">Accueil</strong></strong>, dans <strong class="specialbold"><strong class="specialbold">Extensions</strong></strong> &gt; <strong class="specialbold"><strong class="specialbold">Catalogue des extensions</strong></strong>.</li><li class="procedurelistnumber">Repérez l'extension Amazon Route 53 et cliquez sur <strong class="specialbold"><strong class="specialbold">Installer</strong></strong>.</li><li class="procedurelistnumber">Dans la liste des extensions installées, cliquez sur le nom de l'extension (<em class="emphasis">Amazon Route 53</em>). </li><li class="procedurelistnumber">Saisissez vos identifiants de sécurité Amazon et activez le service.</li></ol><p class="bodytext">Remarque : quand vous utilisez Amazon Route 53, les zones DNS sont gérées par Plesk, sauf si vous désinstallez le composant Serveur DNS de Plesk.</p>
+<p class="note"><strong class="buttons">Important</strong> : si vous ajoutez ou modifiez manuellement des zones sur un serveur DNS externe intégré à Plesk, comme Amazon Route 53, ces modifications ne sont pas visibles dans Plesk et peuvent être écrasées ou supprimées par Plesk. Vous devez gérer les zones uniquement sur le serveur DNS de Plesk. Le serveur DNS de Plesk agit en tant que serveur DNS primaire (maître) qui propage les modifications des zones DNS au serveur externe.</p>
+<p class="bodytext">Si vous voulez modifier les zones DNS manuellement dans Amazon Route 53, vous devez supprimer le composant du serveur DNS de Plesk et son intégration Route 53 de Plesk. </p>
+<p class="procedureheading">Pour utiliser exclusivement Amazon Route 53 :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Supprimez l'extension Amazon Route 53 (<strong class="specialbold"><strong class="specialbold">Extensions</strong></strong> &gt; sélectionnez <em class="emphasis">Amazon Route 53</em> et cliquez sur <strong class="specialbold"><strong class="specialbold">Supprimer</strong></strong>).</li><li class="procedurelistnumber">Désinstallez les serveurs DNS de Plesk à l'aide du <strong class="specialbold">Programme d'installation de Plesk (<a id="h75154" class="externalhyperlinktemplate" title="Ajouter et supprimer des composants Plesk" href="74719.htm" target="_blank">Ajouter et supprimer des composants Plesk</a>, <a class="externalhyperlinktemplate" title="/current/redirect.html?book=administrator-guide&amp;page=74719.htm" href="/current/redirect.html?book=administrator-guide&page=74719.htm" target="_blank">/current/redirect.html?book=administrator-guide&amp;page=74719.htm</a>)</strong> (<strong class="specialbold"><strong class="specialbold">Outils &amp; Paramètres</strong></strong> &gt; <strong class="specialbold"><strong class="specialbold">Mises à jour et à niveau</strong></strong>).</li><li class="procedurelistnumber">Désactivez l'intégration avec un DNS tiers à l'aide de la commande : <p class="preformattedseclevel">plesk bin server_dns -&#8212;disable-custom-backend</p>
+</li></ol><p class="bodytext"></p>
+<h5 class="heading5">Problème de transfert d'abonnement</h5>
+<p class="bodytext">Si vous transférez des abonnements de Plesk avec un service DNS local vers Plesk avec un service DNS externe, les zones DNS des domaines <em class="emphasis">ne sont pas transférées</em> automatiquement vers les serveurs de noms externes. Vous devez créer manuellement les zones sur les serveurs de noms.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72230.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

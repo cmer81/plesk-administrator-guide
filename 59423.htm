@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Paramètres du serveur </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="78064.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59418.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557101.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557101.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Paramètres du serveur</h2>
+<p class="bodytext">Dans cette section, nous décrirons les paramètres généraux du serveur Plesk. Ces paramètres incluent un ensemble de paramètres liés aux statistiques et diverses options, comme les droits appliqués à tout le serveur pour les clients. Vous pouvez modifier les paramètres généraux du serveur sur la page <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Paramètres du serveur</strong>.</p>
+<p class="widegraphic"><img src="74995.gif" alt="Server_Settings" height="529" width="835" vspace="0" hspace="0" align="bottom" border="0"></p>
+<h5 class="heading5">Options des statistiques</h5>
+<p class="bodytext">Vous pouvez configurer les options suivantes au niveau des statistiques :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Conserver les stats du trafic pendant</strong><p class="listcontinue">Cette option permet de définir la durée de stockage des statistiques Web et des statistiques d'utilisation recueillies par le programmes Webalizer ou AWstats. Par défaut, Plesk conserve les données des trois derniers mois.</p>
+</li><li class="listbullet"><strong class="specialbold">À inclure dans le calcul de l'utilisation de l'espace disque</strong><p class="listcontinue">Cette option vous permet de sélectionner les types d'objets que Plesk doit prendre en compte pour calculer l'utilisation de l'espace disque. </p>
+</li><li class="listbullet"><strong class="specialbold">A inclure dans le calcul de l'utilisation de l'espace disque</strong><p class="listcontinue">Cette option vous permet de définir comment Plesk doit prendre en compte l'espace disque utilisé par chaque objet : selon la taille ou le volume de l'espace disque utilisé. Pour savoir comment Plesk calcule l'utilisation de l'espace disque, consultez la section <strong class="specialbold"><a id="h72017" class="jumptemplate" title="À propos du calcul de l'espace disque utilisé" href="71164.htm" target="_self">À propos du calcul de l'espace disque utilisé</a></strong>.</p>
+</li><li class="listbullet"><strong class="specialbold">À inclure dans le calcul du trafic</strong><p class="listcontinue">Cette option vous permet de sélectionner le type de trafic que Plesk doit prendre en compte lors du calcul du trafic : entrant, sortant ou les deux.</p>
+</li></ul><h5 class="heading5">Options diverses</h5>
+<p class="bodytext">Outre les paramètres liés aux statistiques, vous pouvez modifier les paramètres suivants :</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Nom d'hôte complet</strong><em class="emphasis"> </em><p class="listcontinue">Nom d'hôte de ce serveur Plesk.</p>
+</li><li class="listbullet"><strong class="specialbold">Interdire aux utilisateurs de créer des sous-zones DNS dans les superzones DNS d'autres utilisateurs</strong><br>Si un client crée un domaine, il peut indiquer des noms de domaine de deuxième niveau (comme <em class="emphasis">exemple.com)</em> ainsi que des noms de domaine de troisième niveau ou de niveau inférieur, comme <em class="emphasis">doc.exemple.com</em>. Si un client crée <em class="emphasis">doc.exemple.com</em> et si le nom de domaine d'origine, <em class="emphasis">exemple.com</em>,<em class="emphasis"> </em>a été créé par un autre client, le système ne permet pas de créer un tel sous-domaine si l'option correspondante est sélectionnée. <p class="listcontinue">Nous vous recommandons de sélectionner cette option. Dans le cas contraire, les utilisateurs pourront créer de faux sous-domaines et configurer des sites Web et des comptes mail à des fins malveillantes  diffusion de spam, vol d'identité ou phishing.  </p>
+</li><li class="listbullet"><strong class="specialbold">Interdire aux clients de modifier le nom de leur utilisateur système.</strong><p class="listcontinue">Lorsque vous ajoutez un abonnement pour un client d'hébergement, vous devez préciser un nom d'utilisateur système associé à cet abonnement. Au nom de cet utilisateur, le client accède au serveur via FTP ou SSH, utilise le système de fichiers, etc. </p>
+<p class="listcontinue">Par défaut, les clients sont autorisés à modifier les noms des utilisateurs système associés à leurs abonnements. Utilisez cette option pour éviter que les clients modifient ces noms. </p>
+<p class="listnote"><strong class="buttons">Remarque </strong>: cette option est disponible uniquement pour les clients qui n'ont pas le droit <strong class="specialbold">Gestion de l'hébergement</strong>. Ce droit permet aux clients de modifier le nom de l'utilisateur système même si l'option est sélectionnée.</p>
+</li><li class="listbullet"><strong class="specialbold">Interdire aux clients de modifier le nom de leur domaine principal.</strong><p class="listcontinue">Le nom de domaine d'un abonnement est créé lorsque vous créez l'abonnement. Le nom du domaine principal est identique au nom de l'abonnement. Cette option vous permet d'interdire aux clients de modifier ce nom. Remarque : l'administrateur Plesk et les autres administrateurs peuvent modifier les noms des abonnements de clients, même si cette option est sélectionnée. Par défaut, cette option n'est pas sélectionnée.</p>
+</li><li class="listbullet"><em class="emphasis">(Windows uniquement)</em> <strong class="specialbold">Inclure le mot de passe de l'utilisateur dans le fichier avec les paramètres de publication Web Deploy.</strong><br>Les clients peuvent écrire le code de leurs sites Web dans WebMatrix&reg; (l'outil de développement) et le publier directement sur leur compte client via un protocole spécial appelé Web Deploy. Pour configurer une connexion vers leur compte, les clients doivent indiquer les paramètres de publication dans WebMatrix&reg;. Plesk aide ces clients en générant le fichier XML qu'ils peuvent utiliser au lieu de définir tous les paramètres. Le mot de passe du compte client ainsi que les autres paramètres sont inclus dans ce fichier XML. Si vous souhaitez améliorer la sécurité de votre système et empêcher le vol de mots de passe, vous pouvez exclure le mot de passe du fichier XML. Les clients devront alors entrer le mot de passe directement dans WebMatrix&reg;. Pour en savoir plus sur WebMatrix&reg;, consultez la section <strong class="specialbold">Publication Web avec Web Deploy (Windows)</strong>.<p class="listnote"><strong class="buttons">Remarque </strong>: vous pouvez changer cette option par programmation. Pour en savoir plus sur la procédure à suivre, consultez le guide <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=cli-win&page=60982.htm" target="_blank">Reference for Command-Line Utilities</a></strong> (en anglais).</p>
+</li></ul>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '59423.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

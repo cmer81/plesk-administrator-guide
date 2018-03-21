@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Activer le mode passif pour FTP (Linux) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="60305.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="60210.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557101.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557101.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Activer le mode passif pour FTP (Linux)</h2>
+<p class="bodytext">Pour permettre aux utilisateurs de se connecter à votre serveur Plesk pour Linux via FTP en mode passif, vous devez modifier manuellement le fichier de configuration ProFTPD et changer la politique de votre pare-feu pour autoriser les connexions FTP passives.</p>
+<p class="bodytext">Connectez-vous à votre serveur SSH en tant qu'utilisateur <code class="monospace">root</code>. Ouvrez le fichier <code class="monospace">/etc/proftpd.conf</code> pour le modifier et ajoutez la ligne suivante quelque part dans la section <code class="monospace">&lt;Global&gt;</code> :</p>
+<p class="bodytext"><code class="monospace">PassivePorts 49152 65534</code></p>
+<p class="bodytext">Le fichier sera similaire à ceci une fois que vous aurez ajouté la ligne :</p>
+<p class="widegraphic"><img src="74644.png" alt="" height="134" width="415" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Enregistrez les modifications et redémarrez le service <code class="monospace">xinetd</code> pour que les modifications prennent effet :</p>
+<p class="bodytext"><code class="monospace">/etc/init.d/xinetd restart</code></p>
+<p class="bodytext">Pour vous assurer que les connexions FTP passives sont autorisées via votre pare-feu, ajoutez une règle de pare-feu personnalisée avec les paramètres suivants :</p>
+<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Direction</strong> : Entrant</li><li class="listbullet2"><strong class="specialbold">Action</strong> : Autoriser</li><li class="listbullet2"><strong class="specialbold">Ports</strong> : TCP 49152-65534</li><li class="listbullet2"><strong class="specialbold">Sources</strong> : (tout hôte)</li></ul><p class="bodytext">La règle configurée doit ressembler à ceci :</p>
+<p class="widegraphic"><img src="74645.png" alt="" height="590" width="692" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Ajoutez la règle à votre jeu de règle pour terminer la procédure.</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '74643.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

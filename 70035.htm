@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Personnaliser la Vue Power User </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="70562.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="71932.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc705575.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc705575.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Personnaliser la Vue Power User</h2>
+<p class="bodytext">La <strong class="specialbold">Vue Power User</strong> possède un sous-type, la <em class="emphasis">Vue Personnalisée</em> (disponible dans <strong class="specialbold"><strong class="specialbold">Outils &amp; Paramètres &gt; Gestion de l'interface</strong></strong>), qui sert deux objectifs principaux : </p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Simplifier l'expérience utilisateur des administrateurs qui utilisent l'hébergement géré.</em><p class="listcontinue">Certains administrateurs ne s'occupent que des tâches d'administration basiques (surveillance de services système, administration des comptes utilisateur, etc.). Ils laissent les tâches plus complexes, comme la configuration des services et du serveur, au service d'assistance d'un fournisseur de services. Ce type d'utilisateur ne veut avoir que les outils dont il a vraiment besoin et masquer les autres outils.</p>
+</li><li class="listbullet"><em class="emphasis">Augmenter la sécurité et la convivialité de Plesk.</em><p class="listcontinue">Les administrateurs peuvent volontairement révoquer certains de leurs droits pour masquer les outils dont ils n'ont pas besoin au quotidien. Ils peuvent également revenir à la vue Power User qui inclut toutes les fonctionnalités s'ils ont besoin de paramétrer plus finement le système (par exemple, activer les sauvegardes du serveur).</p>
+</li></ul><p class="bodytext">Si vous allez dans <strong class="specialbold"><strong class="specialbold">Outils &amp; Paramètres &gt; Paramètres de la Vue personnalisée</strong></strong> (onglet <strong class="specialbold"><strong class="specialbold">Outils d'administration</strong></strong>), vous pouvez sélectionner les outils que l'administrateur verra dans cette vue. Les paramètres de cette vue peuvent être indisponibles si le fournisseur de services qui vous a donné l'accès à Plesk a décidé de verrouiller la Vue personnalisée. </p>
+<h5 class="heading5">Verrouillage de la Vue personnalisée et masquage des paramètres de la Vue personnalisée</h5>
+<p class="bodytext"><em class="emphasis">Verrouiller</em> la Vue personnalisée signifie limiter l'éventail des fonctions disponibles de Plesk pour l'administrateur et désactiver tout changement dans la liste des fonctions. Résultat : lorsque la Vue personnalisée est verrouillée, il est impossible de basculer vers une autre vue de l'interface (ou API XML) ou de changer les paramètres de la Vue personnalisée. En général, si vous êtes un fournisseur de services, vous avez la possibilité de mettre certains outils à la disposition des administrateurs et ainsi de diviser en deux l'administration de Plesk :</p>
+<ul class="listbullet"><li class="listbullet">Opérations quotidiennes. Ces opérations sont exécutées par l'administrateur de Plesk, la personne qui a acheté l'hébergement Web.</li><li class="listbullet">Configuration et maintenance complexes. Ces opérations sont exécutées par votre équipe d'assistance. De telles opérations peuvent inclure la configuration d'un réseau, DNS, serveur Web, etc.</li></ul><p class="bodytext">Si un administrateur de Plesk a besoin d'une certaine fonction et n'arrive pas à la trouver, votre équipe d'assistance active cette fonction en déverrouillant la Vue personnalisée, en modifiant les paramètres de la vue et en reverrouillant cette même vue. </p>
+<p class="bodytext">La Vue personnalisée est verrouillée <em class="emphasis">uniquement </em>via un appel de la ligne de commande de l'utilitaire <code class="monospace">poweruser</code> :</p>
+<p class="bodytext"><code class="monospace">poweruser</code> <code class="monospace">--on -simple true -lock true</code></p>
+<p class="bodytext">Le verrouillage est supprimé en appelant <code class="monospace">poweruser</code> <code class="monospace">--on -lock false</code>. </p>
+<h5 class="heading5">Vue personnalisée et abonnements propres de l'administrateur</h5>
+<p class="bodytext">Quelle est la spécificité de cette vue ? Elle vous permet d'adapter instantanément les droits, paramètres d'hébergement, paramètres PHP et autres paramètres d'abonnement <em class="emphasis">sur tous les abonnements que vous avez créés dans cette vue</em>. Cette possibilité existe car chaque abonnement que vous créez dans cette vue vient du pack de services <em class="emphasis">Personnalisée</em> artificiel qui n'est pas visible dans la liste des packs. Les paramètres de ce pack sont disponibles dans <strong class="specialbold"><strong class="specialbold">Outils &amp; Paramètres &gt; Paramètres de la Vue personnalisée</strong></strong>. Lorsque vous modifiez les paramètres, ces changements (si possible) sont automatiquement appliqués à tous les abonnements sous le pack Personnalisé.</p>
+<p class="bodytext">Autre point qui mérite votre attention : le pack Personnalisé inclut un droit spécial, la <em class="emphasis">possibilité de créer, de supprimer et de basculer entre les abonnements</em>. Si ce droit n'est pas sélectionné dans l'interface utilisateur, il est impossible de créer des abonnements dans la Vue personnalisée.</p>
+<p class="bodytext">Si vous devez affiner les paramètres de la Vue personnalisée via la ligne de commande, utilisez l'utilitaire <code class="monospace">admin</code>. Pour en savoir plus sur les options de l'utilitaire, reportez-vous à <strong class="specialbold">Plesk Onyx pour Linux (Windows) : Référence pour les utilitaires de ligne de commande</strong>.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '70035.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

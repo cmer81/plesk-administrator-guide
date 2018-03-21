@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Gérer les zones DNS pour les sous-domaines </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72226.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="72217.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055776.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055776.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Gérer les zones DNS pour les sous-domaines</h2>
+<p class="bodytext">Plesk permet à chaque sous-domaine d'avoir sa propre zone DNS. Ces zones de sous-domaines sont utiles si vous souhaitez indiquer un serveur de noms personnalisé pour un sous-domaine particulier ou si vous souhaitez réduire le nombre d'enregistrements DNS en les réarrangeant pour les zones subordonnées. De manière générale, les zones DNS du sous-domaine apportent toutes les fonctions DNS au niveau du sous-domaine.</p>
+<p class="bodytext">Par défaut, Plesk ne crée pas de zones DNS distinctes pour les sous-domaines. Cependant, si vous souhaitez essayer cette fonction, utilisez l'appel suivant de la ligne de commande :</p>
+<p class="preformattedbold">server_pref &#8211;u &#8211;subdomain-dns-zone own</p>
+<p class="bodytext">Pour désactiver cette fonction, utilisez la commande suivante :</p>
+<p class="preformattedbold">server_pref &#8211;u &#8211;subdomain-dns-zone parent</p>
+<p class="bodytext">Pour en savoir plus sur l'exécution des utilitaires de Plesk : </p>
+<ul class="listbullet"><li class="listbullet">(Linux) <a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=cli-linux&page=37894.htm" target="_blank">Référence pour les utilitaires de lignes de commande, Plesk pour Linux</a></li><li class="listbullet">(Windows) <a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=cli-win&page=44076.htm" target="_blank">Référence pour les utilitaires de lignes de commande, Plesk pour Windows</a></li></ul><p class="note"><strong class="buttons">Remarque :</strong> avant la micro-mise à jour MU#9, le comportement par défaut dans les versions 10.4 était de créer des zones DNS de sous-domaine. Si vous appliquez la mise à jour n° 9 dans la version 10.4, cette fonction restera active. Sinon, le comportement par défaut sera de ne pas créer de zones séparées.</p>
+<p class="bodytext">Lorsque les zones de sous-domaines sont désactivées, les clients modifient la zone DNS du domaine parent en activant le contrôle de Plesk sur une zone de sous-domaine particulier. En fait, quand ils vont dans <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="specialbold">&lt;nom_de_domaine&gt;</strong> &gt; <strong class="specialbold">Paramètres DNS</strong> &gt; <strong class="specialbold">Activer/Désactiver</strong>, les situations suivantes sont possibles.</p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="174" height="0"></td>
+<td width="192" height="0"></td>
+<td width="198" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="bodytext">Activé</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="390"><p class="bodytext">N'a aucun effet sur la zone DNS d'un domaine parent.</p>
+<p class="bodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="bodytext">Désactivé</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="bodytext">Une nouvelle zone DNS est créée pour le sous-domaine et tous les enregistrements DNS correspondants à ce sous-domaine sont supprimés de la zone DNS du domaine parent.</p>
+</td>
+<td style="border:1px solid #010101;" width="198"><p class="bodytext">Seuls&nbsp;les enregistrements A et AAAA correspondant à ce sous-domaine sont ajoutés à la zone DNS du domaine parent.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">&nbsp;</p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72212.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

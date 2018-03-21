@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Mises à niveau de Plesk </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="70989.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59216.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557361.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557361.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Mises à niveau de Plesk</h2>
+<p class="bodytext">Les <em class="emphasis">Mises à niveau</em> apportent toujours un nombre important d'optimisations de Plesk ou intègrent même de nouveaux comportements et de nouvelles fonctions de Plesk. Après une mise à niveau, Plesk augmente sa version mineure ou majeure :</p>
+<ul class="listbullet"><li class="listbullet">En général, si une mise à niveau optimise seulement les fonctions existantes, Plesk augmente son numéro de version mineure (par ex., de 10.3.0 à 10.3.1).</li><li class="listbullet">Si une mise à niveau inclut des changements plus complexes dans Plesk, le numéro de version majeure est augmenté (par ex., de 10.3.1 à 10.4.0).</li></ul><h5 class="heading5">Niveaux de builds et mises à niveau de Plesk </h5>
+<p class="bodytext">Pendant son cycle de vie, chaque version majeure de Plesk passe par différentes étapes de développement (voir le schéma ci-dessous). Il est naturel qu'au début, certaines fonctions nouvellement implémentées ne soient pas dans un statut final mais requièrent d'autres modifications. Ces fonctions dans les versions ultérieures de Plesk sont optimisées à mesure qu'elles reçoivent des feedbacks des clients. Pour indiquer le niveau de la version actuelle de Plesk, nous affectons l'un des niveaux de builds : <em class="emphasis">Testing release</em> (Version de test), <em class="emphasis">Early Adopter release</em> (Version Premier utilisateur), <em class="emphasis">General release</em> (Version globale) et <em class="emphasis">Late Adopter release</em> (Version Utilisateur tardif). </p>
+<p class="note"><strong class="buttons">Remarques : </strong><br>1. Par défaut, les builds de test ne sont pas affichés comme étant disponibles à l'installation. Vous pouvez installer la version de test de Plesk uniquement en exécutant le Programme d'installation de Plesk avec l'une des options spéciales. Pour en savoir plus, consultez le <strong class="specialbold">Guide de déploiement</strong>, section <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=deployment-guide&page=70260.htm" target="_blank">Installer Plesk</a></strong>.<br>2. Vous pouvez mettre à niveau vers la prochaine version de test uniquement si vous êtes propriétaire d'un build de test. Les builds suivants de Plesk n'ont pas d'option correspondante dans l'interface utilisateur.</p>
+<p class="bodytext">C'est à vous de décider quel niveau vous voulez utiliser. Par exemple, envisagez la mise à niveau vers une version Premier utilisateur si vous voulez tester de nouvelles fonctions avant la disponibilité générale de Plesk. En revanche, si vous souhaitez utiliser la solution intégrant toutes les mises à jour majeures et déjà utilisées avec succès par plusieurs fournisseurs de services, attendez la publication de la version Utilisateur tardif de Plesk, qui peut intervenir quelques mois après celle de la version globale. </p>
+<p class="bodytext">Une fois que vous avez décidé de la version dont vous avez besoin, configurez Plesk pour qu'il vous notifie quand les mises à niveau vers la version choisie sont disponibles. Après avoir sélectionné le type de version dans <strong class="specialbold">Outils &amp; Paramètres &gt; Paramètres de mises à jour et de mise à niveau</strong>, Plesk vérifiera les mises à niveau une fois par jour. Lorsqu'une mise à niveau avec le numéro de version sélectionné est disponible, Plesk vous notifiera sur <strong class="specialbold">Accueil &gt; Présentation du système</strong>.<strong class="buttons"> </strong>Remarque : Plesk vous notifie toujours lorsqu'une version avec un niveau de build plus élevé est disponible. Par exemple, si vous configurez Plesk pour qu'il vous notifie des versions Premier utilisateur, vous continuerez de recevoir toutes les notifications de versions globales et Utilisateur tardif. Cependant, si vous décidez d'utiliser uniquement les versions Utilisateur tardif, les notifications pour toutes les mises à niveau de versions globales et Premier utilisateur seront ignorées.</p>
+<p class="bodytext">Le diagramme ci-dessous présente en gros le cycle de vie de Plesk (les numéros de versions sont indiqués à titre d'exemple et ne correspondent pas aux numéros réels).</p>
+<p class="widegraphic"><img src="70050.gif" alt="Lifecycle" height="92" width="900" vspace="0" hspace="0" align="bottom" border="0"></p>
+<h5 class="heading5">Appliquer les mises à niveau de Plesk</h5>
+<p class="bodytext">Comme les mises à niveau impliquent plusieurs changements dans le produit et peuvent requérir d'importants arrêts de fonctionnement, Plesk ne les applique pas automatiquement. À la place, il affiche des notifications de mise à niveau sur la page d'<strong class="specialbold">Accueil</strong>. Une fois que vous recevez une notification de ce type, vous pouvez initier la mise à niveau soit depuis <strong class="specialbold">Accueil </strong>&gt; <strong class="specialbold">Présentation du système</strong> soit depuis <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Mises à jour et à niveau</strong> à tout moment qui vous convient. </p>
+<p class="bodytext">Le scénario décrit ci-dessus s'appelle la « mise à niveau sur place », car les composants de Plesk sont mis à niveau directement dans un serveur. Cependant, il existe une autre solution pour mettre à niveau Plesk : la <em class="emphasis">mise à niveau par transfert</em>. Cette solution implique le transfert des données de Plesk vers un autre serveur avec une version plus récente de Plesk. La mise à niveau par transfert convient, par exemple, lorsque vous voulez non seulement mettre à niveau Plesk, mais le migrer également vers un serveur plus productif ou un autre système d'exploitation. Pour en savoir plus sur les différences entre les différentes méthodes de mises à niveau et connaître les instructions détaillées sur la mise à niveau de Plesk, consultez le <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=deployment-guide&page=70322.htm" target="_blank">Guide de déploiement</a></strong>.</p>
+<h5 class="heading5">Mises à niveau et clés de licence de Plesk</h5>
+<p class="bodytext">Notez que certaines licences de Plesk n'accordent pas le droit d'exécuter des mises à niveau complexes (mises à niveau qui changent le numéro de version majeure : par ex. de 10.3.1 à 10.4.0). Si vous essayez d'exécuter une telle mise à niveau, Plesk vous notifiera des limites de la licence. Néanmoins, vous pourrez encore exécuter la mise à niveau. Une fois terminée, vous devrez obtenir et installer la clé de licence pour la nouvelle version de Plesk. Pour en savoir plus sur l'installation d'une clé de licence après une mise à niveau, consultez la section <strong class="specialbold"><a id="h65005" class="jumptemplate" title="Mettre votre clé de licence à niveau" href="59469.htm" target="_self">Mettre à niveau votre clé de licence</a></strong>.</p>
+<h5 class="heading5">Remarques sur la procédure de mise à niveau sur place</h5>
+<ul class="listbullet"><li class="listbullet">Après avoir mis à niveau vers une nouvelle version de Plesk, vous recevrez le rapport de la procédure de mise à niveau. Le message de notification inclura le log d'évènements et une liste des packs installés si la mise à niveau est réussie. Cependant, vous ne recevrez aucune notification d'erreur en cas d'échec de votre serveur de messagerie. Dans ce cas, vous pouvez vérifier les erreurs dans le fichier <code class="monospace">autoinstaller3.log</code> localisé dans le répertoire <code class="monospace">/tmp</code> sur le disque dur du serveur.</li><li class="listbullet">Toutes les opérations de Plesk sont suspendues lors de l'installation des packs dits <em class="emphasis">« de base »</em> qui affectent les fonctionnalités majeures de Plesk.</li><li class="listbullet">À partir de la version 10.3, Plesk donne la possibilité d'installer des versions de composants alternatifs (PHP 5.3, MySQL 5.5, etc.) directement à partir de la page <strong class="specialbold">Mises à jour et à niveau</strong>.</li></ul><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '70988.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

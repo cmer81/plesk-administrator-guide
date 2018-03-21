@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Applications Web </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="75669.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="68949.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557121.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557121.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Applications Web</h2>
+<p class="bodytext">La majorité des clients achètent des comptes d'hébergement Web pour exécuter différentes applications Web : messagerie Web, CRM (GRC), systèmes d'e-commerce, blogs, galeries d'images, etc. En général, ces utilisateurs sont incapables d'installer les applications par eux-mêmes, car ils manquent des compétences techniques nécessaires et d'expérience. C'est pourquoi ils demandent à leurs fournisseurs de services de le faire. Résultat : le personnel du fournisseur est alors surchargé par les opérations de routine associées aux applications. Pour faciliter l'installation (et la maintenance) des applications Web et réduire la charge de travail du personnel, Plesk offre plusieurs applications gratuites et payantes aux utilisateurs de Plesk, et ce, directement à partir de leur Panneau Client.</p>
+<p class="bodytext">Il y a différents facteurs qui régulent les applications qui sont disponibles pour vos clients. Par exemple, la liste d'applications est restreinte par les propriétés du pack de services ou de l'abonnement, les paramètres du répertoire local, etc. Pour voir comment se constitue la liste des applications, consultez la section <strong class="specialbold"><a id="h70978" class="jumptemplate" title="Disponibilité des applications pour vos clients" href="68949.htm" target="_self">Comment les applications sont disponibles pour vos clients</a></strong>.</p>
+<h5 class="heading5">Types d'application</h5>
+<p class="bodytext">Plesk offre deux types d'applications : </p>
+<ul class="listbullet"><li class="listbullet">Les applications qui sont installées directement sur un site Web (comme la plate-forme de blog WordPress ou le système de gestion des contenus Joomla!.</li><li class="listbullet">Les applications qui ne requièrent pas de site Web pour leur installation. Généralement, il s'agit d'applications externes situées quelque part sur le Web qui ne fournissent qu'un lien vers leurs services ; par ex. : OfficeDrive, une suite bureautique en ligne, ou le service de vidéoconférence iMind.</li></ul><p class="bodytext">Les applications peuvent être <em class="emphasis">gratuites</em> ou <em class="emphasis">payantes</em>.<em class="emphasis"> </em>L'utilisation d'applications payantes requiert une clé de licence.</p>
+<h5 class="heading5">Maintenance et installation des applications</h5>
+<p class="bodytext">La procédure d'installation ne requiert aucune compétence spécifique de la part des clients. Ils remplissent les paramètres des applications (par ex., les identifiants d'accès de l'administrateur) et Plesk installe l'application pour eux. La gestion avancée des applications est également simplifiée, car les applications sont mises à jour ou supprimées directement dans Plesk. En outre, les clients peuvent accéder à certaines fonctions que les applications rendent accessibles dans le Panneau Client (sans avoir besoin de se connecter à une application). Par exemple, les clients peuvent envoyer un nouveau thème WordPress ou ajouter un compte utilisateur SugarCRM directement à partir de leur Panneau Client. Une telle fonctionnalité d'application est un <em class="emphasis">service</em> que l'application fournit aux clients.</p>
+<h5 class="heading5">Sauvegarde et restauration des applications</h5>
+<p class="bodytext">Les applications sont sauvegardées à l'aide de la version standard de Plesk (l'utilitaire de <code class="monospace">sauvegarde</code>). Comme l'unité de sauvegarde est un abonnement, toutes les applications dans un abonnement doivent être sauvegardées à la fois. Les applications d'une sauvegarde sont restaurées avec toutes les autres données de l'abonnement.</p>
+<h5 class="heading5">Référentiel d'applications et Catalogue d'applications</h5>
+<p class="bodytext">S'il n'y a pas de limite sur la disponibilité des applications, la liste des applications disponibles dans le Panneau Client inclut toutes les applications à partir des deux sources suivantes : </p>
+<ol class="listnumber"><li class="listnumber">Catalogue d'applications : répertoire distant tenu par Plesk, la principale source d'applications.</li><li class="listnumber">Référentiel d'applications : répertoire local dans Plesk. Chaque version de Plesk a son propre référentiel d'applications, disponible via le Panneau d'administration du serveur (<strong class="specialbold">Gestion du serveur &gt; Outils &amp; Paramètres &gt; Référentiel d'applications</strong>). </li></ol><p class="bodytext">Voici les principaux objectifs du Référentiel d'applications :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Étendre la liste des applications disponibles en envoyant vos propres packs APS</em>.<br>C'est particulièrement utile si vous voulez offrir certaines applications à vos clients et si ces applications ne sont pas listées dans le Catalogue d'applications.</li><li class="listbullet"><em class="emphasis">Appliquer les mises à jour des applications installées depuis le Catalogue d'applications.</em></li><li class="listbullet"><em class="emphasis">Gagner le contrôle sur les applications à partir du Catalogue d'applications.</em> <br>Téléchargez une application à partir du Catalogue dans le Référentiel pour contrôler certaines de ses options. Par exemple, vous pouvez basculer sa visibilité pour les clients ou configurer ses paramètres pour l'ensemble du serveur.  </li></ul><p class="bodytext">Pour en savoir plus sur la gestion des applications via le Référentiel d'applications, reportez-vous à la section <strong class="specialbold"><a id="h68935" class="jumptemplate" title="Référentiel d'applications" href="68933.htm" target="_self">Référentiel d'applications</a></strong>.</p>
+<p class="bodytext">Pour résumer, le Référentiel d'applications est non seulement un répertoire local d'applications, mais également un outil permettant de contrôler les versions, la visibilité et les paramètres valables pour l'ensemble du serveur des applications du Catalogue d'applications. Pour mieux comprendre le Référentiel d'applications, reportez-vous au schéma de la section <strong class="specialbold"><a id="h70978_2" class="jumptemplate" title="Disponibilité des applications pour vos clients" href="68949.htm" target="_self">Disponibilité des applications pour vos clients</a></strong>.</p>
+<h5 class="heading5">Partager les applications parmi les serveurs de Plesk</h5>
+<p class="bodytext">Ajouter un pack APS dans le Référentiel d'applications pour le mettre à la disposition de vos clients uniquement. Si vous souhaitez partager votre application avec les utilisateurs d'autres serveurs de Plesk, ajoutez une application dans le Catalogue d'applications. Le Catalogue n'accepte que les applications packagées conformément au format Application Packaging Standard (APS) : le jeu de règles qui vous permet d'installer et de gérer facilement les applications. Une fois votre application packagée, elle doit réussir la procédure de certification. Pour en savoir plus sur la procédure à suivre, consultez la section <a class="externalhyperlinktemplate" title="" href="http://apsstandard.org/learn" target="_blank">http://www.apsstandard.org/learn</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="68949.htm" target="_self">Disponibilité des applications pour vos clients</a></p><p class="relateditem"><a href="68933.htm" target="_self">Référentiel d'applications</a></p></td>
+</tr>
+</table>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '68930.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

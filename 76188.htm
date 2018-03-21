@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Surveiller les services système </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="76187.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="76190.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557262.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557262.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Surveiller les services système</h3>
+<h5 class="heading5">Démarrage ou arrêt de la surveillance</h5>
+<p class="procedureheading">Pour indiquer les services à surveiller et démarrer la surveillance :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Watchdog</strong>.<p class="listcontinue">Tous les services contrôlés par Plesk sont listés sur l'onglet <strong class="specialbold">Services</strong>.</p>
+<p class="widegraphic"><img src="76192.gif" alt="Watchdog_Services" height="511" width="1067" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="procedurelistnumber">Indiquez les services à surveiller et les préférences de surveillance :<ol class="procedurelistnumber2"><li class="procedurelistnumber2">Cliquez sur le nom d'un service.</li><li class="procedurelistnumber2">Cochez la case <strong class="specialbold">Surveiller le service</strong> pour que Watchdog contrôle le service.</li><li class="procedurelistnumber2">Cochez la case <strong class="specialbold">Enregistrer les statistiques du service</strong> si vous souhaitez que Watchdog garde les informations sur les ressources CPU et RAM utilisées par le service et les présente dans des rapports graphiques (<strong class="specialbold">Extensions &gt; Watchdog &gt; Statistiques</strong>).</li><li class="procedurelistnumber2">Sélectionnez l'option <strong class="specialbold">Stopper la surveillance du service s'il redémarre fréquemment</strong> si vous souhaitez que Watchdog stoppe la surveillance de ce service s'il échoue le nombre de fois indiqué et précisez le taux d'échecs. Sinon, Watchdog vous dérangera avec des messages d'alerte à chaque fois qu'il essaiera de redémarrer un service qui ne répond pas. La valeur par défaut de cinq tentatives échouées convient généralement.</li><li class="procedurelistnumber2">Indiquez le délai pendant lequel Watchdog attend la réponse du service sondé dans la case <strong class="specialbold">Délai de dépassement de la connexion</strong>. Watchdog interroge le service et attend la réponse pendant le délai indiqué. Si Watchdog ne reçoit aucune réponse, il redémarre le service. Si vous hébergez un grand nombre de sites et de comptes mail sur votre machine, nous vous recommandons de configurer le <strong class="specialbold">Délai de dépassement de la connexion</strong> pour le serveur de messagerie Qmail sur 120 secondes, et le serveur Web Apache sur 15 secondes. Sinon Watchdog considérera que les services occupés ne fonctionnent pas correctement et les redémarrera.</li><li class="procedurelistnumber2">Vérifiez les commandes que Watchdog utilise pour démarrer et arrêter le service. Nous vous conseillons de ne pas modifier les valeurs préremplies. Vous pouvez écrire des scripts personnalisés qui, par exemple, nettoieront les fichiers de log ou enverront un SMS sur votre téléphone portable avant de démarrer le service. Vous pouvez également indiquer les commandes pour exécuter vos scripts dans les champs <strong class="specialbold">Pour démarrer le service, exécuter la commande</strong> et <strong class="specialbold">Pour arrêter le service, exécuter la commande</strong>. </li><li class="procedurelistnumber2">Si vous utilisez les commandes par défaut pour exécuter les services, laissez la valeur prédéfinie de 60 secondes dans le champ <strong class="specialbold">Temps de démarrage du service</strong>. Si vous exécutez des scripts personnalisés dont l'exécution dure plus de 60 secondes, indiquez le temps requis dans le champ <strong class="specialbold">Temps de démarrage du service</strong>. Si un script est exécuté et s'il n'a pas terminé sa tâche dans le délai indiqué, Watchdog termine l'exécution de ce script.</li><li class="procedurelistnumber2">Cliquez sur <strong class="specialbold">OK</strong> pour envoyer les paramètres.</li><li class="procedurelistnumber2">Répétez cette procédure pour configurer la surveillance de tous les services dont vous avez besoin. Si vous êtes satisfait des paramètres de surveillance par défaut de chaque service, vous pouvez configurer Watchdog afin qu'il surveille les services requis simplement en cliquant sur les icônes <img src="76214.png" alt="disk_mon_status__notmonitored" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> dans la colonne <strong class="specialbold">A</strong> de la liste de services.</li></ol></li><li class="procedurelistnumber">Une fois que vous avez indiqué tous les services que Watchdog doit surveiller, cliquez sur l'icône <strong class="specialbold">Activer</strong> dans le groupe <strong class="specialbold">Outils</strong>.<p class="listcontinue">Maintenant, les services seront surveillés selon les paramètres que vous avez indiqués. Si vous avez décidé d'utiliser les paramètres par défaut, les actions suivantes sont exécutées :</p>
+<ul class="listbullet2"><li class="listbullet2">Tous les services sont automatiquement redémarrés en cas de panne.</li><li class="listbullet2">Watchdog arrête la surveillance de tous les services échouant 5 fois sur 5 sondages.</li><li class="listbullet2">Des messages d'alerte sont envoyés à l'adresse mail indiquée dans le compte de l'administrateur de Plesk pour tout événement.</li></ul></li></ol><p class="procedureheading">Pour arrêter la surveillance d'un service en particulier :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Watchdog</strong>.</li><li class="procedurelistnumber">Cliquez sur l'icône <img src="76215.png" alt="disk_mon_status__monitored" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> correspondant au service que Watchdog doit cesser de surveiller.</li></ol><p class="procedureheading">Pour arrêter de surveiller tous les services :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Watchdog</strong>.</li><li class="procedurelistnumber">Cliquez sur l'icône <strong class="specialbold">Désactiver</strong> dans le groupe <strong class="specialbold">Outils</strong>.</li></ol><p class="note"><strong class="buttons">Important</strong> : si vous cliquez sur Désactiver, tout le service de surveillance est affecté. Autrement dit, plus aucun service système ni aucune partition du disque ne seront surveillés. </p>
+<h5 class="heading5">Visualisation du statut du serveur</h5>
+<p class="procedureheading">Pour voir le statut des services gérés de Plesk :</p>
+<ul class="listbullet"><li class="listbullet">Cliquez sur <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Gestion de services</strong>. Une liste des services Plesk est affichée. À partir de cet écran, vous pouvez gérer les services et voir leur statut.<p class="widegraphic"><br><img src="76213.gif" alt="ToolsSettings_Services" height="334" width="1020" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="listcontinue"><strong class="specialbold">Ou</strong></p>
+</li><li class="listbullet">Cliquez sur <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Watchdog</strong>. Une liste des services Plesk est affichée. À partir de cet écran, vous pouvez voir les statuts des services et gérer les préférences de surveillance.<p class="widegraphic"><img src="76216.gif" alt="Watchdog_Services_monitored" height="519" width="1019" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="listcontinue">Les informations suivantes sont affichées :</p>
+<p class="listcontinue">Une icône dans la colonne <strong class="specialbold">S</strong> (statut) indique si un service est actuellement surveillé par Watchdog. Elle indique également le statut du service renvoyé lors de la dernière vérification :</p>
+<p class="listcontinue"><img src="76193.gif" alt="18426" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le service n'est actuellement pas surveillé.</p>
+<p class="listcontinue"><img src="76205.png" alt="disk_mon_status__init" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - vous avez commencé la surveillance mais le service n'a pas encore été analysé pour identifier son statut.</p>
+<p class="listcontinue"><img src="76206.png" alt="service_status__running" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le service est surveillé et Watchdog signale que le service est en cours d'exécution.</p>
+<p class="listcontinue"><img src="76207.png" alt="service_status__notrunning" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le service est surveillé et Watchdog signale que le service est interrompu.</p>
+<p class="listcontinue"><img src="76208.png" alt="service_mon_status__timeout" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le service n'est plus surveillé par Watchdog car il était instable.</p>
+<p class="listcontinue">Une icône dans la colonne <strong class="specialbold">M</strong> (Monitoring - Surveillance) indique si vous avez configuré Watchdog pour qu'il surveille le service et si le service était installé sur le serveur et correctement configuré :</p>
+<p class="listcontinue"><img src="76209.png" alt="service_mon_status__notinstalled" height="16" width="16" vspace="0" hspace="0" align="bottom" border="0"> - le service n'est pas installé.</p>
+<p class="listcontinue"><img src="76199.png" alt="Icon_not_configured" height="18" width="15" vspace="0" hspace="0" align="bottom" border="0"> - le service n'est pas configuré.</p>
+<p class="listcontinue"><img src="76211.png" alt="Icon_Monitoring_disabled" height="19" width="17" vspace="0" hspace="0" align="bottom" border="0"> - vous n'avez pas configuré Watchdog pour qu'il surveille le service.</p>
+<p class="listcontinue"><img src="76212.png" alt="Icon_Monitoring_enabled" height="16" width="18" vspace="0" hspace="0" align="bottom" border="0"> - vous avez configuré Watchdog pour qu'il surveille le service.</p>
+</li></ul><p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '76188.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

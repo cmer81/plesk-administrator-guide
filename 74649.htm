@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Utilitaire de réparation de Plesk </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="73563.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="74650.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557321.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557321.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Utilitaire de réparation de Plesk</h2>
+<p class="bodytext">La fonction d'auto-réparation de Plesk vous permet de détecter automatiquement les problèmes liés à Plesk et ses services ainsi que de les résoudre. Si vous rencontrez des problèmes avec l'un des services de Plesk (par exemple, si les mails ne sont pas envoyés ou remis, si un site Web ne s'ouvre par, etc.) ou avec Plesk lui-même (par exemple, si des messages d'erreur s'affichent dans l'interface de Plesk ou encore si des pages Plesk ne chargent pas), l'utilitaire de réparation de Plesk peut vous permettre de résoudre le problème. Vous pouvez exécuter l'utilitaire pour vérifier et réparer un par un des éléments de Plesk (comme le service de messagerie ou la base de données Plesk) ou pour les réparer tous simultanément.</p>
+<p class="bodytext">Pour lancer l'utilitaire, connectez-vous au serveur via SSH (avec Plesk pour Linux) ou RDP (avec Plesk pour Windows) et exécutez la <code class="monospace">commande plesk repair</code>. Précisez les aspects et options voulus.</p>
+<p class="preformattedbold">plesk repair ASPECT [OPTION]</p>
+<p class="bodytext">L'utilitaire de réparation de Plesk peut être exécuté dans l'un des trois modes suivants :</p>
+<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Interactive mode</strong>. Lorsque l'utilitaire détecte un problème ou veut reconfigurer un service, il affiche une notification et vous invite à autoriser le service à résoudre le problème ou à reconfigurer le service. Par défaut, l'utilitaire de réparation est exécuté en mode interactif. Remarque : pour exécuter certaines opérations (comme la résolution des problèmes dus à des gestionnaires PHP manquants), vous devez choisir parmi une liste d'options disponibles et non répondre simplement par &quot;oui&quot; ou &quot;non&quot;. C'est pourquoi ces opérations ne peuvent être exécutées qu'avec le mode interactif. Ce type d'opération est signalé dans les descriptions des aspects correspondants.</li><li class="listbullet2"><strong class="specialbold">Mode diagnostique</strong>. L'utilitaire vous informe des problèmes détectés, mais ne les résout pas. Pour exécuter l'utilitaire en mode diagnostique, utilisez la commande <code class="monospace">plesk repair</code> avec l'option <code class="monospace">-n</code>.</li><li class="listbullet2"><strong class="specialbold">Mode réparation</strong>. L'utilitaire tente de réparer immédiatement les problèmes détectés. Il reconfigure également certains services, même si aucun problème n'est détecté. Pour exécuter l'utilitaire en mode réparation, utilisez la commande <code class="monospace">plesk repair</code> avec l'option <code class="monospace">-y</code>.</li></ul><p class="bodytext">Vous devez préciser l'un des aspects suivants (cliquez sur le nom de l'aspect pour afficher une explication détaillée, les options spécifiques de l'aspect et des cas d'utilisation) :</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="monospace"><a id="h74651" class="jumptemplate" title="Utilitaire de réparation de Plesk : All" href="74650.htm" target="_self">all</a></code> : cet aspect inclut tous les aspects ci-dessous.</li><li class="listbullet2"><code class="monospace"><a id="h74653" class="jumptemplate" title="Utilitaire de réparation de Plesk : Mail" href="74652.htm" target="_self">mail</a></code> : cet aspect diagnostique et résout les problèmes du serveur de messagerie. </li><li class="listbullet2"><code class="monospace"><a id="h74655" class="jumptemplate" title="Utilitaire de réparation de Plesk : Web" href="74654.htm" target="_self">web</a></code> : cet aspect diagnostique et résout les problèmes du serveur Web.</li><li class="listbullet2"><code class="monospace"><a id="h74661" class="jumptemplate" title="Utilitaire de réparation de Plesk : DNS" href="74659.htm" target="_self">dns</a></code> : cet aspect diagnostique et résout les problèmes du serveur DNS.</li><li class="listbullet2"><code class="monospace"><a id="h74664" class="jumptemplate" title="Utilitaire de réparation de Plesk : FTP" href="74662.htm" target="_self">ftp</a></code> : cet aspect diagnostique et résout les problèmes du serveur FTP.</li><li class="listbullet2"><code class="monospace"><a id="h74667" class="jumptemplate" title="Utilitaire de réparation de Plesk : Base de données Plesk" href="74665.htm" target="_self">db</a></code> : cet aspect diagnostique et résout les problèmes de la base de données Plesk.</li><li class="listbullet2"><code class="monospace">fs</code> : cet aspect diagnostique et résout les problèmes du serveur du système de fichiers.</li><li class="listbullet2"><code class="monospace"><a id="h74673" class="jumptemplate" title="Utilitaire de réparation de Plesk : MySQL" href="74671.htm" target="_self">mysql</a></code> : cet aspect diagnostique et résout les problèmes de MySQL.</li><li class="listbullet2"><code class="monospace"><a id="h74676" class="jumptemplate" title="Utilitaire de réparation de Plesk : Microsoft SQL Server" href="74674.htm" target="_self">mssql</a></code> : cet aspect diagnostique et résout les problèmes de Microsoft SQL Server.</li><li class="listbullet2"><code class="monospace"><a id="h74680" class="jumptemplate" title="Utilitaire de réparation de Plesk : Installation" href="74677.htm" target="_self">installation</a></code> : cet aspect diagnostique et résout les problèmes de Plesk lui-même.</li></ul><p class="bodytext">Certaines opérations peuvent fournir un résultat étendu. Pour voir le résultat étendu, exécutez la commande <code class="monospace">plesk repair</code> avec l'option <code class="monospace">-v</code>. </p>
+<p class="bodytext">Quand l'utilitaire détecte un problème, il le classe soit avec un AVERTISSEMENT soit avec une ERREUR, selon le niveau de gravité du problème. Par défaut, l'utilitaire renvoie le code d'erreur 1 lorsqu'il a terminé et qu'un problème de niveau ERREUR est détecté. Il renvoie le code d'erreur 0 si tous les problèmes détectés sont du niveau AVERTISSEMENT ou s'il n'y a aucune erreur. Pour que l'utilitaire renvoie le code d'erreur 1 si au moins un problème de niveau AVERTISSEMENT est détecté, exécutez la commande <code class="monospace">plesk repair</code> avec l'option <code class="monospace">-treat-warnings-as-errors</code>.</p>
+<p class="bodytext">Pour accéder à l'aide de l'utilitaire de réparation de Plesk, exécutez la commande <code class="monospace">plesk repair</code> avec l'option <code class="monospace">help(</code>ou <code class="monospace">--help)</code> :</p>
+<p class="preformattedbold">plesk help repair</p>
+<p class="bodytext">ou</p>
+<p class="preformattedbold">plesk --help repair</p>
+<p class="bodytext">Pour accéder à l'aide de tout aspect de l'utilitaire, exécutez la même commande en indiquant l'aspect :</p>
+<p class="preformattedbold">plesk help repair [ASPECT]</p>
+<p class="bodytext">ou</p>
+<p class="preformattedbold">plesk --help repair [ASPECT]</p>
+<p class="bodytext">Par exemple, la commande <code class="monospace">plesk repair help mail </code>ouvre l'aide de l'aspect <code class="monospace">mail</code>.</p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="74650.htm" target="_self">Utilitaire de réparation de Plesk : All</a></p><p class="relateditem"><a href="74652.htm" target="_self">Utilitaire de réparation de Plesk : Mail</a></p><p class="relateditem"><a href="74654.htm" target="_self">Utilitaire de réparation de Plesk : Web</a></p><p class="relateditem"><a href="74659.htm" target="_self">Utilitaire de réparation de Plesk : DNS</a></p><p class="relateditem"><a href="74662.htm" target="_self">Utilitaire de réparation de Plesk : FTP</a></p><p class="relateditem"><a href="75675.htm" target="_self">Utilitaire de réparation de Plesk : Système de fichiers</a></p><p class="relateditem"><a href="74665.htm" target="_self">Utilitaire de réparation de Plesk : Base de données Plesk</a></p><p class="relateditem"><a href="74671.htm" target="_self">Utilitaire de réparation de Plesk : MySQL</a></p><p class="relateditem"><a href="74674.htm" target="_self">Utilitaire de réparation de Plesk : Microsoft SQL Server</a></p><p class="relateditem"><a href="74677.htm" target="_self">Utilitaire de réparation de Plesk : Installation</a></p></td>
+</tr>
+</table>
+
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '74649.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

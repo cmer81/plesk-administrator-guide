@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Gestionnaire Cgroups (Linux) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="74719.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="70390.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557305.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557305.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Gestionnaire Cgroups (Linux)</h2>
+<p class="bodytext">Un site Web présent sur un hébergement partagé peut consommer toutes les ressources système et nuire aux performances des autres sites Web. C&#8217;est ce qu&#8217;on appelle le problème du &quot;voisin bruyant&quot;.</p>
+<p class="bodytext">Le <strong class="specialbold">Gestionnaire Cgroups Plesk</strong> est une extension qui vous aide à résoudre ce problème en gérant la consommation du CPU, de la RAM et le volume de lecture et écriture du disque.</p>
+<p class="bodytext">Pour chaque abonnement et chaque ressource du système, le Gestionnaire Cgroups vous permet de :</p>
+<ul class="listbullet"><li class="listbullet">Configurer la quantité maximum (limite) de la ressource que l'abonnement peut consommer.</li><li class="listbullet">Surveiller la quantité de ressource que l'abonnement consomme et envoyer des notifications par e-mail lorsqu'il dépasse un certain niveau (seuil).</li></ul><p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="78308.htm#o78310" target="_self">Exigences</a></p><p class="relateditem"><a href="78308.htm#o78311" target="_self">Installation</a></p><p class="relateditem"><a href="78308.htm#o78312" target="_self">Configurer le gestionnaire Cgroups</a></p><p class="relateditem"><a href="78308.htm#o78313" target="_self">Limiter la consommation des ressources</a></p><p class="relateditem"><a href="78308.htm#o78314" target="_self">Surveillance et notifications pour la consommation des ressources</a></p><p class="relateditem"><a href="78308.htm#o78315" target="_self">Restrictions</a></p><p class="relateditem"><a href="78308.htm#o78316" target="_self">Désactiver le gestionnaire Cgroups</a></p></td>
+</tr>
+</table>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78310"></a><h3 class="heading3">Exigences</h3>
+<h6 class="heading6">Licence Plesk</h6>
+<p class="bodytext">Le Gestionnaire Cgroups est disponible pour les <a class="externalhyperlinktemplate" title="" href="https://www.plesk.com/plans-pricing" target="_blank">éditions Plesk</a> suivantes :</p>
+<ul class="listbullet"><li class="listbullet">Plesk Web Pro</li><li class="listbullet">Plesk Web Host</li></ul><p class="bodytext">Si vous utilisez le pack Web Admin et souhaitez gérer la consommation des ressources de vos sites Web, vous devez envisager une mise à niveau vers Web Pro et la répartition des sites Web entre plusieurs abonnements.</p>
+<h6 class="heading6">Licence d&#8217;extension</h6>
+<p class="bodytext">Le Gestionnaire Cgroups est une extension payante. Vous pouvez l'acquérir <a class="externalhyperlinktemplate" title="" href="https://go.plesk.com/buy-plesk-ext/offer-cgroups" target="_blank">individuellement</a> ou via le <a class="externalhyperlinktemplate" title="" href="https://go.plesk.com/buy-plesk-ext/offer-hosting-pack" target="_blank">pack d'hébergement</a>.</p>
+<h6 class="heading6">Système d&#8217;exploitation et système init</h6>
+<p class="bodytext">Le Gestionnaire Cgroups est disponible pour :</p>
+<ul class="listbullet"><li class="listbullet">Debian 8</li><li class="listbullet">Ubuntu 16.04</li><li class="listbullet">CentOS 7</li><li class="listbullet">Red Hat Enterprise Linux 7</li></ul><p class="bodytext">Par défaut, toutes ces distributions utilisent le système init appelé <a class="externalhyperlinktemplate" title="" href="https://www.freedesktop.org/wiki/Software/systemd/" target="_blank">systemd</a>, qui est nécessaire pour le Gestionnaire Cgroups. Cela dit, Plesk peut aussi être installé sur Debian avec un autre système init appelé <a class="" title="" href="https://en.wikipedia.org/wiki/UNIX_System_V" target="_self">System V</a>. Pour vérifier le système init actuel, exécutez <code class="monospace">cat /proc/1/comm </code>dans l&#8217;interface de ligne de commande.</p>
+<p class="note">Remarque : si vous installez le Gestionnaire Cgroups sur Debian avec System V, Plesk le remplacera par systemd. Vous devrez réinitialiser manuellement le système après l&#8217;installation pour rendre les modifications effectives.</p>
+<h6 class="heading6">Restrictions pour Virtuozzo 6 &amp; 7</h6>
+<p class="bodytext">Plesk sur Virtuozzo 6 peut gérer uniquement la RAM, et Plesk sur Virtuozzo 7 peut gérer la RAM et le CPU, mais pas l&#8217;E/S disque.</p>
+<p class="bodytext">Si votre système ne répond pas à certaines caractéristiques, vous pouvez <a class="externalhyperlinktemplate" title="" href="https://docs.plesk.com/en-US/onyx/migration-guide/introduction.75496/" target="_blank">migrer</a> Plesk vers un système conforme à ces caractéristiques.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78311"></a><h3 class="heading3">Installation</h3>
+<p class="procedureheading">Pour activer le Gestionnaire Cgroups :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Installez la composante Contrôleur de ressources (Cgroups) en utilisant Plesk Installer :<ol class="listnumber2"><li class="listnumber2">Allez sous Outils &amp; Paramètres</li><li class="listnumber2">Cliquez sur le lien Mises à jour et à niveau</li><li class="listnumber2">Cliquez sur le lien Ajouter/Supprimer des composants</li><li class="listnumber2">Sélectionnez &quot;Contrôleur de ressources (Cgroups)&quot; et cliquez sur Continuer.<p class="listnote">Remarque : si la composante souhaitée manque dans la liste des composantes disponibles, assurez-vous que votre système répond aux exigences.</p>
+</li></ol></li><li class="procedurelistnumber">Démarrez la composante :<ol class="listnumber2"><li class="listnumber2">Allez sous Outils &amp; Paramètres</li><li class="listnumber2">Cliquez sur le lien Gestion des services</li><li class="listnumber2">Démarrez le service &quot;Contrôleur de ressources (Cgroups)&quot;.</li></ol></li></ol>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78312"></a><h3 class="heading3">Configurer le gestionnaire Cgroups</h3>
+<p class="note">Attention : en cas d'installation incorrecte du gestionnaire Cgroups, les sites Web peuvent ralentir, voire devenir indisponibles. Avant de procéder à des modifications, assurez-vous d'avoir lu et compris les instructions de ce chapitre.</p>
+<p class="bodytext">Vous pouvez configurer le gestionnaire Cgroups aux niveaux suivants :</p>
+<ul class="listbullet"><li class="listbullet">Pour un pack de services, et par conséquent pour tous les abonnements couverts par ce pack.</li><li class="listbullet">Pour un abonnement unique.</li></ul><p class="bodytext">Les paramètres configurés au niveau de l'abonnement écrasent les paramètres configurés au niveau du pack de services. Vous ne pouvez pas utiliser les packs d'add-ons pour modifier les paramètres du gestionnaire Cgroups.</p>
+<p class="bodytext">Une fois que vous avez installé et démarré le service, vous disposez des outils de configuration suivants :</p>
+<table class="tableintopic" width="1558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Outil</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Pack de services</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Abonnement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Panneau de contrôle Plesk (utiliser la Vue Fournisseur de services)</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><ol class="tablelistnumber"><li class="tablelistnumber">Allez dans Pack de services &gt; onglet Packs d'hébergement. </li><li class="tablelistnumber">Cliquez sur le pack de services pour lequel vous voulez configurer le gestionnaire Cgroups. </li><li class="tablelistnumber">Ouvrez l'onglet RAM, CPU, E/S disque</li></ol></td>
+<td style="border:1px solid #010101;" width="519"><ol class="tablelistnumber"><li class="tablelistnumber">Allez dans Abonnements.</li><li class="tablelistnumber">Cliquez sur l'abonnement pour lequel vous voulez configurer le gestionnaire Cgroups.</li><li class="tablelistnumber">Cliquez sur Personnaliser &gt; onglet RAM, CPU, E/S disque. </li></ol></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Interface de ligne de commande de Plesk (CLI)</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Utilisez les options <code class="monospace">-cgroups*</code> de l'utilitaire <code class="monospace"><a class="externalhyperlinktemplate" title="" href="https://docs.plesk.com/en-US/onyx/cli-linux/using-command-line-utilities/service_plan-hosting-plans.38365/" target="_blank">service_plan</a></code>.</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Utilisez les options <code class="monospace">-cgroups*</code> de l'utilitaire <code class="monospace"><a class="externalhyperlinktemplate" title="" href="https://docs.plesk.com/en-US/onyx/cli-linux/using-command-line-utilities/subscription_settings-hosting-subscription-settings.37982/" target="_blank">subscription_settings</a></code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">API XML de Plesk</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Consultez la section <a class="externalhyperlinktemplate" title="" href="https://docs.plesk.com/en-US/onyx/api-rpc/reference/managing-service-plans.32891/" target="_blank">Gérer les packs de services</a>.</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Consultez la section <a class="" title="" href="https://docs.plesk.com/en-US/onyx/api-rpc/reference/managing-subscriptions.33852/" target="_self">Gérer les abonnements</a>.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78313"></a><h3 class="heading3">Limiter la consommation des ressources</h3>
+<h6 class="heading6">Configuration des limites</h6>
+<p class="bodytext">Le premier des paramètres disponibles pour chaque ressource gérée est la valeur limite. Chaque ressource gérée a sa propre valeur limite. Par défaut, les valeurs limites ne sont pas définies, c&#8217;est-à-dire que les ressources ne sont pas limitées.</p>
+<p class="bodytext">Les abonnements peuvent partager des paramètres de limite, mais chacun a sa propre limite.</p>
+<p class="bodytext">Si une ressource est limitée pour un abonnement donné :</p>
+<ul class="listbullet"><li class="listbullet">Le Gestionnaire Cgroups surveille tous les processus que possède l&#8217;utilisateur système de l&#8217;abonnement. Ensemble, ces processus ne peuvent pas consommer plus que la valeur limite de chaque ressource.</li><li class="listbullet">Si un abonnement atteint sa limite, le système d&#8217;exploitation réalise une action spécifique, qui dépend du type de ressource.</li><li class="listbullet">Un abonnement ne peut pas dépasser la limite même s&#8217;il y a des ressources libres du type correspondant disponibles sur le serveur (cycles CPU inactifs, RAM libre, etc.).</li></ul><p class="bodytext">Si une ressource n&#8217;est pas limitée pour un abonnement donné :</p>
+<ul class="listbullet"><li class="listbullet">Les processus de l&#8217;abonnement peuvent utiliser la totalité de ce qui est disponible pour cette ressource.</li><li class="listbullet">La ressource est partagée entre les processus de tous les abonnements :<ul class="listbullet2"><li class="listbullet2">Le temps du CPU et l&#8217;E/S disque sont partagés de façon presque équitable.</li><li class="listbullet2">La RAM est partagée en fonction de ce que demandent les processus.</li></ul></li></ul><p class="bodytext">Dans les deux cas, il n&#8217;est pas garanti qu&#8217;un abonnement reçoive une quantité minimum disponible de la ressource.</p>
+<h6 class="heading6">Valeurs de paramètre autorisées pour les limites</h6>
+<p class="bodytext">Les paramètres de limite peuvent avoir les valeurs suivantes :</p>
+<p class="bodytext"></p>
+<table class="tableintopic" width="1558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Paramètre</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Mesuré en</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Valeurs disponibles</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Limite CPU</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pourcentage du temps du CPU, où 100% signifie qu&#8217;un cur de CPU est entièrement utilisé</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pas plus de 100% * Nombre de curs de CPU</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Limite RAM</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Octets</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pas plus d&#8217;1 Mo</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Vitesse d'entrée (écriture) disque</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Octets par seconde</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pas plus d&#8217;1 Mo par seconde</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Vitesse de sortie (lecture) disque</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Octets par seconde</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pas plus d&#8217;1 Mo par seconde</p>
+</td>
+</tr>
+
+</table>
+<h6 class="heading6">Comment le système gère la consommation des ressources</h6>
+<p class="bodytext">Lorsque les processus d&#8217;un abonnement spécifique utilisent la valeur maximum autorisée pour une ressource, le système d&#8217;exploitation réalise certaines actions, en fonction du type de ressource.</p>
+<table class="tableintopic" width="1558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Ressource sur-utilisée</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Actions</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Impact</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">CPU, volume de lecture et écriture du disque</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Le système limite les processus de cet abonnement pour qu&#8217;ils n&#8217;utilisent pas plus de ressources que la limite ne l&#8217;autorise.</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Les sites Web correspondants sont susceptibles de fonctionner plus lentement et avoir un délai de réponse plus élevé.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">RAM</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Lorsque les processus d'un abonnement spécifique atteignent la limite RAM, le système arrête ceux qui consomment le plus de mémoire.</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Le site Web correspondant peut être indisponible pour un certain temps et répondre aux requêtes par des codes HTTP 5xx.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">	</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78314"></a><h3 class="heading3">Surveillance et notifications pour la consommation des ressources</h3>
+<h6 class="heading6">Configuration de la surveillance et des notifications</h6>
+<p class="bodytext">Dès que vous avez défini la limite pour une ressource, vous pouvez aussi configurer Plesk pour surveiller la consommation de cette ressource.</p>
+<p class="bodytext">Pour activer la surveillance, paramétrez les valeurs suivantes :</p>
+<ul class="listbullet"><li class="listbullet">Seuil (&quot;Notifier en cas de dépassement.&quot; dans Plesk Panel).</li><li class="listbullet">Période.</li></ul><p class="bodytext">Pour désactiver la surveillance, supprimez la valeur-seuil correspondante.</p>
+<h6 class="heading6">Valeurs de paramètre autorisées pour la surveillance</h6>
+<p class="bodytext">Les paramètres de surveillance peuvent avoir les valeurs suivantes :</p>
+<table class="tableintopic" width="1558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Paramètre</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Mesuré en</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="tableheading">Valeurs disponibles</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Limite CPU</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pourcentage du temps du CPU, où 100% signifie qu&#8217;un cur de CPU est entièrement utilisé</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pas plus que la valeur limite du CPU</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Limite RAM</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Octets</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pas moins d'un 1 Mo et pas plus que la valeur limite de la RAM</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Vitesse d'entrée (écriture) disque</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Octets par seconde</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pas moins d'un 1 Mo par seconde et pas plus que la valeur limite d'écriture sur le disque</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Vitesse de sortie (lecture) disque</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Octets par seconde</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Pas moins d'un 1 Mo par seconde et pas plus que la valeur limite de lecture du disque</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Période de contrôle (pour n&#8217;importe quelle ressource)</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">Secondes</p>
+</td>
+<td style="border:1px solid #010101;" width="519"><p class="bodytext">300 (5 minutes), 3600 (1 heure) ou 86400 (24 heures)</p>
+</td>
+</tr>
+
+</table>
+<h6 class="heading6">Comment le système réalise la surveillance</h6>
+<p class="bodytext">Lorsque vous activez la surveillance des ressources pour une ou plusieurs ressources, le Gestionnaire Cgroups démarre la surveillance de leurs consommations. Si vous avez activé la surveillance des ressources au niveau de l&#8217;abonnement, l&#8217;utilisation des ressources sera surveillée pour cet abonnement. Si vous avez activé la surveillance des ressources au niveau du pack de services, l&#8217;utilisation des ressources pour tous les abonnements basés sur ce pack de services sera surveillée à la place :</p>
+<ol class="listnumber"><li class="listnumber">Toutes les 5 minutes, le Gestionnaire Cgroups comptabilise la consommation moyenne des ressources d'un abonnement et vérifie si elle est égale ou supérieure au <code class="monospace">seuil</code>.</li><li class="listnumber">Pendant chaque <code class="monospace">période</code>, le Gestionnaire Cgroups vérifie combien de fois l&#8217;abonnement a dépassé le <code class="monospace">seuil</code> durant la dernière <code class="monospace">période</code> de temps.<ul class="listbullet2"><li class="listbullet2">Si l&#8217;abonnement a dépassé le <code class="monospace">seuil</code> pendant tous les intervalles d'une <code class="monospace">période</code>, le Gestionnaire Cgroups envoie une notification par e-mail.</li><li class="listbullet2">Si cela arrive pour plus d&#8217;une <code class="monospace">période</code>, cela ne génère pas l&#8217;envoi de notifications supplémentaires.</li></ul></li></ol><h6 class="heading6">Exemple de surveillance</h6>
+<p class="bodytext">Cet exemple va vous aider à mieux comprendre comment le Gestionnaire Cgroups réalise la surveillance et déclenche les notifications.</p>
+<p class="bodytext">Supposons un pack d'abonnement P avec les paramètres suivants :</p>
+<table class="tableintopic" width="354" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="192"><p class="tableheading">Paramètre</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tableheading">Valeur</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="192"><p class="bodytext">Limite CPU </p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="bodytext">200%</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="192"><p class="bodytext">Seuil CPU</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="bodytext">160%</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="192"><p class="bodytext">Période de contrôle CPU</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="bodytext">1 heure</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Comme il a été expliqué auparavant, 100% signifie qu&#8217;un cur de CPU est entièrement utilisé.</p>
+<p class="bodytext">Ce pack comprend deux abonnements : A et B.</p>
+<p class="bodytext">L'abonnement A a une tâche lourde pour le CPU qui tourne toutes les heures et dure environ 10 minutes. Pendant ces 10 minutes, les processus d'abonnement consomment plus de 160 % du temps du CPU. Le reste du temps, l'abonnement consomme moins de 160 % du temps du CPU. Cela ne compte pas pour les notifications s'il atteint la valeur limite.</p>
+<p class="bodytext">Le site Web de l&#8217;abonnement B est sous une lourde charge. Les processus d'abonnement consomment toujours plus de 160 % du temps du CPU.</p>
+<p class="bodytext">Le Gestionnaire Cgroups comptabilise la consommation moyenne pour chaque intervalle de 5 minutes. Donc, à la fin d&#8217;une heure, il a les résultats suivants :</p>
+<ul class="listbullet"><li class="listbullet">L'abonnement A a dépassé le seuil pendant deux intervalles sur 12. Le Gestionnaire Cgroups n&#8217;enverra pas de notification.</li><li class="listbullet">L'abonnement B a dépassé le seuil sur la totalité des 12 intervalles. Le Gestionnaire Cgroups va envoyer une notification, mais ne la répétera pas si la charge continue.</li></ul><h6 class="heading6">Destinataire et contenu des notifications</h6>
+<p class="procedureheading">Pour définir qui recevra les notifications :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans Outils &amp; Paramètres &gt; Notifications.</li><li class="procedurelistnumber">Sélectionnez les destinataires voulus à côté de CPU, RAM et E/S Disque (Cgroups).</li></ol><p class="procedureheading">Le contenu de chaque message de notification est créé à partir d&#8217;un modèle. Pour lire et modifier le modèle :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez dans Outils &amp; Paramètres &gt; Notifications.</li><li class="procedurelistnumber">Cliquez sur le bouton le plus à droite à côté de CPU, RAM et E/S Disque (Cgroups).</li></ol><p class="bodytext">Pour en savoir plus, lisez la documentation sur les <a id="h78318" class="jumptemplate" title="Notifications automatiques par mail" href="59422.htm" target="_self">notifications automatiques par mail</a>.</p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78315"></a><h3 class="heading3">Restrictions</h3>
+<p class="bodytext">Certains problèmes techniques et commerciaux ne peuvent pas être résolus par la gestion des ressources :</p>
+<ul class="listbullet"><li class="listbullet">Les clients qui ont surutilisé les ressources auparavant vont vraisemblablement être soumis aux performances les plus mauvaises.</li><li class="listbullet">Le Gestionnaire Cgroups ne comptabilise ni ne limite les ressources pour les applications Web Ruby, Python et Node.js utilisant Phusion Passenger.</li></ul>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78316"></a><h3 class="heading3">Désactiver le gestionnaire Cgroups</h3>
+<p class="bodytext">Pour masquer la fonctionnalité du gestionnaire Cgroups, ajoutez ces lignes au fichier <code class="monospace"><a id="h78579" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> :</p>
+<pre class="preformatted">[resourceController]</pre>
+<pre class="preformatted">enabled = false</pre>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '78308.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Structure de l'hôte virtuel (Windows) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="68806.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="70219.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055728.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055728.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Structure de l'hôte virtuel (Windows)</h3>
+<p class="bodytext">Le tableau ci-dessous récapitule les répertoires que Plesk crée pour chaque hôte virtuel. Remarque : Plesk n'ajoute pas tous les répertoires par défaut. Certains des répertoires sont créés uniquement lorsque le propriétaire du site Web en a besoin. Ce type de répertoire est indiqué comme créé <strong class="specialbold">À la demande</strong>. Par exemple, lorsqu'un client ajoute un site Web, il n'a pas de répertoire <code class="monospace">/web_users</code>. Plesk crée ce répertoire seulement une fois que le client ajoute son premier utilisateur Web. </p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="78" height="0"></td>
+<td width="78" height="0"></td>
+<td width="90" height="0"></td>
+<td width="90" height="0"></td>
+<td width="84" height="0"></td>
+<td width="90" height="0"></td>
+<td width="78" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tableheading">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" colspan="2" width="168"><p class="tableheading">Arborescence des répertoires</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tableheading">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tableheading">Droits des utilisateurs</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tableheading">Description</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tableheading">Date de création</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;" width="78"><p class="tablebodytext">\&lt;VHOST&gt; </p>
+</td>
+<td valign="middle" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Aucun</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">\.plesk</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">\statistics\&lt;nom de domaine&gt;\</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Répertoire des statistiques</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">\anon_ftpstat</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Statistiques FTP anonyme</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">\ftpstat</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Statistiques utilisateurs FTP</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">\webstat</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Statistiques utilisateurs HTTP</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">\.security</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Lire</p>
+</td>
+<td style="border:1px solid #010101;" rowspan="2" width="90"><p class="tablebodytext">Paramètres de sécurité</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">\.web.&lt;user&gt;.security</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Lire</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">À la demande</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">/anon_ftp </p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Fichiers FTP anonyme</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">À la demande</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" width="78"><p class="tablebodytext">\cgi-bin </p>
+</td>
+<td valign="middle" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Scripts CGI</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">À la demande</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">\error_docs</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Fichiers des messages d'erreur</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&lt;doc&gt;.html</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Lecture, Écriture</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">\httpdocs</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contrôle complet</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Documents HTTP</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">\logs</p>
+</td>
+<td valign="middle" style="border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contenu de la liste</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Logs d'hôtes virtuels</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">Toujours</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">\web_users</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Aucun</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Répertoire de l'utilisateur Web</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">À la demande</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">\&lt;web_user&gt; </p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Aucun</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">\&lt;subdomain&gt;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contrôle complet</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Documents HTTP et HTTPS pour un sous-domaine</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">À la demande</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td valign="middle" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="78"><p class="tablebodytext">\&lt;domain&gt;</p>
+</td>
+<td valign="middle" style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="90"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td valign="middle" style="border:1px solid #010101;" width="84"><p class="tablebodytext">Contrôle complet</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytext">Documents HTTP et HTTPS pour un domaine supplémentaire</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">À la demande</p>
+</td>
+</tr>
+
+</table>
+<h5 class="heading5">Différences avec les versions antérieures</h5>
+<p class="bodytext">La structure décrite ci-dessus a été introduite dans Plesk 11.5. Voici les différences avec la structure des versions antérieures de Plesk :</p>
+<ul class="listbullet"><li class="listbullet">Certains répertoires sont créés à la demande. Auparavant, ils étaient tous créés par défaut.</li><li class="listbullet">Les répertoires suivants sont situés à des emplacements différents : </li></ul><table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="230"><p class="tableheading">Ancien emplacement</p>
+</td>
+<td style="border:1px solid #010101;" width="230"><p class="tableheading">Nouvel emplacement</p>
+</td>
+<td style="border:1px solid #010101;" width="135"><p class="tableheading">Commentaire</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="230"><p class="tablebodytext"><code class="monospace">\statistics</code></p>
+</td>
+<td style="border:1px solid #010101;" width="230"><p class="tablebodytext"><code class="monospace">\.plesk\statistics</code></p>
+</td>
+<td style="border:1px solid #010101;" width="135"><p class="tablebodytext">Répertoire des statistiques</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="230"><p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext"><code class="monospace">\statistics\logs</code></p>
+</td>
+<td style="border:1px solid #010101;" width="230"><p class="tablebodytext"><code class="monospace">\logs</code></p>
+</td>
+<td style="border:1px solid #010101;" width="135"><p class="tablebodytext">Logs d'hôtes virtuels</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="230"><p class="tablebodytext"><code class="monospace">\.security</code></p>
+</td>
+<td style="border:1px solid #010101;" width="230"><p class="tablebodytext"><code class="monospace">\.plesk\.security</code></p>
+</td>
+<td style="border:1px solid #010101;" rowspan="2" width="135"><p class="tablebodytext">Paramètres de sécurité</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="230"><p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext"><code class="monospace">\.web.&lt;user&gt;.security</code></p>
+</td>
+<td style="border:1px solid #010101;" width="230"><p class="tablebodytext"><code class="monospace">\.plesk\.security</code></p>
+</td>
+</tr>
+
+</table>
+<ul class="listbullet"><li class="listbullet">Les répertoires suivants ne sont pas inclus dans les hôtes virtuels de Plesk :<ul class="listbullet2"><li class="listbullet2"><code class="monospace">\httpsdocs</code></li><li class="listbullet2"><code class="monospace">\subdomains</code></li><li class="listbullet2"><code class="monospace">\private</code> </li></ul></li></ul><p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '71975.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

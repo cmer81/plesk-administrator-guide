@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Extensions de Plesk </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="78328.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="78409.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557269.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Extensions de Plesk</h2>
+<p class="note"><strong class="buttons">Remarque :</strong> dans ce chapitre, vous trouverez les descriptions du Catalogue des extensions disponibles dans Plesk Onyx 17.0. Si vous exécutez Plesk Onyx 17.5 ou une version ultérieure, consultez le chapitre <a id="h78356" class="jumptemplate" title="Catalogue des extensions" href="78328.htm" target="_self">Catalogue des extensions</a>.</p>
+<p class="bodytext">L'utilisation d'extensions est un autre moyen d'augmenter les fonctions de votre version de Plesk. Les extensions sont des composants fonctionnels développés par Plesk ou des tiers. </p>
+<p class="bodytext">Les extensions peuvent être facilement installées, supprimées et configurées directement à partir de Plesk (section <strong class="specialbold">Extensions</strong> dans le volet de navigation). </p>
+<p class="bodytext">Pour installer d'autres extensions fournies par des partenaires Plesk, allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Catalogue des extensions</strong> ou consultez le site Web <a class="externalhyperlinktemplate" title="" href="http://ext.plesk.com" target="_blank">http://ext.plesk.com</a>. Vous pouvez interdire l'installation d'extensions particulières.</p>
+<p class="bodytext">Vous pouvez également ajouter des extensions qui ne sont pas incluses dans le Catalogue des extensions en les envoyant sous forme d'archive .rpm ou .zip.</p>
+<p class="bodytext">Pour en savoir plus sur l'installation des extensions dans Plesk, consultez le <strong class="specialbold">Guide de déploiement</strong>, section <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=deployment-guide&page=70430.htm" target="_blank">Installer des extensions Plesk</a></strong>.</p>
+<h5 class="heading5">Catalogue des extensions</h5>
+<p class="bodytext">Le Catalogue des extensions dans l'interface de Plesk (<strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Catalogue des extensions</strong>) correspond au catalogue disponible sur la page <a class="externalhyperlinktemplate" title="" href="http://ext.plesk.com" target="_blank">http://ext.plesk.com</a>. Il propose des extensions fournies par Plesk et ses partenaires. Il inclut un logiciel de protection antivirus, des solutions de sauvegarde avancée et bien plus.</p>
+<p class="widegraphic"><img src="75029.gif" alt="Extensions" height="458" width="871" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Vous pouvez désactiver le Catalogue des extensions et supprimer le bouton <strong class="specialbold">Catalogue des extensions</strong> de l'interface de Plesk. Pour cela, ajoutez les lignes suivantes au fichier <code class="monospace"><a id="h78550" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> :</p>
+<pre class="preformatted">[extensions]</pre>
+<pre class="preformatted">catalog.enabled = off</pre>
+<h5 class="heading5">Programme d'installation de Plesk</h5>
+<p class="bodytext">De nombreuses extensions sont également disponibles directement depuis le Programme d'installation de Plesk (sous <strong class="specialbold">Extensions de Plesk</strong>, dans <strong class="specialbold">Outils &amp; Paramètres &gt; Mises à jour et à niveau &gt; Ajouter/supprimer des composants</strong>). Les extensions installées à l'aide du Programme d'installation de Plesk sont vérifiées à chaque niveau de Plesk. Les extensions avec des mises à jour disponibles sont mises à jour automatiquement et celles qui ne sont pas compatibles avec la version de Plesk installée sont supprimées.</p>
+<h5 class="heading5">Envoi d'autres extensions</h5>
+<p class="bodytext">Vous pouvez également ajouter des extensions qui ne sont pas incluses dans le <strong class="specialbold">Catalogue des extensions</strong> en les envoyant sous forme d'archive .rpm ou .zip. Pour cela, allez dans <strong class="specialbold">Extensions</strong> et cliquez sur le bouton <strong class="specialbold">Ajouter une extension</strong>. Puis, sélectionnez un fichier archive avec l'extension et cliquez sur <strong class="specialbold">OK</strong>.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> l'installation d'extensions de sources autres que le Catalogue des extensions peut être risquée.</p>
+<p class="widegraphic"><img src="75652.gif" alt="Extensions_Upload" height="243" width="868" vspace="0" hspace="0" align="bottom" border="0"></p>
+<h5 class="heading5">Configuration de la mise à niveau automatique des extensions</h5>
+<p class="bodytext">Pour activer ou désactiver les mises à niveau automatiques des extensions de Plesk, allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Paramètres</strong> et sélectionnez <strong class="specialbold">Mise à niveau automatique des extensions de Plesk</strong>.</p>
+<p class="bodytext">Vous pouvez également utiliser l'utilitaire de ligne de commande <code class="monospace">server_pref</code>. Pour désactiver les mises à niveau automatiques, exécutez :</p>
+<pre class="preformatted">plesk bin server_pref --update -disable-upgrade-extensions true</pre>
+<p class="bodytext">Pour activer les mises à niveau automatiques, exécutez :</p>
+<pre class="preformatted">plesk bin server_pref --update -disable-upgrade-extensions false</pre>
+<p class="bodytext">Plesk exécute la tâche de maintenance qui vérifie les mises à niveau et les installe automatiquement. Cette tâche est exécutée une fois par semaine. Si vous voulez mettre à niveau les extensions manuellement moins d'une semaine après la dernière vérification, cliquez sur le lien correspondant dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Paramètres</strong>.</p>
+<p class="bodytext">Important : veillez à tenir à jour tous les logiciels installés sur le serveur. Pendant la mise à niveau de Plesk, les mises à niveau de toutes les extensions installées sont vérifiées aussi. Toutes les mises à niveau disponibles sont installées automatiquement.</p>
+<p class="bodytext">Certaines extensions risquent de ne pas être compatibles avec la dernière version de Plesk et de ne plus fonctionner après la mise à niveau, voire d'interférer avec les opérations de Plesk. C'est pourquoi la compatibilité de toutes les extensions avec la version de Plesk en cours d'installation est vérifiée pendant la mise à niveau de Plesk. Toutes les versions qui ne sont pas compatibles sont désactivées automatiquement.</p>
+<h5 class="heading5">Vérification manuelle des mises à niveau des extensions</h5>
+<p class="bodytext">Pour vérifier manuellement les mises à niveau des extensions installées, allez dans <strong class="specialbold">Extensions</strong> &gt; <strong class="specialbold">Paramètres</strong> et cliquez sur <strong class="specialbold">Vérifier maintenant s'il y a de nouvelles mises à niveau</strong>.</p>
+<h5 class="heading5">Interdiction de l'installation d'une extension</h5>
+<p class="bodytext">Pour interdire l'installation d'une ou plusieurs extensions particulières, répertoriez les alias de noms de ces extensions dans le fichier <code class="monospace"><a id="h78551" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code>. Par exemple :</p>
+<pre class="preformatted">[extensions]</pre>
+<pre class="preformatted">blacklist = &quot;nat, aast-apf, dropbox-backup, route53&quot;</pre>
+<p class="bodytext">Pour connaître tous les alias de nom d'une extension, consultez le Catalogue des extensions (<a class="externalhyperlinktemplate" title="" href="http://ext.plesk.com" target="_blank">http://ext.plesk.com</a>). Les alias de nom y sont présentés comme URL d'extension. Les URL suivent le modèle suivant : <code class="monospace">https://ext.plesk.com/packages/&lt;guid&gt;-&lt;package-name&gt;</code> &#8211; <code class="monospace">&lt;package-name&gt;</code> est un alias de noms. </p>
+<p class="bodytext">Par exemple, cette URL indique que l'alias du gestionnaire NAT est <code class="monospace">nat </code>:<br>(https://ext.plesk.com/packages/90a20ade-9d3c-4ac5-82ea-20e8e0cd54de-nat).</p>
+<h5 class="heading5">Activation et désactivation d'extensions</h5>
+<p class="bodytext">Pour désactiver des extensions installées, cochez les cases correspondantes et cliquez sur <strong class="specialbold">Désactiver</strong>. Les extensions désactivées sont signalées par l'icône<img src="77125.png" alt="" height="24" width="24" vspace="0" hspace="0" align="bottom" border="0">. Une extension désactivée n'est pas disponible pour les clients et ses dépendances sont désactivées.</p>
+<p class="bodytext">Pour activer des extensions installées qui ont été désactivées, cochez les cases correspondantes et cliquez sur <strong class="specialbold">Activer</strong>.</p>
+<h5 class="heading5">Activation de la revente d'extension</h5>
+<p class="bodytext">Certaines extensions présentées dans le catalogue des extensions ont besoin d'une licence payante pour fonctionner. Vous pouvez l'acquérir via l'interface de Plesk en cliquant sur <strong class="specialbold">Acheter</strong>.</p>
+<p class="widegraphic"><img src="77911.png" alt="" height="107" width="795" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Par défaut, lorsque l'administrateur Plesk clique sur le bouton, il est dirigé vers la <a class="externalhyperlinktemplate" title="" href="https://www.go.plesk.com" target="_blank">Boutique en ligne de Plesk</a> où il peut procéder à l'achat. Toutefois, si vous souhaitez vendre des licences d'extensions dans votre propre boutique en ligne, l'URL est modifiable.</p>
+<p class="bodytext">Pour modifier l'URL de la boutique en ligne utilisée dans les liens &quot;Acheter&quot;, ajoutez les lignes suivantes au fichier <code class="monospace"><a id="h78552" class="jumptemplate" title="Fichier de configuration panel.ini" href="78509.htm" target="_self">panel.ini</a></code> :</p>
+<pre class="preformatted">[extensions]</pre>
+<pre class="preformatted">buyUrl = &quot;https://shop.com&quot;</pre>
+<p class="bodytext">où &quot;shop.com&quot; est le nom de domaine de votre boutique en ligne.</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '75596.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

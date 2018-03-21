@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Web Server (Apache) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="66303.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="65721.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557645.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557645.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Web Server (Apache)</h2>
+<p class="bodytext">Les paramètres du serveur Web (sous <strong class="specialbold">Packs de services</strong> &gt; sélectionnez un pack &gt; onglet <strong class="specialbold">Serveur Web</strong>) vous permettent de définir la configuration du serveur Web pour tous les domaines qui seront créés sous un pack de services spécifique. </p>
+<p class="note"><strong class="buttons">Remarque :  </strong>les paramètres du serveur Web peuvent également être modifiés individuellement pour chaque domaine. Les modifications au niveau du pack de services n'écrasent pas les paramètres personnalisés des domaines existants. Par conséquent, les modifications que vous effectuez sous <strong class="specialbold">Packs de services</strong> &gt; sélectionnez un pack &gt; <strong class="specialbold">Serveur Web</strong>, sont effectives uniquement pour les domaines nouvellement créés.</p>
+<p class="bodytext">Pour en savoir plus sur la configuration du serveur Web, consultez la section <strong class="specialbold"><a id="h72121" class="jumptemplate" title="Serveurs Web Apache et Nginx (Linux)" href="71933.htm" target="_self">Serveur Web Apache (Linux)</a></strong>.</p>
+<p class="bodytext">&nbsp;</p>
+<p class="bodytext"><strong class="specialbold">Paramètres communs Apache.</strong></p>
+<p class="bodytext">Nous vous recommandons de sélectionner l'option <strong class="specialbold">Restreindre le suivi des liens symboliques</strong> afin d'augmenter le niveau de sécurité du serveur. Si cette option est sélectionnée, les utilisateurs de Plesk ne peuvent plus suivre les liens symboliques qui risquent de pointer vers des répertoires auxquels les utilisateurs ne doivent pas pouvoir accéder. Les utilisateurs ne peuvent ni utiliser / ni activer la directive FollowSymLink dans .htaccess.</p>
+<p class="bodytext">Remarque : cette option risque d'interrompre de nombreuses applications (applications APS, mais aussi si un utilisateur à copié/collé un fichier .htaccess qui contient FollowSymLinks).</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"><strong class="specialbold">Directives pour HTTP </strong>et <strong class="specialbold">Directives pour HTTPS</strong></p>
+<p class="bodytext">Pour prédéfinir les directives Apache qui seront utilisées lors de l'accès au site Web via HTTP et HTTPS, utilisez les champs <strong class="specialbold">Directives pour HTTP</strong> et <strong class="specialbold">Directives pour HTTPS</strong>. Lorsque vous éditez les champs, utilisez la syntaxe comme dans <code class="monospace">httpd.conf</code>. Par exemple, si vous souhaitez définir une page d'erreur personnalisée, ajoutez la ligne : </p>
+<pre class="preformatted">ErrorDocument 401 /my_error_page.html</pre>
+<p class="bodytext">&nbsp;</p>
+<p class="bodytext"><strong class="specialbold">Paramètres Apache communs</strong></p>
+<p class="bodytext">Par défaut, Apache est utilisé avec N qui envoie par proxy des requêtes HTTP à Apache. Vous pouvez exclure Apache du processus de gestion des requêtes en contenu Web des sites Web et utiliser Nginx à cette fin. Pour ce faire, décochez l'option <strong class="specialbold">Mode proxy</strong>. Cette option sera désactivée sur les domaines nouvellement créés dans des abonnements synchronisés avec l'abonnement. Cela ne changera rien pour les domaines existants.</p>
+<p class="bodytext">Pour plus d'informations, consultez la section <strong class="specialbold"><a id="h76432" class="jumptemplate" title="Ajuster les paramètres d'Apache et Nginx" href="72037.htm" target="_self">Ajuster les paramètres du serveur Web Apache</a></strong>.</p>
+<p class="bodytext">&nbsp;&nbsp;</p>
+<p class="bodytext"><strong class="specialbold">Directives Nginx</strong></p>
+<p class="bodytext">Pour prédéfinir les directives Nginx, utilisez le champ <strong class="specialbold">Directives Nginx</strong>. Lorsque vous éditez ce champ, utilisez la même syntaxe que pour <code class="monospace">nginx.conf</code>. Par exemple, si vous souhaitez compresser toutes les requêtes par proxy avec gzip, ajoutez la ligne : </p>
+<pre class="preformatted">gzip_proxied any;</pre>
+<p class="bodytext">&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '72120.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

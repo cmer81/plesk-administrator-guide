@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Sauvegarde incrémentale </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="59264.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="68468.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557385.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557385.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Sauvegarde incrémentale</h2>
+<h5 class="heading5">Présentation des sauvegardes incrémentales</h5>
+<p class="bodytext">Plesk prend en charge deux types de sauvegardes :</p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">Sauvegarde complète</em>. Une sauvegarde complète inclut toutes les données, à chaque sauvegarde, quelle que soit la date de la dernière mise à jour des données.</li><li class="listbullet"><em class="emphasis">Sauvegarde incrémentale.</em> Une sauvegarde incrémentale contient uniquement les données modifiées depuis la dernière sauvegarde.</li></ul><p class="bodytext">Ce type de sauvegarde permet de réduire à la fois la durée du processus de sauvegarde, la charge du CPU et l'espace disque occupé par les fichiers de sauvegarde, et par conséquent, améliore les performances de sauvegarde.</p>
+<p class="bodytext">Plesk inclut les données suivantes dans les sauvegardes incrémentales :</p>
+<ul class="listbullet"><li class="listbullet">Données d'hébergement Web modifiées depuis la dernière sauvegarde (complète et incrémentale).</li><li class="listbullet">Données de messagerie modifiées depuis la dernière sauvegarde (complète et incrémentale).</li><li class="listbullet">Sauvegarde complète des données des bases de données.</li></ul><p class="bodytext">Remarque : les sauvegardes incrémentales contiennent les fichiers complets créés lors d'un abonnement et non des parties. Plesk détermine si les données ont été modifiées en fonction des fichiers complets. Pour cela, Plesk utilise&nbsp;un fichier index&nbsp;créé pour chaque sauvegarde au moment du processus de sauvegarde. Ce fichier index répertorie l'ensemble des fichiers qui existaient dans un abonnement ainsi que les informations concernant ces fichiers, comme la taille, la date de modification, les droits ou le propriétaire. Une sauvegarde complète répertorie tous les fichiers, tandis qu'une sauvegarde incrémentale répertorie uniquement les quelques fichiers qui ont été modifiés. Les fichiers répertoriés sont ceux inclus dans la sauvegarde.</p>
+<p class="bodytext">Façon dont Plesk détermine s'il faut ou non inclure un fichier dans une sauvegarde :</p>
+<ul class="listbullet"><li class="listbullet">Le fichier n'est pas inclus dans le fichier index des sauvegardes précédentes (complètes ou incrémentales).</li><li class="listbullet">La taille ou la date de modification du fichier est différente de celle du fichier index de la sauvegarde précédente.</li><li class="listbullet">Les droits ou le propriétaire du fichier sont différents.</li></ul><h5 class="heading5">Création d'une sauvegarde incrémentale</h5>
+<p class="bodytext">Pour créer une sauvegarde, allez sur la page <strong class="specialbold">Gestionnaire de sauvegardes</strong> (du serveur, compte utilisateur ou abonnement, comme requis) et cliquez sur le bouton <strong class="specialbold">Sauvegarder</strong>. Ensuite, sélectionnez le type de sauvegarde : <strong class="specialbold">Sauvegarde complète</strong> ou <strong class="specialbold">Sauvegarde incrémentale</strong>. Lors de la première sauvegarde de données, il s'agit toujours d'une <em class="emphasis">Sauvegarde complète</em>, indépendamment du type de sauvegarde choisi. Si par la suite vous créez une sauvegarde de type <strong class="specialbold">Sauvegarde incrémentale</strong>, ne sont sauvegardées que les données d'hébergement Web et de messagerie qui ont été modifiées depuis la sauvegarde précédente. Par conséquent, vous pouvez avoir une seule sauvegarde complète et une série de sauvegardes incrémentales.</p>
+<p class="bodytext">Les sauvegardes incrémentales sont répertoriées sur la page <strong class="specialbold">Gestionnaire de sauvegardes</strong> avec la mention <em class="emphasis">Incrémentale</em>.</p>
+<p class="widegraphic"><br><img src="75804.gif" alt="Backup_Incremental" height="306" width="1081" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="note"><strong class="buttons">Remarque </strong>: en cas de perte ou de corruption d'une sauvegarde incrémentale, les suivantes sont marquées d'un point d'exclamation jaune. Toute tentative de restauration de ce type de sauvegarde renvoie un message d'avertissement indiquant le nom des sauvegardes incrémentales manquantes.</p>
+<p class="bodytext">Si vous supprimez une sauvegarde incrémentale, toutes les suivantes dans la chaîne sont également supprimées.</p>
+<p class="bodytext">Il est recommandé de procéder de temps en temps à une sauvegarde complète de vos données, par exemple, une fois par semaine ou par mois, selon la fréquence de modification des données de votre contenu Web ou de messagerie. Si vous utilisez les sauvegardes planifiées et sélectionnez l'option <strong class="specialbold">Utiliser la sauvegarde incrémentale</strong>, vous devez aussi définir quand procéder à une sauvegarde complète. </p>
+<p class="widegraphic"><img src="75807.gif" alt="Scheduled_backups" height="476" width="990" vspace="0" hspace="0" align="bottom" border="0"></p>
+<h5 class="heading5">Restauration d'une sauvegarde incrémentale</h5>
+<p class="bodytext">Lorsque vous restaurez une sauvegarde incrémentale, cela revient à restaurer toutes les données non modifiées de la dernière sauvegarde complète et les données modifiées de toutes les sauvegardes incrémentales précédentes (créées après la sauvegarde complète). Par conséquent, cette restauration ne présente pas de différence notable par rapport à une sauvegarde complète. </p>
+<p class="bodytext">La boîte de dialogue de <strong class="specialbold">restauration de sauvegarde</strong> présente toutes les sauvegardes incluant des données à restaurer : sauvegarde incrémentale sélectionnée, somme des sauvegardes incrémentales précédentes et sauvegarde complète initiale. Vous pouvez télécharger toutes ces sauvegardes.</p>
+<p class="widegraphic"><img src="75808.gif" alt="Restore_incremental_backup" height="386" width="1000" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"></p>
+<p class="bodytext"></p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '75803.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

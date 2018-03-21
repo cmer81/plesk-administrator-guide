@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Ajuster les paramètres Nginx des hôtes virtuels </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="72009.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="72074.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055712.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc7055712.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Ajuster les paramètres Nginx des hôtes virtuels</h3>
+<p class="bodytext">Par défaut, le serveur Web Apache fonctionne conjointement avec Nginx. Cela permet de charger plus rapidement les pages Web et d'économiser les ressources serveur. Pour découvrir comment Apache et Nginx coopèrent par défaut, consultez la section <strong class="specialbold"><a id="h72008" class="jumptemplate" title="Apache avec Nginx" href="70837.htm" target="_self">Apache avec Nginx</a></strong>.</p>
+<p class="bodytext">Pour tout site Web, vous pouvez modifier la manière dont Apache et Nginx coopèrent. Plus exactement, vous pouvez :</p>
+<ul class="listbullet"><li class="listbullet">Indiquer si Nginx doit jouer le rôle de proxy pour Apache ou de serveur indépendant pour traiter les requêtes HTTP. </li><li class="listbullet">Définir le contenu Web (statique ou dynamique) à traiter par chaque serveur si vous utilisez Nginx comme proxy.</li></ul><p class="bodytext">Ce genre de paramétrage peut aider à optimiser les performances des applications Web avec un niveau de charge élevé et beaucoup de contenu dynamique (fichiers PHP) ou statique. </p>
+<p class="bodytext">Les options d'interface correspondantes sont disponibles dans le Panneau Client, rubrique <strong class="specialbold">Sites Web &amp; Domaines</strong> &lt;nom_de_domaine&gt; &gt; <strong class="specialbold">Paramètres d'Apache et Nginx</strong>.</p>
+<p class="note"><strong class="buttons">Remarque : </strong>les paramètres liés à Nginx sont disponibles uniquement si Nginx est activé.</p>
+<p class="bodytext">Les schémas ci-dessous présentent toutes les configurations possibles et les avantages et inconvénients de chacune. Remarque : si vous n'utilisez que Nginx, les requêtes ne peuvent atteindre Apache.</p>
+<p class="bodytext"></p>
+<h5 class="heading5">Traiter le contenu statique</h5>
+<p class="bodytext">Le tableau suivant montre comment Plesk traite les requêtes pour un fichier image GIF de 2 Ko selon la configuration Nginx.</p>
+<table class="tableintopic" width="864" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="150"><p class="bodytext">&nbsp;</p>
+</td>
+<td width="510"><p class="bodytext"><img src="71998.gif" alt="header" height="58" width="500" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td width="204"><p class="bodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="150"><p class="tablebodytext">Le <strong class="specialbold">Traitement intuitif des fichiers statiques</strong> est activé.</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="510"><p class="bodytext"><img src="71999.gif" alt="default" height="206" width="500" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="204"><p class="tablebodytext">Il s'agit de la configuration optimale en termes de performances et de fiabilité. </p>
+<p class="tablebodytext">La requête est transmise à Apache qui renvoie seulement l'emplacement du fichier. Le fichier est localisé et fourni par Nginx.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="150"><p class="tablebodytext">Le <strong class="specialbold">Traitement intuitif des fichiers statiques</strong> est désactivé.</p>
+</td>
+<td width="510"><p class="bodytext"><img src="72000.gif" alt="transparent" height="179" width="500" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td width="204"><p class="tablebodytext">Nginx transfère uniquement les demandes et les réponses sans modification. Cela permet d'utiliser ce mode pour résoudre les problèmes liés à Nginx. </p>
+<p class="tablebodytext">Le fichier est envoyé deux fois : d'Apache à Nginx et de Nginx au client. Cela peut légèrement réduire les performances, notamment en cas de fichiers volumineux.</p>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="150"><p class="tablebodytext">L'extension de fichier GIF est incluse dans le <strong class="specialbold">Traitement des fichiers statiques directement avec Nginx</strong>.</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="510"><p class="bodytext"><img src="72001.gif" alt="static_by_nginx" height="152" width="500" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="204"><p class="tablebodytext">Ce mode améliore les performances pour fournir des fichiers statiques.</p>
+<p class="tablebodytext">Remarque : les requêtes n'atteignant jamais Apache, elles ne sont pas traitées par ses gestionnaires. Cela signifie par exemple que les règles de réécriture ou les directives <code class="monospace">.htaccess</code> ne sont pas appliquées.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<h5 class="heading5">Traitement du contenu dynamique</h5>
+<p class="bodytext">Le tableau suivant montre comment Plesk traite les requêtes d'un fichier PHP en fonction de la configuration de Nginx.</p>
+<table class="tableintopic" width="864" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="150"><p class="bodytext">&nbsp;</p>
+</td>
+<td width="510"><p class="bodytext"><img src="71998.gif" alt="header" height="58" width="500" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td width="204"><p class="bodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="150"><p class="tablebodytext"><strong class="specialbold">Gérer PHP avec Nginx</strong> est désactivé.</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="510"><p class="bodytext"><img src="72002.gif" alt="" height="175" width="500" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="204"><p class="tablebodytext">Il s'agit de la configuration optimale en termes de performances et de fiabilité. </p>
+<p class="tablebodytext">La requête est transmise à Apache qui exécute le fichier et renvoie le résultat.</p>
+<p class="tablebodytext">Selon les paramètres d'hébergement du site, Apache utilise l'un des gestionnaires suivants : FastCGI, CGI ou le module Apache. Vous pouvez également définir individuellement la version PHP de chaque site.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-bottom:1px solid #010101;" width="150"><p class="tablebodytext"><strong class="specialbold">Gérer PHP avec Nginx</strong> est activé.</p>
+</td>
+<td style="border-bottom:1px solid #010101;" width="510"><p class="bodytext"><img src="72003.gif" alt="php_nginx" height="119" width="500" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border-bottom:1px solid #010101;" width="204"><p class="tablebodytext">Nginx exécute lui-même le fichier avec le gestionnaire PHP-FPM. Le gestionnaire PHP-FPM est doté de fonctions FastCGI renforcées, susceptible d'améliorer les performances des applications Web, notamment celles avec de nombreux utilisateurs.</p>
+<p class="tablebodytext">Remarque : les requêtes n'atteignant jamais Apache, elles ne sont pas traitées par ses gestionnaires. Cela signifie que certaines applications Web peuvent ne pas fonctionner comme prévu. De plus, les directives Apache <code class="monospace">.htaccess</code> et les règles de réécriture ne seront également pas appliquées.</p>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<p class="note"><strong class="buttons">Important : </strong>pour que l'option <strong class="specialbold">Gérer PHP avec Nginx</strong> soit disponible, vous devez installer la prise en charge PHP-FPM pour Nginx. Pour en savoir plus sur l'installation de la prise en charge PHP-FPM, consultez la section <strong class="specialbold">Gestionnaires PHP</strong>.</p>
+<h5 class="heading5"></h5>
+<h5 class="heading5">Configurer des directives Nginx supplémentaires</h5>
+<p class="bodytext">Pour ajouter d'autres directives Nginx à un site Web, utilisez le champ <strong class="specialbold">Directives supplémentaires Nginx</strong>. Lorsque vous éditez ce champ, utilisez la même syntaxe que pour <code class="monospace">nginx.conf</code>. Par exemple, si vous souhaitez compresser toutes les requêtes par proxy avec gzip, ajoutez la ligne : </p>
+<pre class="preformatted">gzip_proxied any;</pre>
+<p class="bodytext">Remarque : vos clients ne peuvent ni voir ni éditer le champ <strong class="specialbold">Directives supplémentaires Nginx</strong>.</p>
+<p class="bodytext">&nbsp;</p>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '71997.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

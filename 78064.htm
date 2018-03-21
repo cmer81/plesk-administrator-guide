@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Paramétrer des shells de tâches planifiées </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="64993.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="59423.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557106.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557106.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Paramétrer des shells de tâches planifiées</h3>
+<p class="bodytext">Plesk pour Linux permet aux clients de créer des tâches planifiées qui exécutent des commandes sur le serveur. Le shell utilisé détermine les zones du système de fichiers auxquelles les tâches planifiées ont accès. Par défaut, l'accès est limité à l'espace Web du client. Toutefois, l'administrateur de Plesk peut modifier cet accès.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> si vous n'êtes par familier avec les shells, nous vous recommandons d'étudier cette notion avant de modifier les paramètres décrits dans ce chapitre.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="78064.htm#o78096" target="_self">Quel shell est utilisé pour exécuter les tâches planifiées ?</a></p><p class="relateditem"><a href="78064.htm#o78097" target="_self">Pour quelle raison utiliser un shell différent ?</a></p><p class="relateditem"><a href="78064.htm#o78098" target="_self">Paramétrer le shell par défaut pour les tâches planifiées</a></p><p class="relateditem"><a href="78064.htm#o78100" target="_self">Empêcher lutilisation de tâches planifiées &quot;Exécuter une commande&quot;</a></p><p class="relateditem"><a href="78064.htm#o78101" target="_self">Configurer un shell personnalisé pour un abonnement spécifique</a></p><p class="relateditem"><a href="78064.htm#o78102" target="_self">Permettre à un client de configurer un shell personnalisé pour son abonnement</a></p><p class="relateditem"><a href="78064.htm#o78103" target="_self">Trouver quel shell est utilisé par un abonnement</a></p></td>
+</tr>
+</table>
+
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78096"></a><h4 class="heading4">Quel shell est utilisé pour exécuter les tâches planifiées ?</h4>
+<p class="bodytext">Le shell utilisé pour les tâches planifiées &quot;Exécuter une commande&quot; est lié à l&#8217;utilisateur système de l&#8217;abonnement (c&#8217;est-à-dire que toutes les tâches planifiées créées sous un abonnement partagent le même shell). Par défaut, il correspond au shell par défaut configuré dans les paramètres de serveur et utilisé pour tous les abonnements sur le serveur. Toutefois, il existe deux exceptions à cette règle :</p>
+<ul class="listbullet2"><li class="listbullet2">L'administrateur Plesk peut <a id="h78104" class="jumptemplate" title="Configurer un shell personnalisé pour un abonnement spécifique" href="78064.htm#o78101" target="_self">sélectionner n&#8217;importe quel shell</a> pour n&#8217;importe quel abonnement sur le serveur.</li><li class="listbullet2">L'administrateur Plesk peut accorder au propriétaire d'un abonnement l&#8217;<a id="h78105" class="jumptemplate" title="Permettre à un client de configurer un shell personnalisé pour son abonnement" href="78064.htm#o78102" target="_self">autorisation de sélectionner un shell personnalisé</a>.</li></ul><p class="bodytext">Dans les deux cas, les tâches planifiées &quot;Exécuter une commande&quot; créées sous l&#8217;abonnement utiliseront le shell personnalisé à la place du shell par défaut.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78097"></a><h4 class="heading4">Pour quelle raison utiliser un shell différent ?</h4>
+<p class="bodytext">Par défaut, le shell &quot;<code class="monospace">/bin/bash (chrooted)</code>&quot; est configuré comme le shell par défaut pour les tâches planifiées. Il fait en sorte que les commandes exécutées par les tâches planifiées aient uniquement accès aux fichiers contenus dans l&#8217;espace Web associé à l'abonnement. C&#8217;est une mesure de sécurité importante qui garantit que les clients ne peuvent pas utiliser les tâches planifiées pour compromettre le fonctionnement du serveur ou accéder aux fichiers appartement à l'administrateur Plesk ou à d'autres clients.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> ce paramètre affecte tous les abonnements sur le serveur, y compris ceux qui sont détenus par l&#8217;administrateur Plesk. Il n&#8217;affecte pas les <a id="h78106" class="jumptemplate" title="Planifier des tâches" href="64993.htm" target="_self">tâches planifiées</a> créées par l&#8217;administrateur Plesk dans <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Tâches planifiées</strong> qui sont configurées pour s&#8217;exécuter sous l&#8217;utilisateur <code class="monospace">root</code>.</p>
+<p class="bodytext">La raison principale pour laquelle vous pourriez souhaiter modifier le shell par défaut pour les tâches planifiées est de donner à tout le monde sur le serveur la possibilité d&#8217;exécuter des commandes via des tâches planifiées qui aient accès à l&#8217;ensemble du système de fichiers du serveur.</p>
+<p class="bodytext">Si vous ne partagez le serveur avec personne, ou si vous faites confiance aux autres titulaires, vous pouvez <a id="h78107" class="jumptemplate" title="Paramétrer le shell par défaut pour les tâches planifiées" href="78064.htm#o78098" target="_self">sélectionner un shell non chrooté</a> pour les tâches planifiées. Si vous souhaitez utiliser un shell non chrooté pour les tâches planifiées, mais avez des doutes sur celui que vous devez choisir, sélectionnez &quot;<code class="monospace">/bin/bash</code>&quot;.</p>
+<p class="bodytext">Sur un serveur d&#8217;hébergement partagé, nous vous conseillons de laisser le shell par défaut pour les tâches planifiées configuré sur &quot;<code class="monospace">/bin/bash (chrooted)</code>&quot;. Si un de vos clients a besoin d&#8217;un shell non chrooté pour ses tâches planifiées, vous pouvez le <a id="h78104_2" class="jumptemplate" title="Configurer un shell personnalisé pour un abonnement spécifique" href="78064.htm#o78101" target="_self">lui accorder</a> pour un abonnement, sur une base par abonnement.</p>
+<p class="warning"><strong class="buttons">Attention :</strong> accorder à un client l&#8217;accès à un autre shell que &quot;<code class="monospace">/bin/bash (chrooted)</code>&quot; lui donne la possibilité d&#8217;exécuter des fichiers binaires et des fichiers d'accès ainsi que des données qui ne lui appartiennent pas. C&#8217;est un risque pour la sécurité qui peut conduire le serveur à faire l&#8217;objet d'une attaque.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78098"></a><h4 class="heading4">Paramétrer le shell par défaut pour les tâches planifiées</h4>
+<p class="bodytext">Pour paramétrer le shell qui sera utilisé pour exécuter toutes les tâches planifiées &quot;Exécuter une commande&quot; par défaut, allez sous <strong class="specialbold">Outils &amp; Paramètres</strong> &gt; <strong class="specialbold">Tâches planifiées</strong> &gt; <strong class="specialbold">Paramètres</strong> et sélectionnez le shell souhaité dans le menu.</p>
+<p class="widegraphic"><img src="78099.png" alt="" height="328" width="688" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Sinon, vous pouvez aussi vous connecter au serveur via ssh et exécuter la commande suivante :</p>
+<pre class="preformatted">plesk bin server_pref -u -crontab-secure-shell &quot;&lt;shell&gt;&quot;</pre>
+<p class="bodytext">où <code class="monospace">&lt;shell&gt;</code> représente le shell souhaité. Par exemple :</p>
+<pre class="preformatted">plesk bin server_pref -u -crontab-secure-shell &quot;/bin/bash&quot; </pre>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78100"></a><h4 class="heading4">Empêcher lutilisation de tâches planifiées &quot;Exécuter une commande&quot;</h4>
+<p class="bodytext">Si vous pensez qu'un de vos clients a créé une tâche planifiée réalisant une activité malveillante sur le serveur (par exemple qui envoie des spams), vous pouvez désactiver toutes les tâches planifiées &quot;Exécuter une commande&quot; pendant que vous faites des recherches.</p>
+<p class="bodytext">Connectez-vous au serveur Plesk via ssh et exécutez la commande suivante</p>
+<pre class="preformatted">plesk bin server_pref -u -crontab-secure-shell &quot;/bin/false&quot;</pre>
+<p class="bodytext">pour configurer le shell par défaut pour les tâches planifiées sur &quot;<code class="monospace">/bin/false</code>&quot;. Cela provoque l&#8217;échec de toutes les tâches planifiées &quot;Exécuter une commande&quot; créées par les clients.</p>
+<p class="note"><strong class="buttons">Remarque :</strong> les clients qui ont la permission de sélectionner un shell différent peuvent contourner cette fonction pour leurs abonnements en sélectionnant un shell différent dans <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="specialbold">Accès à l'hébergement Web</strong>.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78101"></a><h4 class="heading4">Configurer un shell personnalisé pour un abonnement spécifique</h4>
+<p class="bodytext">Pour configurer un shell personnalité pour un abonnement spécifique, suivez ces étapes :</p>
+<ol class="listnumber2"><li class="listnumber2">Allez sous <strong class="specialbold">Abonnements</strong>, cliquez sur l'abonnement souhaité, puis cliquez sur <strong class="specialbold">Accès à l'hébergement Web</strong>.</li><li class="listnumber2">Sélectionnez le shell souhaité dans le menu &quot;Accès SSH au shell&quot; et cliquez sur <strong class="specialbold">Ok</strong>.</li></ol><p class="bodytext">Toutes les tâches planifiées &quot;Exécuter une commande&quot; pour cet abonnement utiliseront le shell sélectionné.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78102"></a><h4 class="heading4">Permettre à un client de configurer un shell personnalisé pour son abonnement</h4>
+<p class="bodytext">Pour permettre à un client de configurer un shell personnalisé pour un de ces abonnements, suivez ces étapes :</p>
+<ol class="listnumber2"><li class="listnumber2">Allez sous <strong class="specialbold">Abonnements</strong>, cliquez sur l'abonnement souhaité, puis cliquez sur <strong class="specialbold">Personnaliser</strong>.</li><li class="listnumber2">Sur l&#8217;onglet &quot;Droits&quot;, cochez les cases &quot;Gestion des paramètres d'hébergement&quot; et &quot;Configuration des options des scripts Web potentiellement dangereux qui vont à l'encontre de la politique du fournisseur&quot;, puis cliquez sur <strong class="specialbold">Ok</strong>.</li></ol><p class="bodytext">Cela va donner au client la possibilité de sélectionner un shell différent dans <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; <strong class="specialbold">Accès à l&#8217;hébergement Web</strong>. S'il le fait, toutes les tâches planifiées &quot;Exécuter une commande&quot; pour cet abonnement utiliseront le shell sélectionné.</p>
+&nbsp;
+<hr class="linesolid"/>
+<a name="o78103"></a><h4 class="heading4">Trouver quel shell est utilisé par un abonnement</h4>
+<p class="bodytext">Pour trouver quel shell est utilisé pour les tâches &quot;Exécuter une commande&quot; d&#8217;un abonnement, suivez ces étapes :</p>
+<ol class="listnumber2"><li class="listnumber2">Recherchez le nom d&#8217;utilisateur de l&#8217;utilisateur système de l&#8217;abonnement. Allez sous <strong class="specialbold">Abonnements</strong>, cliquez sur l'abonnement souhaité, cliquez sur <strong class="specialbold">Accès à l&#8217;hébergement Web</strong> puis recherchez le champ &quot;Nom d&#8217;utilisateur&quot;.</li><li class="listnumber2">Connectez-vous au serveur Plesk via ssh et exécutez la commande suivante :</li></ol><pre class="preformatted">crontab -u &lt;system user name&gt; -l | grep SHELL</pre>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '78064.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>

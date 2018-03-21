@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Pare-feu applicatif (ModSecurity) </title>
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheet.css"/>
+<script src="locate.js"></script>
+<link href="prettify.css" rel="stylesheet" />
+<script type="text/javascript" src="prettify.js"></script>
+
+</head>
+<script src="highlight.js"></script>
+<body class="sid-main" onload="FindCorrectTOCPage(); prettyPrint()">
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="pagenavigation"><a href="73382.htm" target="_self"><img src="38976.gif" alt="Page précédente" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page précédente</a></p></td>
+<td>
+<p class="pagenavigation"><a href="75669.htm" target="_self"><img src="38977.gif" alt="Page suivante" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Page suivante</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557119.htm" target="TOC"><img src="38970.gif" alt="Localiser la page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"> Localiser la page</a></p></td>
+<td>
+<p class="pagenavigation"><a href="toc70557119.htm" target="TOC"><a class="" title="" href="javascript:print();" target="_self"><img src="39072.gif" alt="Imprimer cette page" height="16" width="16" vspace="0" hspace="1" align="top" border="0"></a></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">Pare-feu applicatif (ModSecurity)</h2>
+<p class="bodytext">Pour détecter et prévenir les attaques contre des applications Web, le pare-feu applicatif (ModSecurity) vérifie toutes les requêtes de votre serveur Web et les réponses associées du serveur contre son jeu de règles. Si la vérification réussit, la requête HTTP est transmise pour récupérer le contenu du site Web. Si elle échoue, les actions prédéfinies sont exécutées.</p>
+<p class="bodytext">ModSecurity est pris à la charge par Plesk pour Linux et pour Windows. Il fonctionne en tant que module de serveur Web (Apache ou IIS).</p>
+<p class="note"><strong class="buttons">Remarque :</strong> pour utiliser le pare-feu applicatif (ModSecurity), les administrateurs mettant à niveau depuis Plesk 11.5 doivent obtenir une nouvelle clé de licence pour Plesk Onyx auprès de Plesk ou d'un revendeur.</p>
+<h5 class="heading5">Activation de ModSecurity</h5>
+<p class="procedureheading">Pour activer le pare-feu applicatif :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous &nbsp;<strong class="specialbold">Outils &amp; Paramètres&nbsp; &gt; &nbsp;Pare-feu applicatif (ModSecurity)</strong> &nbsp;(dans le groupe&nbsp;<strong class="specialbold">Sécurité</strong>)&nbsp;. <p class="listcontinue">Si vous ne voyez pas ce lien, installez le composant ModSecurity dans <strong class="specialbold">Outils &amp; Paramètres</strong>&nbsp;&gt;&nbsp;<strong class="specialbold">Mises à jour et à niveau</strong> &gt; <strong class="specialbold">Ajouter/Supprimer des composants</strong> &gt; groupe <strong class="specialbold">Hébergement Web</strong>.</p>
+<p class="widegraphic"><br><img src="75008.gif" alt="Web_Application_Firewall" height="809" width="1235" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="procedurelistnumber">Définissez le mode pare-feu applicatif sur <strong class="specialbold">On</strong> ou sur <strong class="specialbold">Détection uniquement</strong>. Chaque requête HTTP entrante et la réponse associée seront vérifiées selon un jeu de règles. Si la vérification réussit, la requête HTTP est transmise au site Web pour récupérer le contenu. Si elle échoue, l'événement est consigné dans le fichier de log. En mode <strong class="specialbold">Détection uniquement</strong> aucune autre action n'est exécutée. En mode <strong class="specialbold">On</strong>, la réponse HTTP est émise avec un code d'erreur.<p class="listnote"><strong class="buttons">Remarque :</strong> les modes du pare-feu applicatif peuvent être définis au niveau du serveur et des domaines. Toutefois, le mode au niveau du domaine ne peut être plus élevé que le mode défini pour le serveur. Par exemple, si le pare-feu applicatif fonctionne en mode <strong class="specialbold">Détection uniquement</strong> au niveau du serveur, alors vous ne pouvez le définir sur <strong class="specialbold">On</strong> pour les domaines. Seuls les modes <strong class="specialbold">Off</strong> et <strong class="specialbold">Détection uniquement</strong> sont disponibles.</p>
+</li><li class="procedurelistnumber">Sélectionnez le jeu de règles qui sera vérifié par le moteur du pare-feu applicatif pour chaque requête HTTP entrante ou chargez un jeu de règles personnalisé. Vous pouvez choisir parmi les jeux de règles suivants :<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Atomic Basic ModSecurity</strong>. Version de base gratuite des règles Atomic ModSecurity, associée à Plesk. Ce jeu de règles contient à la fois des fonctions de sécurité et des correctifs importants publiés tous les mois. Découvrez les règles comprises dans ce jeu dans la section <strong class="specialbold"><a id="h75686" class="jumptemplate" title="Jeux de règles Atomic ModSecurity" href="75669.htm" target="_self">Jeu de règles Atomic ModSecurity</a></strong>.</li><li class="listbullet2"><strong class="specialbold">OWASP ModSecurity Core Rule Set (CRS)</strong>. Le CRS assure une protection générique contre les vulnérabilités courantes des applications Web. Ce jeu de règles est gratuit. Il s'agit d'un jeu de règles reconnu comme très restrictif. Il est nécessaire de l'ajuster pour des fins de production. Lorsque ce jeu de règles est sélectionné, WordPress ne fonctionne pas complètement ; la messagerie Web et le partage des fichiers ne fonctionnent pas non plus. À la place, vous pouvez utiliser les jeux de règles Atomic ou Comodo.</li><li class="listbullet2"><strong class="specialbold">Jeu de règles Atomic ModSecurity</strong>. Ce jeu de règles inclut les versions les plus récentes avec toutes les améliorations au niveau des performances, fonctions de sécurité et correctifs publiés par <a class="" title="" href="http://www.atomicorp.com/products/modsecurity.html" target="_self">Atomicorp GotRoot</a> au quotidien. Il s'agit d'un jeu de règles payant entièrement pris en charge et recommandé à des fins de production. Plesk offre la fonctionnalité complémentaire <strong class="specialbold">Security Core Complete by Atomicorp</strong> permettant d'activer ce jeu de règles dans Plesk. Pour obtenir cette fonctionnalité, vous pouvez :<ul class="listbullet3"><li class="listbullet3">Acheter le produit <strong class="specialbold">Security Core Complete By Atomicorp</strong> dans la <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="https://go.plesk.com/buy-plesk-ext/offer-security-core" target="_blank">boutique en ligne de Plesk</a></strong>. </li><li class="listbullet3">Si vous disposez déjà d'une licence Plesk, vous pouvez l'ajouter via l'interface Partner Central de Plesk ou l'API Partenaires. Pour plus d'informations, consultez le <strong class="specialbold"><a class="externalhyperlinktemplate" title="" href="/current/redirect.html?book=advanced-administration-guide-linux&page=68540.htm" target="_blank">guide d'administration avancée</a></strong>.</li><li class="listbullet3">Si vous disposez d'une licence Plesk mais n'avez pas accès à l'interface Partner Central de Plesk, contactez votre revendeur.</li></ul><p class="listcontinue2">Si vous avez déjà un compte sur le site&nbsp;Atomic, vous pouvez indiquer votre nom d'utilisateur et votre mot de passe pour activer ce jeu de règles.</p>
+<p class="listnote"><strong class="buttons">Remarque :</strong> si vous obtenez cette fonction supplémentaire, l'interface utilisateur de Plesk affiche <strong class="specialbold">Atomic Professional ModSecurity</strong> à la place de <strong class="specialbold">Atomic Basic ModSecurity</strong>, autrement dit, il s'agit du jeu de règles <strong class="specialbold">Atomic ModSecurity</strong> complet. </p>
+<p class="listcontinue2">Découvrez les règles comprises dans ce jeu dans la section <strong class="specialbold"><a id="h75686_2" class="jumptemplate" title="Jeux de règles Atomic ModSecurity" href="75669.htm" target="_self">Jeu de règles Atomic ModSecurity</a></strong>.</p>
+<p class="listcontinue2"><strong class="buttons">Attention (Linux) :</strong> si vous sélectionnez le jeu de règles Atomic, suivez la procédure ci-après pour vérifier que ModSecurity fonctionne correctement. Exécutez la commande <code class="monospace">aum -u</code> sur le serveur. Le pack Plesk <em class="emphasis">modsecurity</em> sera remplacé par celui du répertoire Atomic. Exécutez les commandes suivantes :</p>
+<ul class="listbullet3"><li class="listbullet3"><code class="monospace">plesk sbin modsecurity_ctl --disable</code></li><li class="listbullet3"><code class="monospace">plesk sbin modsecurity_ctl &#8211;enable</code></li><li class="listbullet3"><code class="monospace">service httpd restart</code></li></ul></li><li class="listbullet2"><strong class="specialbold">Jeu de règles Comodo ModSecurity (Linux)</strong>. Ce système simple à utiliser de contrôle du trafic repose sur des règles personnalisables. Il protège vos applications basées sur le Web et prévient les techniques de hack émergentes. Pour cela, il s'appuie sur une base de données de règles mise à jour régulièrement. Ce jeu de règles est gratuit. Pour l'activer dans Plesk, enregistrez-vous sur le site <a class="" title="" href="https://accounts.comodo.com/cwaf/management/signup" target="_self">Comodo</a>. Indiquez votre nom d'utilisateur et mot de passe pour ce site.</li><li class="listbullet2"><strong class="specialbold">Installation personnalisée</strong>. Vous pouvez charger un jeu de règles personnalisé pour le pare-feu applicatif, par exemple, un pack de test Atomic ou un pack gratuit Comodo. Formats pris en charge : zip, tar.gz, tgz, tar.bz2, conf.</li></ul></li><li class="procedurelistnumber">Pour mettre à jour automatiquement le jeu de règles sélectionné, cochez la case <strong class="specialbold">Mettre à jour le jeu de règles</strong> et choisissez la période de mise à jour.</li><li class="procedurelistnumber">Sélectionnez un jeu de paramètres prédéfinis ou indiquez vos directives ModSecurity personnalisées. Vous pouvez choisir parmi les jeux de paramètres prédéfinis suivants :<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Rapide</strong> : analyse de l'URI de requête HTTP et d'une partie des en-têtes. Ce mode est celui sollicitant le moins le CPU.</li><li class="listbullet2"><strong class="specialbold">Intermédiaire</strong> : analyse de l'URI de requête HTTP, des en-têtes et des données POST de la requête. Ce mode est un bon compromis qualité/performances.</li><li class="listbullet2"><strong class="specialbold">Complet</strong> : analyse de l'intégralité des en-têtes de la requête HTTP, des données POST de la requête et du contenu du corps de la réponse. Ce mode est celui qui consomme le plus de ressources CPU. Il est toutefois recommandé pour les sites qui requièrent des mesures de sécurité spécifiques. Par exemple, les boutiques en ligne acceptant les paiements par carte.<p class="listnote"><strong class="buttons">Remarque :</strong> pour des performances optimales, le pare-feu applicatif requiert un serveur DNS local avec la mise en cache des requêtes activée. Sinon, vos sites Web risquent de ralentir quand le pare-feu applicatif est activé.</p>
+<p class="widegraphic"><img src="76906.gif" alt="2016-09-07_161237" height="369" width="1060" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul></li></ol><p class="bodytext">&nbsp;&nbsp;</p>
+<h5 class="heading5">Fichiers de log (Linux)</h5>
+<p class="bodytext">Sous Linux, ModSecurity utilise les emplacements suivants pour les logs :</p>
+<ul class="listbullet"><li class="listbullet">Le log d'audit ModSecurity (sous <code class="monospace">/var/log/httpd/modsec_audit.log</code>) est très détaillé et utilisé par l'ensemble du serveur Plesk. Tout événement détecté par ModSecurity génère une entrée dans le fichier du log d'audit. Pour consulter le log d'audit ModSecurity, allez dans&nbsp;<strong class="specialbold">Outils &amp; Paramètres&nbsp;&gt;&nbsp;Pare-feu applicatif (ModSecurity)</strong> et cliquez sur le lien <strong class="specialbold">Logs d'archive</strong> dans la section <strong class="specialbold">Log d'audit ModSecurity</strong>. Sur cette page, vous pouvez consulter et télécharger les fichiers de log ModSecurity et voir leurs dates de modification.</li><li class="listbullet">Le log d'erreurs Apache pour un domaine (sous <code class="monospace">/var/www/vhosts/DOMAIN.TLD/logs/error_log</code>) contient seulement de courtes informations sur les erreurs de sites Web. Vous pouvez voir le log d'erreurs d'un site Web particulier dans le Panneau Client sous <strong class="specialbold">Sites Web &amp; Domaines</strong> &gt; &lt;nom_de_domaine&gt; &gt; <strong class="specialbold">Logs</strong>. Sélectionnez uniquement <strong class="specialbold">Erreur Apache</strong> et <strong class="specialbold">Erreur Nginx</strong> à la place de <strong class="specialbold">Tous les logs</strong> à droite.</li></ul><h5 class="heading5"></h5>
+<h5 class="heading5">Fichiers de log (Windows)</h5>
+<p class="bodytext">Sous Windows, les logs d'audit ModSecurity sont spécifiques à chaque domaine et se trouvent dans <code class="monospace">%plesk_dir%\ModSecurity\vhosts\&lt;GUID domaine&gt;\logs</code>, où <code class="monospace">%plesk_dir%</code> est le répertoire d'installation par défaut de Plesk.</p>
+<p class="bodytext">&nbsp;</p>
+<h5 class="heading5">Désactivation des règles</h5>
+<p class="bodytext">Lorsque vous passez le mode pare-feu applicatif de <strong class="specialbold">On</strong> à <strong class="specialbold">Off</strong> ou à <strong class="specialbold">Détection uniquement</strong>, un site Web risque de cesser de fonctionner. Dans le log d'erreurs du site Web, vous pouvez trouver des codes d'erreur du type <code class="monospace">403</code>, <code class="monospace">404</code> ou <code class="monospace">500</code>. Ces erreurs disparaissent lorsque vous passez le pare-feu applicatif en mode <strong class="specialbold">Détection uniquement</strong> ou <strong class="specialbold">Off</strong>. Dans ce cas, analysez le log d'audit ModSecurity pour découvrir ce qui se passe. Vous pouvez désactiver les règles de sécurité trop restrictives ou ajuster le site Web.</p>
+<p class="bodytext"></p>
+<p class="procedureheading">Afin de déterminer pourquoi une requête HTTP ne peut pas être terminée pour un site Web :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Consultez le fichier du log d'audit du site Web.<p class="listcontinue">Dans Plesk pour Linux, vous pouvez utiliser l'interface Plesk pour afficher le log : allez dans&nbsp;<strong class="specialbold">Outils &amp; Paramètres&nbsp; &gt; &nbsp;Pare-feu applicatif (ModSecurity)</strong> et cliquez sur le lien <strong class="specialbold">Fichier de log ModSecurity</strong> pour télécharger le log d'audit et l'ouvrir dans une nouvelle fenêtre de navigateur.</p>
+</li><li class="procedurelistnumber">Utilisez la recherche (généralement <code class="monospace">Ctrl + F</code>) pour trouver les événements du site Web (nom de domaine) qui ont généré des problèmes. Par exemple, <code class="monospace">votre_domaine.tld</code>. Le navigateur met en surbrillance des entrées comme <code class="monospace">HOST: votre_domaine.tld</code>. Trois lignes au-dessus de l'entrée en surbrillance, repérez une chaîne du type : <code class="monospace">--eece5138-B--</code>. Les 8 caractères entre les tirets (ici &quot;<code class="monospace">eece5138</code>&quot;) correspondent à l'ID de l'événement déclenché par la requête HTTP.</li><li class="procedurelistnumber">Recherchez d'autres entrées avec le même ID d'événement. Repérez une entrée avec la lettre <code class="monospace">H</code> après l'ID d'événement (ici <code class="monospace">eece5138-H--</code>). Cette entrée contient l'ID et la description de la règle de sécurité déclenchée lors de la vérification de la requête HTTP. L'ID de la règle de sécurité est un nombre entier commençant par <code class="monospace">3</code> entre guillemets avec le préfixe <code class="monospace">id</code> entre crochets. Par exemple : <code class="monospace">[id &quot;340003&quot;]</code>.</li><li class="procedurelistnumber">Trouvez un ID de règle de sécurité dans l'événement avec la sous-chaîne <code class="monospace">[id &quot;3</code>. Cet ID peut être utilisé lorsque vous désactivez des règles.</li></ol><p class="procedureheading">Pour désactiver une règle :</p>
+<ol class="procedurelistnumber"><li class="procedurelistnumber">Allez sous &nbsp;<strong class="specialbold">Outils &amp; Paramètres&nbsp; &gt; &nbsp;Pare-feu applicatif (ModSecurity)</strong>.</li><li class="procedurelistnumber">Dans la section <strong class="specialbold">Désactiver les règles de sécurité</strong>, sélectionnez la règle de sécurité selon son ID (par exemple <code class="monospace">340003</code>), la balise correspondante (par exemple <strong class="specialbold">CVE-2011-4898</strong>) ou une expression régulière (par exemple <code class="monospace">XSS</code>) et cliquez sur <strong class="specialbold">OK</strong>.</li></ol><p class="bodytext"></p>
+<h5 class="heading5">Remarques relatives à Nginx et ModSecurity (Linux)</h5>
+<p class="bodytext">Sous Linux, ModSecurity est un module pour Apache. Par conséquent, il vérifie les requêtes HTTP communiquant avec Apache. Apache peut être complété par un autre serveur Web,&nbsp;Nginx. Si vous activez l'option <strong class="specialbold">Gérer PHP avec Nginx</strong> du serveur Web Nginx pour le contenu dynamique de votre site Web (dans les paramètres Apache &amp; Nginx du site), le pare-feu applicatif ne sera pas en mesure de traiter les requêtes HTTP, car elles n'atteignent jamais Apache. Pour le contenu statique, si l'option <strong class="specialbold">Traiter les fichiers statiques directement avec Nginx</strong> est activée, les requêtes HTTP n'atteindront pas Apache, et ModSecurity ne les vérifiera pas.</p>
+<p class="bodytext"></p>
+<h5 class="heading5">Notes de mise à niveau (Linux)</h5>
+<p class="bodytext">Astuces pratiques si vous avez installé ModSecurity sur le serveur avant de mettre à niveau vers Plesk Onyx :</p>
+<ul class="listbullet"><li class="listbullet">Plesk installe son propre pack ModSecurity. Toutefois,&nbsp;pendant la vérification préalable à la mise à niveau, le Programme d'installation de Plesk vous demandera si vous acceptez l'installation de Plesk ModSecurity sur votre installation existante.</li><li class="listbullet">Votre configuration ModSecurity reste telle quelle. Toutefois, il y a de nombreuses configurations et distributions pour ModSecurity, c'est pourquoi il est si difficile de prédire comment les nouvelles et anciennes configurations risquent d'entrer en conflit. Pour éviter tout problème, enregistrez votre configuration existante et désinstallez ModSecurity avant de procéder à la mise à niveau vers Plesk Onyx (ou avant d'installer ModSecurity sur Plesk).</li></ul><p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td>
+<p class="relatedheading">Dans cette section :</p><p class="relateditem"><a href="75669.htm" target="_self">Jeux de règles Atomic ModSecurity</a></p></td>
+</tr>
+</table>
+
+
+
+
+<!--
+<p class="bodytext">
+<a target="_blank" title="Send feedback through a web form" href="http://www.parallels.com/en/support/usersdoc/?problemSubject=Feedback+on+Help+Page+" onclick="var u = parent.BODY.location.href;
+u = u.replace(/.+\/([^/]+).htm$/,'$1');
+u+= '+of+the+'+parent.document.title.replace(/ /g,'+');
+
+this.href+=u;
+
+window.location.reload(false);">Please send us your feedback on this help page.</a></p>
+-->
+
+
+
+&nbsp;
+<hr style="border: none; background-color: grey; color: grey; height: 2px" />
+<h3 class="heading3">Leave your feedback on this topic here</h3>
+<p class="note">If you have questions or need support, please visit the <a target="_blank" href="http://talk.plesk.com/">Plesk forum</a> or contact your hosting provider.<br>The comments below are for feedback on the documentation only. No timely answers or help will be provided.</p>
+
+    
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'pleskdocs'; // required: replace example with your forum shortname
+		var disqus_developer = 0; 
+		var disqus_identifier = '73383.htm';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</body>
+<script>highlightTOC()</script>
+</html>
